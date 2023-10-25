@@ -46,8 +46,8 @@ CREATE TABLE ARTISTE(
     DdNA DATE,
     LdN VARCHAR(255),
     adresseA VARCHAR(255),
-    numSecuriteSociale INT,
-    numCNI INT,
+    numSecuriteSociale INT UNIQUE,
+    numCNI INT UNIQUE,
     dateDelivranceCNI DATE,
     dateExpirationCNI DATE,
     dansGroupe BOOLEAN 
