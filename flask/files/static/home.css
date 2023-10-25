@@ -1,0 +1,70 @@
+.left > h2{
+    color : white;
+    text-align: left;
+    margin-left: 5rem;
+    font-size: 4rem;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #22AD8F;
+    width: 45vw;
+    height: 80vh;
+    text-align: center;
+    border-top-right-radius: 45%;
+    border-bottom-right-radius: 45%;
+}
+
+.main{
+    background-image: url("../static/img/fond.jpg");
+    background-size: 75%;
+    background-position: 25vw;
+}
+
+button{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    color : white;
+    border-radius: 2rem;
+    border: none;
+    background-color: #D33FC4;
+    margin-left: 5vw;
+    transition-duration: 0.4s;
+    width: 20vw;
+    height: 3vh;
+}
+
+button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #c930b9;
+}
+
+button span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+button span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+
+button:hover span {
+    padding-right: 2rem;
+}
+
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
