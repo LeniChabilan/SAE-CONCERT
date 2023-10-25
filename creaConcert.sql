@@ -93,7 +93,7 @@ CREATE TABLE PERSONELTECHNIQUE(
 CREATE TABLE PLAN(
     planID int PRIMARY KEY,
     planScene BLOB,
-    planFeu int,
+    planFeu BLOB,
     salleID int,
     FOREIGN KEY (salleID) REFERENCES SALLE(salleID)
 );
