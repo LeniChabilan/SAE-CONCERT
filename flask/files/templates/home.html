@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% block styles %}
 <link rel="stylesheet" href="{{ url_for('static',filename='home.css')}}">
 {% endblock %}
@@ -6,7 +7,7 @@
     <div class="left">   
         <h2>Organisez votre concert en toute simplicité !</h2>
         <a href="#">
-            <button><span>Organisez-vous avec ConcertIUTO</span></button>
+            <button class="buttonOrg">  <span>Organisez-vous avec ConcertIUTO</span></button>
         </a>
     </div>
 </div>
