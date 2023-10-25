@@ -1,6 +1,29 @@
-
-
-
+DROP Table ORGANISER;
+DROP Table SALLETYPEPLACE;
+DROP Table INVITATION;
+DROP Table PREPARE;
+DROP Table PARTICIPE;
+DROP Table UTILISE;
+DROP Table COMPOSER;
+DROP Table NECESSITER;
+DROP Table TRANSPORTE;
+DROP Table MUSICIENADDITIONEL;
+DROP Table CONCERT;
+DROP Table MATERIELSALLE;
+DROP Table HEBERGMENT;
+DROP Table PLAN;
+DROP Table PERSONELTECHNIQUE;
+DROP Table SALLE;
+DROP Table GROUPE;
+DROP Table MATERIEL;
+DROP Table VEHICULE;
+DROP Table ARTISTE;
+DROP Table LIEU;
+DROP Table TYPEPLACE;
+DROP Table ORGANISATION;
+DROP Table ROLEP;
+DROP Table MATERIELARTISTE;
+DROP Table MUSICIEN;
 
 
 
@@ -9,84 +32,27 @@ create Table MUSICIEN(
     nomMusicien VARCHAR(50)
 );
 
-create Table MUSICIENADDITIONEL(
-    musicienID int PRIMARY KEY,
-    groupeId int PRIMARY KEY,
-    ramene boolean,
-    FOREIGN KEY (musicienID) REFERENCES MUSICIEN(musicienID),
-    FOREIGN KEY (groupeId) REFERENCES GROUPE(groupeId)
-);
-
----A revoir
-create Table GROUPE(
-    groupeID int PRIMARY KEY
-    
-);
-create Table APPARTIENT(
-    groupeID int PRIMARY KEY,
-    artisteId int PRIMARY KEY,
-    FOREIGN KEY (groupeID) REFERENCES GROUPE(groupeID),
-    FOREIGN KEY (artisteId) REFERENCES ARTISTE(artisteId)
-);
-
-create Table UTILISE(
-    materielArtisteID int PRIMARY KEY,
-    artisteId int PRIMARY KEY,
-    quantite int
-    FOREIGN KEY (materielArtisteID) REFERENCES MATERIELARTISTE(materielArtisteID),
-    FOREIGN KEY (artisteId) REFERENCES ARTISTE(artisteId)
-);
 create Table MATERIELARTISTE(
     materielArtisteID int PRIMARY KEY,
-    nomMateriel VARCHAR(200),
+    nomMaterielArt VARCHAR(200),
     disponible boolean 
-)
-create Table PARTICIPE(
-    concertId int PRIMARY KEY,
-    artisteId int PRIMARY KEY,
-    FOREIGN KEY (concertId) REFERENCES CONCERT(concertId),
-    FOREIGN KEY (artisteId) REFERENCES ARTISTE(artisteId)
 );
 
-create Table ROLE(
+create Table ROLEP(
     roleID int PRIMARY KEY,
-    nomRole VARCHAR(50),
+    nomRole VARCHAR(50)
 );
+
 create Table ORGANISATION(
     nomOrga varchar(50) PRIMARY KEY,
     motDePasse varchar(50),
     typeOrga VARCHAR(50)
 );
-create Table PERSONELTECHNIQUE(
-    personelTechniqueID int PRIMARY KEY,
-    nom varchar(50),
-    prenom VARCHAR(50)
-);
-create Table PREPARE(
-    personelTechniqueID int PRIMARY KEY,
-    concertID int,
-    FOREIGN KEY (concertID) REFERENCES Concert(concertId),
-    FOREIGN KEY (personelTechniqueID) REFERENCES PERSONELTECHNIQUE(personelTechniqueID)    
-);
 
 create Table TYPEPLACE(
-    typeId int PRIMARY KEY,
+    typePlaceID int PRIMARY KEY,
     nomPlace varchar(50),
     descriptionP TEXT
-);
-create Table INVITATION(
-    typeId int PRIMARY KEY,
-    concertID int,
-    quantite int
-    FOREIGN KEY (concertID) REFERENCES Concert(concertId),
-    FOREIGN KEY (typeId) REFERENCES TYPEPLACE(typeId)
-);
-create Table PLAN(
-    planId int PRIMARY KEY,
-    planScene BLOB,
-    planFeu int
-    salleID int,
-    FOREIGN KEY (salleID) REFERENCES SALLE(salleID)
 );
 
 -- Table pour stocker les informations sur les lieux des concerts et des activités annexes
@@ -96,35 +62,6 @@ CREATE TABLE LIEU (
     adresseL VARCHAR(255),
     departement INT(3)
 );
-
-CREATE TABLE SALLE (
-    salleID INT PRIMARY KEY,
-    nomSalle VARCHAR(255),
-    capaciteTotaleSalle INT,
-    planSalle BLOB,
-    dimensionOuverture float,
-    dimensionProfondeur float,
-    lieuID INT,
-    FOREIGN KEY (lieuID) REFERENCES LIEU(lieuID),
-
-);
-
-CREATE TABLE SALLETYPEPLACE(
-    typeId INT PRIMARY KEY,
-    salleID INT PRIMARY KEY,
-    capacite INT,
-    FOREIGN KEY (typeId) REFERENCES TYPEPLACE(typeId),
-    FOREIGN KEY (salleID) REFERENCES SALLE(salleID)
-
-)
--- Table pour stocker les informations sur l'hebergement
-CREATE TABLE HEBERGMENT (
-    hebergementID INT PRIMARY KEY AUTO_INCREMENT,
-    nomHebergement VARCHAR(255) NOT NULL,
-    capacitéH INT NOT NULL,
-    qualitéH INT NOT NULL
-);
-
 
 
 -- Table pour stocker les informations sur les Artistes
@@ -136,14 +73,14 @@ CREATE TABLE ARTISTE(
     mailA VARCHAR(255),
     DdNA DATE,
     LdN VARCHAR(255),
-    adresseN VARCHAR(255),
+    adresseA VARCHAR(255),
     numSecuriteSociale INT,
     numCNI INT,
     dateDelivranceCNI DATE,
-    dateExpirationCNI DATE
+    dateExpirationCNI DATE,
+    dansGroupe BOOLEAN 
+
 );
-
-
 
 CREATE TABLE VEHICULE(
     immatriculation VARCHAR(255) PRIMARY KEY,
@@ -151,21 +88,89 @@ CREATE TABLE VEHICULE(
     capacitéV INT
 );
 
+CREATE TABLE MATERIEL(
+    materielID int PRIMARY KEY,
+    nomMateriel VARCHAR(255),
+);
+
+
+CREATE TABLE GROUPE(
+    groupeID int PRIMARY KEY,
+    nomGroupe varchar(255)
+);
+
+CREATE TABLE SALLE (
+    salleID INT PRIMARY KEY,
+    nomSalle VARCHAR(255),
+    capaciteTotaleSalle INT,
+    planSalle BLOB,
+    dimensionOuverture float,
+    dimensionProfondeur float,
+    lieuID INT,
+    FOREIGN KEY (lieuID) REFERENCES LIEU(lieuID)
+);
+
+CREATE TABLE PERSONELTECHNIQUE(
+    personelTechniqueID int PRIMARY KEY,
+    roleID int ,
+    nomP varchar(50),
+    prenomP VARCHAR(50),
+    FOREIGN KEY (roleID) REFERENCES ROLEP(roleID)
+);
+
+CREATE TABLE PLAN(
+    planID int PRIMARY KEY,
+    planScene BLOB,
+    planFeu int,
+    salleID int,
+    FOREIGN KEY (salleID) REFERENCES SALLE(salleID)
+);
+
+-- Table pour stocker les informations sur l'hebergement
+CREATE TABLE HEBERGMENT (
+    hebergementID INT PRIMARY KEY AUTO_INCREMENT,
+    nomHebergement VARCHAR(255) NOT NULL,
+    capacitéH INT NOT NULL,
+    qualitéH INT NOT NULL,
+    lieuID int,
+    FOREIGN KEY (lieuID) REFERENCES LIEU(lieuID)
+);
+
+create Table MATERIELSALLE(
+    materielSalleID int PRIMARY KEY,
+    salleID INT,
+    nomMaterielS VARCHAR(255),
+    disponible BOOLEAN,
+    FOREIGN KEY (salleID) REFERENCES SALLE(salleID)
+);
+
 -- Table pour stocker les informations sur les concerts
 CREATE TABLE CONCERT (
-    concertId INT PRIMARY KEY,
-    dateHeureDebutConcert DATETIME,
-    dureeConcert INT,
-    lieuId INT,
-    festivalId INT,
-    groupeId INT,
-    FOREIGN KEY (lieuId) REFERENCES LIEU(lieuId),
-
+    concertID INT PRIMARY KEY,
+    nomConcert varchar(255),
+    dateDebutConcert DATE,
+    dateFinConcert DATE,
+    ficheTechnique TEXT,
+    catering TEXT,
+    salleID int,
+    groupeID int,
+    FOREIGN KEY (salleID) REFERENCES SALLE(salleID),
+    FOREIGN KEY (groupeID) REFERENCES GROUPE(groupeID)
 ); 
 
-create Table MATERIEL(
-    materielID int PRIMARY KEY,
-    nomMateriel VARCHAR(255)
+
+CREATE TABLE MUSICIENADDITIONEL(
+    musicienID int PRIMARY KEY,
+    concertID int PRIMARY KEY,
+    FOREIGN KEY (musicienID) REFERENCES MUSICIEN(musicienID),
+    FOREIGN KEY (concertID) REFERENCES CONCERT(concertID)
+);
+
+CREATE TABLE TRANSPORTE(
+    concertID INT PRIMARY KEY,
+    immatriculation varchar(50) PRIMARY KEY,
+    FOREIGN KEY (concertID) REFERENCES CONCERT(concertID),
+    FOREIGN KEY (immatriculation) REFERENCES VEHICULE(immatriculation)
 );
 
 create Table NECESSITER(
@@ -176,14 +181,61 @@ create Table NECESSITER(
     FOREIGN KEY (concertID) REFERENCES CONCERT(concertID)
 );
 
-create Table MATERIELSALLE(
-    materielSalleID int PRIMARY KEY,
-    salleID INT,
-    nomMaterielS VARCHAR(255),
-    disponible BOOLEAN,
-    FOREIGN KEY (salleID) REFERENCES SALLE(salleID)
 
+CREATE TABLE COMPOSER(
+    artisteID INT PRIMARY KEY,
+    groupeID INT PRIMARY KEY,
+    FOREIGN KEY (artisteID) REFERENCES ARTISTE(artisteID),
+    FOREIGN KEY (groupeID) REFERENCES GROUPE(groupeID)
 );
+
+
+CREATE TABLE UTILISE(
+    materielArtisteID int PRIMARY KEY,
+    groupeID int PRIMARY KEY,
+    quantiteMaterielArt int,
+    FOREIGN KEY (materielArtisteID) REFERENCES MATERIELARTISTE(materielArtisteID),
+    FOREIGN KEY (groupeID) REFERENCES GROUPE(groupeID)
+);
+
+CREATE TABLE PARTICIPE(
+    concertId int PRIMARY KEY,
+    artisteId int PRIMARY KEY,
+    FOREIGN KEY (concertId) REFERENCES CONCERT(concertId),
+    FOREIGN KEY (artisteId) REFERENCES ARTISTE(artisteId)
+);
+
+
+CREATE TABLE PREPARE(
+    personelTechniqueID int PRIMARY KEY,
+    concertID int PRIMARY KEY,
+    FOREIGN KEY (concertID) REFERENCES CONCERT(concertId),
+    FOREIGN KEY (personelTechniqueID) REFERENCES PERSONELTECHNIQUE(personelTechniqueID)    
+);
+
+
+CREATE TABLE INVITATION(
+    typePlaceID int PRIMARY KEY,
+    concertID int PRIMARY KEY,
+    quantiteInv int,
+    FOREIGN KEY (concertID) REFERENCES CONCERT(concertId),
+    FOREIGN KEY (typePlaceID) REFERENCES TYPEPLACE(typePlaceID)
+);
+
+CREATE TABLE SALLETYPEPLACE(
+    typePlaceID INT PRIMARY KEY,
+    salleID INT PRIMARY KEY,
+    capaciteS INT,
+    FOREIGN KEY (typePlaceID) REFERENCES TYPEPLACE(typePlaceID),
+    FOREIGN KEY (salleID) REFERENCES SALLE(salleID)
+);
+
+create TABLE ORGANISER(
+    concertID int PRIMARY KEY,
+    nomOrga varchar(50) PRIMARY KEY,
+    FOREIGN KEY (nomOrga) REFERENCES ORGANISATION(nomOrga),
+    FOREIGN KEY (concertID) REFERENCES CONCERT(concertID)
+    )
 
 
 
