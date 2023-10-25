@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static',filename='home.css')}}">
+{% endblock %}
+{% block content %}
+<ul class="listeOptions">
+    <li>
+        <div>
+            <a href="#">Consulter la liste des concerts prévus</a>
+            <img src="../static/img/prevus.jpg" alt="salle de concert vide en préparation">
+        </div>
+    </li>
+    <li>
+        <div>
+            <a href="#">Créer un nouveau concert</a>
+            <img src="../static/img/caisse.jpeg" alt="salle de concert vide en préparation">
+        </div>
+    </li>
+    <li>
+        <div>
+            <a href="#">Modifier les fiches d'artiste</a>
+            <img src="../static/img/checklist.png" alt="salle de concert vide en préparation">
+        </div>
+    </li>
+</ul>
+{% endblock %}

@@ -11,14 +11,14 @@
 </head>
 <body>
     <header>
-        <a href="#">
+        <a href="{{ url_for('home') }}">
             <img class="img_base" id="img1" src="./../static/img/logo.png" alt="">
         </a>
         <h2 id="nom_Entreprise">ConcertIUT'O</h2>
         <a href="#" id="fond_bouton">
             <button type="button" id="bouton_se_connecter">Se connecter</button>
         </a>
-        <a href="home.html" id="se_connecter">
+        <a href="{{ url_for('home') }}" id="home">
             <img class="img_base" id="img2" src="./../static/img/home.png" alt="">
         </a>
     </header>
