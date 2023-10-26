@@ -191,16 +191,6 @@ CREATE TABLE PREPARE(
     FOREIGN KEY (personelTechniqueID) REFERENCES PERSONELTECHNIQUE(personelTechniqueID)    
 );
 
-
-CREATE TABLE INVITATION(
-    typePlaceID int ,
-    concertID int ,
-    quantiteInv int,
-    PRIMARY KEY(typePlaceID,concertID),
-    FOREIGN KEY (concertID) REFERENCES CONCERT(concertId),
-    FOREIGN KEY (typePlaceID) REFERENCES TYPEPLACE(typePlaceID)
-);
-
 CREATE TABLE SALLETYPEPLACE(
     typePlaceID INT ,
     salleID INT ,
