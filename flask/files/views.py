@@ -9,3 +9,7 @@ def home():
 @app.route("/asso/bien-etre")
 def accueil_bien_etre():
     return render_template("accueil_bien_etre.html")    
+
+@app.route("/connexion")
+def connexion():
+    return render_template("connexion.html")    

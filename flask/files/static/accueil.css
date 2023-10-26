@@ -1,0 +1,86 @@
+body{margin:0;}
+
+header{
+    display: flex;
+    background-color: #264263;
+}
+
+.img_base {
+    height: 5vw;
+    width: 5vw;
+    border-radius: 15%;
+    margin: 2vw;
+    margin-right : 4vw;
+}
+
+#nom_Entreprise{
+    color: #E9C46A;
+    margin-top : 2wh;
+    font-size: 3vw;
+    margin-right: 38vw;
+}
+
+#bouton_se_connecter{
+    color : #FFFF;
+    border-color: #22AD8F;
+    background-color: #22AD8F;
+    border-radius: 5%;
+    margin: 2vw;
+    margin-top: 3vw;
+    font-size: 2vw;
+}
+
+
+#bouton_se_connecter:hover{
+    background-color: #1d997e;
+}
+
+.listeOptions{
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    list-style-type: none;
+    background-color: #22AD8F;
+    padding-bottom: 10%;
+}
+
+.listeOptions div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #264263;
+    margin: 3vw;
+    margin-top: 5vw;
+    border-radius: 5%;
+    height: 50vh;
+    width: 25vw;
+}
+
+.listeOptions a{
+    color: #E9C46A;
+    text-decoration: none;
+    font-size: 2em;
+    margin: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.listeOptions a:hover{
+    font-size: 2.1em;
+    transition-duration: 0.2s;
+}
+
+.listeOptions img:hover{
+    width: 19vw;
+    height: 24vh;
+    transition-duration: 0.2s;
+}
+
+.listeOptions img{
+    width: 18vw;
+    height: 23vh;
+    border-radius: 5%;
+    margin: 2rem;
+    align-self: center;
+}
