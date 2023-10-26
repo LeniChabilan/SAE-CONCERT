@@ -176,10 +176,10 @@ CREATE TABLE UTILISE(
 
 CREATE TABLE PARTICIPE(
     concertId int,
-    artisteId int,
-    PRIMARY KEY(concertId,artisteId),
+    groupeID int,
+    PRIMARY KEY(concertId,groupeID),
     FOREIGN KEY (concertId) REFERENCES CONCERT(concertId),
-    FOREIGN KEY (artisteId) REFERENCES ARTISTE(artisteId)
+    FOREIGN KEY (groupeID) REFERENCES GROUPE(groupeID)
 );
 
 
