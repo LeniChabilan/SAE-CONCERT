@@ -105,6 +105,7 @@ CREATE TABLE HEBERGMENT (
     capacitéH INT NOT NULL,
     qualitéH INT NOT NULL,
     lieuID int,
+    prix int,
     FOREIGN KEY (lieuID) REFERENCES LIEU(lieuID)
 );
 
