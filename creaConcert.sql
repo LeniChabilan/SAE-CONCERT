@@ -46,8 +46,8 @@ CREATE TABLE ARTISTE(
     DdNA DATE,
     LdN VARCHAR(255),
     adresseA VARCHAR(255),
-    numSecuriteSociale INT,
-    numCNI INT,
+    numSecuriteSociale INT UNIQUE,
+    numCNI INT UNIQUE,
     dateDelivranceCNI DATE,
     dateExpirationCNI DATE,
     dansGroupe BOOLEAN 
@@ -93,7 +93,7 @@ CREATE TABLE PERSONELTECHNIQUE(
 CREATE TABLE PLAN(
     planID int PRIMARY KEY,
     planScene BLOB,
-    planFeu int,
+    planFeu BLOB,
     salleID int,
     FOREIGN KEY (salleID) REFERENCES SALLE(salleID)
 );
@@ -134,6 +134,7 @@ CREATE TABLE CONCERT (
 CREATE TABLE MUSICIENADDITIONEL(
     musicienID int,
     concertID int,
+    PRIMARY KEY(musicienID,concertID),
     FOREIGN KEY (musicienID) REFERENCES MUSICIEN(musicienID),
     FOREIGN KEY (concertID) REFERENCES CONCERT(concertID)
 );
@@ -141,6 +142,7 @@ CREATE TABLE MUSICIENADDITIONEL(
 CREATE TABLE TRANSPORTE(
     concertID INT,
     immatriculation varchar(50),
+    PRIMARY KEY(concertID,immatriculation),
     FOREIGN KEY (concertID) REFERENCES CONCERT(concertID),
     FOREIGN KEY (immatriculation) REFERENCES VEHICULE(immatriculation)
 );
@@ -148,7 +150,7 @@ CREATE TABLE TRANSPORTE(
 create Table NECESSITER(
     materielID int,
     concertID int,
-    quantiteM int,
+    PRIMARY KEY(materielID,concertID),
     FOREIGN KEY (materielID) REFERENCES MATERIEL(materielID),
     FOREIGN KEY (concertID) REFERENCES CONCERT(concertID)
 );
@@ -157,6 +159,7 @@ create Table NECESSITER(
 CREATE TABLE COMPOSER(
     artisteID INT,
     groupeID INT,
+    PRIMARY KEY(artisteID,groupeID),
     FOREIGN KEY (artisteID) REFERENCES ARTISTE(artisteID),
     FOREIGN KEY (groupeID) REFERENCES GROUPE(groupeID)
 );
@@ -166,21 +169,24 @@ CREATE TABLE UTILISE(
     materielArtisteID int,
     groupeID int,
     quantiteMaterielArt int,
+    PRIMARY KEY(materielArtisteID,groupeID),
     FOREIGN KEY (materielArtisteID) REFERENCES MATERIELARTISTE(materielArtisteID),
     FOREIGN KEY (groupeID) REFERENCES GROUPE(groupeID)
 );
 
 CREATE TABLE PARTICIPE(
     concertId int,
-    artisteId int,
+    groupeID int,
+    PRIMARY KEY(concertId,groupeID),
     FOREIGN KEY (concertId) REFERENCES CONCERT(concertId),
-    FOREIGN KEY (artisteId) REFERENCES ARTISTE(artisteId)
+    FOREIGN KEY (groupeID) REFERENCES GROUPE(groupeID)
 );
 
 
 CREATE TABLE PREPARE(
     personelTechniqueID int,
     concertID int,
+    PRIMARY KEY(personelTechniqueID,concertID),
     FOREIGN KEY (concertID) REFERENCES CONCERT(concertId),
     FOREIGN KEY (personelTechniqueID) REFERENCES PERSONELTECHNIQUE(personelTechniqueID)    
 );
@@ -190,6 +196,7 @@ CREATE TABLE INVITATION(
     typePlaceID int ,
     concertID int ,
     quantiteInv int,
+    PRIMARY KEY(typePlaceID,concertID),
     FOREIGN KEY (concertID) REFERENCES CONCERT(concertId),
     FOREIGN KEY (typePlaceID) REFERENCES TYPEPLACE(typePlaceID)
 );
@@ -198,6 +205,7 @@ CREATE TABLE SALLETYPEPLACE(
     typePlaceID INT ,
     salleID INT ,
     capaciteS INT,
+    PRIMARY KEY(typePlaceID,salleID),
     FOREIGN KEY (typePlaceID) REFERENCES TYPEPLACE(typePlaceID),
     FOREIGN KEY (salleID) REFERENCES SALLE(salleID)
 );
@@ -205,6 +213,7 @@ CREATE TABLE SALLETYPEPLACE(
 create TABLE ORGANISER(
     concertID int ,
     nomOrga varchar(50) ,
+    PRIMARY KEY(concertID,nomOrga),
     FOREIGN KEY (nomOrga) REFERENCES ORGANISATION(nomOrga),
     FOREIGN KEY (concertID) REFERENCES CONCERT(concertID)
 );

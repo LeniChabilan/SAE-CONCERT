@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static',filename='base.css')}}">
+{% endblock %}
+<head>
+{% block head %}
+<meta charset="utf-8">
+<title>ConcertIUT'O</title>
+{% endblock %}
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('home') }}">
+            <img class="img_base" id="img1" src="./../static/img/logo.png" alt="">
+        </a>
+        <h2 id="nom_Entreprise">ConcertIUT'O</h2>
+        <a href="{{ url_for('connexion') }}" id="fond_bouton">
+            <button type="button" id="bouton_se_connecter">Se connecter</button>
+        </a>
+        <a href="{{ url_for('home') }}" id="home">
+            <img class="img_base" id="img2" src="./../static/img/home.png" alt="">
+        </a>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>

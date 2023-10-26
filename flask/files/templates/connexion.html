@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<link rel="stylesheet" href='../static/connexion.css'>
+<head>
+<meta charset="utf-8">
+<title>ConcertIUT'O</title>
+</head>
+    <div class="main">
+        <div class="left">
+            <h1 id="connexion">Connexion :</h1>
+        </div>
+        <div class="id_mdp">
+            <div class="id">
+                <h2 class="texte_connexion">Identifiant</h2>
+                <input type="text" id="identifiant" placeholder="Votre identifiant" required>
+            </div>
+            <div class="mdp">
+                <h2 class="texte_connexion">Mot de passe</h2>
+                <input type="password" id="mot_de_passe" placeholder="Votre mot de passe" required>
+            </div>
+        </div>
+        <div class="envoyer_identifiants">
+            <a href="{{ url_for('accueil_bien_etre') }}">
+                <button type="submit" id="boutonConnexion">Se Connecter</button>
+            </a>
+        </div>
+    </div>
+<body>
