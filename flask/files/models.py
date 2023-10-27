@@ -3,9 +3,15 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship,sessionmaker
 from sqlalchemy import func
 import pymysql
-
 pymysql.install_as_MySQLdb()
 Base = declarative_base()
+from .app import db
+from flask_login import UserMixin
+from .app import login_manager
+
+@login_manager.user_loader
+def load_user(nomOrga):
+    return Organisation.query.get(nomOrga)
 
 class Musicien(Base):
     __tablename__ = 'MUSICIEN'
@@ -23,11 +29,14 @@ class RoleP(Base):
     roleID = Column(Integer, primary_key=True)
     nomRole = Column(String(50))
 
-class Organisation(Base):
+class Organisation(db.Model, UserMixin):
     __tablename__ = 'ORGANISATION'
-    nomOrga = Column(String(50), primary_key=True)
-    motDePasse = Column(String(50))
-    typeOrga = Column(String(50))
+    nomOrga = db.Column(String(50), primary_key=True)
+    motDePasse = db.Column(String(50))
+    typeOrga = db.Column(String(50))
+
+    def get_id(self):
+        return self.nomOrga
 
 class TypePlace(Base):
     __tablename__ = 'TYPEPLACE'
