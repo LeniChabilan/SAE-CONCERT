@@ -1,4 +1,7 @@
-body{margin:0;}
+body{
+    margin: 0;
+    padding: 0;
+}
 
 header{
     display: flex;
@@ -35,11 +38,12 @@ header{
     background-color: #1d997e;
 }
 
+
 .left > h2{
     color : white;
     text-align: left;
     margin-left: 5rem;
-    font-size: 4rem;
+    font-size: 2vw;
 }
 
 .left{
@@ -85,6 +89,7 @@ header{
     display: inline-block;
     position: relative;
     transition: 0.5s;
+    font-size: 1rem;
 }
 
 .buttonOrg span:after{
@@ -96,7 +101,6 @@ header{
     transition: 0.5s;
 }
 
-
 .buttonOrg:hover span {
     padding-right: 2rem;
 }
@@ -104,4 +108,54 @@ header{
 .buttonOrg:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+.listeOptions{
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    list-style-type: none;
+    background-color: #22AD8F;
+    padding-bottom: 10%;
+}
+
+.listeOptions div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #264263;
+    margin: 3vw;
+    margin-top: 5vw;
+    border-radius: 5%;
+    height: 50vh;
+    width: 25vw;
+}
+
+.listeOptions a{
+    color: #E9C46A;
+    text-decoration: none;
+    font-size: 2em;
+    margin: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.listeOptions a:hover{
+    font-size: 2.1em;
+    transition-duration: 0.2s;
+}
+
+.listeOptions img:hover{
+    width: 19vw;
+    height: 24vh;
+    transition-duration: 0.2s;
+}
+
+.listeOptions img{
+    width: 18vw;
+    height: 23vh;
+    border-radius: 5%;
+    margin: 2rem;
+    align-self: center;
 }
