@@ -1,0 +1,979 @@
+<mxfile host="app.diagrams.net" modified="2023-10-27T09:39:40.714Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="VyePuAbCkA6Ffbp5aHbT" version="22.0.8" type="google">
+  <diagram name="Page-1" id="961OaiwmuwQlu_yd7X_A">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="58" y="-1040" width="1600" height="1870" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1750" y="-927" width="1550" height="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-75" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-3590" y="-907.5" width="1550" height="837.5" as="geometry" />
+        </mxCell>
+        <mxCell id="7sOBCMGw0FgsZVdKqGp7-1" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-560" y="-40" as="sourcePoint" />
+            <mxPoint x="-560" y="-760" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-560" y="-380" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7sOBCMGw0FgsZVdKqGp7-2" value="editer une liste des besoins pour un concert" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-689" y="-800" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-5" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-730" y="-730" as="sourcePoint" />
+            <mxPoint x="-390" y="-730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rR7BoHSBbbFr1cChehXX-1" value="artiste" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-710" y="-762" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rR7BoHSBbbFr1cChehXX-2" value="système" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-515" y="-762" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rR7BoHSBbbFr1cChehXX-3" value="&lt;div align=&quot;left&quot;&gt;1- ouvre le lien du formulaire&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-740" y="-710" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rR7BoHSBbbFr1cChehXX-4" value="&lt;div align=&quot;left&quot;&gt;2- l&#39;artiste rempli la page des informations de l&#39;artiste&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-740" y="-677" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TlmScWpylyDLZyujIXdL-1" value="&lt;div align=&quot;left&quot;&gt;14 - le système envoie un mail du formulaire à l&#39;artiste&amp;nbsp; &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-556" y="-117" width="170" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="ej2JFybLueWeB4u2mJ3n-1" value="&lt;div align=&quot;left&quot;&gt;5- l&#39;artiste insert ses différents plans &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-737" y="-543" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-1" value="8- l&#39;artiste rempli les différents tableaux avec le matériel qu&#39;il a besoin" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-737" y="-402" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-2" value="&lt;div align=&quot;left&quot;&gt;4 - Le système ouvre une page de plans&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-548" y="-612" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-3" value="&lt;div align=&quot;left&quot;&gt;3 - clique sur suivant&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-743" y="-653" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-5" value="&lt;div align=&quot;left&quot;&gt;6 - clique sur suivant&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-738" y="-523" width="114" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-6" value="&lt;div align=&quot;left&quot;&gt;7 - Le système ouvre la page du rider&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-559" y="-478" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-8" value="&lt;div&gt;9 - clique sur suivant&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-737" y="-374" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-13" value="&lt;div align=&quot;left&quot;&gt;13 - le système&amp;nbsp;enregistre en base de donné &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-555" y="-160" width="158" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-15" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="238" y="-770" as="sourcePoint" />
+            <mxPoint x="578" y="-770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-16" value="Gerer les Fiches(Accueil)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="348" y="-840" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-17" value="acteur" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="298" y="-802" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-18" value="systeme" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="443" y="-802" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-19" value="&lt;div align=&quot;left&quot;&gt;4 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="428" y="-609" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-20" value="&lt;div align=&quot;left&quot;&gt;1- L&#39;utilisateur clique sur &quot;Gerer les fiches&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="248" y="-762" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-21" value="&lt;div align=&quot;left&quot;&gt;5 - L&#39;utilisateur clique sur&amp;nbsp; fiche &quot;Accueil&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="243" y="-567" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-23" value="&lt;div align=&quot;left&quot;&gt;6 - Le système interroge la base de données pour avoir les informations de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="418" y="-516" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-24" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="418" y="-170" as="sourcePoint" />
+            <mxPoint x="418" y="-800" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="418" y="-420" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-14" value="12- l&#39;artiste clique sur envoyer le formulaire" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-735" y="-210" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-15" value="&lt;div align=&quot;left&quot;&gt;10 - Le système ouvre la page du fiche accueil&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-555" y="-320" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-16" value="11- l&#39;artiste rempli les différents champs" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-734" y="-250" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-6" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-2430" y="-759" as="sourcePoint" />
+            <mxPoint x="-2090" y="-759" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-7" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-2270" y="-330" as="sourcePoint" />
+            <mxPoint x="-2270" y="-786" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-2270" y="-406" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-8" value="Association technique" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-2430" y="-789" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-9" value="Système" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-2210" y="-789" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-17" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-990" y="-490" as="sourcePoint" />
+            <mxPoint x="-990" y="-770" as="targetPoint" />
+            <Array as="points" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-18" value="cas alternatif éditer les besoin pour un concert&amp;nbsp; " style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1124" y="-810" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-19" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-1160" y="-740" as="sourcePoint" />
+            <mxPoint x="-820" y="-740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-20" value="artiste" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1140" y="-772" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-21" value="système" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-945" y="-772" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-22" value="&lt;div align=&quot;left&quot;&gt;1-&amp;nbsp;l&#39;artiste ouvre le lien du formulaire&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1170" y="-719" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-23" value="2- l&#39;artiste ne rempli pas la page des informations de l&#39;artiste entièrement" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1170" y="-676" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-28" value="&lt;div align=&quot;left&quot;&gt;4 - Le système ouvre une pop-up expliquant l&#39;erreur&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-986" y="-622" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-29" value="&lt;div align=&quot;left&quot;&gt;3 - clique sur suivant&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1170" y="-651" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-39" value="&lt;div align=&quot;left&quot;&gt;&amp;nbsp;reprise a l’étape 2 de la description textuel initiale&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1169" y="-563" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-10" value="nominale faire l&#39;inventaire des besoins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2380" y="-827" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-27" value="&lt;div align=&quot;left&quot;&gt;7 - Le système ouvre une page correspondant à la fiche &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="418" y="-461" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-40" value="&lt;b&gt;&lt;font color=&quot;#ff0000&quot;&gt;Ce cas peut être répéter pour toutes les pages que l&#39;artiste doit remplir&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1190" y="-472" width="430" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-41" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-1372" y="-580" as="sourcePoint" />
+            <mxPoint x="-1372" y="-771" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1372" y="-391" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-42" value="cas exception éditer les besoin pour un concert&amp;nbsp; " style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1511" y="-811" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-30" value="10 - Le systeme stocke les informations dans la base de données" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="418" y="-315" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-28" value="8 - L&#39;utilisateur modifie&lt;div align=&quot;left&quot;&gt;une ligne de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="238" y="-411" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-50" value="&lt;div align=&quot;left&quot;&gt;3 - clique sur annuler&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1552" y="-654" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-43" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-1542" y="-741" as="sourcePoint" />
+            <mxPoint x="-1202" y="-741" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-29" value="&lt;div align=&quot;left&quot;&gt;9 - L&#39;utilisateur clique &lt;br&gt;sur enregistrer les modifications&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="238" y="-359" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-11" value="&lt;div align=&quot;left&quot;&gt;1- L&#39;association technique choisis de faire l&#39;inventaire des besoins&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2460" y="-746" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-45" value="système" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1327" y="-773" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-46" value="&lt;div align=&quot;left&quot;&gt;1-&amp;nbsp;l&#39;artiste ouvre le lien du formulaire&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1552" y="-720" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-13" value="&lt;div align=&quot;left&quot;&gt;2- Le système affiche la page d&#39;inventaire des besoins&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2260" y="-706" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-44" value="artiste" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1522" y="-773" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-52" value="&lt;div align=&quot;left&quot;&gt;2- l&#39;artiste rempli la page des informations de l&#39;artiste&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-1551" y="-683" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-31" value="&lt;div align=&quot;left&quot;&gt;11 - Le systeme affiche une popup qui dit &quot;Les modifications ont bien été enregistrée&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="419" y="-257" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1dNPn4tNo5FSWcxdqjr-53" value="&lt;b&gt;&lt;font color=&quot;#ff0000&quot;&gt;Ce cas peut être répéter pour toutes les pages que l&#39;artiste doit remplir&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1586" y="-593" width="430" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-14" value="&lt;div align=&quot;left&quot;&gt;3- L&#39;association technique choisis un concert dans le champ correspondant&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2460" y="-653" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-15" value="&lt;div align=&quot;left&quot;&gt;4- Le système affiche les informations importantes du concert&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2260" y="-609" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-32" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="708" y="-770" as="sourcePoint" />
+            <mxPoint x="1048" y="-770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-33" value="Gerer les Fiches(Rider)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="823" y="-840" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-34" value="acteur" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="768" y="-802" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-35" value="systeme" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="913" y="-802" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-36" value="&lt;div align=&quot;left&quot;&gt;2 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="898" y="-730" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-37" value="&lt;div align=&quot;left&quot;&gt;1- L&#39;utilisateur clique sur &quot;Gerer les fiches&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="713" y="-760" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-38" value="&lt;div align=&quot;left&quot;&gt;5 - L&#39;utilisateur clique sur fiche &quot;Rider&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="713" y="-520" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-39" value="&lt;div align=&quot;left&quot;&gt;6 - Le système interroge la base de données pour avoir les informations de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="895" y="-469" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-40" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="888" y="-170" as="sourcePoint" />
+            <mxPoint x="888" y="-800" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="888" y="-420" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-41" value="&lt;div align=&quot;left&quot;&gt;7 - Le système ouvre une page correspondant à la fiche &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="898" y="-414" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-42" value="&lt;div align=&quot;left&quot;&gt;10 - Le systeme stocke les informations dans la base de données&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="894" y="-268" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-43" value="&lt;div align=&quot;left&quot;&gt;8 - L&#39;utilisateur modifie&lt;br&gt;une ligne de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="708" y="-364" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-44" value="&lt;div align=&quot;left&quot;&gt;9 - L&#39;utilisateur clique &lt;br&gt;sur enregistrer les modifications&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="708" y="-312" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-45" value="&lt;div align=&quot;left&quot;&gt;11 - Le systeme affiche une popup qui dit &quot;Les modifications ont bien été enregistrée&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="895" y="-210" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-53" value="&lt;div align=&quot;left&quot;&gt;6 - Le système interroge la base de données pour avoir les informations de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1366" y="-468" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-54" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1358" y="-170" as="sourcePoint" />
+            <mxPoint x="1358" y="-799" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1358" y="-419" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-55" value="&lt;div align=&quot;left&quot;&gt;7 - Le système ouvre une page correspondant à la fiche &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1364" y="-413" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-56" value="&lt;div align=&quot;left&quot;&gt;10 - Le systeme stocke les informations dans la base de données&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1365" y="-267" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-57" value="&lt;div align=&quot;left&quot;&gt;8 - L&#39;utilisateur modifie&lt;br&gt;une ligne de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1178" y="-363" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-58" value="&lt;div align=&quot;left&quot;&gt;9 - L&#39;utilisateur clique &lt;br&gt;sur enregistrer les modifications&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1178" y="-311" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-59" value="&lt;div align=&quot;left&quot;&gt;11 - Le systeme affiche une popup qui dit &quot;Les modifications ont bien été enregistrée&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1365" y="-209" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-17" value="&lt;div align=&quot;left&quot;&gt;6- Le système génère une liste de matériel à louer&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2260" y="-508" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-18" value="&lt;div align=&quot;left&quot;&gt;7- L&#39;association technique clique sur l&#39;enregistrement de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2460" y="-458" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-46" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1178" y="-769" as="sourcePoint" />
+            <mxPoint x="1518" y="-769" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-16" value="&lt;div align=&quot;left&quot;&gt;5- L&#39;association technique clique sur générer la liste de matériel à louer&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2460" y="-559" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-47" value="Gerer les Fiches(PlanFeu)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1288" y="-839" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-48" value="acteur" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1238" y="-801" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-49" value="systeme" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1383" y="-801" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-50" value="&lt;div align=&quot;left&quot;&gt;2 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1368" y="-729" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-51" value="&lt;div align=&quot;left&quot;&gt;1- L&#39;utilisateur clique sur &quot;Gerer les fiches&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="-759" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-52" value="&lt;div align=&quot;left&quot;&gt;5 - L&#39;utilisateur clique sur&amp;nbsp; fiche &quot;PlanFeu&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1183" y="-519" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-19" value="&lt;div align=&quot;left&quot;&gt;8- Le système effectue l&#39;enregistrement de la fiche dans la base de données&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2260" y="-407" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-60" value="&lt;font color=&quot;#ff0000&quot; style=&quot;font-size: 12px;&quot;&gt;L&#39;utilisateur à du se connecter precedement &lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="348" y="-912" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-61" value="&lt;font color=&quot;#ff0000&quot; style=&quot;font-size: 12px;&quot;&gt;L&#39;utilisateur à du se connecter precedement &lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="823" y="-912" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gIfYoSf_4-gKHdT1DG24-62" value="&lt;font color=&quot;#ff0000&quot; style=&quot;font-size: 12px;&quot;&gt;L&#39;utilisateur à du se connecter precedement &lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1288" y="-912" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-24" value="alternatif faire l&#39;inventaire des besoins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2890" y="-821" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-33" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-2940" y="-759" as="sourcePoint" />
+            <mxPoint x="-2600" y="-759" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-45" value="7- L&#39;association technique clique pour modifier la fiche générée " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2980" y="-457" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-34" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-2780" y="-200" as="sourcePoint" />
+            <mxPoint x="-2780" y="-786" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-2780" y="-406" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-35" value="Association technique" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-2940" y="-789" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-36" value="Système" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-2720" y="-789" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-37" value="&lt;div align=&quot;left&quot;&gt;1- L&#39;association technique choisis de faire l&#39;inventaire des besoins&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2970" y="-746" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-38" value="&lt;div align=&quot;left&quot;&gt;2- Le système affiche la page d&#39;inventaire des besoins&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2770" y="-706" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-39" value="&lt;div align=&quot;left&quot;&gt;3- L&#39;association technique choisis un concert dans le champ correspondant&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2970" y="-653" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-40" value="&lt;div align=&quot;left&quot;&gt;4- Le système affiche les informations importantes du concert&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2770" y="-609" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-41" value="&lt;div align=&quot;left&quot;&gt;6- Le système génère une liste de matériel à louer&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2775" y="-503" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-43" value="&lt;div align=&quot;left&quot;&gt;5- L&#39;association technique clique sur générer la liste de matériel à louer&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2980" y="-543" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-44" value="&lt;div align=&quot;left&quot;&gt;11- Le système effectue la sauvegarde et l&#39;enregistrement de la fiche dans la base de données&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2775" y="-260" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-48" value="8- Le système affiche tout les champs de la fiche générée modifiable" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2775" y="-418" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-49" value="9- L&#39;association technique modifie les champs qu&#39;elle souhaite " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2980" y="-364" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-51" value="10- L&#39;association technique clique sur sauvegarder les modifications " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-2980" y="-310" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-53" value="exception faire l&#39;inventaire des besoins" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3370" y="-821" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-54" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-3420" y="-759" as="sourcePoint" />
+            <mxPoint x="-3080" y="-759" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-55" value="7- L&#39;association technique clique pour modifier la fiche générée " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3460" y="-457" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-56" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-3260" y="-90" as="sourcePoint" />
+            <mxPoint x="-3260" y="-786" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-3260" y="-406" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-57" value="Association technique" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-3420" y="-789" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-58" value="Système" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-3200" y="-789" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-59" value="&lt;div align=&quot;left&quot;&gt;1- L&#39;association technique choisis de faire l&#39;inventaire des besoins&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3450" y="-746" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-60" value="&lt;div align=&quot;left&quot;&gt;2- Le système affiche la page d&#39;inventaire des besoins&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3250" y="-706" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-61" value="&lt;div align=&quot;left&quot;&gt;3- L&#39;association technique choisis un concert dans le champ correspondant&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3450" y="-653" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-62" value="&lt;div align=&quot;left&quot;&gt;4- Le système affiche les informations importantes du concert&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3250" y="-609" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-63" value="&lt;div align=&quot;left&quot;&gt;6- Le système génère une liste de matériel à louer&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3255" y="-503" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-64" value="&lt;div align=&quot;left&quot;&gt;5- L&#39;association technique clique sur générer la liste de matériel à louer&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3460" y="-543" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-66" value="8- Le système affiche tout les champs de la fiche générée modifiable" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3255" y="-418" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-67" value="9- L&#39;association technique modifie les champs qu&#39;elle souhaite " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3460" y="-364" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-68" value="12- L&#39;association technique clique sur annuler l&#39;opération" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3460" y="-190" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-71" value="&lt;div style=&quot;font-size: 40px;&quot; align=&quot;left&quot;&gt;Faire l&#39;inventaire des besoins&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3550" y="-882" width="670" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-27" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1798" y="-907" width="990" height="717" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry width="990" height="717" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-3" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="49" y="137" as="sourcePoint" />
+            <mxPoint x="389" y="137" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-4" value="Se connecter" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="194" y="67" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-5" value="acteur" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="109" y="105" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-6" value="systeme" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="254" y="105" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-7" value="&lt;div align=&quot;left&quot;&gt;2 - Le systeme ouvre une page de connexion&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="239" y="177" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-8" value="1- L&#39;utilisateur clique sur &quot;Se connecter&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="54" y="147" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-9" value="&lt;div align=&quot;left&quot;&gt;3 - L&#39;utilisateur rentre les champs pour son identifiant et son mot de passe&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="54" y="227" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-10" value="&lt;div align=&quot;left&quot;&gt;4 - L&#39;utilisateur clique sur le bouton &quot;connexion&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="54" y="287" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-11" value="&lt;div align=&quot;left&quot;&gt;5 - Le système interroge la base de données pour voir si l&#39;utilisateur à entrer le bon mot de passe&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="239" y="337" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-12" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="229" y="609" as="sourcePoint" />
+            <mxPoint x="229" y="107" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="229" y="487" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-13" value="&lt;div align=&quot;left&quot;&gt;6 - L&#39;identifiant et le mot de passe sont correcte &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="239" y="415" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-14" value="&lt;div align=&quot;left&quot;&gt;7 - L&#39;utilisateur est connecté &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="59" y="469" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-15" value="Se connecter&lt;br&gt;CAS EXCEPTION" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="649" y="63" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-16" value="acteur" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="579" y="106" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-17" value="systeme" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="724" y="106" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-18" value="&lt;div align=&quot;left&quot;&gt;2 - Le systeme ouvre une page de connexion&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="709" y="178" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-19" value="&lt;div align=&quot;left&quot;&gt;1- L&#39;utilisateur clique sur &quot;Se connecter&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="524" y="148" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-20" value="3 - L&#39;utilisateur rentre les champs pour son identifiant et son mot de passe" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="524" y="228" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-21" value="&lt;div align=&quot;left&quot;&gt;4 - L&#39;utilisateur clique sur le bouton &quot;connexion&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="524" y="288" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-22" value="&lt;div align=&quot;left&quot;&gt;5 - Le système interroge la base de données pour voir si l&#39;utilisateur à entrer le bon mot de passe&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="709" y="338" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-23" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="699" y="619" as="sourcePoint" />
+            <mxPoint x="699" y="108" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="699" y="488" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-24" value="&lt;div align=&quot;left&quot;&gt;6 - L&#39;identifiant et le mot de passe sont incorrecte &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="709" y="415" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-25" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="519" y="138" as="sourcePoint" />
+            <mxPoint x="859" y="138" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-26" value="&lt;div align=&quot;left&quot;&gt;7 -&amp;nbsp;Arret du système&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry x="709" y="465" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-89" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;Se connecter&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KhOzIQ3qqzZt_QD0Vbmh-27">
+          <mxGeometry width="310" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-72" value="&lt;div align=&quot;left&quot;&gt;11- Le système ramène l&#39;utilisateur sur la page de génération de la fiche&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3245" y="-250" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-73" value="10- L&#39;association technique clique sur annuler les modifications" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3460" y="-300" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CJFMJoMXRkiUn54-eEzV-74" value="&lt;div align=&quot;left&quot;&gt;13- Le système ramène l&#39;association technique sur la page de choix d&#39;action&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-3250" y="-147" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-28" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="80" as="sourcePoint" />
+            <mxPoint x="580" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-29" value="Gerer les Fiches(Accueil)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="10" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-30" value="acteur" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="300" y="48" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-31" value="systeme" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="445" y="48" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-32" value="&lt;div align=&quot;left&quot;&gt;2 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="421" y="120" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-33" value="&lt;div align=&quot;left&quot;&gt;1- L&#39;utilisateur clique sur &quot;Gerer les fiches&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="245" y="90" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-34" value="&lt;div align=&quot;left&quot;&gt;5 - L&#39;utilisateur clique sur&amp;nbsp; fiche &quot;Accueil&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="246" y="297" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-35" value="&lt;div align=&quot;left&quot;&gt;6 - Le système interroge la base de données pour avoir les informations de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="421" y="348" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-36" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="730" as="sourcePoint" />
+            <mxPoint x="420" y="50" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="420" y="430" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-37" value="&lt;div align=&quot;left&quot;&gt;7 - Le système ouvre une page correspondant à la fiche &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="421" y="403" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-38" value="10 - Le systeme remarque que les informations ne sont pas conformes pour être stocker dans la base de données " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="428" y="563" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-39" value="&lt;div align=&quot;left&quot;&gt;8 - L&#39;utilisateur modifie&lt;br&gt;une ligne de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="241" y="453" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-40" value="&lt;div align=&quot;left&quot;&gt;9 - L&#39;utilisateur clique &lt;br&gt;sur enregistrer les modifications&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="241" y="505" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-41" value="&lt;div align=&quot;left&quot;&gt;11 - Le systeme affiche une popup qui dit &quot;Erreur d&#39;enregistrement&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="428" y="632" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-42" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="80" as="sourcePoint" />
+            <mxPoint x="1050" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-43" value="Gerer les Fiches(Rider)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="825" y="10" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-44" value="acteur" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="770" y="48" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-45" value="systeme" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="915" y="48" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-46" value="&lt;div align=&quot;left&quot;&gt;2 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="900" y="120" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-47" value="&lt;div align=&quot;left&quot;&gt;1- L&#39;utilisateur clique sur &quot;Gerer les fiches&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="715" y="90" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-48" value="&lt;div align=&quot;left&quot;&gt;5 - L&#39;utilisateur clique sur fiche &quot;Rider&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="715" y="292" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-49" value="&lt;div align=&quot;left&quot;&gt;6 - Le système interroge la base de données pour avoir les informations de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="897" y="343" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-50" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="888" y="740" as="sourcePoint" />
+            <mxPoint x="890" y="50" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="890" y="430" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-51" value="&lt;div align=&quot;left&quot;&gt;7 - Le système ouvre une page correspondant à la fiche &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="900" y="398" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-53" value="&lt;div align=&quot;left&quot;&gt;8 - L&#39;utilisateur modifie&lt;br&gt;une ligne de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="710" y="448" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-54" value="&lt;div align=&quot;left&quot;&gt;9 - L&#39;utilisateur clique &lt;br&gt;sur enregistrer les modifications&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="710" y="500" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-56" value="&lt;div align=&quot;left&quot;&gt;6 - Le système interroge la base de données pour avoir les informations de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1368" y="342" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-57" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1358" y="730" as="sourcePoint" />
+            <mxPoint x="1360" y="51" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1360" y="431" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-58" value="&lt;div align=&quot;left&quot;&gt;7 - Le système ouvre une page correspondant à la fiche &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1366" y="397" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-60" value="&lt;div align=&quot;left&quot;&gt;8 - L&#39;utilisateur modifie&lt;br&gt;une ligne de la fiche&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1186" y="449" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-61" value="&lt;div align=&quot;left&quot;&gt;9 - L&#39;utilisateur clique &lt;br&gt;sur enregistrer les modifications&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1186" y="499" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-63" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1180" y="81" as="sourcePoint" />
+            <mxPoint x="1520" y="81" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-64" value="Gerer les Fiches(PlanFeu)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="11" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-65" value="acteur" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="49" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-66" value="systeme" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1385" y="49" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-67" value="&lt;div align=&quot;left&quot;&gt;2 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="121" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-68" value="&lt;div align=&quot;left&quot;&gt;1- L&#39;utilisateur clique sur &quot;Gerer les fiches&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="91" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-69" value="&lt;div align=&quot;left&quot;&gt;5 - L&#39;utilisateur clique sur&amp;nbsp; fiche &quot;PlanFeu&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="291" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-70" value="&lt;font color=&quot;#ff0000&quot; style=&quot;font-size: 12px;&quot;&gt;L&#39;utilisateur à du se connecter precedement &lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="350" y="-62" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-71" value="&lt;font color=&quot;#ff0000&quot; style=&quot;font-size: 12px;&quot;&gt;L&#39;utilisateur à du se connecter precedement &lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="825" y="-62" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-72" value="&lt;font color=&quot;#ff0000&quot; style=&quot;font-size: 12px;&quot;&gt;L&#39;utilisateur à du se connecter precedement &lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="-62" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-3" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;Editer les besoins pour un concert&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1749" y="-920.5" width="750" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-73" value="scénario nominal" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="375" y="-865.5" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-74" value="scénario nominal" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="843" y="-857" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-75" value="scénario nominal" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="-857" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-76" value="scénario exception" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="360" y="-19" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-77" value="scénario exception" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="843" y="-20" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-78" value="scénario exception" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="-10" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-79" value="&lt;div align=&quot;left&quot;&gt;3- L&#39;utilisateur choisir un concert dans la liste de concert&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="245" y="-673" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-35" value="" style="group" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="-5210" y="-850" width="1430" height="687.5" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-25" value="" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry width="1430" height="687.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Xz7rErc1MzquWfdvFi9a-1" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="185.5" as="sourcePoint" />
+            <mxPoint x="460" y="185.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Xz7rErc1MzquWfdvFi9a-2" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="627.5" as="sourcePoint" />
+            <mxPoint x="280" y="158.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="280" y="538.5" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Xz7rErc1MzquWfdvFi9a-3" value="Association Bien-être" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="120" y="155.5" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Xz7rErc1MzquWfdvFi9a-4" value="Système" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="340" y="155.5" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Xz7rErc1MzquWfdvFi9a-5" value="nominale créer un concert " style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="170" y="117.5" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Xz7rErc1MzquWfdvFi9a-6" value="&lt;div align=&quot;left&quot;&gt;1-Selectionner &quot;créer un concert&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="80" y="198.5" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Xz7rErc1MzquWfdvFi9a-7" value="&lt;div align=&quot;left&quot;&gt;2-affiche une page de formulaire&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="280" y="240.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Xz7rErc1MzquWfdvFi9a-8" value="&lt;div align=&quot;left&quot;&gt;3-Remplir le formulaire, en indiquant les besoins particulier du concert&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="80" y="288.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-1" value="&lt;div align=&quot;left&quot;&gt;4-Trouver et indiquer la salle du concert&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="80" y="347.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-2" value="5-Appuyer sur envoyer le formulaire " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="80" y="407.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-3" value="6-Récuperer les informations et les envoyer en DB" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="280" y="444.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-4" value="7-Envoyer un mail de confirmation à l&#39;association" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="280" y="514.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-5" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="185.5" as="sourcePoint" />
+            <mxPoint x="910" y="185.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-6" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="637.5" as="sourcePoint" />
+            <mxPoint x="730" y="158.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="730" y="538.5" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-7" value="Association Bien-être" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="570" y="155.5" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-8" value="Système" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="790" y="155.5" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-9" value="exeption créer un concert " style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="620" y="117.5" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-10" value="&lt;div align=&quot;left&quot;&gt;1-Selectionner &quot;créer un concert&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="530" y="198.5" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-11" value="&lt;div align=&quot;left&quot;&gt;2-affiche une page de formulaire&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="730" y="240.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LAepY5dG0f3IVNtCfLWu-12" value="3-Selectionner &quot;annuler&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="530" y="288.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-10" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1010" y="185.5" as="sourcePoint" />
+            <mxPoint x="1350" y="185.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-11" value="&amp;nbsp;" style="endArrow=none;html=1;rounded=0;" edge="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1170" y="576" as="sourcePoint" />
+            <mxPoint x="1170" y="158.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1170" y="538.5" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-12" value="Association Bien-être" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="1010" y="155.5" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-13" value="Système" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="1230" y="155.5" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-14" value="Alternatif créer un concert " style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="1060" y="117.5" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-15" value="&lt;div align=&quot;left&quot;&gt;1-Selectionner &quot;créer un concert&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="970" y="198.5" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-16" value="&lt;div align=&quot;left&quot;&gt;2-affiche une page de formulaire&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="1170" y="240.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-17" value="&lt;div align=&quot;left&quot;&gt;3-Remplir le formulaire, en indiquant les besoins particulier du concert&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="970" y="288.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-18" value="&lt;div align=&quot;left&quot;&gt;4-Trouver et indiquer la salle du concert&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="970" y="347.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-19" value="5-Appuyer sur envoyer le formulaire " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="970" y="407.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-20" value="6-Détection d&#39;une erreur dans le formulaire" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="1170" y="444.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-23" value="7-Envoyer une pop-up d&#39;erreur" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="1170" y="517" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-24" value="&lt;div align=&quot;center&quot;&gt;&lt;b&gt;&lt;font color=&quot;#ff0000&quot;&gt;reprendre au numéro 3 du scénario nominale&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="1080" y="587" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-34" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;&lt;b&gt;Créer un concert&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="20" y="27.5" width="670" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="917-nx0YbgsBhprQTppI-36" value="4-Le système renvoie l&#39;association à la page précédente" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="917-nx0YbgsBhprQTppI-35">
+          <mxGeometry x="730" y="350" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-81" value="&lt;div align=&quot;left&quot;&gt;2 - Le systeme ouvre une page avec les differentes concerts qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="428" y="-723" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-6" value="&lt;div align=&quot;left&quot;&gt;4 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="896" y="-599" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-7" value="&lt;div align=&quot;left&quot;&gt;3- L&#39;utilisateur choisir un concert dans la liste de concert&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="713" y="-663" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-8" value="&lt;div align=&quot;left&quot;&gt;4 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1363" y="-609" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-9" value="&lt;div align=&quot;left&quot;&gt;3- L&#39;utilisateur choisir un concert dans la liste de concert&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="-673" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-10" value="&lt;div align=&quot;left&quot;&gt;4 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="421" y="236" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-11" value="&lt;div align=&quot;left&quot;&gt;3- L&#39;utilisateur choisir un concert dans la liste de concert&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="238" y="172" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-82" value="10 - Le systeme remarque que les informations ne sont pas conformes pour être stocker dans la base de données " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="897" y="563" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-83" value="&lt;div align=&quot;left&quot;&gt;11 - Le systeme affiche une popup qui dit &quot;Erreur d&#39;enregistrement&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="897" y="643" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-84" value="10 - Le systeme remarque que les informations ne sont pas conformes pour être stocker dans la base de données " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1368" y="561" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-85" value="&lt;div align=&quot;left&quot;&gt;11 - Le systeme affiche une popup qui dit &quot;Erreur d&#39;enregistrement&quot;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1368" y="641" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-86" value="&lt;div align=&quot;left&quot;&gt;12 - Arret du systeme&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="428" y="682" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-87" value="&lt;div align=&quot;left&quot;&gt;12 - Arret du systeme&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="894" y="702" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-12" value="&lt;div align=&quot;left&quot;&gt;4 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1363" y="241" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KhOzIQ3qqzZt_QD0Vbmh-88" value="&lt;div align=&quot;left&quot;&gt;12 - Arret du systeme&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1365" y="691" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-13" value="&lt;div align=&quot;left&quot;&gt;3- L&#39;utilisateur choisir un concert dans la liste de concert&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="177" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-14" value="&lt;div align=&quot;left&quot;&gt;4 - Le systeme ouvre une page avec les differentes fiches qui peuvent être gerer &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="898" y="234" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-15" value="&lt;div align=&quot;left&quot;&gt;3- L&#39;utilisateur choisir un concert dans la liste de concert&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="715" y="170" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rwAOEVdXcjEYdVGuWs3A-17" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;Gerer les fichies&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="63" y="-1030" width="370" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,147 @@
+body{margin:0;}
+
+header{
+    display: flex;
+    background-color: #264263;
+}
+
+.img_base {
+    height: 5vw;
+    width: 5vw;
+    border-radius: 15%;
+    margin: 2vw;
+    margin-right : 4vw;
+}
+
+#nom_Entreprise{
+    color: #E9C46A;
+    margin-top : 2wh;
+    font-size: 3vw;
+    margin-right: 38vw;
+}
+
+#bouton_se_connecter{
+    color : #FFFF;
+    border-color: #22AD8F;
+    background-color: #22AD8F;
+    border-radius: 5%;
+    margin: 2vw;
+    margin-top: 3vw;
+    font-size: 2vw;
+}
+
+
+#bouton_se_connecter:hover{
+    background-color: #1d997e;
+}
+
+.middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2D8DD2;
+    width: 22vw;
+    height: 22vh;
+    text-align: center;
+    border-radius: 45%;
+    margin-left: 39vw;
+}
+
+.main{
+    background-color: #22AD8F;
+}
+
+#modification{
+    color: #FFFF;
+    font-size: 2vw;
+}
+
+.listeOptions{
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    list-style-type: none;
+    background-color: #22AD8F;
+}
+
+.listeOptions > li > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #264263;
+    margin: 3vw;
+    margin-top: 2vw;
+    border-radius: 5%;
+    height: 50vh;
+    width: 25vw;
+}
+
+.text_link{
+    color: #E9C46A;
+    text-decoration: none;
+    font-size: 2vw;
+    margin: 1vw;
+    font-weight: bold;
+    text-align: center;
+}
+
+.text_link:hover{
+    font-size: 2vw;
+    transition-duration: 0.2s;
+}
+
+.image_link:hover, .image_link_liste:hover{
+    transition-duration: 0.2s;
+}
+
+.image_link{
+    width: 20vw;
+    height: 20vh;
+    border-radius: 5%;
+    margin: 1vw;
+    margin-left: 2vw;
+    align-self: center;
+}
+
+.image_link_liste{
+    width: 7vw;
+    height: 8vh;
+    border-radius: 5%;
+    margin-top: 1vw;
+    margin-left:-1vw;
+    margin-bottom: 1vh;
+    align-self: center;
+}
+
+#image_branchements{
+    width: 18vw;
+    height: 10vh;
+    border-radius: 5%;
+    margin-top: 1vw;
+    margin-left:3vw;
+    margin-bottom: 1vh;
+    align-self: center;
+}
+
+.carre_images{
+    display:flex;
+}
+
+#liste_image_accueil_1,#liste_image_accueil_2,#liste_image_rider_1,#liste_image_rider_2{
+    list-style-type: None;
+}
+
+#liste_image_rider_1{
+    display: flex;
+    margin-top: -9vh;
+}
+
+#image_electrique{
+    margin-left: 3vw;
+}
+
+.carre_images2{
+    margin-top:7vh;
+}
