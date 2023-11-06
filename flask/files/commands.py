@@ -6,31 +6,7 @@ from datetime import datetime
 @click.argument('filename')
 
 
-# def loaddb(filename):
-#     '''Crée les tables et les remplit de données'''
-#     db.create_all()
-#     # Chargement du fichier YAML
-#     import yaml
-#     data = yaml.safe_load(open(filename))
-#     from .models import Musicien 
-#     # Vérifiez que le fichier contient la clé "Musicien"
-#     print(len(data))
-#     for nomTable in data:
-#         print(nomTable)
-#         if "Musicien" in nomTable:
-#             musiciens = nomTable["Musicien"]
-#             print("ok1")
-#             # Itération sur la liste de musiciens dans le fichier YAML
-#             for musicien_data in musiciens:
-#                 print("ok2")
-#                 if "musicienID" in musicien_data and "nomMusicien" in musicien_data:
-#                     musicien_id = musicien_data["musicienID"]
-#                     nom_musicien = musicien_data["nomMusicien"]
-                    
-#                     # Crée un objet Musicien et l'ajoute à la session
-#                     musicien = Musicien(musicienID=musicien_id, nomMusicien=nom_musicien)
-#                     db.session.add(musicien)
-#     db.session.commit()
+
 
 
 
@@ -197,25 +173,6 @@ def loaddb(filename):
 
 
 
-# def loaddb(filename):
-#     '''Creates the tables and populates them with data'''
-#     #créationdetouteslestables
-#     db.create_all()
-#     #chargementdenotrejeudedonnées
-#     import yaml
-#     file = yaml.safe_load(open(filename))
-#     #importdesmodèles
-#     from .models import Organisation
-#     #premièrepasse:créationdetouslesauteurs
-#     organisations={}
-#     for o in file:
-#         nom=o["nomOrga"]
-#         mdp = o["motDePasse"]
-#         type = o["typeOrga"]
-#         if nom not in organisations:
-#             org = Organisation(nomOrga=nom, motDePasse=mdp, typeOrga=type)
-#             db.session.add(org)
-#     db.session.commit()
 
 @app.cli.command()
 def syncdb():
