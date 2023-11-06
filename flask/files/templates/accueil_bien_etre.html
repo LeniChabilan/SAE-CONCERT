@@ -1,26 +1,36 @@
-{% extends 'base.html' %}
-{% block styles %}
-<link rel="stylesheet" href="{{ url_for('static',filename='accueil.css')}}">
-{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block styles %} {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='accueil.css')}}" />
+{% endblock %} {% block content %}
 <ul class="listeOptions">
-    <li>
-        <div>
-            <a href="#">Consulter la liste des concerts prévus</a>
-            <img src="../static/img/prevus.jpg" alt="salle de concert vide en préparation">
-        </div>
-    </li>
-    <li>
-        <div>
-            <a href="#">Créer un nouveau concert</a>
-            <img src="../static/img/caisse.jpeg" alt="salle de concert vide en préparation">
-        </div>
-    </li>
-    <li>
-        <div>
-            <a href="#">Modifier les fiches d'artiste</a>
-            <img src="../static/img/checklist.png" alt="salle de concert vide en préparation">
-        </div>
-    </li>
+  <li>
+    <a href="#"
+      ><div>
+        Consulter la liste des concerts prévus
+        <img
+          src="../static/img/prevus.jpg"
+          alt="salle de concert vide en préparation"
+        /></div
+    ></a>
+  </li>
+  <li>
+    <a href="#"
+      ><div>
+        Creer un nouveau concert
+        <img
+          src="../static/img/caisse.jpeg"
+          alt="salle de concert vide en préparation"
+        /></div
+    ></a>
+  </li>
+  <li>
+    <a href="#"
+      ><div>
+        Modifier les fiches d'artiste
+        <img
+          src="../static/img/checklist.png"
+          alt="salle de concert vide en préparation"
+        /></div
+    ></a>
+  </li>
 </ul>
 {% endblock %}
