@@ -15,12 +15,14 @@ def home():
 
 
 @app.route("/asso/bien-etre")
+@login_required
 def accueil_bien_etre():
     return render_template("accueil_bien_etre.html")    
 
 class LoginForm(FlaskForm):
     nomOrga = StringField('Username')
     motDePasse = PasswordField('Password')
+    next = HiddenField()
     def get_authenticated_user(self):
         user = Organisation.query.get(self.nomOrga.data)
         if user is None:
@@ -33,9 +35,16 @@ class LoginForm(FlaskForm):
 @app.route("/connexion/", methods =("GET","POST",))
 def connexion():
     f = LoginForm()
-    if f.validate_on_submit():
+    if not f.is_submitted():
+        f.next.data = request.args.get("next")
+    elif f.validate_on_submit():
         user = f.get_authenticated_user()
         if user:
             login_user(user)
             return redirect(url_for("accueil_bien_etre"))
     return render_template("connexion.html", form=f)
+
+@app.route("/logout/")
+def logout():
+    logout_user()
+    return redirect(url_for('connexion'))

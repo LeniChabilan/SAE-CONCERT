@@ -18,3 +18,5 @@ def mkpath(p):
 app.config['SQLALCHEMY_DATABASE_URI'] = ('sqlite:///'+mkpath('../../creaConcert.db'))
 db = SQLAlchemy(app)
 app.config["SECRET_KEY"] = "4d166f5f-fa64-461b-878d-d7077d4ef1a2"
+
+login_manager.login_view = "connexion"
