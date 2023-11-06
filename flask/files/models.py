@@ -158,7 +158,6 @@ class Necessiter(db.Model):
     __tablename__ = 'NECESSITER'
     materielID = Column(Integer, ForeignKey('MATERIEL.materielID'), primary_key=True)
     concertID = Column(Integer, ForeignKey('CONCERT.concertID'), primary_key=True)
-    quantiteM = Column(Integer)
     materiel = relationship(Materiel)
     concert = relationship(Concert)
 
@@ -180,9 +179,9 @@ class Utilise(db.Model):
 class Participe(db.Model):
     __tablename__ = 'PARTICIPE'
     concertID = Column(Integer, ForeignKey('CONCERT.concertID'), primary_key=True)
-    artisteID = Column(Integer, ForeignKey('ARTISTE.artisteID'), primary_key=True)
+    groupeID = Column(Integer, ForeignKey('GROUPE.groupeID'), primary_key=True)
     concert = relationship(Concert)
-    artiste = relationship(Artiste)
+    groupe = relationship(Groupe)
 
 class Prepare(db.Model):
     __tablename__ = 'PREPARE'
@@ -191,13 +190,6 @@ class Prepare(db.Model):
     concert = relationship(Concert)
     personelTechnique = relationship(PersonelTechnique)
 
-class Invitation(db.Model):
-    __tablename__ = 'INVITATION'
-    typePlaceID = Column(Integer, ForeignKey('TYPEPLACE.typePlaceID'), primary_key=True)
-    concertID = Column(Integer, ForeignKey('CONCERT.concertID'), primary_key=True)
-    quantiteInv = Column(Integer)
-    typePlace = relationship(TypePlace)
-    concert = relationship(Concert)
 
 class SalleTypePlace(db.Model):
     __tablename__ = 'SALLETYPEPLACE'
