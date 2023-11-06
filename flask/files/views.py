@@ -52,3 +52,7 @@ def logout():
 @app.route("/choix_fiche/", methods = ("GET","POST",))
 def choix_fiche():
     return render_template("choix_fiche.html")
+
+@app.route("/creation_concert")
+def creation_concert():
+    return render_template("creation_concert.html")

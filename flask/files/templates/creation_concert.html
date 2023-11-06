@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='creation_concert.css')}}" />
+{% endblock %} {% block content %}
+<main>
+    <div class="form">
+        <div class="title">Creer votre concert !</div>
+        <form role="form" method ="POST" action ="{{ url_for('home') }}">
+            <div class="input-container ">
+                <input placeholder="" type="text" class="input" id="firstname">
+                <div class="cut"></div>
+                <label class="iLabel" for="firstname">Nom</label>
+             </div>
+              <div class="input-container">
+                <input placeholder="" type="date" class="input" id="lastname">
+                <label class="iLabel" for="lastname"></label>
+              </div>
+              <div class="input-container">
+                <input placeholder="" type="date" class="input" id="email">
+                <label class="iLabel" for="email"></label>
+              </div>
+              <div class="input-container">
+                <input placeholder="" type="text" class="input" id="email">
+                <div class="cut"></div>
+                <label class="iLabel" for="email">Fiche technique</label>
+              </div>
+              <div class="input-container">
+                <input placeholder="" type="text" class="input" id="email">
+                <div class="cut"></div>
+                <label class="iLabel" for="email">Catering</label>
+              </div>
+              <div class="input-container">
+                <input placeholder="" type="text" class="input" id="email">
+                <div class="cut"></div>
+                <label class="iLabel" for="email">Salle</label>
+              </div>
+              <div class="input-container">
+                <input placeholder="" type="text" class="input" id="email">
+                <div class="cut"></div>
+                <label class="iLabel" for="email">Groupe</label>
+              </div>
+              
+              <button class="submit" type="text">Enregistrer</button>
+        </form>
+    </div>
+</main>
+{% endblock %}
