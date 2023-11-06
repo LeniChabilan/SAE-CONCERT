@@ -1,1265 +1,1251 @@
-- musicienID: 1
-  nomMusicien: "Pierre Dupont"
-- musicienID: 2
-  nomMusicien: "Élise Martin"
-- musicienID: 3
-  nomMusicien: "Claude Leblanc"
-- musicienID: 4
-  nomMusicien: "Camille Dubois"
-- musicienID: 5
-  nomMusicien: "Lucien Lambert"
-
-
-- roleID: 1
-  nomRole: "Ingénieur du son"
-- roleID: 2
-  nomRole: "Éclairagiste"
-- roleID: 3
-  nomRole: "Régisseur de scène"
-- roleID: 4
-  nomRole: "Technicien de son"
-- roleID: 5
-  nomRole: "Technicien éclairage"
-
-
-
-
-
-- materielArtisteID: 1
-  nomMaterielArt: "Guitare acoustique"
-  disponible: true
-
-- materielArtisteID: 2
-  nomMaterielArt: "Piano à queue"
-  disponible: true
-
-- materielArtisteID: 3
-  nomMaterielArt: "Batterie complète"
-  disponible: false
-
-- materielArtisteID: 4
-  nomMaterielArt: "Saxophone alto"
-  disponible: true
-
-- materielArtisteID: 5
-  nomMaterielArt: "Violoncelle"
-  disponible: true
-
-
-
-
-
-- nomOrga: "HarmonieMusicale"
-  motDePasse: "mdp123"
-  typeOrga: "Technique"
-
-- nomOrga: "BienveillanceArtistique"
-  motDePasse: "mdp123"
-  typeOrga: "Bien-être des Artistes"
-
-- nomOrga: "SonsEnScène"
-  motDePasse: "mdp123"
-  typeOrga: "Technique"
-
-- nomOrga: "CoeurDeScene"
-  motDePasse: "mdp123"
-  typeOrga: "Bien-être des Artistes"
-
-
-
-
-
-
-
-- typePlaceID: 1
-  nomPlace: "VIP"
-  descriptionP: "Accès privilégié avec vue exceptionnelle sur la scène."
-
-- typePlaceID: 2
-  nomPlace: "Place Assise"
-  descriptionP: "Des sièges confortables et une bonne vue sur la scène."
-
-- typePlaceID: 3
-  nomPlace: "Place en Fosse"
-  descriptionP: "Directement dans la fosse du concert."
-
-- typePlaceID: 4
-  nomPlace: "Place Debout"
-  descriptionP: "Accès à la zone debout pour ceux qui aiment danser."
-
-- typePlaceID: 5
-  nomPlace: "Place Enfant"
-  descriptionP: "Pour les jeunes fans et enfants (âge limite : 12 ans)."
-
-- typePlaceID: 6
-  nomPlace: "Place pour Personnes à Mobilité Réduite"
-  descriptionP: "Places spécialement aménagées pour les personnes à mobilité réduite."
-
-
-
-
-- lieuID: 1
-  nomVille: "Lyon"
-  adresseL: "Salle Harmonie"
-  departement: 69001
-- lieuID: 2
-  nomVille: "Lyon"
-  adresseL: "Palais des Arts"
-  departement: 69002
-- lieuID: 3
-  nomVille: "Lyon"
-  adresseL: "La Cité Musicale"
-  departement: 69003
-- lieuID: 4
-  nomVille: "Lyon"
-  adresseL: "Salle des Artistes"
-  departement: 69004
-- lieuID: 5
-  nomVille: "Lyon"
-  adresseL: "Le Centre de Musique"
-  departement: 69005
-- lieuID: 6
-  nomVille: "Lyon"
-  adresseL: "Salle Étoile"
-  departement: 69006
-- lieuID: 7
-  nomVille: "Lyon"
-  adresseL: "Le Forum Musical"
-  departement: 69007
-
-
-
-- artisteID: 1
-  pseudoArtiste: "RockStar123"
-  nomA: "Dupont"
-  prenomA: "Jean"
-  mailA: "jean.dupont@gmail.com"
-  DdNA: "1990-05-15"
-  LdN: "Lyon"
-  adresseA: "123 Rue de la Musique"
-  numSecuriteSociale: 12367890
-  numCNI: 456
-  dateDelivranceCNI: "2005-06-20"
-  dateExpirationCNI: "2025-06-20"
-  dansGroupe: true
-
-- artisteID: 2
-  pseudoArtiste: "GrooveMaster"
-  nomA: "Martin"
-  prenomA: "Marie"
-  mailA: "marie.martin@gmail.com"
-  DdNA: "1985-08-25"
-  LdN: "Lyon"
-  adresseA: "456 Avenue du Spectacle"
-  numSecuriteSociale: 78954321
-  numCNI: 987
-  dateDelivranceCNI: "2003-04-12"
-  dateExpirationCNI: "2023-04-12"
-  dansGroupe: true
-
-- artisteID: 3
-  pseudoArtiste: "JazzCat"
-  nomA: "Lefebvre"
-  prenomA: "Paul"
-  mailA: "paul.lefebvre@gmail.com"
-  DdNA: "1993-03-10"
-  LdN: "Lyon"
-  adresseA: "789 Boulevard du Son"
-  numSecuriteSociale: 23454321
-  numCNI: 567
-  dateDelivranceCNI: "2010-09-05"
-  dateExpirationCNI: "2030-09-05"
-  dansGroupe: true
-
-- artisteID: 4
-  pseudoArtiste: "PopPrincess"
-  nomA: "Dubois"
-  prenomA: "Sophie"
-  mailA: "sophie.dubois@gmail.com"
-  DdNA: "1988-11-03"
-  LdN: "Lyon"
-  adresseA: "321 Rue des Artistes"
-  numSecuriteSociale: 89045678
-  numCNI: 654
-  dateDelivranceCNI: "2006-07-15"
-  dateExpirationCNI: "2026-07-15"
-  dansGroupe: false
-
-- artisteID: 5
-  pseudoArtiste: "MetalHead"
-  nomA: "Bertrand"
-  prenomA: "Luc"
-  mailA: "luc.bertrand@gmail.com"
-  DdNA: "1997-02-17"
-  LdN: "Lyon"
-  adresseA: "567 Avenue du Rock"
-  numSecuriteSociale: 43245678
-  numCNI: 123
-  dateDelivranceCNI: "2008-12-01"
-  dateExpirationCNI: "2028-12-01"
-  dansGroupe: true
-
-- artisteID: 6
-  pseudoArtiste: "BluesMaestro"
-  nomA: "Roux"
-  prenomA: "Alice"
-  mailA: "alice.roux@gmail.com"
-  DdNA: "1980-07-08"
-  LdN: "Lyon"
-  adresseA: "234 Boulevard du Blues"
-  numSecuriteSociale: 76554321
-  numCNI: 365
-  dateDelivranceCNI: "2001-03-30"
-  dateExpirationCNI: "2021-03-30"
-  dansGroupe: true
-
-- artisteID: 7
-  pseudoArtiste: "ReggaeVibes"
-  nomA: "Girard"
-  prenomA: "Hugo"
-  mailA: "hugo.girard@gmail.com"
-  DdNA: "1995-09-27"
-  LdN: "Lyon"
-  adresseA: "987 Rue de la Reggae"
-  numSecuriteSociale: 32198765
-  numCNI: 542
-  dateDelivranceCNI: "2007-11-22"
-  dateExpirationCNI: "2027-11-22"
-  dansGroupe: true
-
-- artisteID: 8
-  pseudoArtiste: "ClassicalMaestro"
-  nomA: "Fournier"
-  prenomA: "Emma"
-  mailA: "emma.fournier@gmail.com"
-  DdNA: "1983-04-02"
-  LdN: "Lyon"
-  adresseA: "678 Avenue des Classiques"
-  numSecuriteSociale: 23498765
-  numCNI: 765
-  dateDelivranceCNI: "2004-08-10"
-  dateExpirationCNI: "2024-08-10"
-  dansGroupe: true
-
-- artisteID: 9
-  pseudoArtiste: "IndieSinger"
-  nomA: "Petit"
-  prenomA: "Lucas"
-  mailA: "lucas.petit@gmail.com"
-  DdNA: "1992-12-19"
-  LdN: "Lyon"
-  adresseA: "345 Rue de Indépendance"
-  numSecuriteSociale: 54354321
-  numCNI: 876
-  dateDelivranceCNI: "2009-06-18"
-  dateExpirationCNI: "2029-06-18"
-  dansGroupe: false
-
-- artisteID: 10
-  pseudoArtiste: "FolkFiddler"
-  nomA: "Moreau"
-  prenomA: "Anna"
-  mailA: "anna.moreau@gmail.com"
-  DdNA: "1998-06-23"
-  LdN: "Lyon"
-  adresseA: "234 Avenue de la Folk"
-  numSecuriteSociale: 87654321
-  numCNI: 345
-  dateDelivranceCNI: "2011-05-02"
-  dateExpirationCNI: "2031-05-02"
-  dansGroupe: true
-
-
-
-
-
-
-- immatriculation: "AB-123-CD"
-  typeVehicule: "Voiture"
-  capacitéV: 5
-- immatriculation: "XY-789-ZW"
-  typeVehicule: "Camion"
-  capacitéV: 10
-- immatriculation: "LM-456-OP"
-  typeVehicule: "Moto"
-  capacitéV: 2
-- immatriculation: "EF-123-GH"
-  typeVehicule: "Voiture"
-  capacitéV: 7
-- immatriculation: "JK-789-LM"
-  typeVehicule: "Voiture"
-  capacitéV: 5
-- immatriculation: "UV-456-WX"
-  typeVehicule: "Camion"
-  capacitéV: 10
-- immatriculation: "CD-123-EF"
-  typeVehicule: "Moto"
-  capacitéV: 2
-- immatriculation: "GH-789-IJ"
-  typeVehicule: "Fourgon"
-  capacitéV: 8
-- immatriculation: "OP-456-QR"
-  typeVehicule: "Bus"
-  capacitéV: 35
-- immatriculation: "LM-123-UV"
-  typeVehicule: "Minibus"
-  capacitéV: 15
-- immatriculation: "WX-789-CD"
-  typeVehicule: "Bus"
-  capacitéV: 50
-- immatriculation: "EF-120-GH"
-  typeVehicule: "Minibus"
-  capacitéV: 15
-
-
-
-
-
-
-- materielID: 1
-  nomMateriel: "Microphone dynamique"
-- materielID: 2
-  nomMateriel: "Microphone à condensateur"
-- materielID: 3
-  nomMateriel: "Table de mixage 8 canaux"
-- materielID: 4
-  nomMateriel: "Table de mixage 16 canaux"
-- materielID: 5
-  nomMateriel: "Table de mixage numérique"
-- materielID: 6
-  nomMateriel: "Enceinte passive 12"
-- materielID: 7
-  nomMateriel: "Enceinte passive 15"
-- materielID: 8
-  nomMateriel: "Enceinte active 10"
-- materielID: 9
-  nomMateriel: "Enceinte active 18"
-- materielID: 10
-  nomMateriel: "Amplificateur de puissance 1000W"
-- materielID: 11
-  nomMateriel: "Amplificateur de puissance 2000W"
-- materielID: 12
-  nomMateriel: "Amplificateur de casque"
-- materielID: 13
-  nomMateriel: "Casque écoute professionnel"
-- materielID: 14
-  nomMateriel: "Effets audio rackables"
-- materielID: 15
-  nomMateriel: "Laser RGB 1W"
-- materielID: 16
-  nomMateriel: "Projecteur LED 100W"
-- materielID: 17
-  nomMateriel: "Projecteur LED 200W"
-- materielID: 18
-  nomMateriel: "Machine à brouillard"
-- materielID: 19
-  nomMateriel: "Machine à fumée lourde"
-- materielID: 20
-  nomMateriel: "Lyre à LED 60W"
-- materielID: 21
-  nomMateriel: "Lyre à LED 150W"
-- materielID: 22
-  nomMateriel: "Pied de micro droit"
-- materielID: 23
-  nomMateriel: "Pied de micro perche"
-- materielID: 24
-  nomMateriel: "Câble XLR 3m"
-- materielID: 25
-  nomMateriel: "Câble XLR 5m"
-- materielID: 26
-  nomMateriel: "Câble jack 6.35mm 10m"
-- materielID: 27
-  nomMateriel: "Câble speakon 25m"
-- materielID: 28
-  nomMateriel: "Égaliseur graphique 31 bandes"
-- materielID: 29
-  nomMateriel: "Égaliseur paramétrique"
-- materielID: 30
-  nomMateriel: "Console éclairage DMX 512"
-- materielID: 31
-  nomMateriel: "Machine à bulles"
-- materielID: 32
-  nomMateriel: "Machine à neige"
-- materielID: 33
-  nomMateriel: "Machine à confettis"
-- materielID: 34
-  nomMateriel: "Machine à mousse"
-- materielID: 35
-  nomMateriel: "Stroboscope 1000W"
-- materielID: 36
-  nomMateriel: "Stroboscope LED"
-- materielID: 37
-  nomMateriel: "Panneau LED 4x4"
-- materielID: 38
-  nomMateriel: "Écran de projection 120"
-- materielID: 39
-  nomMateriel: "Écran LED 55"
-- materielID: 40
-  nomMateriel: "Ampli casque 4 canaux"
-- materielID: 41
-  nomMateriel: "Caisse de régie"
-- materielID: 42
-  nomMateriel: "Console de mixage numérique 24 canaux"
-- materielID: 43
-  nomMateriel: "Microphone sans fil main"
-- materielID: 44
-  nomMateriel: "Microphone sans fil cravate"
-- materielID: 45
-  nomMateriel: "Microphone sans fil serre-tête"
-- materielID: 46
-  nomMateriel: "Ampli de puissance 4000W"
-- materielID: 47
-  nomMateriel: "Lyre à LED 250W"
-- materielID: 48
-  nomMateriel: "Éclairage UV 400W"
-- materielID: 49
-  nomMateriel: "Machine à brouillard lourd"
-- materielID: 50
-  nomMateriel: "Lyre laser 1W"
-- materielID: 51
-  nomMateriel: "Ampli casque 8 canaux"
-- materielID: 52
-  nomMateriel: "Lyre spot 75W"
-- materielID: 53
-  nomMateriel: "Lyre wash 120W"
-- materielID: 54
-  nomMateriel: "Console de mixage analogique 32 canaux"
-- materielID: 55
-  nomMateriel: "Effets audio DSP"
-- materielID: 56
-  nomMateriel: "Enceinte colonne active 1000W"
-- materielID: 57
-  nomMateriel: "Console éclairage compacte"
-- materielID: 58
-  nomMateriel: "Machine à bulles géante"
-- materielID: 59
-  nomMateriel: "Lyre beam 150W"
-- materielID: 60
-  nomMateriel: "Machine à neige lourde"
-- materielID: 61
-  nomMateriel: "Microphone chant studio"
-- materielID: 62
-  nomMateriel: "Microphone overhead studio"
-- materielID: 63
-  nomMateriel: "Microphone batterie studio"
-- materielID: 64
-  nomMateriel: "Table de mixage compacte 6 canaux"
-- materielID: 65
-  nomMateriel: "Lyre à LED 300W"
-- materielID: 66
-  nomMateriel: "Projecteur LED 400W"
-- materielID: 67
-  nomMateriel: "Stroboscope 1500W"
-- materielID: 68
-  nomMateriel: "Machine à brouillard professionnel"
-- materielID: 69
-  nomMateriel: "Écran de projection électrique 150"
-- materielID: 70
-  nomMateriel: "Lyre à LED wash 250W"
-- materielID: 71
-  nomMateriel: "Console éclairage à gradateurs"
-- materielID: 72
-  nomMateriel: "Machine à confettis électrique"
-- materielID: 73
-  nomMateriel: "Enceinte passive 10"
-- materielID: 74
-  nomMateriel: "Ampli casque 16 canaux"
-- materielID: 75
-  nomMateriel: "Microphone chant dynamique"
-- materielID: 76
-  nomMateriel: "Câble alimentation PowerCON"
-- materielID: 77
-  nomMateriel: "Pied éclairage télescopique"
-- materielID: 78
-  nomMateriel: "Câble DMX 5m"
-- materielID: 79
-  nomMateriel: "Lyre spot 120W"
-- materielID: 80
-  nomMateriel: "Machine à fumée basse densité"
-- materielID: 81
-  nomMateriel: "Table de mixage 32 canaux"
-- materielID: 82
-  nomMateriel: "Microphone à ruban"
-- materielID: 83
-  nomMateriel: "Machine à neige artificielle"
-- materielID: 84
-  nomMateriel: "Écran LED 75"
-- materielID: 85
-  nomMateriel: "Amplificateur de casque 8 canaux"
-- materielID: 86
-  nomMateriel: "Console de mixage numérique 48 canaux"
-- materielID: 87
-  nomMateriel: "Machine à fumée lourde professionnelle"
-- materielID: 88
-  nomMateriel: "Lyre laser RGB 2W"
-- materielID: 89
-  nomMateriel: "Lyre à LED 400W"
-- materielID: 90
-  nomMateriel: "Égaliseur 15 bandes"
-- materielID: 91
-  nomMateriel: "Machine à bulles professionnelle"
-- materielID: 92
-  nomMateriel: "Lyre à LED spot 200W"
-- materielID: 93
-  nomMateriel: "Machine à mousse compacte"
-- materielID: 94
-  nomMateriel: "Console de mixage analogique 16 canaux"
-- materielID: 95
-  nomMateriel: "Câble jack 3.5mm 3m"
-- materielID: 96
-  nomMateriel: "Câble adaptateur XLR-jack 6.35mm"
-- materielID: 97
-  nomMateriel: "Câble speakon 50m"
-- materielID: 98
-  nomMateriel: "Écran de projection motorisé 200"
-- materielID: 99
-  nomMateriel: "Lyre beam 200W"
-- materielID: 100
-  nomMateriel: "Lyre wash 180W"
-- materielID: 101
-  nomMateriel: "Console de mixage compacte 12 canaux"
-- materielID: 102
-  nomMateriel: "Enceinte active 8"
-- materielID: 103
-  nomMateriel: "Caisse de régie avec rack"
-- materielID: 104
-  nomMateriel: "Microphone dynamique instrument"
-- materielID: 105
-  nomMateriel: "Machine à confettis manuelle"
-- materielID: 106
-  nomMateriel: "Ampli casque 12 canaux"
-- materielID: 107
-  nomMateriel: "Écran LED 85"
-- materielID: 108
-  nomMateriel: "Lyre à LED wash spot 350W"
-- materielID: 109
-  nomMateriel: "Machine à brouillard lourd professionnelle"
-- materielID: 110
-  nomMateriel: "Table de mixage 24 canaux"
-- materielID: 111
-  nomMateriel: "Lyre à LED hybride 280W"
-- materielID: 112
-  nomMateriel: "Machine à neige professionnelle"
-- materielID: 113
-  nomMateriel: "Microphone cravate sans fil"
-- materielID: 114
-  nomMateriel: "Lyre à LED wash 300W"
-- materielID: 115
-  nomMateriel: "Projecteur LED 800W"
-- materielID: 116
-  nomMateriel: "Machine à confettis électrique à gros débit"
-- materielID: 117
-  nomMateriel: "Stroboscope LED 500W"
-- materielID: 118
-  nomMateriel: "Machine à fumée basse densité professionnelle"
-- materielID: 119
-  nomMateriel: "Câble DMX 10m"
-- materielID: 120
-  nomMateriel: "Console éclairage à gradateurs 48 canaux"
-- materielID: 121
-  nomMateriel: "Lyre à LED wash beam spot 350W"
-- materielID: 122
-  nomMateriel: "Ampli de puissance 5000W"
-- materielID: 123
-  nomMateriel: "Écran de projection électrique 250"
-- materielID: 124
-  nomMateriel: "Lyre spot wash 180W"
-- materielID: 125
-  nomMateriel: "Console de mixage numérique 64 canaux"
-- materielID: 126
-  nomMateriel: "Lyre à LED beam spot 400W"
-- materielID: 127
-  nomMateriel: "Machine à mousse professionnelle"
-- materielID: 128
-  nomMateriel: "Enceinte passive 15"
-- materielID: 129
-  nomMateriel: "Ampli casque 24 canaux"
-- materielID: 130
-  nomMateriel: "Microphone studio à ruban"
-
-
-
-- groupeID: 1
-  nomGroupe: "Les Rockeurs"
-- groupeID: 2
-  nomGroupe: "PopPrincess"
-- groupeID: 3
-  nomGroupe: "Pop Sensation"
-- groupeID: 4
-  nomGroupe: "IndieSinger"
-
-
-
-
-
-- salleID: 1
-  nomSalle: "Salle A"
-  capaciteTotaleSalle: 500
-  planSalle: null
-  dimensionOuverture: 20.5
-  dimensionProfondeur: 30.2
-  lieuID: 1
-
-- salleID: 2
-  nomSalle: "Salle B"
-  capaciteTotaleSalle: 300
-  planSalle: null
-  dimensionOuverture: 15.8
-  dimensionProfondeur: 25.4
-  lieuID: 2
-
-- salleID: 3
-  nomSalle: "Salle C"
-  capaciteTotaleSalle: 700
-  planSalle: null
-  dimensionOuverture: 25.0
-  dimensionProfondeur: 35.6
-  lieuID: 3
-
-- salleID: 4
-  nomSalle: "Salle D"
-  capaciteTotaleSalle: 400
-  planSalle: null
-  dimensionOuverture: 18.2
-  dimensionProfondeur: 27.9
-  lieuID: 4
+- Musicien :
+  - musicienID: 1  
+    nomMusicien: "Pierre Dupont"
+  - musicienID: 2
+    nomMusicien: "Élise Martin"
+  - musicienID: 3
+    nomMusicien: "Claude Leblanc"
+  - musicienID: 4
+    nomMusicien: "Camille Dubois"
+  - musicienID: 5
+    nomMusicien: "Lucien Lambert"
+
+
+
+- MaterielArtiste :
+  - materielArtisteID: 1
+    nomMaterielArt: "Guitare acoustique"
+    disponible: true
+  - materielArtisteID: 2
+    nomMaterielArt: "Piano à queue"
+    disponible: true
+  - materielArtisteID: 3
+    nomMaterielArt: "Batterie complète"
+    disponible: false
+  - materielArtisteID: 4
+    nomMaterielArt: "Saxophone alto"
+    disponible: true
+  - materielArtisteID: 5
+    nomMaterielArt: "Violoncelle"
+    disponible: true
+
+- RoleP : 
+  - roleID: 1
+    nomRole: "Ingénieur du son"
+  - roleID: 2
+    nomRole: "Éclairagiste"
+  - roleID: 3
+    nomRole: "Régisseur de scène"
+  - roleID: 4
+    nomRole: "Technicien de son"
+  - roleID: 5
+    nomRole: "Technicien éclairage"
+
+
+
+- Organisation:
+  - nomOrga: "HarmonieMusicale"
+    motDePasse: "mdp123"
+    typeOrga: "Technique"
+
+  - nomOrga: "BienveillanceArtistique"
+    motDePasse: "mdp123"
+    typeOrga: "Bien-être des Artistes"
+
+  - nomOrga: "SonsEnScène"
+    motDePasse: "mdp123"
+    typeOrga: "Technique"
+
+  - nomOrga: "CoeurDeScene"
+    motDePasse: "mdp123"
+    typeOrga: "Bien-être des Artistes"
+
+
+
+
+
+
+- TypePlace :
+  - typePlaceID: 1
+    nomPlace: "VIP"
+    descriptionP: "Accès privilégié avec vue exceptionnelle sur la scène."
+
+  - typePlaceID: 2
+    nomPlace: "Place Assise"
+    descriptionP: "Des sièges confortables et une bonne vue sur la scène."
+
+  - typePlaceID: 3
+    nomPlace: "Place en Fosse"
+    descriptionP: "Directement dans la fosse du concert."
+
+  - typePlaceID: 4
+    nomPlace: "Place Debout"
+    descriptionP: "Accès à la zone debout pour ceux qui aiment danser."
+
+  - typePlaceID: 5
+    nomPlace: "Place Enfant"
+    descriptionP: "Pour les jeunes fans et enfants (âge limite : 12 ans)."
+
+  - typePlaceID: 6
+    nomPlace: "Place pour Personnes à Mobilité Réduite"
+    descriptionP: "Places spécialement aménagées pour les personnes à mobilité réduite."
+
+
+
+- Lieu:
+  - lieuID: 1
+    nomVille: "Lyon"
+    adresseL: "Salle Harmonie"
+    departement: 69001
+  - lieuID: 2
+    nomVille: "Lyon"
+    adresseL: "Palais des Arts"
+    departement: 69002
+  - lieuID: 3
+    nomVille: "Lyon"
+    adresseL: "La Cité Musicale"
+    departement: 69003
+  - lieuID: 4
+    nomVille: "Lyon"
+    adresseL: "Salle des Artistes"
+    departement: 69004
+  - lieuID: 5
+    nomVille: "Lyon"
+    adresseL: "Le Centre de Musique"
+    departement: 69005
+  - lieuID: 6
+    nomVille: "Lyon"
+    adresseL: "Salle Étoile"
+    departement: 69006
+  - lieuID: 7
+    nomVille: "Lyon"
+    adresseL: "Le Forum Musical"
+    departement: 69007
+
+
+- Artiste:
+  - artisteID: 1
+    pseudoArtiste: "RockStar123"
+    nomA: "Dupont"
+    prenomA: "Jean"
+    mailA: "jean.dupont@gmail.com"
+    DdNA: "1990-05-15"
+    LdN: "Lyon"
+    adresseA: "123 Rue de la Musique"
+    numSecuriteSociale: 12367890
+    numCNI: 456
+    dateDelivranceCNI: "2005-06-20"
+    dateExpirationCNI: "2025-06-20"
+    dansGroupe: true
+
+  - artisteID: 2
+    pseudoArtiste: "GrooveMaster"
+    nomA: "Martin"
+    prenomA: "Marie"
+    mailA: "marie.martin@gmail.com"
+    DdNA: "1985-08-25"
+    LdN: "Lyon"
+    adresseA: "456 Avenue du Spectacle"
+    numSecuriteSociale: 78954321
+    numCNI: 987
+    dateDelivranceCNI: "2003-04-12"
+    dateExpirationCNI: "2023-04-12"
+    dansGroupe: true
+
+  - artisteID: 3
+    pseudoArtiste: "JazzCat"
+    nomA: "Lefebvre"
+    prenomA: "Paul"
+    mailA: "paul.lefebvre@gmail.com"
+    DdNA: "1993-03-10"
+    LdN: "Lyon"
+    adresseA: "789 Boulevard du Son"
+    numSecuriteSociale: 23454321
+    numCNI: 567
+    dateDelivranceCNI: "2010-09-05"
+    dateExpirationCNI: "2030-09-05"
+    dansGroupe: true
+
+  - artisteID: 4
+    pseudoArtiste: "PopPrincess"
+    nomA: "Dubois"
+    prenomA: "Sophie"
+    mailA: "sophie.dubois@gmail.com"
+    DdNA: "1988-11-03"
+    LdN: "Lyon"
+    adresseA: "321 Rue des Artistes"
+    numSecuriteSociale: 89045678
+    numCNI: 654
+    dateDelivranceCNI: "2006-07-15"
+    dateExpirationCNI: "2026-07-15"
+    dansGroupe: false
+
+  - artisteID: 5
+    pseudoArtiste: "MetalHead"
+    nomA: "Bertrand"
+    prenomA: "Luc"
+    mailA: "luc.bertrand@gmail.com"
+    DdNA: "1997-02-17"
+    LdN: "Lyon"
+    adresseA: "567 Avenue du Rock"
+    numSecuriteSociale: 43245678
+    numCNI: 123
+    dateDelivranceCNI: "2008-12-01"
+    dateExpirationCNI: "2028-12-01"
+    dansGroupe: true
+
+  - artisteID: 6
+    pseudoArtiste: "BluesMaestro"
+    nomA: "Roux"
+    prenomA: "Alice"
+    mailA: "alice.roux@gmail.com"
+    DdNA: "1980-07-08"
+    LdN: "Lyon"
+    adresseA: "234 Boulevard du Blues"
+    numSecuriteSociale: 76554321
+    numCNI: 365
+    dateDelivranceCNI: "2001-03-30"
+    dateExpirationCNI: "2021-03-30"
+    dansGroupe: true
+
+  - artisteID: 7
+    pseudoArtiste: "ReggaeVibes"
+    nomA: "Girard"
+    prenomA: "Hugo"
+    mailA: "hugo.girard@gmail.com"
+    DdNA: "1995-09-27"
+    LdN: "Lyon"
+    adresseA: "987 Rue de la Reggae"
+    numSecuriteSociale: 32198765
+    numCNI: 542
+    dateDelivranceCNI: "2007-11-22"
+    dateExpirationCNI: "2027-11-22"
+    dansGroupe: true
+
+  - artisteID: 8
+    pseudoArtiste: "ClassicalMaestro"
+    nomA: "Fournier"
+    prenomA: "Emma"
+    mailA: "emma.fournier@gmail.com"
+    DdNA: "1983-04-02"
+    LdN: "Lyon"
+    adresseA: "678 Avenue des Classiques"
+    numSecuriteSociale: 23498765
+    numCNI: 765
+    dateDelivranceCNI: "2004-08-10"
+    dateExpirationCNI: "2024-08-10"
+    dansGroupe: true
+
+  - artisteID: 9
+    pseudoArtiste: "IndieSinger"
+    nomA: "Petit"
+    prenomA: "Lucas"
+    mailA: "lucas.petit@gmail.com"
+    DdNA: "1992-12-19"
+    LdN: "Lyon"
+    adresseA: "345 Rue de Indépendance"
+    numSecuriteSociale: 54354321
+    numCNI: 876
+    dateDelivranceCNI: "2009-06-18"
+    dateExpirationCNI: "2029-06-18"
+    dansGroupe: false
+
+  - artisteID: 10
+    pseudoArtiste: "FolkFiddler"
+    nomA: "Moreau"
+    prenomA: "Anna"
+    mailA: "anna.moreau@gmail.com"
+    DdNA: "1998-06-23"
+    LdN: "Lyon"
+    adresseA: "234 Avenue de la Folk"
+    numSecuriteSociale: 87654321
+    numCNI: 345
+    dateDelivranceCNI: "2011-05-02"
+    dateExpirationCNI: "2031-05-02"
+    dansGroupe: true
+
+
+
+
+
+- Vehicule:
+  - immatriculation: "AB-123-CD"
+    typeVehicule: "Voiture"
+    capacitéV: 5
+  - immatriculation: "XY-789-ZW"
+    typeVehicule: "Camion"
+    capacitéV: 10
+  - immatriculation: "LM-456-OP"
+    typeVehicule: "Moto"
+    capacitéV: 2
+  - immatriculation: "EF-123-GH"
+    typeVehicule: "Voiture"
+    capacitéV: 7
+  - immatriculation: "JK-789-LM"
+    typeVehicule: "Voiture"
+    capacitéV: 5
+  - immatriculation: "UV-456-WX"
+    typeVehicule: "Camion"
+    capacitéV: 10
+  - immatriculation: "CD-123-EF"
+    typeVehicule: "Moto"
+    capacitéV: 2
+  - immatriculation: "GH-789-IJ"
+    typeVehicule: "Fourgon"
+    capacitéV: 8
+  - immatriculation: "OP-456-QR"
+    typeVehicule: "Bus"
+    capacitéV: 35
+  - immatriculation: "LM-123-UV"
+    typeVehicule: "Minibus"
+    capacitéV: 15
+  - immatriculation: "WX-789-CD"
+    typeVehicule: "Bus"
+    capacitéV: 50
+  - immatriculation: "EF-120-GH"
+    typeVehicule: "Minibus"
+    capacitéV: 15
+
+
+
+
+
+- Materiel:
+  - materielID: 1
+    nomMateriel: "Microphone dynamique"
+  - materielID: 2
+    nomMateriel: "Microphone à condensateur"
+  - materielID: 3
+    nomMateriel: "Table de mixage 8 canaux"
+  - materielID: 4
+    nomMateriel: "Table de mixage 16 canaux"
+  - materielID: 5
+    nomMateriel: "Table de mixage numérique"
+  - materielID: 6
+    nomMateriel: "Enceinte passive 12"
+  - materielID: 7
+    nomMateriel: "Enceinte passive 15"
+  - materielID: 8
+    nomMateriel: "Enceinte active 10"
+  - materielID: 9
+    nomMateriel: "Enceinte active 18"
+  - materielID: 10
+    nomMateriel: "Amplificateur de puissance 1000W"
+  - materielID: 11
+    nomMateriel: "Amplificateur de puissance 2000W"
+  - materielID: 12
+    nomMateriel: "Amplificateur de casque"
+  - materielID: 13
+    nomMateriel: "Casque écoute professionnel"
+  - materielID: 14
+    nomMateriel: "Effets audio rackables"
+  - materielID: 15
+    nomMateriel: "Laser RGB 1W"
+  - materielID: 16
+    nomMateriel: "Projecteur LED 100W"
+  - materielID: 17
+    nomMateriel: "Projecteur LED 200W"
+  - materielID: 18
+    nomMateriel: "Machine à brouillard"
+  - materielID: 19
+    nomMateriel: "Machine à fumée lourde"
+  - materielID: 20
+    nomMateriel: "Lyre à LED 60W"
+  - materielID: 21
+    nomMateriel: "Lyre à LED 150W"
+  - materielID: 22
+    nomMateriel: "Pied de micro droit"
+  - materielID: 23
+    nomMateriel: "Pied de micro perche"
+  - materielID: 24
+    nomMateriel: "Câble XLR 3m"
+  - materielID: 25
+    nomMateriel: "Câble XLR 5m"
+  - materielID: 26
+    nomMateriel: "Câble jack 6.35mm 10m"
+  - materielID: 27
+    nomMateriel: "Câble speakon 25m"
+  - materielID: 28
+    nomMateriel: "Égaliseur graphique 31 bandes"
+  - materielID: 29
+    nomMateriel: "Égaliseur paramétrique"
+  - materielID: 30
+    nomMateriel: "Console éclairage DMX 512"
+  - materielID: 31
+    nomMateriel: "Machine à bulles"
+  - materielID: 32
+    nomMateriel: "Machine à neige"
+  - materielID: 33
+    nomMateriel: "Machine à confettis"
+  - materielID: 34
+    nomMateriel: "Machine à mousse"
+  - materielID: 35
+    nomMateriel: "Stroboscope 1000W"
+  - materielID: 36
+    nomMateriel: "Stroboscope LED"
+  - materielID: 37
+    nomMateriel: "Panneau LED 4x4"
+  - materielID: 38
+    nomMateriel: "Écran de projection 120"
+  - materielID: 39
+    nomMateriel: "Écran LED 55"
+  - materielID: 40
+    nomMateriel: "Ampli casque 4 canaux"
+  - materielID: 41
+    nomMateriel: "Caisse de régie"
+  - materielID: 42
+    nomMateriel: "Console de mixage numérique 24 canaux"
+  - materielID: 43
+    nomMateriel: "Microphone sans fil main"
+  - materielID: 44
+    nomMateriel: "Microphone sans fil cravate"
+  - materielID: 45
+    nomMateriel: "Microphone sans fil serre-tête"
+  - materielID: 46
+    nomMateriel: "Ampli de puissance 4000W"
+  - materielID: 47
+    nomMateriel: "Lyre à LED 250W"
+  - materielID: 48
+    nomMateriel: "Éclairage UV 400W"
+  - materielID: 49
+    nomMateriel: "Machine à brouillard lourd"
+  - materielID: 50
+    nomMateriel: "Lyre laser 1W"
+  - materielID: 51
+    nomMateriel: "Ampli casque 8 canaux"
+  - materielID: 52
+    nomMateriel: "Lyre spot 75W"
+  - materielID: 53
+    nomMateriel: "Lyre wash 120W"
+  - materielID: 54
+    nomMateriel: "Console de mixage analogique 32 canaux"
+  - materielID: 55
+    nomMateriel: "Effets audio DSP"
+  - materielID: 56
+    nomMateriel: "Enceinte colonne active 1000W"
+  - materielID: 57
+    nomMateriel: "Console éclairage compacte"
+  - materielID: 58
+    nomMateriel: "Machine à bulles géante"
+  - materielID: 59
+    nomMateriel: "Lyre beam 150W"
+  - materielID: 60
+    nomMateriel: "Machine à neige lourde"
+  - materielID: 61
+    nomMateriel: "Microphone chant studio"
+  - materielID: 62
+    nomMateriel: "Microphone overhead studio"
+  - materielID: 63
+    nomMateriel: "Microphone batterie studio"
+  - materielID: 64
+    nomMateriel: "Table de mixage compacte 6 canaux"
+  - materielID: 65
+    nomMateriel: "Lyre à LED 300W"
+  - materielID: 66
+    nomMateriel: "Projecteur LED 400W"
+  - materielID: 67
+    nomMateriel: "Stroboscope 1500W"
+  - materielID: 68
+    nomMateriel: "Machine à brouillard professionnel"
+  - materielID: 69
+    nomMateriel: "Écran de projection électrique 150"
+  - materielID: 70
+    nomMateriel: "Lyre à LED wash 250W"
+  - materielID: 71
+    nomMateriel: "Console éclairage à gradateurs"
+  - materielID: 72
+    nomMateriel: "Machine à confettis électrique"
+  - materielID: 73
+    nomMateriel: "Enceinte passive 10"
+  - materielID: 74
+    nomMateriel: "Ampli casque 16 canaux"
+  - materielID: 75
+    nomMateriel: "Microphone chant dynamique"
+  - materielID: 76
+    nomMateriel: "Câble alimentation PowerCON"
+  - materielID: 77
+    nomMateriel: "Pied éclairage télescopique"
+  - materielID: 78
+    nomMateriel: "Câble DMX 5m"
+  - materielID: 79
+    nomMateriel: "Lyre spot 120W"
+  - materielID: 80
+    nomMateriel: "Machine à fumée basse densité"
+  - materielID: 81
+    nomMateriel: "Table de mixage 32 canaux"
+  - materielID: 82
+    nomMateriel: "Microphone à ruban"
+  - materielID: 83
+    nomMateriel: "Machine à neige artificielle"
+  - materielID: 84
+    nomMateriel: "Écran LED 75"
+  - materielID: 85
+    nomMateriel: "Amplificateur de casque 8 canaux"
+  - materielID: 86
+    nomMateriel: "Console de mixage numérique 48 canaux"
+  - materielID: 87
+    nomMateriel: "Machine à fumée lourde professionnelle"
+  - materielID: 88
+    nomMateriel: "Lyre laser RGB 2W"
+  - materielID: 89
+    nomMateriel: "Lyre à LED 400W"
+  - materielID: 90
+    nomMateriel: "Égaliseur 15 bandes"
+  - materielID: 91
+    nomMateriel: "Machine à bulles professionnelle"
+  - materielID: 92
+    nomMateriel: "Lyre à LED spot 200W"
+  - materielID: 93
+    nomMateriel: "Machine à mousse compacte"
+  - materielID: 94
+    nomMateriel: "Console de mixage analogique 16 canaux"
+  - materielID: 95
+    nomMateriel: "Câble jack 3.5mm 3m"
+  - materielID: 96
+    nomMateriel: "Câble adaptateur XLR-jack 6.35mm"
+  - materielID: 97
+    nomMateriel: "Câble speakon 50m"
+  - materielID: 98
+    nomMateriel: "Écran de projection motorisé 200"
+  - materielID: 99
+    nomMateriel: "Lyre beam 200W"
+  - materielID: 100
+    nomMateriel: "Lyre wash 180W"
+  - materielID: 101
+    nomMateriel: "Console de mixage compacte 12 canaux"
+  - materielID: 102
+    nomMateriel: "Enceinte active 8"
+  - materielID: 103
+    nomMateriel: "Caisse de régie avec rack"
+  - materielID: 104
+    nomMateriel: "Microphone dynamique instrument"
+  - materielID: 105
+    nomMateriel: "Machine à confettis manuelle"
+  - materielID: 106
+    nomMateriel: "Ampli casque 12 canaux"
+  - materielID: 107
+    nomMateriel: "Écran LED 85"
+  - materielID: 108
+    nomMateriel: "Lyre à LED wash spot 350W"
+  - materielID: 109
+    nomMateriel: "Machine à brouillard lourd professionnelle"
+  - materielID: 110
+    nomMateriel: "Table de mixage 24 canaux"
+  - materielID: 111
+    nomMateriel: "Lyre à LED hybride 280W"
+  - materielID: 112
+    nomMateriel: "Machine à neige professionnelle"
+  - materielID: 113
+    nomMateriel: "Microphone cravate sans fil"
+  - materielID: 114
+    nomMateriel: "Lyre à LED wash 300W"
+  - materielID: 115
+    nomMateriel: "Projecteur LED 800W"
+  - materielID: 116
+    nomMateriel: "Machine à confettis électrique à gros débit"
+  - materielID: 117
+    nomMateriel: "Stroboscope LED 500W"
+  - materielID: 118
+    nomMateriel: "Machine à fumée basse densité professionnelle"
+  - materielID: 119
+    nomMateriel: "Câble DMX 10m"
+  - materielID: 120
+    nomMateriel: "Console éclairage à gradateurs 48 canaux"
+  - materielID: 121
+    nomMateriel: "Lyre à LED wash beam spot 350W"
+  - materielID: 122
+    nomMateriel: "Ampli de puissance 5000W"
+  - materielID: 123
+    nomMateriel: "Écran de projection électrique 250"
+  - materielID: 124
+    nomMateriel: "Lyre spot wash 180W"
+  - materielID: 125
+    nomMateriel: "Console de mixage numérique 64 canaux"
+  - materielID: 126
+    nomMateriel: "Lyre à LED beam spot 400W"
+  - materielID: 127
+    nomMateriel: "Machine à mousse professionnelle"
+  - materielID: 128
+    nomMateriel: "Enceinte passive 15"
+  - materielID: 129
+    nomMateriel: "Ampli casque 24 canaux"
+  - materielID: 130
+    nomMateriel: "Microphone studio à ruban"
+
+
+- Groupe:
+  - groupeID: 1
+    nomGroupe: "Les Rockeurs"
+  - groupeID: 2
+    nomGroupe: "PopPrincess"
+  - groupeID: 3
+    nomGroupe: "Pop Sensation"
+  - groupeID: 4
+    nomGroupe: "IndieSinger"
+
+
+
+
+- Salle:
+  - salleID: 1
+    nomSalle: "Salle A"
+    capaciteTotaleSalle: 500
+    planSalle: null
+    dimensionOuverture: 20.5
+    dimensionProfondeur: 30.2
+    lieuID: 1
+
+  - salleID: 2
+    nomSalle: "Salle B"
+    capaciteTotaleSalle: 300
+    planSalle: null
+    dimensionOuverture: 15.8
+    dimensionProfondeur: 25.4
+    lieuID: 2
+
+  - salleID: 3
+    nomSalle: "Salle C"
+    capaciteTotaleSalle: 700
+    planSalle: null
+    dimensionOuverture: 25.0
+    dimensionProfondeur: 35.6
+    lieuID: 3
+
+  - salleID: 4
+    nomSalle: "Salle D"
+    capaciteTotaleSalle: 400
+    planSalle: null
+    dimensionOuverture: 18.2
+    dimensionProfondeur: 27.9
+    lieuID: 4
 
   
 
 
 
-
-- personelTechniqueID: 1
-  roleID: 1
-  nomP: "Martin"
-  prenomP: "Dupont"  # Ingénieur du son
-
-- personelTechniqueID: 2
-  roleID: 2
-  nomP: "Sophie"
-  prenomP: "Lefebvre"  # Éclairagiste
-
-- personelTechniqueID: 3
-  roleID: 3
-  nomP: "Philippe"
-  prenomP: "Roux"  # Régisseur de scène
-
-- personelTechniqueID: 4
-  roleID: 4
-  nomP: "Camille"
-  prenomP: "Moreau"  # Technicien de son
-
-- personelTechniqueID: 5
-  roleID: 5
-  nomP: "Éric"
-  prenomP: "Lambert"  # Technicien éclairage
-
-- personelTechniqueID: 6
-  roleID: 1
-  nomP: "Isabelle"
-  prenomP: "Gagnon"  # Ingénieur du son
-
-- personelTechniqueID: 7
-  roleID: 2
-  nomP: "Antoine"
-  prenomP: "Lapointe"  # Éclairagiste
-
-- personelTechniqueID: 8
-  roleID: 3
-  nomP: "David"
-  prenomP: "Bergeron"  # Régisseur de scène
-
-- personelTechniqueID: 9
-  roleID: 4
-  nomP: "Valérie"
-  prenomP: "Leclerc"  # Technicien de son
-
-- personelTechniqueID: 10
-  roleID: 5
-  nomP: "Sophie"
-  prenomP: "Tremblay"  # Technicien éclairage
-
-- personelTechniqueID: 11
-  roleID: 1
-  nomP: "Thomas"
-  prenomP: "Leroy"  # Ingénieur du son
-
-- personelTechniqueID: 12
-  roleID: 2
-  nomP: "Léa"
-  prenomP: "Dubois"  # Éclairagiste
-
-
-
-
-
-- planID: 1
-  planScene: null
-  planFeu: null
-  salleID: 1
-
-- planID: 2
-  planScene: null
-  planFeu: null
-  salleID: 2
-
-- planID: 3
-  planScene: null
-  planFeu: null
-  salleID: 3
-
-- planID: 4
-  planScene: null
-  planFeu: null
-  salleID: 4
-
-- planID: 5
-  planScene: null
-  planFeu: null
-  salleID: 1
-
-- planID: 6
-  planScene: null
-  planFeu: null
-  salleID: 2
-
-- planID: 7
-  planScene: null
-  planFeu: null
-  salleID: 3
-
-- planID: 8
-  planScene: null
-  planFeu: null
-  salleID: 4
-
-
-
-
-
-- hebergementID: 1
-  nomHebergement: "Hôtel de Lyon"
-  capacitéH: 100
-  qualitéH: 4
-  lieuID: 1
-  prix: 150
-
-- hebergementID: 2
-  nomHebergement: "Auberge des Musiciens"
-  capacitéH: 50
-  qualitéH: 3
-  lieuID: 2
-  prix: 80
-
-- hebergementID: 3
-  nomHebergement: "Appartement du Vieux Lyon"
-  capacitéH: 30
-  qualitéH: 5
-  lieuID: 1
-  prix: 120
-
-- hebergementID: 4
-  nomHebergement: "Chambre d hôtes du Vieux Lyon"
-  capacitéH: 10
-  qualitéH: 4
-  lieuID: 1
-  prix: 70
-
-- hebergementID: 5
-  nomHebergement: "Hôtel Belle Vue"
-  capacitéH: 80
-  qualitéH: 4
-  lieuID: 3
-  prix: 130
-
-- hebergementID: 6
-  nomHebergement: "Maison de Ville Lumière"
-  capacitéH: 45
-  qualitéH: 3
-  lieuID: 2
-  prix: 90
-
-
-
-
-
-- materielSalleID: 1
-  salleID: 1
-  nomMaterielS: "Microphone dynamique"
-  disponible: true
-
-- materielSalleID: 2
-  salleID: 1
-  nomMaterielS: "Microphone à condensateur"
-  disponible: true
-
-- materielSalleID: 3
-  salleID: 1
-  nomMaterielS: "Table de mixage 8 canaux"
-  disponible: true
-
-- materielSalleID: 4
-  salleID: 1
-  nomMaterielS: "Table de mixage 16 canaux"
-  disponible: false
-
-- materielSalleID: 5
-  salleID: 1
-  nomMaterielS: "Table de mixage numérique"
-  disponible: true
-
-- materielSalleID: 6
-  salleID: 2
-  nomMaterielS: "Enceinte passive 12"
-  disponible: true
-
-- materielSalleID: 7
-  salleID: 2
-  nomMaterielS: "Enceinte passive 15"
-  disponible: false
-
-- materielSalleID: 8
-  salleID: 2
-  nomMaterielS: "Enceinte active 10"
-  disponible: true
-
-- materielSalleID: 9
-  salleID: 2
-  nomMaterielS: "Enceinte active 18"
-  disponible: true
-
-- materielSalleID: 10
-  salleID: 2
-  nomMaterielS: "Amplificateur de puissance 1000W"
-  disponible: true
-
-- materielSalleID: 11
-  salleID: 3
-  nomMaterielS: "Amplificateur de puissance 2000W"
-  disponible: true
-
-- materielSalleID: 12
-  salleID: 3
-  nomMaterielS: "Amplificateur de casque"
-  disponible: false
-
-- materielSalleID: 13
-  salleID: 3
-  nomMaterielS: "Casque écoute professionnel"
-  disponible: true
-
-- materielSalleID: 14
-  salleID: 3
-  nomMaterielS: "Effets audio rackables"
-  disponible: true
-
-- materielSalleID: 15
-  salleID: 3
-  nomMaterielS: "Laser RGB 1W"
-  disponible: false
-
-- materielSalleID: 16
-  salleID: 4
-  nomMaterielS: "Projecteur LED 100W"
-  disponible: true
-
-- materielSalleID: 17
-  salleID: 4
-  nomMaterielS: "Projecteur LED 200W"
-  disponible: true
-
-- materielSalleID: 18
-  salleID: 4
-  nomMaterielS: "Machine à brouillard"
-  disponible: true
-
-- materielSalleID: 19
-  salleID: 4
-  nomMaterielS: "Machine à fumée lourde"
-  disponible: false
-
-- materielSalleID: 20
-  salleID: 4
-  nomMaterielS: "Lyre à LED 60W"
-  disponible: true
-
-
-
-
-
-
-- concertID: 1
-  nomConcert: "Concert 1"
-  dateDebutConcert: "2023-11-28"
-  dateFinConcert: "2023-11-29"
-  ficheTechnique: "Fiche technique du concert 1"
-  catering: "Catering du concert 1"
-  salleID: 2
-  groupeID: 2
-
-- concertID: 2
-  nomConcert: "Concert 2"
-  dateDebutConcert: "2023-11-27"
-  dateFinConcert: "2023-11-28"
-  ficheTechnique: "Fiche technique du concert 2"
-  catering: "Catering du concert 2"
-  salleID: 3
-  groupeID: 1
-
-- concertID: 3
-  nomConcert: "Concert 3"
-  dateDebutConcert: "2023-12-23"
-  dateFinConcert: "2023-12-24"
-  ficheTechnique: "Fiche technique du concert 3"
-  catering: "Catering du concert 3"
-  salleID: 1
-  groupeID: 3
-
-
-
-
-- musicienID: 1
-  concertID: 1
-
-- musicienID: 2
-  concertID: 1
-
-- musicienID: 3
-  concertID: 1
-
-- musicienID: 4
-  concertID: 2
-
-- musicienID: 5
-  concertID: 2
-
-- musicienID: 4
-  concertID: 3
-
-- musicienID: 1
-  concertID: 3
-
-
-
-
-- concertID: 1
-  immatriculation: "AB-123-CD"
-
-- concertID: 2
-  immatriculation: "EF-123-GH"
-
-- concertID: 3
-  immatriculation: "CD-123-EF"
-
-
-
-- materielID: 1
-  concertID: 1
-- materielID: 2
-  concertID: 1
-- materielID: 3
-  concertID: 2
-- materielID: 4
-  concertID: 2
-- materielID: 5
-  concertID: 2
-- materielID: 6
-  concertID: 2
-- materielID: 7
-  concertID: 2
-- materielID: 8
-  concertID: 2
-- materielID: 9
-  concertID: 2
-- materielID: 10
-  concertID: 1
-- materielID: 11
-  concertID: 1
-- materielID: 12
-  concertID: 1
-- materielID: 13
-  concertID: 1
-- materielID: 14
-  concertID: 1
-- materielID: 15
-  concertID: 1
-- materielID: 16
-  concertID: 1
-- materielID: 17
-  concertID: 1
-- materielID: 18
-  concertID: 1
-- materielID: 19
-  concertID: 1
-- materielID: 20
-  concertID: 1
-- materielID: 21
-  concertID: 1
-- materielID: 22
-  concertID: 1
-- materielID: 23
-  concertID: 1
-- materielID: 24
-  concertID: 1
-- materielID: 25
-  concertID: 2
-- materielID: 26
-  concertID: 2
-- materielID: 27
-  concertID: 2
-- materielID: 28
-  concertID: 2
-- materielID: 29
-  concertID: 2
-- materielID: 30
-  concertID: 2
-- materielID: 31
-  concertID: 2
-- materielID: 32
-  concertID: 2
-- materielID: 33
-  concertID: 2
-- materielID: 34
-  concertID: 2
-- materielID: 35
-  concertID: 2
-- materielID: 36
-  concertID: 2
-- materielID: 37
-  concertID: 2
-- materielID: 38
-  concertID: 2
-- materielID: 39
-  concertID: 2
-- materielID: 40
-  concertID: 3
-- materielID: 41
-  concertID: 3
-- materielID: 42
-  concertID: 3
-- materielID: 43
-  concertID: 3
-- materielID: 44
-  concertID: 3
-- materielID: 45
-  concertID: 3
-- materielID: 46
-  concertID: 3
-- materielID: 47
-  concertID: 3
-- materielID: 48
-  concertID: 3
-- materielID: 49
-  concertID: 3
-- materielID: 50
-  concertID: 3
-- materielID: 51
-  concertID: 3
-- materielID: 52
-  concertID: 3
-- materielID: 53
-  concertID: 3
-- materielID: 54
-  concertID: 3
-- materielID: 55
-  concertID: 3
-- materielID: 56
-  concertID: 3
-- materielID: 57
-  concertID: 3
-- materielID: 58
-  concertID: 3
-- materielID: 59
-  concertID: 3
-
-
-
-- artisteID: 1
-  groupeID: 1
-
-- artisteID: 2
-  groupeID: 1
-
-- artisteID: 3
-  groupeID: 1
-
-- artisteID: 4
-  groupeID: 2
-
-- artisteID: 9
-  groupeID: 4
-
-- artisteID: 7
-  groupeID: 3
-
-- artisteID: 5
-  groupeID: 3
-
-
-
-
-
-
-
-- personelTechniqueID: 1
-  concertID: 1
-
-- personelTechniqueID: 2
-  concertID: 1
-
-- personelTechniqueID: 3
-  concertID: 1
-
-- personelTechniqueID: 4
-  concertID: 2
-
-- personelTechniqueID: 5
-  concertID: 2
-
-- personelTechniqueID: 6
-  concertID: 3
-
-- personelTechniqueID: 7
-  concertID: 3
-
-- personelTechniqueID: 8
-  concertID: 3
-
-- personelTechniqueID: 9
-  concertID: 1
-
-- personelTechniqueID: 10
-  concertID: 1
-
-- personelTechniqueID: 11
-  concertID: 2
-
-- personelTechniqueID: 12
-  concertID: 3
-
-
-
-
-
-
-
-- materielArtisteID: 1
-  groupeID: 1
-  quantiteMaterielArt: 2
-
-- materielArtisteID: 2
-  groupeID: 2
-  quantiteMaterielArt: 1
-
-- materielArtisteID: 3
-  groupeID: 1
-  quantiteMaterielArt: 1
-
-- materielArtisteID: 4
-  groupeID: 3
-  quantiteMaterielArt: 3
-
-- materielArtisteID: 5
-  groupeID: 4
-  quantiteMaterielArt: 2
-
-
-
-
-#salle type place
-- concertId: 1
-  artisteId: 1
-- concertId: 2
-  artisteId: 2
-- concertId: 3
-  artisteId: 3
-
-
-
-#salle type place
-- typePlaceID: 1
-  salleID: 1
-  capaciteS: 50
-- typePlaceID: 2
-  salleID: 1
-  capaciteS: 200
-- typePlaceID: 3
-  salleID: 1
-  capaciteS: 300
-- typePlaceID: 4
-  salleID: 1
-  capaciteS: 400
-- typePlaceID: 5
-  salleID: 1
-  capaciteS: 30
-- typePlaceID: 6
-  salleID: 1
-  capaciteS: 10
-- typePlaceID: 1
-  salleID: 2
-  capaciteS: 30
-- typePlaceID: 2
-  salleID: 2
-  capaciteS: 150
-- typePlaceID: 3
-  salleID: 2
-  capaciteS: 200
-- typePlaceID: 4
-  salleID: 2
-  capaciteS: 250
-- typePlaceID: 5
-  salleID: 2
-  capaciteS: 20
-- typePlaceID: 6
-  salleID: 2
-  capaciteS: 8
-- typePlaceID: 1
-  salleID: 3
-  capaciteS: 70
-- typePlaceID: 2
-  salleID: 3
-  capaciteS: 350
-- typePlaceID: 3
-  salleID: 3
-  capaciteS: 450
-- typePlaceID: 4
-  salleID: 3
-  capaciteS: 600
-- typePlaceID: 5
-  salleID: 3
-  capaciteS: 40
-- typePlaceID: 6
-  salleID: 3
-  capaciteS: 12
-- typePlaceID: 1
-  salleID: 4
-  capaciteS: 40
-- typePlaceID: 2
-  salleID: 4
-  capaciteS: 200
-- typePlaceID: 3
-  salleID: 4
-  capaciteS: 250
-- typePlaceID: 4
-  salleID: 4
-  capaciteS: 300
-- typePlaceID: 5
-  salleID: 4
-  capaciteS: 25
-- typePlaceID: 6
-  salleID: 4
-  capaciteS: 6
-
-#organiser
-- concertID: 1
-  nomOrga: "HarmonieMusicale"
-- concertID: 1
-  nomOrga: "BienveillanceArtistique"
-- concertID: 2
-  nomOrga: "SonsEnScène"
-- concertID: 2
-  nomOrga: "CoeurDeScene"
-- concertID: 3
-  nomOrga: "HarmonieMusicale"
-- concertID: 3
-  nomOrga: "CoeurDeScene"
+- PersonelTechnique:
+  - personelTechniqueID: 1
+    roleID: 1
+    nomP: "Martin"
+    prenomP: "Dupont"  # Ingénieur du son
+
+  - personelTechniqueID: 2
+    roleID: 2
+    nomP: "Sophie"
+    prenomP: "Lefebvre"  # Éclairagiste
+
+  - personelTechniqueID: 3
+    roleID: 3
+    nomP: "Philippe"
+    prenomP: "Roux"  # Régisseur de scène
+
+  - personelTechniqueID: 4
+    roleID: 4
+    nomP: "Camille"
+    prenomP: "Moreau"  # Technicien de son
+
+  - personelTechniqueID: 5
+    roleID: 5
+    nomP: "Éric"
+    prenomP: "Lambert"  # Technicien éclairage
+
+  - personelTechniqueID: 6
+    roleID: 1
+    nomP: "Isabelle"
+    prenomP: "Gagnon"  # Ingénieur du son
+
+  - personelTechniqueID: 7
+    roleID: 2
+    nomP: "Antoine"
+    prenomP: "Lapointe"  # Éclairagiste
+
+  - personelTechniqueID: 8
+    roleID: 3
+    nomP: "David"
+    prenomP: "Bergeron"  # Régisseur de scène
+
+  - personelTechniqueID: 9
+    roleID: 4
+    nomP: "Valérie"
+    prenomP: "Leclerc"  # Technicien de son
+
+  - personelTechniqueID: 10
+    roleID: 5
+    nomP: "Sophie"
+    prenomP: "Tremblay"  # Technicien éclairage
+
+  - personelTechniqueID: 11
+    roleID: 1
+    nomP: "Thomas"
+    prenomP: "Leroy"  # Ingénieur du son
+
+  - personelTechniqueID: 12
+    roleID: 2
+    nomP: "Léa"
+    prenomP: "Dubois"  # Éclairagiste
+
+
+
+
+- Plan:
+  - planID: 1
+    planScene: null
+    planFeu: null
+    salleID: 1
+
+  - planID: 2
+    planScene: null
+    planFeu: null
+    salleID: 2
+
+  - planID: 3
+    planScene: null
+    planFeu: null
+    salleID: 3
+
+  - planID: 4
+    planScene: null
+    planFeu: null
+    salleID: 4
+
+  - planID: 5
+    planScene: null
+    planFeu: null
+    salleID: 1
+
+  - planID: 6
+    planScene: null
+    planFeu: null
+    salleID: 2
+
+  - planID: 7
+    planScene: null
+    planFeu: null
+    salleID: 3
+
+  - planID: 8
+    planScene: null
+    planFeu: null
+    salleID: 4
+
+
+
+
+- Hebergment:
+  - hebergementID: 1
+    nomHebergement: "Hôtel de Lyon"
+    capacitéH: 100
+    qualitéH: 4
+    lieuID: 1
+    prix: 150
+
+  - hebergementID: 2
+    nomHebergement: "Auberge des Musiciens"
+    capacitéH: 50
+    qualitéH: 3
+    lieuID: 2
+    prix: 80
+
+  - hebergementID: 3
+    nomHebergement: "Appartement du Vieux Lyon"
+    capacitéH: 30
+    qualitéH: 5
+    lieuID: 1
+    prix: 120
+
+  - hebergementID: 4
+    nomHebergement: "Chambre d hôtes du Vieux Lyon"
+    capacitéH: 10
+    qualitéH: 4
+    lieuID: 1
+    prix: 70
+
+  - hebergementID: 5
+    nomHebergement: "Hôtel Belle Vue"
+    capacitéH: 80
+    qualitéH: 4
+    lieuID: 3
+    prix: 130
+
+  - hebergementID: 6
+    nomHebergement: "Maison de Ville Lumière"
+    capacitéH: 45
+    qualitéH: 3
+    lieuID: 2
+    prix: 90
+
+
+
+
+- MaterielSalle:
+  - materielSalleID: 1
+    salleID: 1
+    nomMaterielS: "Microphone dynamique"
+    disponible: true
+
+  - materielSalleID: 2
+    salleID: 1
+    nomMaterielS: "Microphone à condensateur"
+    disponible: true
+
+  - materielSalleID: 3
+    salleID: 1
+    nomMaterielS: "Table de mixage 8 canaux"
+    disponible: true
+
+  - materielSalleID: 4
+    salleID: 1
+    nomMaterielS: "Table de mixage 16 canaux"
+    disponible: false
+
+  - materielSalleID: 5
+    salleID: 1
+    nomMaterielS: "Table de mixage numérique"
+    disponible: true
+
+  - materielSalleID: 6
+    salleID: 2
+    nomMaterielS: "Enceinte passive 12"
+    disponible: true
+
+  - materielSalleID: 7
+    salleID: 2
+    nomMaterielS: "Enceinte passive 15"
+    disponible: false
+
+  - materielSalleID: 8
+    salleID: 2
+    nomMaterielS: "Enceinte active 10"
+    disponible: true
+
+  - materielSalleID: 9
+    salleID: 2
+    nomMaterielS: "Enceinte active 18"
+    disponible: true
+
+  - materielSalleID: 10
+    salleID: 2
+    nomMaterielS: "Amplificateur de puissance 1000W"
+    disponible: true
+
+  - materielSalleID: 11
+    salleID: 3
+    nomMaterielS: "Amplificateur de puissance 2000W"
+    disponible: true
+
+  - materielSalleID: 12
+    salleID: 3
+    nomMaterielS: "Amplificateur de casque"
+    disponible: false
+
+  - materielSalleID: 13
+    salleID: 3
+    nomMaterielS: "Casque écoute professionnel"
+    disponible: true
+
+  - materielSalleID: 14
+    salleID: 3
+    nomMaterielS: "Effets audio rackables"
+    disponible: true
+
+  - materielSalleID: 15
+    salleID: 3
+    nomMaterielS: "Laser RGB 1W"
+    disponible: false
+
+  - materielSalleID: 16
+    salleID: 4
+    nomMaterielS: "Projecteur LED 100W"
+    disponible: true
+
+  - materielSalleID: 17
+    salleID: 4
+    nomMaterielS: "Projecteur LED 200W"
+    disponible: true
+
+  - materielSalleID: 18
+    salleID: 4
+    nomMaterielS: "Machine à brouillard"
+    disponible: true
+
+  - materielSalleID: 19
+    salleID: 4
+    nomMaterielS: "Machine à fumée lourde"
+    disponible: false
+
+  - materielSalleID: 20
+    salleID: 4
+    nomMaterielS: "Lyre à LED 60W"
+    disponible: true
+
+
+- Concert:
+  - concertID: 1
+    nomConcert: "Concert 1"
+    dateDebutConcert: "2023-11-28"
+    dateFinConcert: "2023-11-29"
+    ficheTechnique: "Fiche technique du concert 1"
+    catering: "Catering du concert 1"
+    salleID: 2
+    groupeID: 2
+
+  - concertID: 2
+    nomConcert: "Concert 2"
+    dateDebutConcert: "2023-11-27"
+    dateFinConcert: "2023-11-28"
+    ficheTechnique: "Fiche technique du concert 2"
+    catering: "Catering du concert 2"
+    salleID: 3
+    groupeID: 1
+
+  - concertID: 3
+    nomConcert: "Concert 3"
+    dateDebutConcert: "2023-12-23"
+    dateFinConcert: "2023-12-24"
+    ficheTechnique: "Fiche technique du concert 3"
+    catering: "Catering du concert 3"
+    salleID: 1
+    groupeID: 3
+
+
+
+- MusicienAdditionnel:
+  - musicienID: 1
+    concertID: 1
+
+  - musicienID: 2
+    concertID: 1
+
+  - musicienID: 3
+    concertID: 1
+
+  - musicienID: 4
+    concertID: 2
+
+  - musicienID: 5
+    concertID: 2
+
+  - musicienID: 4
+    concertID: 3
+
+  - musicienID: 1
+    concertID: 3
+
+
+
+- Transporte:
+  - concertID: 1
+    immatriculation: "AB-123-CD"
+
+  - concertID: 2
+    immatriculation: "EF-123-GH"
+
+  - concertID: 3
+    immatriculation: "CD-123-EF"
+
+
+- Necessiter:
+  - materielID: 1
+    concertID: 1
+  - materielID: 2
+    concertID: 1
+  - materielID: 3
+    concertID: 2
+  - materielID: 4
+    concertID: 2
+  - materielID: 5
+    concertID: 2
+  - materielID: 6
+    concertID: 2
+  - materielID: 7
+    concertID: 2
+  - materielID: 8
+    concertID: 2
+  - materielID: 9
+    concertID: 2
+  - materielID: 10
+    concertID: 1
+  - materielID: 11
+    concertID: 1
+  - materielID: 12
+    concertID: 1
+  - materielID: 13
+    concertID: 1
+  - materielID: 14
+    concertID: 1
+  - materielID: 15
+    concertID: 1
+  - materielID: 16
+    concertID: 1
+  - materielID: 17
+    concertID: 1
+  - materielID: 18
+    concertID: 1
+  - materielID: 19
+    concertID: 1
+  - materielID: 20
+    concertID: 1
+  - materielID: 21
+    concertID: 1
+  - materielID: 22
+    concertID: 1
+  - materielID: 23
+    concertID: 1
+  - materielID: 24
+    concertID: 1
+  - materielID: 25
+    concertID: 2
+  - materielID: 26
+    concertID: 2
+  - materielID: 27
+    concertID: 2
+  - materielID: 28
+    concertID: 2
+  - materielID: 29
+    concertID: 2
+  - materielID: 30
+    concertID: 2
+  - materielID: 31
+    concertID: 2
+  - materielID: 32
+    concertID: 2
+  - materielID: 33
+    concertID: 2
+  - materielID: 34
+    concertID: 2
+  - materielID: 35
+    concertID: 2
+  - materielID: 36
+    concertID: 2
+  - materielID: 37
+    concertID: 2
+  - materielID: 38
+    concertID: 2
+  - materielID: 39
+    concertID: 2
+  - materielID: 40
+    concertID: 3
+  - materielID: 41
+    concertID: 3
+  - materielID: 42
+    concertID: 3
+  - materielID: 43
+    concertID: 3
+  - materielID: 44
+    concertID: 3
+  - materielID: 45
+    concertID: 3
+  - materielID: 46
+    concertID: 3
+  - materielID: 47
+    concertID: 3
+  - materielID: 48
+    concertID: 3
+  - materielID: 49
+    concertID: 3
+  - materielID: 50
+    concertID: 3
+  - materielID: 51
+    concertID: 3
+  - materielID: 52
+    concertID: 3
+  - materielID: 53
+    concertID: 3
+  - materielID: 54
+    concertID: 3
+  - materielID: 55
+    concertID: 3
+  - materielID: 56
+    concertID: 3
+  - materielID: 57
+    concertID: 3
+  - materielID: 58
+    concertID: 3
+  - materielID: 59
+    concertID: 3
+
+
+- Composer:
+  - artisteID: 1
+    groupeID: 1
+
+  - artisteID: 2
+    groupeID: 1
+
+  - artisteID: 3
+    groupeID: 1
+
+  - artisteID: 4
+    groupeID: 2
+
+  - artisteID: 9
+    groupeID: 4
+
+  - artisteID: 7
+    groupeID: 3
+
+  - artisteID: 5
+    groupeID: 3
+
+
+
+
+
+
+- Prepare:
+  - personelTechniqueID: 1
+    concertID: 1
+
+  - personelTechniqueID: 2
+    concertID: 1
+
+  - personelTechniqueID: 3
+    concertID: 1
+
+  - personelTechniqueID: 4
+    concertID: 2
+
+  - personelTechniqueID: 5
+    concertID: 2
+
+  - personelTechniqueID: 6
+    concertID: 3
+
+  - personelTechniqueID: 7
+    concertID: 3
+
+  - personelTechniqueID: 8
+    concertID: 3
+
+  - personelTechniqueID: 9
+    concertID: 1
+
+  - personelTechniqueID: 10
+    concertID: 1
+
+  - personelTechniqueID: 11
+    concertID: 2
+
+  - personelTechniqueID: 12
+    concertID: 3
+
+
+
+
+
+
+- Utilise:
+  - materielArtisteID: 1
+    groupeID: 1
+    quantiteMaterielArt: 2
+  - materielArtisteID: 2
+    groupeID: 2
+    quantiteMaterielArt: 1
+  - materielArtisteID: 3
+    groupeID: 1
+    quantiteMaterielArt: 1
+  - materielArtisteID: 4
+    groupeID: 3
+    quantiteMaterielArt: 3
+  - materielArtisteID: 5
+    groupeID: 4
+    quantiteMaterielArt: 2
+
+
+
+- PARTICIPE:
+  - concertId: 1
+    groupeID: 1
+  - concertId: 2
+    groupeID: 2
+  - concertId: 3
+    groupeID: 3
+
+
+- SALLETYPEPLACE:
+  - typePlaceID: 1
+    salleID: 1
+    capaciteS: 50
+  - typePlaceID: 2
+    salleID: 1
+    capaciteS: 200
+  - typePlaceID: 3
+    salleID: 1
+    capaciteS: 300
+  - typePlaceID: 4
+    salleID: 1
+    capaciteS: 400
+  - typePlaceID: 5
+    salleID: 1
+    capaciteS: 30
+  - typePlaceID: 6
+    salleID: 1
+    capaciteS: 10
+  - typePlaceID: 1
+    salleID: 2
+    capaciteS: 30
+  - typePlaceID: 2
+    salleID: 2
+    capaciteS: 150
+  - typePlaceID: 3
+    salleID: 2
+    capaciteS: 200
+  - typePlaceID: 4
+    salleID: 2
+    capaciteS: 250
+  - typePlaceID: 5
+    salleID: 2
+    capaciteS: 20
+  - typePlaceID: 6
+    salleID: 2
+    capaciteS: 8
+  - typePlaceID: 1
+    salleID: 3
+    capaciteS: 70
+  - typePlaceID: 2
+    salleID: 3
+    capaciteS: 350
+  - typePlaceID: 3
+    salleID: 3
+    capaciteS: 450
+  - typePlaceID: 4
+    salleID: 3
+    capaciteS: 600
+  - typePlaceID: 5
+    salleID: 3
+    capaciteS: 40
+  - typePlaceID: 6
+    salleID: 3
+    capaciteS: 12
+  - typePlaceID: 1
+    salleID: 4
+    capaciteS: 40
+  - typePlaceID: 2
+    salleID: 4
+    capaciteS: 200
+  - typePlaceID: 3
+    salleID: 4
+    capaciteS: 250
+  - typePlaceID: 4
+    salleID: 4
+    capaciteS: 300
+  - typePlaceID: 5
+    salleID: 4
+    capaciteS: 25
+  - typePlaceID: 6
+    salleID: 4
+    capaciteS: 6
+
+- ORGANISER:
+  - concertID: 1
+    nomOrga: "HarmonieMusicale"
+  - concertID: 1
+    nomOrga: "BienveillanceArtistique"
+  - concertID: 2
+    nomOrga: "SonsEnScène"
+  - concertID: 2
+    nomOrga: "CoeurDeScene"
+  - concertID: 3
+    nomOrga: "HarmonieMusicale"
+  - concertID: 3
+    nomOrga: "CoeurDeScene"
