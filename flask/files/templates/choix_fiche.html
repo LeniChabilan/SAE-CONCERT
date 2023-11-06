@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <link rel="stylesheet" href="../static/choix_fiche.css" />
-  <head>
-    <meta charset="utf-8" />
-    <title>ConcertIUT'O</title>
-  </head>
+{% extends 'base.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='choix_fiche.css')}}" />
+{% endblock %} {% block content %}
   <div class="main">
     <div class="middle">
-      <h1 id="modification">Modifier une page</h1>
+      <h1 id="modification">Modifier une fiche</h1>
     </div>
     <ul class="listeOptions">
       <li>
@@ -97,3 +93,4 @@
     </ul>
   </div>
 </html>
+{% endblock %}

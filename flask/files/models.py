@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine, Column, Integer, String, Boolean, Date, Float, Text, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.ext.declarative import declarative_db.Model
 from sqlalchemy.orm import relationship,sessionmaker
 from sqlalchemy import func
 import pymysql
 pymysql.install_as_MySQLdb()
-Base = declarative_base()
+db.Model = declarative_db.Model()
 from .app import db
 from flask_login import UserMixin
 from .app import login_manager
@@ -88,7 +88,7 @@ class Salle(db.Model):
     salleID = Column(Integer, primary_key=True)
     nomSalle = Column(String(255))
     capaciteTotaleSalle = Column(Integer)
-    planSalle = Column(Integer)  # Utilisez le type de données approprié pour BLOB, selon votre base de données
+    planSalle = Column(Integer)  # Utilisez le type de données approprié pour BLOB, selon votre db.Model de données
     dimensionOuverture = Column(Float)
     dimensionProfondeur = Column(Float)
     lieuID = Column(Integer, ForeignKey('LIEU.lieuID'))
