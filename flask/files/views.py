@@ -48,3 +48,7 @@ def connexion():
 def logout():
     logout_user()
     return redirect(url_for('connexion'))
+
+@app.route("/choix_fiche/", methods = ("GET","POST",))
+def choix_fiche():
+    return render_template("choix_fiche.html")
