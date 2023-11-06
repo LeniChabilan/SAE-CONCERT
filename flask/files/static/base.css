@@ -7,6 +7,11 @@ header {
   background-color: #2a2b38;
 }
 
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
 .img_base {
   height: 5vw;
   width: 5vw;
@@ -14,6 +19,7 @@ header {
   margin-right: 2vw;
   margin-left: 2vw;
 }
+
 
 #nom_Entreprise {
   color: #e9c46a;
@@ -153,4 +159,11 @@ header {
   #nom_Entreprise {
     margin-right: 10vw;
   }
+}
+
+
+.username{
+  margin-right: 1vw;
+  color: #e9c46a;
+  font-size: 2vw;
 }
