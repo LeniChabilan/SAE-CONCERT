@@ -38,6 +38,11 @@ body.dark .listeOptions {
   height: 53vh;
   width: 28vw;
 }
+.listeOptions div:hover img{
+  width: 19vw;
+  height: 24vh;
+  transition-duration: 0.2s;
+}
 
 .listeOptions a {
   color: #e9c46a;
@@ -48,16 +53,12 @@ body.dark .listeOptions {
   text-align: center;
 }
 
-.listeOptions a:hover {
+.listeOptions div:hover a {
   font-size: 2.1em;
   transition-duration: 0.2s;
 }
 
-/* .listeOptions img:hover {
-  width: 19vw;
-  height: 24vh;
-  transition-duration: 0.2s;
-} */
+
 
 .listeOptions img {
   width: 18vw;
