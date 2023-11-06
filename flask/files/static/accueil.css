@@ -53,11 +53,11 @@ body.dark .listeOptions {
   transition-duration: 0.2s;
 }
 
-.listeOptions img:hover {
+/* .listeOptions img:hover {
   width: 19vw;
   height: 24vh;
   transition-duration: 0.2s;
-}
+} */
 
 .listeOptions img {
   width: 18vw;

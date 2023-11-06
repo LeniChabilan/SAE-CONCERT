@@ -17,7 +17,12 @@ def home():
 @app.route("/asso/bien-etre")
 @login_required
 def accueil_bien_etre():
-    return render_template("accueil_bien_etre.html")    
+    return render_template("accueil_bien_etre.html") 
+
+@app.route("/asso/technique")
+@login_required
+def accueil_technique():
+    return render_template("accueil_technique.html")    
 
 class LoginForm(FlaskForm):
     nomOrga = StringField('Username')
@@ -30,6 +35,7 @@ class LoginForm(FlaskForm):
         m = sha256()
         m.update(self.motDePasse.data.encode())
         passwd = m.hexdigest()
+        
         return user if passwd == user.motDePasse else None
 
 @app.route("/connexion/", methods =("GET","POST",))
@@ -40,8 +46,12 @@ def connexion():
     elif f.validate_on_submit():
         user = f.get_authenticated_user()
         if user:
-            login_user(user)
-            return redirect(url_for("accueil_bien_etre"))
+            if user.typeOrga == "Technique":
+                login_user(user)
+                return redirect(url_for("accueil_technique"))
+            else:
+                login_user(user)
+                return redirect(url_for("accueil_bien_etre"))
     return render_template("connexion.html", form=f)
 
 @app.route("/logout/")
