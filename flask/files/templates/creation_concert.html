@@ -6,35 +6,35 @@
         <div class="title">Creer votre concert !</div>
         <form role="form" method ="POST" action ="{{ url_for('save_concert') }}">
             <div class="input-container ">
-                <input placeholder="Nom" type="text" class="input" name="nom">
+                <input placeholder="Nom" type="text" class="input" name="nom" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="nom">Nom</label>
              </div>
               <div class="input-container">
-                <input placeholder="" type="date" class="input" name="dateD">
+                <input placeholder="" type="date" class="input" name="dateD" required>
                 <label class="iLabel" for="dateD"></label>
               </div>
               <div class="input-container">
-                <input placeholder="" type="date" class="input" name="dateF">
+                <input placeholder="" type="date" class="input" name="dateF" required>
                 <label class="iLabel" for="dateF"></label>
               </div>
               <div class="input-container">
-                <input placeholder="Fiche technique" type="text" class="input" name="fiche">
+                <input placeholder="Fiche technique" type="text" class="input" name="fiche" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="Fiche">Fiche technique</label>
               </div>
               <div class="input-container">
-                <input placeholder="Catering" type="text" class="input" name="catering">
+                <input placeholder="Catering" type="text" class="input" name="catering" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="catering">Catering</label>
               </div>
               <div class="input-container">
-                <input placeholder="Salle" type="text" class="input" name="salle">
+                <input placeholder="Salle" type="text" class="input" name="salle" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="salle">Salle</label>
               </div>
               <div class="input-container">
-                <input placeholder="Groupe" type="text" class="input" name="groupe">
+                <input placeholder="Groupe" type="text" class="input" name="groupe" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="groupe">Groupe</label>
               </div>
