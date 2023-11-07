@@ -3,6 +3,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship,sessionmaker
 from sqlalchemy import func
 import pymysql
+from datetime import datetime
+
 pymysql.install_as_MySQLdb()
 Base = declarative_base()
 from .app import db
@@ -140,6 +142,17 @@ class Concert(db.Model):
     salle = relationship(Salle)
     groupe = relationship(Groupe)
 
+    def __init__(self, nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
+        self.id = get_max_id()
+        self.nomConcert = nom
+        self.dateDebutConcert = dateDebut
+        self.dateFinConcert = dateFin
+        self.ficheTechnique = ficheTechnique
+        self.catering = catering
+        self.salleID = salle
+        self.groupeID = groupe
+        
+
 class MusicienAdditionnel(db.Model):
     __tablename__ = 'MUSICIENADDITIONEL'
     musicienID = Column(Integer, ForeignKey('MUSICIEN.musicienID'), primary_key=True)
@@ -222,4 +235,18 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
+
+def get_max_id():
+    return db.session.query(func.max(Concert.concertID)).all()[0][0] + 1
+
+def get_id_salle_by_nom(nom):
+    return db.session.query(Salle.salleID).filter_by(nomSalle = nom).limit(1).all()[0][0]
+
+def get_id_groupe_by_nom(nom):
+    return db.session.query(Groupe.groupeID).filter_by(nomGroupe = nom).limit(1).all()[0][0]
+
+def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
+    concert = Concert(Nom, datetime.strptime(dateDebut,"%Y-%m-%d").date(), datetime.strptime(dateFin,"%Y-%m-%d").date(), ficheTechnique, catering, get_id_salle_by_nom(salle), get_id_groupe_by_nom(groupe))
+    db.session.add(concert)
+    db.session.commit()
 
