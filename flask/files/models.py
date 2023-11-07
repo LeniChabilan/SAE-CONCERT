@@ -206,6 +206,10 @@ class Organiser(db.Model):
     concert = relationship(Concert)
     organisation = relationship(Organisation)
 
+
+def get_info_concert():
+    Concert.query.all()
+
 if __name__ == '__main__':
 
     login='chabilan'
@@ -217,3 +221,5 @@ if __name__ == '__main__':
 
     Session = sessionmaker(bind=engine)
     session = Session()
+
+
