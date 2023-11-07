@@ -14,3 +14,4 @@ flask-sqlalchemy
 flask-wtf
 flask-login
 pymysql
+mysqlclient

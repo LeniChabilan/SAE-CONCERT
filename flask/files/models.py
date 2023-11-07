@@ -5,7 +5,6 @@ from sqlalchemy import func
 import pymysql
 from datetime import datetime
 
-pymysql.install_as_MySQLdb()
 Base = declarative_base()
 from .app import db
 from flask_login import UserMixin
