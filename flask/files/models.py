@@ -32,7 +32,7 @@ class RoleP(db.Model):
 class Organisation(db.Model, UserMixin):
     __tablename__ = 'ORGANISATION'
     nomOrga = db.Column(String(50), primary_key=True)
-    motDePasse = db.Column(String(50))
+    motDePasse = db.Column(String(500))
     typeOrga = db.Column(String(50))
 
     def get_id(self):
