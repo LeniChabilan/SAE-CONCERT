@@ -4,39 +4,39 @@
 <main>
     <div class="form">
         <div class="title">Creer votre concert !</div>
-        <form role="form" method ="POST" action ="{{ url_for('home') }}">
+        <form role="form" method ="POST" action ="{{ url_for('save_concert') }}">
             <div class="input-container ">
-                <input placeholder="Nom" type="text" class="input" id="firstname">
+                <input placeholder="Nom" type="text" class="input" name="nom">
                 <div class="cut"></div>
-                <label class="iLabel" for="firstname">Nom</label>
+                <label class="iLabel" for="nom">Nom</label>
              </div>
               <div class="input-container">
-                <input placeholder="" type="date" class="input" id="lastname">
-                <label class="iLabel" for="lastname"></label>
+                <input placeholder="" type="date" class="input" name="dateD">
+                <label class="iLabel" for="dateD"></label>
               </div>
               <div class="input-container">
-                <input placeholder="" type="date" class="input" id="email">
-                <label class="iLabel" for="email"></label>
+                <input placeholder="" type="date" class="input" name="dateF">
+                <label class="iLabel" for="dateF"></label>
               </div>
               <div class="input-container">
-                <input placeholder="Fiche technique" type="text" class="input" id="email">
+                <input placeholder="Fiche technique" type="text" class="input" name="fiche">
                 <div class="cut"></div>
-                <label class="iLabel" for="email">Fiche technique</label>
+                <label class="iLabel" for="Fiche">Fiche technique</label>
               </div>
               <div class="input-container">
-                <input placeholder="Catering" type="text" class="input" id="email">
+                <input placeholder="Catering" type="text" class="input" name="catering">
                 <div class="cut"></div>
-                <label class="iLabel" for="email">Catering</label>
+                <label class="iLabel" for="catering">Catering</label>
               </div>
               <div class="input-container">
-                <input placeholder="Salle" type="text" class="input" id="email">
+                <input placeholder="Salle" type="text" class="input" name="salle">
                 <div class="cut"></div>
-                <label class="iLabel" for="email">Salle</label>
+                <label class="iLabel" for="salle">Salle</label>
               </div>
               <div class="input-container">
-                <input placeholder="Groupe" type="text" class="input" id="email">
+                <input placeholder="Groupe" type="text" class="input" name="groupe">
                 <div class="cut"></div>
-                <label class="iLabel" for="email">Groupe</label>
+                <label class="iLabel" for="groupe">Groupe</label>
               </div>
               
               <button class="submit" type="text">Enregistrer</button>
