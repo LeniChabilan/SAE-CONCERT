@@ -15,7 +15,12 @@ def mkpath(p):
             os.path.dirname(__file__),
             p))
 
-app.config['SQLALCHEMY_DATABASE_URI'] = ('sqlite:///'+mkpath('../../creaConcert.db'))
+#app.config['SQLALCHEMY_DATABASE_URI'] = ('sqlite:///'+mkpath('../../creaConcert.db'))
+login='chabilan'
+passwd='chabilan'
+serveur='servinfo-maria'
+bd='DBchabilan'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd
 db = SQLAlchemy(app)
 app.config["SECRET_KEY"] = "4d166f5f-fa64-461b-878d-d7077d4ef1a2"
 
