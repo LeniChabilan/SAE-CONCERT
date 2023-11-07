@@ -208,7 +208,7 @@ class Organiser(db.Model):
 
 
 def get_info_concert():
-    Concert.query.all()
+    Concert.query.limit(10).all()
 
 if __name__ == '__main__':
 

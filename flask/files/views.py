@@ -8,6 +8,7 @@ from .models import Organisation
 from wtforms.validators import DataRequired
 from .models import Organisation
 from flask import request
+from .models import get_info_concert
 
 @app.route("/")
 def home():
@@ -66,3 +67,7 @@ def choix_fiche():
 @app.route("/creation_concert")
 def creation_concert():
     return render_template("creation_concert.html")
+
+@app.route("/liste_concerts/", methods = ("GET","POST",))
+def liste_concerts():
+    return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert())

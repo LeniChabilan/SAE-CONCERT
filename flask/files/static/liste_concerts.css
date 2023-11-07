@@ -1,0 +1,58 @@
+body{
+  margin: 0;
+}
+
+.main{
+    height: 85vh;
+}
+.partie_principale{
+    display:flex;
+}
+
+.middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2D8DD2;
+    width: 22vw;
+    height: 22vh;
+    text-align: center;
+    border-radius: 45%;
+    margin-left: 39vw;
+}
+
+body.light .main .partie_principale, body.light .main {
+  background-color: #e8e5da;
+}
+
+body.dark .main .partie_principale, body.dark .main{
+  background-color: #212121;
+}
+
+#modification{
+    color: #FFFF;
+    font-size: 2vw;
+}
+
+.liste_des_concerts{
+    flex-grow:1;
+    margin-top: 5vh;
+    margin-left: 10%;
+    background-color: #264263;
+    margin-right: 8%;
+    margin-bottom: 5%;
+}
+
+.liste_des_concerts, th{
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+th{
+    padding-left:2vw;
+    padding-right:2vw;
+    padding-bottom: 1vh;
+    padding-top:1vh;
+    color: white;
+}
