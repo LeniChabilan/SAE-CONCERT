@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine, Column, Integer, String, Boolean, Date, Float, Text, ForeignKey
-from sqlalchemy.ext.declarative import declarative_db.Model
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship,sessionmaker
 from sqlalchemy import func
 import pymysql
 pymysql.install_as_MySQLdb()
-db.Model = declarative_db.Model()
+Base = declarative_base()
 from .app import db
 from flask_login import UserMixin
 from .app import login_manager
