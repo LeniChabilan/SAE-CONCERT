@@ -59,8 +59,14 @@
   - nomOrga: "CoeurDeScene"
     motDePasse: "mdp123"
     typeOrga: "Bien-être des Artistes"
+  
+  - nomOrga: "Asso1"
+    motDePasse: "mdp1"
+    typeOrga: "Bien-être des Artistes"
 
-
+  - nomOrga: "Asso2"
+    motDePasse: "mdp2"
+    typeOrga: "Technique"
 
 
 
