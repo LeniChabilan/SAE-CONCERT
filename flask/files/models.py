@@ -220,33 +220,53 @@ class Organiser(db.Model):
     organisation = relationship(Organisation)
 
 
+
 def get_info_concert():
     return db.session.query(Concert).all()
 
-if __name__ == '__main__':
-
+def get_max_id():
     login='chabilan'
     passwd='chabilan'
     serveur='servinfo-maria'
-    bd='DBchabilan '
+    bd='DBchabilan'
     engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-
-
     Session = sessionmaker(bind=engine)
     session = Session()
-
-
-def get_max_id():
-    return db.session.query(func.max(Concert.concertID)).all()[0][0] + 1
+    return session.query(func.max(Concert.concertID)).all()[0][0] + 1
 
 def get_id_salle_by_nom(nom):
-    return db.session.query(Salle.salleID).filter_by(nomSalle = nom).limit(1).all()[0][0]
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    return session.query(Salle.salleID).filter_by(nomSalle = nom).limit(1).all()[0][0]
 
 def get_id_groupe_by_nom(nom):
-    return db.session.query(Groupe.groupeID).filter_by(nomGroupe = nom).limit(1).all()[0][0]
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    return session.query(Groupe.groupeID).filter_by(nomGroupe = nom).limit(1).all()[0][0]
 
 def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
     concert = Concert(Nom, datetime.strptime(dateDebut,"%Y-%m-%d").date(), datetime.strptime(dateFin,"%Y-%m-%d").date(), ficheTechnique, catering, get_id_salle_by_nom(salle), get_id_groupe_by_nom(groupe))
-    db.session.add(concert)
-    db.session.commit()
+    session.add(concert)
+    session.commit()
+
+
+
+
 
