@@ -8,6 +8,7 @@ from .models import Organisation, ajouter_concert
 from wtforms.validators import DataRequired
 from .models import Organisation
 from flask import request
+from .models import get_info_concert
 
 @app.route("/")
 def home():
@@ -67,6 +68,11 @@ def choix_fiche():
 def creation_concert():
     return render_template("creation_concert.html")
 
+
+@app.route("/liste_concerts/", methods = ("GET","POST",))
+def liste_concerts():
+    return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert())
+
 @app.route("/save-concert", methods =["POST"])
 def save_concert():
     nom = request.form.get("nom")
@@ -78,3 +84,4 @@ def save_concert():
     groupe = request.form.get("groupe")
     ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
     return render_template("home.html", title="Home")
+

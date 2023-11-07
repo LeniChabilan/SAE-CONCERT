@@ -219,6 +219,10 @@ class Organiser(db.Model):
     concert = relationship(Concert)
     organisation = relationship(Organisation)
 
+
+def get_info_concert():
+    return db.session.query(Concert).all()
+
 if __name__ == '__main__':
 
     login='chabilan'
@@ -230,6 +234,7 @@ if __name__ == '__main__':
 
     Session = sessionmaker(bind=engine)
     session = Session()
+
 
 def get_max_id():
     return db.session.query(func.max(Concert.concertID)).all()[0][0] + 1
@@ -244,3 +249,4 @@ def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, gr
     concert = Concert(Nom, datetime.strptime(dateDebut,"%Y-%m-%d").date(), datetime.strptime(dateFin,"%Y-%m-%d").date(), ficheTechnique, catering, get_id_salle_by_nom(salle), get_id_groupe_by_nom(groupe))
     db.session.add(concert)
     db.session.commit()
+

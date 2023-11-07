@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block styles %} {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='liste_concerts.css')}}" />
+{% endblock %} {% block content %}
+<div class="main">
+    <div class="middle">
+        <h1 id="modification">Liste des concerts</h1>
+    </div>
+    <div class="partie_principale">
+        <table class="liste_des_concerts">
+            <tr>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Artiste</th>
+                <th>Salle</th>
+            </tr>
+            {% if concerts!=None %}
+                {% for x in concerts %}
+                <tr>
+                    <th>{{x.nomConcert}}</th>
+                    <th>{{x.dateDebutConcert}}</th>
+                    <th>{{x.groupe.nomGroupe}}</th>
+                    <th>{{x.salle.nomSalle}}</th>
+                    <a href="#"><th>Modifier</th></a>
+                    <a href="#"><th>Supprimer</a>
+                </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+    </div>
+</div>
+{% endblock %}
