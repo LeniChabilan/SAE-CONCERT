@@ -7,12 +7,19 @@ body.light .left {
   background-color: #e8e5da;
 }
 
-body.dark .left {
+body.light .left > h2  {
+  color: #212121;
+  text-align: left;
+  margin-left: 5rem;
+  font-size: 2vw;
+}
+
+body.dark .left{
   background-color: #212121;
 }
 
-.left > h2 {
-  color: white;
+body.dark .left > h2{
+  color: #e8e5da;
   text-align: left;
   margin-left: 5rem;
   font-size: 2vw;
@@ -33,23 +40,33 @@ body.dark .left {
 
 .main {
   background-image: url("../static/img/fond.jpg");
-  background-size: 75%;
+  background-size: 80%;
   background-position: 25vw;
 }
 
-.buttonOrg {
+.buttonOrg{
   display: inline-block;
   text-align: center;
   cursor: pointer;
-  color: white;
   border-radius: 2rem;
   border: none;
-  background-color: #d33fc4;
   margin-left: 5vw;
   transition-duration: 0.4s;
   width: 20vw;
-  height: 3vh;
+  height: 10vh;
+  
 }
+
+body.light .buttonOrg {
+  color: #e8e5da;
+  background-color: #212121;
+}
+
+body.dark .buttonOrg {
+  color: #212121;
+  background-color: #e8e5da;
+}
+
 
 .buttonOrg:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),

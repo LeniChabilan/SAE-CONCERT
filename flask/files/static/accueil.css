@@ -45,18 +45,18 @@ body.dark .listeOptions {
 }
 
 .listeOptions a {
-  color: #e9c46a;
+  color: #ffeba7;
   text-decoration: none;
   font-size: 2em;
   margin: 1em;
   font-weight: bold;
   text-align: center;
 }
-
+/* 
 .listeOptions div:hover a {
   font-size: 2.1em;
   transition-duration: 0.2s;
-}
+} */
 
 
 

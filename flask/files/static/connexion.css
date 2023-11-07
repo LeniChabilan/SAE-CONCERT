@@ -25,6 +25,7 @@ body.dark .main {
   padding: 1.9rem 1.2rem;
   text-align: center;
   background: #2a2b38;
+  border-radius: 20px;
 }
 
 /*Inputs*/

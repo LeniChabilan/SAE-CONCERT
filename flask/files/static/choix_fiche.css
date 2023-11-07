@@ -5,7 +5,7 @@ body{margin:0;}
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #2D8DD2;
+    background-color: #2a2b38;
     width: 22vw;
     height: 22vh;
     text-align: center;
@@ -17,12 +17,12 @@ body.light .main {
     background-color: #e8e5da;
   }
   
-  body.dark .main {
+body.dark .main {
     background-color: #212121;
   }
 
 #modification{
-    color: #FFFF;
+    color: #ffeba7;
     font-size: 2vw;
 }
 
@@ -38,7 +38,7 @@ body.light .main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: #264263;
+    background-color: #2a2b38;
     margin: 3vw;
     margin-top: 2vw;
     border-radius: 5%;
@@ -47,7 +47,7 @@ body.light .main {
 }
 
 .text_link{
-    color: #E9C46A;
+    color: #ffeba7;
     text-decoration: none;
     font-size: 2vw;
     margin: 1vw;

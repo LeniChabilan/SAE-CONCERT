@@ -6,7 +6,7 @@
   <head>
     {% block head %}
     <meta charset="utf-8" />
-    <title>ConcertIUT'O</title>
+    <title>Concert'O</title>
     {% endblock %}
   </head>
   <body class="light">
@@ -14,7 +14,7 @@
       <a href="{{ url_for('home') }}">
         <img class="img_base" id="img1" src="./../static/img/logo.png" alt="image du logo de l'application" />
       </a>
-      <h2 id="nom_Entreprise">ConcertIUT'O</h2>
+      <h2 id="nom_Entreprise">Concert'O</h2>
       <ul>
       {% if current_user.is_authenticated%}
         <li><a class="username" >{{ current_user.nomOrga }}</a></li>
