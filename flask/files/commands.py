@@ -4,12 +4,6 @@ from datetime import datetime
 
 @app.cli.command()
 @click.argument('filename')
-
-
-
-
-
-
 def loaddb(filename):
     '''Crée les tables et les remplit de données'''
     db.create_all()
@@ -39,8 +33,9 @@ def loaddb(filename):
         if "Organisation" in nomTable:
             organisations = nomTable["Organisation"]
             for organisation_data in organisations:
-                organisation = Organisation(nomOrga=organisation_data["nomOrga"], motDePasse=organisation_data["motDePasse"], typeOrga=organisation_data["typeOrga"])
-                db.session.add(organisation)
+                neworg(organisation_data["nomOrga"],organisation_data["motDePasse"],organisation_data["typeOrga"])
+                # organisation = Organisation(nomOrga=organisation_data["nomOrga"], motDePasse=organisation_data["motDePasse"], typeOrga=organisation_data["typeOrga"])
+                # db.session.add(organisation)
 
         if "TypePlace" in nomTable:
             typePlaces = nomTable["TypePlace"]
@@ -179,10 +174,10 @@ def syncdb():
     '''Creates all missing tables.'''
     db.create_all()
 
-@app.cli.command()
-@click.argument('nomorga')
-@click.argument('motDePasse')
-@click.argument('typeorga')
+# @app.cli.command()
+# @click.argument('nomorga')
+# @click.argument('motDePasse')
+# @click.argument('typeorga')
 def neworg(nomorga, motdepasse,typeorga):
     print(nomorga)
     from .models import Organisation
@@ -193,4 +188,4 @@ def neworg(nomorga, motdepasse,typeorga):
     print(m)
     u = Organisation(nomOrga=nomorga, motDePasse= m.hexdigest(), typeOrga=typeorga)
     db.session.add(u)
-    db.session.commit()
+    # db.session.commit()
