@@ -11,31 +11,36 @@
   </head>
   <body class="light">
     <header>
-      <a href="{{ url_for('home') }}">
-        <img class="img_base" id="img1" src="./../static/img/logo.png" alt="image du logo de l'application" />
-      </a>
-      <h2 id="nom_Entreprise">Concert'O</h2>
-      <ul>
-      {% if current_user.is_authenticated%}
-        <li><a class="username" >{{ current_user.nomOrga }}</a></li>
-        <li><a href="{{ url_for('logout') }}" id="fond_bouton">
-          <button type="button" id="bouton_se_connecter">Logout</button>
-        </a></li>
-        {% else %}
-        <li> <a href="{{ url_for('connexion') }}" id="fond_bouton">
-          <button type="button" id="bouton_se_connecter">Se connecter</button>
-        </a></li>
-      {% endif %}
-      </ul>     
-      <a href="{{ url_for('home') }}" id="home">
-        <img class="img_base" id="img2" src="./../static/img/home.png" alt="logo silouhette maison" />
-      </a>
-      <div class="toggle-switch">
-        <label class="switch-label">
-          <input type="checkbox" class="checkbox" />
-          <span class="slider"></span>
-        </label>
+      <div class="gauche">
+        <a href="{{ url_for('home') }}">
+          <img class="img_base" id="img1" src="./../static/img/logomusiquejaune.png" alt="image du logo de l'application" />
+        </a>
+        <h2 id="nom_Entreprise">Concert'O</h2>
       </div>
+      <div class="droite">
+        <ul>
+        {% if current_user.is_authenticated%}
+          <li><a class="username" >{{ current_user.nomOrga }}</a></li>
+          <li class="logout"><a href="{{ url_for('logout') }}" id="fond_bouton">
+            <button type="button" id="bouton_se_connecter">Logout</button>
+          </a></li>
+          {% else %}
+          <li> <a href="{{ url_for('connexion') }}" id="fond_bouton">
+            <button type="button" id="bouton_se_connecter">Se connecter</button>
+          </a></li>
+        {% endif %}
+        </ul>
+            
+        <a href="{{ url_for('home') }}" id="home">
+          <img class="img_base" id="img2" src="./../static/img/home.png" alt="logo silouhette maison" />
+        </a>
+        <div class="toggle-switch">
+          <label class="switch-label">
+            <input type="checkbox" class="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div> 
     </header>
     <script
       type="text/javascript"
