@@ -42,7 +42,7 @@ body.dark .left > h2{
 
 .main {
   background-image: url("../static/img/fond.jpg");
-  background-size: 80%;
+  background-size: 100%;
   background-position: 25vw;
 }
 
@@ -106,7 +106,7 @@ body.dark .buttonOrg {
 
 @media screen and (max-width: 1600px){
   .main{
-    background-size: 85%;
+    background-size: 100%;
   }
 }
 
@@ -118,7 +118,7 @@ body.dark .buttonOrg {
 
 @media screen and (max-width: 1200px){
   .main{
-    background-size: 115%;
+    background-size: 100%;
   }
 }
 

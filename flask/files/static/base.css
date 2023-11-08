@@ -1,3 +1,9 @@
+html{
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
 header {
   display: flex;
   justify-content: space-between;
@@ -20,6 +26,14 @@ ul {
   margin-left: 2vw;
 }
 
+
+.img_maison {
+  height: 2vw;
+  width: 2vw;
+  border-radius: 15%;
+  margin-right: 2vw;
+  margin-left: 2vw;
+}
 
 #nom_Entreprise {
   color: #ffeba7;
@@ -76,8 +90,8 @@ ul {
 
 .toggle-switch {
   position: relative;
-  width: 6rem;
-  height: 5rem;
+  width: 6vw;
+  height: 5vh;
   --light: #d8dbe0;
   --dark: #28292c;
   --link: rgb(27, 129, 112);
@@ -88,13 +102,14 @@ ul {
 
 .switch-label {
   position: absolute;
-  width: 100%;
-  height: 50%;
+  width: 5vw;
+  height: 4vh;
   background-color: var(--dark);
-  border-radius: 25px;
+  border-radius: 25em;
   cursor: pointer;
-  border: 3px solid var(--dark);
-  font-size: 1vw;
+  
+  font-size: 1vh;
+
 }
 
 .checkbox {
@@ -104,9 +119,9 @@ ul {
 
 .slider {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
+  width: 5vw;
+  height: 4vh;
+  border-radius: 25em;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   
@@ -120,44 +135,32 @@ ul {
 .slider::before {
   content: "";
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 25px;
-  height: 25px;
+  margin-top: 1em;
+  left: 1em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
-  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
-  box-shadow: inset 12px -4px 0px 0px var(--light);
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--link);
+  box-shadow: inset 0.5em -0.25em  var(--light);
   background-color: var(--dark);
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  font-size: 1vh;
   
 }
 
 .checkbox:checked ~ .slider::before {
-  -webkit-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  transform: translateX(50px);
+  -webkit-transform: translateX(5em);
+  -ms-transform: translateX(5em);
+  transform: translateX(5em);
   background-color: var(--dark);
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-.btn-toggle {
-  position: absolute;
-  top: 15rem;
-  right: 15rem;
-  width: 80rem;
-  height: 80rem;
-  border-radius: 50%;
-  background: #333;
-  color: #fff;
-  border: 1rem solid #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+.noligne{
+  text-decoration: none;
 }
-
 @media screen and (max-width: 1100px) {
   #nom_Entreprise {
     margin-right: 0vw;
@@ -185,3 +188,5 @@ ul {
   margin-right: 2%;
   
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');

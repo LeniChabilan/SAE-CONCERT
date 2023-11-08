@@ -8,7 +8,9 @@ from .models import Organisation, ajouter_concert
 from wtforms.validators import DataRequired
 from .models import Organisation
 from flask import request
-from .models import get_info_concert,supprimer_concert
+from .models import get_info_concert
+from .models import supprimer_concert
+
 
 @app.route("/")
 def home():
@@ -83,13 +85,20 @@ def save_concert():
     salle = request.form.get("salle")
     groupe = request.form.get("groupe")
     ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
-    return render_template("home.html", title="Home")
+    return render_template("accueil_bien_etre.html", title="Home")
 
 @app.route("/sup-concert/<int:id>")
 def sup_concert(id):
     supprimer_concert(id)
-    return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert())
+    return render_template("liste_concerts.html",title="Les Concerts", concerts=get_info_concert())
 
 @app.route("/entrer-groupe")
 def inscription_groupe():
     return render_template("entrer_groupe.html")
+@app.route("/retour/<string:typeOrga>")
+def retour(typeOrga):
+    print(typeOrga)
+    if typeOrga == "Technique":
+        return redirect(url_for("accueil_technique"))
+    else:
+        return redirect(url_for("accueil_bien_etre"))

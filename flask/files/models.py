@@ -253,6 +253,8 @@ def get_max_id():
     engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
     Session = sessionmaker(bind=engine)
     session = Session()
+    if session.query(func.max(Concert.concertID)).all()[0][0] is None:
+        return 1
     return session.query(func.max(Concert.concertID)).all()[0][0] + 1
 
 def get_id_salle_by_nom(nom):

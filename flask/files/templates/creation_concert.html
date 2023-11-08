@@ -2,6 +2,11 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='creation_concert.css')}}" />
 {% endblock %} {% block content %}
 <main>
+  <div id="bouton_retour_choix_fiche">
+      <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">
+        <button type="button" class="bouton_de_retour">Retour</button>
+      </a>
+  </div>
     <div class="form">
         <div class="title">Creer votre concert !</div>
         <form role="form" method ="POST" action ="{{ url_for('save_concert') }}">
