@@ -38,12 +38,23 @@ body.light .main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: #264263;
+    background-color: #2a2b38;
     margin: 3vw;
     margin-top: 2vw;
     border-radius: 5%;
     height: 53vh;
     width: 25vw;
+}
+
+
+.listeOptions >li > div:hover {
+    height: 53vh;
+    width: 28vw;
+}
+
+.listeOptions > li > div {
+    font-size: 2.1em;
+    transition-duration: 0.2s;
 }
 
 .text_link{

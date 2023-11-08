@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='choix_fiche.css')}}" />
 {% endblock %} {% block content %}
   <div class="main">
-    <div class="middle">
+    <div id="bouton_retour_choix_fiche">
       {%if current_user.nomOrga == "Technique"%}
         <a href="{{ url_for('accueil_technique') }}">
           <button type="button" id="bouton_de retour">Retour</button>
@@ -18,6 +18,8 @@
           </a>
         {% endif %}
       {% endif %}
+    </div>
+    <div class="middle">
       <h1 id="modification">Modifier une fiche</h1>
     </div>
     <ul class="listeOptions">
@@ -101,6 +103,7 @@
               src="../static/img/prevus.jpg"
               class="image_link"
               alt="salle de concert vide en préparation"
+              id="image_seule"
             />
           </a>
         </div>
