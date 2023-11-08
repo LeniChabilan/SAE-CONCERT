@@ -12,8 +12,6 @@ body.dark main {
 
 main{
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .form {
@@ -25,6 +23,7 @@ main{
     padding: 1vw;
     height: 77vh;
     width: 20vw;
+    margin-left : 30vw;
   }
   
   .title {
@@ -130,3 +129,34 @@ main{
   .submit:active {
     background-color: #06b;
   }
+
+  .bouton_de_retour{
+    appearance: none;
+    background-color: #2a2b38;
+    color: #ffeba7;
+    margin-top: 5vh;
+    margin-left: 3vw;
+    height: 5vh;
+    width: 6vw;
+    text-align: center;
+    font-size: 2vh;
+    box-sizing: border-box;
+    border-radius: 0.9375em;
+    border: none;
+}
+
+.bouton_de_retour:disabled {
+    pointer-events: none;
+}
+
+.bouton_de_retour:hover {
+  color: #2a2b38;
+  background-color: #ffeba7;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.bouton_de_retour:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
