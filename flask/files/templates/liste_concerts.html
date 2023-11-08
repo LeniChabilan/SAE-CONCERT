@@ -13,24 +13,29 @@
         </div>
     </div>
     <div class="partie_principale">
+        
         <table class="liste_des_concerts">
-            <tr>
-                <th>Nom</th>
-                <th>Date</th>
-                <th>Artiste</th>
-                <th>Salle</th>
-            </tr>
-            {% if concerts!=None %}
-                {% for x in concerts %}
+            <thead>
                 <tr>
-                    <th>{{x.nomConcert}}</th>
-                    <th>{{x.dateDebutConcert}}</th>
-                    <th>{{x.groupe.nomGroupe}}</th>
-                    <th>{{x.salle.nomSalle}}</th>
-                    <th><button>Modifier</button></th>
-                    <th><a href="{{ url_for('sup_concert', id=x.concertID) }}">Supprimer</a></th>
+                    <th>Nom</th>
+                    <th>Date</th>
+                    <th>Artiste</th>
+                    <th>Salle</th>
+                    <th></th>
+                    <th></th>
                 </tr>
-                {% endfor %}
+            </thead>
+            {% if concerts!=None %}
+            {% for x in concerts %}
+            <tr>
+                <th>{{x.nomConcert}}</th>
+                <th>{{x.dateDebutConcert}}</th>
+                <th>{{x.groupe.nomGroupe}}</th>
+                <th>{{x.salle.nomSalle}}</th>
+                <th><button>Modifier</button></th>
+                <th><a href="{{ url_for('sup_concert', id=x.concertID) }}">Supprimer</a></th>
+            </tr>
+            {% endfor %}
             {% endif %}
         </table>
     </div>
