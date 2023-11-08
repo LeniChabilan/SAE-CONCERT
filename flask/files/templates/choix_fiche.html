@@ -2,8 +2,27 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='choix_fiche.css')}}" />
 {% endblock %} {% block content %}
   <div class="main">
-    <div class="middle">
-      <h1 id="modification">Modifier une fiche</h1>
+    <div id="tete_page">
+      <div id="bouton_retour_choix_fiche">
+        {%if current_user.nomOrga == "Technique"%}
+          <a href="{{ url_for('accueil_technique') }}">
+            <button type="button" class="bouton_de_retour">Retour</button>
+          </a>
+        {% else %}
+          {% if current_user.is_authenticated%}
+            <a href="{{ url_for('accueil_bien_etre') }}">
+              <button type="button" class="bouton_de_retour">Retour</button>
+            </a>
+          {% else %}
+            <a href="{{ url_for('connexion') }}">
+              <button type="button" class="bouton_de_retour">Retour</button>
+            </a>
+          {% endif %}
+        {% endif %}
+      </div>
+      <div class="middle">
+        <h1 id="modification">Modifier une fiche</h1>
+      </div>
     </div>
     <ul class="listeOptions">
       <li>
@@ -86,6 +105,7 @@
               src="../static/img/prevus.jpg"
               class="image_link"
               alt="salle de concert vide en préparation"
+              id="image_seule"
             />
           </a>
         </div>
