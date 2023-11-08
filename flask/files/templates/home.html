@@ -4,11 +4,28 @@
 <div class="main">
   <div class="left">
     <h2>Organisez votre concert en toute simplicité !</h2>
-    <a href="{{ url_for('accueil_bien_etre') }}">
+    {% if current_user.is_authenticated%}
+      {% if current_user.typeOrga == "Technique" %}
+    <a href="{{ url_for('accueil_technique') }}">
       <button class="buttonOrg">
         <span>Organisez-vous avec ConcertIUTO</span>
       </button>
     </a>
+      {% endif %}
+      {% if current_user.typeOrga == "Bien-être des Artistes" %}
+      <a href="{{ url_for('accueil_bien_etre') }}">
+        <button class="buttonOrg">
+          <span>Organisez-vous avec ConcertIUTO</span>
+        </button>
+      </a>
+      {% endif %}
+      {% else %}
+      <a href="{{ url_for('accueil_technique') }}">
+        <button class="buttonOrg">
+          <span>Organisez-vous avec ConcertIUTO</span>
+        </button>
+      </a>
+      {% endif %}
   </div>
 </div>
 {% endblock %}
