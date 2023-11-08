@@ -90,3 +90,6 @@ def sup_concert(id):
     supprimer_concert(id)
     return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert())
 
+@app.route("/entrer-groupe")
+def inscription_groupe():
+    return render_template("entrer_groupe.html")
