@@ -7,6 +7,7 @@
     {% block head %}
     <meta charset="utf-8" />
     <title>Concert'O</title>
+    <script src="https://kit.fontawesome.com/b2318dca58.js" crossorigin="anonymous"></script>
     {% endblock %}
   </head>
   <body class="light">
@@ -21,18 +22,18 @@
         <ul>
         {% if current_user.is_authenticated%}
           <li><a class="username" >{{ current_user.nomOrga }}</a></li>
-          <li class="logout"><a href="{{ url_for('logout') }}" id="fond_bouton">
+          <li class="logout"><a href="{{ url_for('logout') }}" id="fond_bouton" class="noligne">
             <button type="button" id="bouton_se_connecter">Logout</button>
           </a></li>
           {% else %}
-          <li> <a href="{{ url_for('connexion') }}" id="fond_bouton">
+          <li> <a href="{{ url_for('connexion') }}" id="fond_bouton" class="noligne">
             <button type="button" id="bouton_se_connecter">Se connecter</button>
           </a></li>
         {% endif %}
         </ul>
             
         <a href="{{ url_for('home') }}" id="home">
-          <img class="img_base" id="img2" src="./../static/img/home.png" alt="logo silouhette maison" />
+          <img class="img_maison" id="img2" src="./../static/img/home.png" alt="logo silouhette maison" />
         </a>
         <div class="toggle-switch">
           <label class="switch-label">

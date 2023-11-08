@@ -3,7 +3,7 @@ body{
 }
 
 .main{
-    height: 85vh;
+    min-height: 100vh;
 }
 .partie_principale{
     display:flex;
@@ -14,22 +14,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 22vw;
-    height: 22vh;
     text-align: center;
-    border-radius: 45%;
-    margin-left: 39vw;
+    padding-top: 3%;
 }
 
-body.light .middle{
-    background-color: #212121;
-    color: #e8e5da;
-}
 
-body.dark .middle{
-    background-color: #e8e5da;
-    color: #212121;
-}
 
 body.light .main .partie_principale, body.light .main {
   background-color: #e8e5da;
@@ -40,12 +29,12 @@ body.dark .main .partie_principale, body.dark .main{
 }
 
 body.light #modification{
-    color: #e8e5da;
+    color: #212121;
     font-size: 2vw;
 }
 
 body.dark #modification{
-    color: #212121;
+    color: #e8e5da;
     font-size: 2vw;
 }
 
@@ -58,15 +47,30 @@ body.dark #modification{
     margin-bottom: 5%;
 }
 
+#modification {
+    font-weight: 300;
+}
+
 .liste_des_concerts, th{
-    border: 1px solid #212121;
     border-collapse: collapse;
 }
 
+table{
+    outline: none;
+}
+
+thead{
+    background-color: #2a2b38;
+    color: #fff;
+}
 th{
     padding-left:2vw;
     padding-right:2vw;
-    padding-bottom: 1vh;
-    padding-top:1vh;
-    color: #212121;
+    padding-bottom: 5vh;
+    padding-top:5vh;
+    border: none;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #b9b9b9;
 }
