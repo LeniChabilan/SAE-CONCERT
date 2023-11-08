@@ -104,4 +104,4 @@ def modif_concert(id):
 
 @app.route("/modification_concert/<int:id>")
 def modification_concert(id):
-    return render_template("modifier_concert.html",concert=get_info_un_concert(id))
+    return render_template("modifier_concert.html",concert=get_info_un_concert(id), cID=id)
