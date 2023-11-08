@@ -7,11 +7,15 @@ body.light .left {
   background-color: #e8e5da;
 }
 
-body.light .left > h2  {
-  color: #212121;
-  text-align: left;
+.left > h2{
   margin-left: 5rem;
   font-size: 2vw;
+  text-align: left;
+  font-weight: 800;
+}
+
+body.light .left > h2  {
+  color: #212121;
 }
 
 body.dark .left{
@@ -20,9 +24,6 @@ body.dark .left{
 
 body.dark .left > h2{
   color: #e8e5da;
-  text-align: left;
-  margin-left: 5rem;
-  font-size: 2vw;
 }
 
 .left {
@@ -36,6 +37,7 @@ body.dark .left > h2{
   text-align: center;
   border-top-right-radius: 45%;
   border-bottom-right-radius: 45%;
+  transition: 0.2s;
 }
 
 .main {
@@ -45,8 +47,9 @@ body.dark .left > h2{
 }
 
 .buttonOrg{
-  display: inline-block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-radius: 2rem;
   border: none;
@@ -80,6 +83,7 @@ body.dark .buttonOrg {
   position: relative;
   transition: 0.5s;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .buttonOrg span:after {
@@ -98,4 +102,60 @@ body.dark .buttonOrg {
 .buttonOrg:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+@media screen and (max-width: 1600px){
+  .main{
+    background-size: 85%;
+  }
+}
+
+@media screen and (max-width: 1400px){
+  .main{
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .main{
+    background-size: 115%;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .left{
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .buttonOrg span{
+    font-size: 1rem;
+  }
+
+  .buttonOrg{
+    width: 35vw;
+    font-size: 3vw;
+  }
+
+  .left > h2{
+    font-size: 3vw;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .buttonOrg{
+    width: 40vw;
+    font-size: 4vw;
+  }
+  .buttonOrg span:after {
+    right: -10px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .left > h2{
+    font-size: 4vw;
+    text-align: center;
+  }
 }
