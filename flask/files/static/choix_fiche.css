@@ -10,7 +10,7 @@ body{margin:0;}
     height: 22vh;
     text-align: center;
     border-radius: 45%;
-    margin-left: 39vw;
+    margin-left: 31vw;
 }
 
 body.light .main {
@@ -119,4 +119,39 @@ body.light .main {
 
 .carre_images2{
     margin-top:7vh;
+}
+
+#tete_page{
+    display: flex;
+}
+
+.bouton_de_retour{
+    appearance: none;
+    background-color: #2a2b38;
+    color: #ffeba7;
+    margin-top: 5vh;
+    margin-left: 3vw;
+    height: 5vh;
+    width: 6vw;
+    text-align: center;
+    font-size: 2vh;
+    box-sizing: border-box;
+    border-radius: 0.9375em;
+    border: none;
+}
+
+.bouton_de_retour:disabled {
+    pointer-events: none;
+}
+
+.bouton_de_retour:hover {
+  color: #2a2b38;
+  background-color: #ffeba7;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.bouton_de_retour:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
