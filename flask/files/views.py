@@ -8,7 +8,7 @@ from .models import Organisation, ajouter_concert
 from wtforms.validators import DataRequired
 from .models import Organisation
 from flask import request
-from .models import get_info_concert,supprimer_concert
+from .models import get_info_concert,supprimer_concert, mod_concert, get_info_un_concert
 
 @app.route("/")
 def home():
@@ -90,3 +90,18 @@ def sup_concert(id):
     supprimer_concert(id)
     return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert())
 
+@app.route("/modif-concert/<int:id>", methods =["POST"])
+def modif_concert(id):
+    nom = request.form.get("nom")
+    dateD = request.form.get("dateD")
+    dateF = request.form.get("dateF")
+    ficheTech =request.form.get("fiche")
+    catering = request.form.get("catering")
+    salle = request.form.get("salle")
+    groupe = request.form.get("groupe")
+    mod_concert(id,nom, dateD, dateF, ficheTech, catering, salle, groupe)
+    return render_template("liste_concerts.html", title="Les Concerts",concerts=get_info_concert())
+
+@app.route("/modification_concert/<int:id>")
+def modification_concert(id):
+    return render_template("modifier_concert.html",concert=get_info_un_concert(id))

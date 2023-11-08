@@ -20,7 +20,7 @@
                     <th>{{x.dateDebutConcert}}</th>
                     <th>{{x.groupe.nomGroupe}}</th>
                     <th>{{x.salle.nomSalle}}</th>
-                    <th><button>Modifier</button></th>
+                    <th><a href="{{ url_for('modification_concert', id=x.concertID) }}">Modifier</a></th>
                     <th><a href="{{ url_for('sup_concert', id=x.concertID) }}">Supprimer</a></th>
                 </tr>
                 {% endfor %}

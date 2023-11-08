@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='creation_concert.css')}}" />
+{% endblock %} {% block content %}
+<main>
+    <div class="form">
+        <div class="title">Creer votre concert !</div>
+        <form role="form" method ="POST" action ="{{ url_for('modif_concert', id=concert.concertID) }}">
+            <div class="input-container ">
+                <input placeholder="Nom" type="text" class="input" name="nom" value="{{concert.nomConcert}}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="nom">Nom</label>
+             </div>
+              <div class="input-container">
+                <input placeholder="" type="date" class="input" name="dateD" value="{{concert.dateDebutConcert}}" required>
+                <label class="iLabel" for="dateD"></label>
+              </div>
+              <div class="input-container">
+                <input placeholder="" type="date" class="input" name="dateF" value="{{concert.dateFinConcert}}" required>
+                <label class="iLabel" for="dateF"></label>
+              </div>
+              <div class="input-container">
+                <input placeholder="Fiche technique" type="text" class="input" name="fiche" value="{{concert.ficheTechnique}}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="Fiche">Fiche technique</label>
+              </div>
+              <div class="input-container">
+                <input placeholder="Catering" type="text" class="input" name="catering" value="{{concert.catering}}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="catering">Catering</label>
+              </div>
+              <div class="input-container">
+                <input placeholder="Salle" type="text" class="input" name="salle" value="{{concert.salle.nomSalle}}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="salle">Salle</label>
+              </div>
+              <div class="input-container">
+                <input placeholder="Groupe" type="text" class="input" name="groupe" value="{{concert.groupe.nomGroupe}}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="groupe">Groupe</label>
+              </div>
+              
+              <button class="submit" type="text">Enregistrer</button>
+        </form>
+    </div>
+</main>
+{% endblock %}
