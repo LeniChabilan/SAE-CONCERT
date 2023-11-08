@@ -223,6 +223,28 @@ class Organiser(db.Model):
 def get_info_concert():
     return db.session.query(Concert).all()
 
+
+def supprimer_concert(concID):
+    try:
+        # Supprimez le concert et toutes les lignes liées dans d'autres tables
+        db.session.query(MusicienAdditionnel).filter_by(concertID=concID).delete(synchronize_session=False)
+        db.session.query(Transporte).filter_by(concertID=concID).delete(synchronize_session=False)
+        db.session.query(Necessiter).filter_by(concertID=concID).delete(synchronize_session=False)
+        db.session.query(Participe).filter_by(concertID=concID).delete(synchronize_session=False)
+        db.session.query(Prepare).filter_by(concertID=concID).delete(synchronize_session=False)
+        db.session.query(Organiser).filter_by(concertID=concID).delete(synchronize_session=False)
+        db.session.query(Concert).filter_by(concertID=concID).delete(synchronize_session=False)
+
+        db.session.commit()
+        return "Concert et enregistrements liés supprimés avec succès."
+    except pymysql.IntegrityError:
+        # Si une contrainte de clé étrangère empêche la suppression, gérez l'erreur ici
+        db.session.rollback()
+        return "Erreur : Impossible de supprimer le concert et ses enregistrements liés en raison de contraintes de clé étrangère."
+
+
+
+
 def get_max_id():
     login='chabilan'
     passwd='chabilan'
