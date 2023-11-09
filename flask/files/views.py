@@ -4,11 +4,12 @@ from flask_login import login_user , current_user, logout_user, login_required
 from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
-from .models import Organisation, ajouter_concert
+from .models import Organisation, ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert
 from wtforms.validators import DataRequired
-from .models import Organisation
 from flask import request
-from .models import get_info_concert,supprimer_concert, mod_concert, get_info_un_concert
+
+from .models import *
+
 
 
 
@@ -112,14 +113,32 @@ def modification_concert(id):
 @app.route("/entrer-groupe")
 def inscription_groupe():
     return render_template("entrer_groupe.html")
-  
+
+@app.route("/recherche-groupe", methods =["POST"])
+def recherche_groupe():
+    nom_groupe = request.form.get("nom")
+    groupe = chercher_groupe(nom_groupe)
+    return redirect(url_for("completer_fiche"))
+
+@app.route("/completer-fiche")
+def completer_fiche():
+    return render_template("completer_fiche.html")
+
 @app.route("/retour/<string:typeOrga>")
 def retour(typeOrga):
-    print(typeOrga)
     if typeOrga == "Technique":
         return redirect(url_for("accueil_technique"))
     else:
         return redirect(url_for("accueil_bien_etre"))
+    
+
+@app.route("/liste_groupes/", methods = ("GET","POST",))
+def liste_groupes():
+    return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
+
+@app.route("/liste_artistes/", methods = ("GET","POST",))
+def liste_artistes():
+    return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
 
 @app.route("/choix/<string:typeOrga>")
 def choix(typeOrga):
@@ -132,3 +151,6 @@ def choix(typeOrga):
 @app.route("/Consulter_fiches")
 def Consulter_fiches():
     return render_template("Consulter_fiches.html")
+@app.route("/choix-artiste-groupe/", methods = ("GET","POST",))
+def choix_groupes_artistes():
+    return render_template("choix_groupes_artistes.html")

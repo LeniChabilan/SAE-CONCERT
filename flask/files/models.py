@@ -84,6 +84,11 @@ class Groupe(db.Model):
     groupeID = Column(Integer, primary_key=True,autoincrement=True)
     nomGroupe = Column(String(255))
 
+    def __init__(self, nomGroupe):
+        self.groupeID = get_max_id_groupe() + 1
+        self.nomGroupe = nomGroupe
+        
+
 class Salle(db.Model):
     __tablename__ = 'SALLE'
     salleID = Column(Integer, primary_key=True,autoincrement=True)
@@ -222,8 +227,66 @@ class Organiser(db.Model):
 def get_info_concert():
     return db.session.query(Concert).all()
 
+def get_info_groupe():
+    return db.session.query(Groupe).all()
+
+def get_info_un_groupe(id):
+    return db.session.query(Groupe).filter(Groupe.groupeID==id).first()
+
+def get_info_artiste():
+    return db.session.query(Artiste).all()
+
+def get_info_un_artiste(id):
+    return db.session.query(Artiste).filter(Artiste.artisteID==id).first()
+
 def get_info_un_concert(id):
     return db.session.query(Concert).filter(Concert.concertID==id).first()
+
+def get_id_artiste_par_groupe(idG):
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    grps=session.query(Composer).filter(Composer.groupeID==idG).all()
+    liste_artID=[]
+    for grp in grps:
+        liste_artID.append(grp.artisteID)
+    return liste_artID
+
+def get_liste_artiste(liste_id):
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    liste_art=[]
+    for idA in liste_id:
+        arti=session.query(Artiste).filter(Artiste.artisteID==idA).first()
+        liste_art.append(arti)
+    return liste_art
+
+def get_dico_grps():
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    dicoGr={}
+    grps=get_info_groupe()
+    for grp in grps:
+        idG=grp.groupeID
+        liste_idA=get_id_artiste_par_groupe(idG)
+        liste_arti=get_liste_artiste(liste_idA)
+        dicoGr[grp]=liste_arti
+    return dicoGr
+
 
 def supprimer_concert(concID):
     try:
@@ -277,6 +340,18 @@ def get_max_id():
         return 1
     return session.query(func.max(Concert.concertID)).all()[0][0] + 1
 
+def get_max_id_groupe():
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    if session.query(func.max(Groupe.groupeID)).all()[0][0] is None:
+        return 1
+    return session.query(func.max(Groupe.groupeID)).all()[0][0] + 1
+
 def get_id_salle_by_nom(nom):
     login='chabilan'
     passwd='chabilan'
@@ -311,5 +386,21 @@ def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, gr
 
 
 
+def chercher_groupe(nom):
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    groupe = session.query(Groupe).filter_by(nomGroupe=nom).all()
+    if groupe != []:        
+        return groupe[0]
+    else:
+        grp = Groupe(nom)
+        session.add(grp)
+        session.commit()
+        return grp
 
 

@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block styles %} {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='choix_grp_art.css')}}" />
+{% endblock %} {% block content %}
+<div class="main">
+    <div id="tete_page">
+      <div id="bouton_retour_choix_fiche">
+        <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">
+          <button type="button" class="bouton_de_retour">Retour</button>
+        </a>
+      </div>
+    </div>
+<ul class="listeOptions">
+  <li>
+    <a href="{{ url_for('liste_groupes') }}">
+      <div>
+        Consulter la liste des groupes
+        <img
+          src="../static/img/foule.jpg"
+          alt="la silouhette d'une foule"
+        />
+      </div>
+    </a>
+  </li>
+  <li>
+    <a href="{{ url_for('liste_artistes') }}">
+      <div>
+        Consulter la liste des artistes
+        <img
+          src="../static/img/artiste.jpg"
+          alt="la silouhette d'un artiste"
+        />
+      </div>
+    </a>
+  </li>
+</ul>
+{% endblock %}
