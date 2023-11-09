@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block styles %}{{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='creation_concert.css')}}" />
+<script src="../static/script/confirmation.js"></script>
 {% endblock %} {% block content %}
 <main>
   <div id="bouton_retour_choix_fiche">
@@ -44,7 +45,7 @@
                 <label class="iLabel" for="groupe">Groupe</label>
               </div>
               
-              <button class="submit" type="text">Enregistrer</button>
+              <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
         </form>
     </div>
 </main>
