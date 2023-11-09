@@ -135,12 +135,12 @@ ul {
 .slider::before {
   content: "";
   position: absolute;
-  margin-top: 1em;
+  margin-top: 12%;
   left: 1em;
-  width: 2em;
-  height: 2em;
+  width: 1vw;
+  height: 1.5vh;
   border-radius: 50%;
-  -webkit-box-shadow: inset 12px -4px 0px 0px var(--link);
+  -webkit-box-shadow: inset 500px -5px 0px 0px var(--link);
   box-shadow: inset 0.5em -0.25em  var(--light);
   background-color: var(--dark);
   -webkit-transition: 0.3s;
@@ -150,9 +150,9 @@ ul {
 }
 
 .checkbox:checked ~ .slider::before {
-  -webkit-transform: translateX(5em);
-  -ms-transform: translateX(5em);
-  transform: translateX(5em);
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
   background-color: var(--dark);
   -webkit-box-shadow: none;
   box-shadow: none;
