@@ -4,38 +4,38 @@
 {% endblock %} {% block content %}
 <main>
   <div id="bouton_retour_choix_fiche">
-      <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">
-        <button type="button" class="bouton_de_retour">Retour</button>
-      </a>
+    <a href="{{ url_for('liste_concerts') }}">
+      <button type="button" class="bouton_de_retour">Retour</button>
+    </a>
   </div>
     <div class="form">
-        <div class="title">Creer votre concert !</div>
-        <form role="form" method ="POST" action ="{{ url_for('save_concert') }}">
+        <div class="title">Modifiez votre concert !</div>
+        <form role="form" method ="POST" action ="{{ url_for('modif_concert', id=cID) }}">
             <div class="input-container ">
-                <input placeholder="Nom" type="text" class="input" name="nom" required>
+                <input placeholder="Nom" type="text" class="input" name="nom" value="{{ concert.nomConcert }}" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="nom">Nom</label>
              </div>
               <div class="input-container">
-                <input placeholder="" type="date" class="input" name="dateD" required>
+                <input placeholder="" type="date" class="input" name="dateD" value="{{ concert.dateDebutConcert }}" required>
                 <label class="iLabel" for="dateD"></label>
               </div>
               <div class="input-container">
-                <input placeholder="" type="date" class="input" name="dateF" required>
+                <input placeholder="" type="date" class="input" name="dateF" value="{{ concert.dateFinConcert }}" required>
                 <label class="iLabel" for="dateF"></label>
               </div>
               <div class="input-container">
-                <input placeholder="Fiche technique" type="text" class="input" name="fiche" required>
+                <input placeholder="Fiche technique" type="text" class="input" name="fiche" value="{{ concert.ficheTechnique }}" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="Fiche">Fiche technique</label>
               </div>
               <div class="input-container">
-                <input placeholder="Catering" type="text" class="input" name="catering" required>
+                <input placeholder="Catering" type="text" class="input" name="catering" value="{{ concert.catering }}" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="catering">Catering</label>
               </div>
               <div class="input-container">
-                <input placeholder="Salle" type="text" class="input" name="salle" required>
+                <input placeholder="Salle" type="text" class="input" name="salle"  required>
                 <div class="cut"></div>
                 <label class="iLabel" for="salle">Salle</label>
               </div>

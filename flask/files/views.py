@@ -4,10 +4,9 @@ from flask_login import login_user , current_user, logout_user, login_required
 from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
-from .models import Organisation, ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe
+from .models import Organisation, ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert
 from wtforms.validators import DataRequired
 from flask import request
-
 
 @app.route("/")
 def home():
@@ -89,6 +88,23 @@ def sup_concert(id):
     supprimer_concert(id)
     return render_template("liste_concerts.html",title="Les Concerts", concerts=get_info_concert())
 
+
+@app.route("/modif-concert/<int:id>", methods =["POST"])
+def modif_concert(id):
+    nom = request.form.get("nom")
+    dateD = request.form.get("dateD")
+    dateF = request.form.get("dateF")
+    ficheTech =request.form.get("fiche")
+    catering = request.form.get("catering")
+    salle = request.form.get("salle")
+    groupe = request.form.get("groupe")
+    mod_concert(id,nom, dateD, dateF, ficheTech, catering, salle, groupe)
+    return render_template("liste_concerts.html", title="Les Concerts",concerts=get_info_concert())
+
+@app.route("/modification_concert/<int:id>")
+def modification_concert(id):
+    return render_template("modifier_concert.html",concert=get_info_un_concert(id), cID=id)
+
 @app.route("/entrer-groupe")
 def inscription_groupe():
     return render_template("entrer_groupe.html")
@@ -109,3 +125,4 @@ def retour(typeOrga):
         return redirect(url_for("accueil_technique"))
     else:
         return redirect(url_for("accueil_bien_etre"))
+

@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block styles %} {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='liste_concerts.css')}}" />
+<script src="../static/script/confirmation.js"></script>
 {% endblock %} {% block content %}
 <div class="main">
     <div id="tete_page">
@@ -8,32 +9,31 @@
           <button type="button" class="bouton_de_retour">Retour</button>
         </a>
       </div>
-        <div class="middle">
-          <h1 id="modification">Liste des concerts</h1>
-        </div>
+      <div class="middle">
+        <h1 id="modification">Liste des concerts</h1>
+      </div>
     </div>
     <div class="partie_principale">
         <table class="liste_des_concerts">
+
             <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Date</th>
-                    <th>Artiste</th>
-                    <th>Salle</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Artiste</th>
+                <th>Salle</th>
+                <th></th>
+                <th></th>
             </thead>
             {% if concerts!=None %}
-            {% for x in concerts %}
-            <tr>
-                <th>{{x.nomConcert}}</th>
-                <th>{{x.dateDebutConcert}}</th>
-                <th>{{x.groupe.nomGroupe}}</th>
-                <th>{{x.salle.nomSalle}}</th>
-                <th><button>Modifier</button></th>
-                <th><a href="{{ url_for('sup_concert', id=x.concertID) }}">Supprimer</a></th>
-            </tr>
+                {% for x in concerts %}
+                <tr class="liens" onclick="window.location='{{ url_for('choix_fiche') }}';" style="cursor: pointer;">
+                  <th>{{ x.nomConcert }}</th>
+                  <th>{{ x.dateDebutConcert }}</th>
+                  <th>{{ x.groupe.nomGroupe }}</th>
+                  <th>{{ x.salle.nomSalle }}</th>
+                  <th><a href="{{ url_for('modification_concert', id=x.concertID) }}" onclick="return showConfirmationModif()"><i class="fa-solid fa-pen fa-xl"></i></a></td>
+                  <th><a href="{{ url_for('sup_concert', id=x.concertID) }}" onclick="return showConfirmationSup()"><i class="fa-solid fa-trash fa-xl"></i></a></td>
+              </tr>
             {% endfor %}
             {% endif %}
         </table>

@@ -10,6 +10,7 @@ body{
 }
 
 .middle{
+    flex-basis: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,7 +65,7 @@ thead{
     background-color: #2a2b38;
     color: #fff;
 }
-th{
+thead th{
     padding-left:2vw;
     padding-right:2vw;
     padding-bottom: 5vh;
@@ -76,7 +77,6 @@ tbody tr:nth-child(odd){
     background-color: #b9b9b9;
 }
 
-}
 
 #tete_page{
     display: flex;
@@ -88,8 +88,8 @@ tbody tr:nth-child(odd){
     color: #ffeba7;
     margin-top: 5vh;
     margin-left: 3vw;
-    height: 5vh;
-    width: 6vw;
+    height: 6vh;
+    width: 7vw;
     text-align: center;
     font-size: 2vh;
     box-sizing: border-box;
@@ -111,4 +111,20 @@ tbody tr:nth-child(odd){
 .bouton_de_retour:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+.liens{
+    cursor: hand;
+}
+ 
+.liens:hover
+{
+   background-color: rgb(133, 133, 133);
+   cursor: hand;
+} 
+
+a>i{
+    color: black;
+    justify-content: center;
+    padding: 30%;
 }

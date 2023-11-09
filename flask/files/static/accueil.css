@@ -32,11 +32,14 @@ body.dark .listeOptions {
   height: 50vh;
   width: 25vw;
   transition: 0.3s;
+  max-width: 50vh;
 }
 
 .listeOptions div:hover {
   height: 53vh;
   width: 28vw;
+  max-width: 50vh;
+
 }
 .listeOptions div:hover img{
   width: 19vw;
@@ -52,11 +55,11 @@ body.dark .listeOptions {
   font-weight: bold;
   text-align: center;
 }
-/* 
+
 .listeOptions div:hover a {
   font-size: 2.1em;
   transition-duration: 0.2s;
-} */
+}
 
 
 
@@ -78,21 +81,25 @@ body.dark .listeOptions {
   .listeOptions div {
     height: 50vh;
     width: 60vw;
+    max-width: 20vw;
+    max-width: 50vh;
   }
 
   .listeOptions div:hover {
     height: 53vh;
     width: 63vw;
+    max-width: 20vw;
+    max-width: 50vh;
   }
 
   .listeOptions img {
     width: 30vw;
-    height: 27vh;
+    height: 20vh;
     margin: 2rem;
   }
-
-  .listeOptions img:hover {
-    width: 32vw;
-    height: 29vh;
+  .listeOptions div:hover img{
+    width: 33vw;
+    height: 24vh;
+    transition-duration: 0.2s;
   }
 }
