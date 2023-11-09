@@ -4,12 +4,9 @@ from flask_login import login_user , current_user, logout_user, login_required
 from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
-from .models import Organisation, ajouter_concert
+from .models import Organisation, ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe
 from wtforms.validators import DataRequired
-from .models import Organisation
 from flask import request
-from .models import get_info_concert
-from .models import supprimer_concert
 
 
 @app.route("/")
@@ -95,9 +92,19 @@ def sup_concert(id):
 @app.route("/entrer-groupe")
 def inscription_groupe():
     return render_template("entrer_groupe.html")
+
+@app.route("/recherche-groupe", methods =["POST"])
+def recherche_groupe():
+    nom_groupe = request.form.get("nom")
+    groupe = chercher_groupe(nom_groupe)
+    return redirect(url_for("completer_fiche"))
+
+@app.route("/completer-fiche")
+def completer_fiche():
+    return render_template("completer_fiche.html")
+
 @app.route("/retour/<string:typeOrga>")
 def retour(typeOrga):
-    print(typeOrga)
     if typeOrga == "Technique":
         return redirect(url_for("accueil_technique"))
     else:
