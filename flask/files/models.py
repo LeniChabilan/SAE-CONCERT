@@ -16,18 +16,18 @@ def load_user(nomOrga):
 
 class Musicien(db.Model):
     __tablename__ = 'MUSICIEN'
-    musicienID = Column(Integer, primary_key=True)
+    musicienID = Column(Integer, primary_key=True,autoincrement=True)
     nomMusicien = Column(String(50))
 
 class MaterielArtiste(db.Model):
     __tablename__ = 'MATERIELARTISTE'
-    materielArtisteID = Column(Integer, primary_key=True)
+    materielArtisteID = Column(Integer, primary_key=True,autoincrement=True)
     nomMaterielArt = Column(String(200))
     disponible = Column(Boolean)
 
 class RoleP(db.Model):
     __tablename__ = 'ROLEP'
-    roleID = Column(Integer, primary_key=True)
+    roleID = Column(Integer, primary_key=True,autoincrement=True)
     nomRole = Column(String(50))
 
 class Organisation(db.Model, UserMixin):
@@ -41,20 +41,20 @@ class Organisation(db.Model, UserMixin):
 
 class TypePlace(db.Model):
     __tablename__ = 'TYPEPLACE'
-    typePlaceID = Column(Integer, primary_key=True)
+    typePlaceID = Column(Integer, primary_key=True,autoincrement=True)
     nomPlace = Column(String(50))
     descriptionP = Column(Text)
 
 class Lieu(db.Model):
     __tablename__ = 'LIEU'
-    lieuID = Column(Integer, primary_key=True)
+    lieuID = Column(Integer, primary_key=True,autoincrement=True)
     nomVille = Column(String(255))
     adresseL = Column(String(255))
     departement = Column(Integer)
 
 class Artiste(db.Model):
     __tablename__ = 'ARTISTE'
-    artisteID = Column(Integer, primary_key=True)
+    artisteID = Column(Integer, primary_key=True,autoincrement=True)
     pseudoArtiste = Column(String(255))
     nomA = Column(String(255))
     prenomA = Column(String(255))
@@ -70,23 +70,23 @@ class Artiste(db.Model):
 
 class Vehicule(db.Model):
     __tablename__ = 'VEHICULE'
-    immatriculation = Column(String(255), primary_key=True)
+    immatriculation = Column(String(255), primary_key=True,autoincrement=True)
     typeVehicule = Column(String(255))
     capacitéV = Column(Integer)
 
 class Materiel(db.Model):
     __tablename__ = 'MATERIEL'
-    materielID = Column(Integer, primary_key=True)
+    materielID = Column(Integer, primary_key=True,autoincrement=True)
     nomMateriel = Column(String(255))
 
 class Groupe(db.Model):
     __tablename__ = 'GROUPE'
-    groupeID = Column(Integer, primary_key=True)
+    groupeID = Column(Integer, primary_key=True,autoincrement=True)
     nomGroupe = Column(String(255))
 
 class Salle(db.Model):
     __tablename__ = 'SALLE'
-    salleID = Column(Integer, primary_key=True)
+    salleID = Column(Integer, primary_key=True,autoincrement=True)
     nomSalle = Column(String(255))
     capaciteTotaleSalle = Column(Integer)
     planSalle = Column(Integer)  # Utilisez le type de données approprié pour BLOB, selon votre db.Model de données
@@ -97,7 +97,7 @@ class Salle(db.Model):
 
 class PersonelTechnique(db.Model):
     __tablename__ = 'PERSONELTECHNIQUE'
-    personelTechniqueID = Column(Integer, primary_key=True)
+    personelTechniqueID = Column(Integer, primary_key=True,autoincrement=True)
     roleID = Column(Integer, ForeignKey('ROLEP.roleID'))
     nomP = Column(String(50))
     prenomP = Column(String(50))
@@ -105,7 +105,7 @@ class PersonelTechnique(db.Model):
 
 class Plan(db.Model):
     __tablename__ = 'PLAN'
-    planID = Column(Integer, primary_key=True)
+    planID = Column(Integer, primary_key=True,autoincrement=True)
     planScene = Column(Integer)  # Utilisez le type de données approprié pour BLOB
     planFeu = Column(Integer)
     salleID = Column(Integer, ForeignKey('SALLE.salleID'))
@@ -122,7 +122,7 @@ class Hebergement(db.Model):
 
 class MaterielSalle(db.Model):
     __tablename__ = 'MATERIELSALLE'
-    materielSalleID = Column(Integer, primary_key=True)
+    materielSalleID = Column(Integer, primary_key=True,autoincrement=True)
     salleID = Column(Integer, ForeignKey('SALLE.salleID'))
     nomMaterielS = Column(String(255))
     disponible = Column(Boolean)
@@ -130,7 +130,7 @@ class MaterielSalle(db.Model):
 
 class Concert(db.Model):
     __tablename__ = 'CONCERT'
-    concertID = Column(Integer, primary_key=True)
+    concertID = Column(Integer, primary_key=True,autoincrement=True)
     nomConcert = Column(String(255))
     dateDebutConcert = Column(Date)
     dateFinConcert = Column(Date)
@@ -142,7 +142,6 @@ class Concert(db.Model):
     groupe = relationship(Groupe)
 
     def __init__(self, nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
-        self.id = get_max_id()
         self.nomConcert = nom
         self.dateDebutConcert = dateDebut
         self.dateFinConcert = dateFin
