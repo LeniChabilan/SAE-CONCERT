@@ -1,17 +1,18 @@
 {% extends 'base.html' %} {% block styles %}{{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='choix_fiche.css')}}" />
 {% endblock %} {% block content %}
-  <div class="main">
-    <div id="tete_page">
-      <div id="bouton_retour_choix_fiche">
-        <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">
-          <button type="button" class="bouton_de_retour">Retour</button>
-        </a>
-      </div>
-      <div class="middle">
-        <h1 id="modification">Modifier une fiche</h1>
-      </div>
+<div class="main">
+  <div id="tete_page">
+    <div id="bouton_retour_choix_fiche">
+      <a href="{{ url_for('choix_groupes_artistes') }}">
+        <button type="button" class="bouton_de_retour">Retour</button>
+      </a>
     </div>
+    <div class="middle">
+      <h1 id="modification">Liste des groupes</h1>
+    </div>
+  </div>
+  <div class="partie_principale">
     <ul class="listeOptions">
       <li>
         <div>
@@ -99,6 +100,7 @@
         </div>
       </li>
     </ul>
+    </div>
   </div>
 </html>
 {% endblock %}

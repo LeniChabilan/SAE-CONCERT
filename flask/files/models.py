@@ -267,7 +267,22 @@ def get_liste_artiste(liste_id):
     return liste_art
 
 def get_dico_grps():
-    return 0
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    dicoGr={}
+    grps=get_info_groupe()
+    for grp in grps:
+        idG=grp.groupeID
+        liste_idA=get_id_artiste_par_groupe(idG)
+        liste_arti=get_liste_artiste(liste_idA)
+        dicoGr[grp]=liste_arti
+    return dicoGr
+
 
 def supprimer_concert(concID):
     try:

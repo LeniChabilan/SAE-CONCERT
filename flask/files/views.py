@@ -124,4 +124,12 @@ def retour(typeOrga):
 
 @app.route("/liste_groupes/", methods = ("GET","POST",))
 def liste_groupes():
-    return render_template("liste_groupes.html",title="Les Groupes",groupes=get_info_groupe())
+    return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
+
+@app.route("/liste_artistes/", methods = ("GET","POST",))
+def liste_artistes():
+    return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
+
+@app.route("/choix-artiste-groupe/", methods = ("GET","POST",))
+def choix_groupes_artistes():
+    return render_template("choix_groupes_artistes.html")
