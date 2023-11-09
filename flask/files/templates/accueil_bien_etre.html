@@ -3,34 +3,37 @@
 {% endblock %} {% block content %}
 <ul class="listeOptions">
   <li>
-    <a href="{{ url_for('liste_concerts') }}"
-      ><div>
+    <a href="{{ url_for('liste_concerts') }}">
+      <div>
         Consulter la liste des concerts prévus
         <img
           src="../static/img/prevus.jpg"
           alt="salle de concert vide en préparation"
-        /></div
-    ></a>
+        />
+      </div>
+    </a>
   </li>
   <li>
-    <a href="{{ url_for('creation_concert') }}"
-      ><div>
+    <a href="{{ url_for('creation_concert') }}">
+      <div>
         Creer un nouveau concert
         <img
           src="../static/img/caisse.jpeg"
           alt="image de caisses de concert"
-        /></div
-    ></a>
+        />
+      </div>
+    </a>
   </li>
   <li>
-    <a href="{{ url_for('choix_fiche') }}"
-      ><div>
+    <a href="{{ url_for('choix_fiche') }}">
+      <div>
         Modifier les fiches d'artiste
         <img
           src="../static/img/checklist.png"
           alt="image de checklist"
-        /></div
-    ></a>
+        />
+      </div>
+    </a>
   </li>
 </ul>
 {% endblock %}

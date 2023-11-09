@@ -8,9 +8,9 @@
           <button type="button" class="bouton_de_retour">Retour</button>
         </a>
       </div>
-        <div class="middle">
-          <h1 id="modification">Liste des concerts</h1>
-        </div>
+      <div class="middle">
+        <h1 id="modification">Liste des concerts</h1>
+      </div>
     </div>
     <div class="partie_principale">
         <table class="liste_des_concerts">
@@ -31,8 +31,8 @@
                 <th>{{x.dateDebutConcert}}</th>
                 <th>{{x.groupe.nomGroupe}}</th>
                 <th>{{x.salle.nomSalle}}</th>
-                <th><button>Modifier</button></th>
-                <th><a href="{{ url_for('sup_concert', id=x.concertID) }}">Supprimer</a></th>
+                <th><button><i class="fa-solid fa-pen"></i></button></th>
+                <th><a href="{{ url_for('sup_concert', id=x.concertID) }}"><i class="fa-solid fa-trash"></i></a></th>
             </tr>
             {% endfor %}
             {% endif %}
