@@ -223,8 +223,51 @@ class Organiser(db.Model):
 def get_info_concert():
     return db.session.query(Concert).all()
 
+def get_info_groupe():
+    return db.session.query(Groupe).all()
+
+def get_info_un_groupe(id):
+    return db.session.query(Groupe).filter(Groupe.groupeID==id).first()
+
+def get_info_artiste():
+    return db.session.query(Artiste).all()
+
+def get_info_un_artiste(id):
+    return db.session.query(Artiste).filter(Artiste.artisteID==id).first()
+
 def get_info_un_concert(id):
     return db.session.query(Concert).filter(Concert.concertID==id).first()
+
+def get_id_artiste_par_groupe(idG):
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    grps=session.query(Composer).filter(Composer.groupeID==idG).all()
+    liste_artID=[]
+    for grp in grps:
+        liste_artID.append(grp.artisteID)
+    return liste_artID
+
+def get_liste_artiste(liste_id):
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    liste_art=[]
+    for idA in liste_id:
+        arti=session.query(Artiste).filter(Artiste.artisteID==idA).first()
+        liste_art.append(arti)
+    return liste_art
+
+def get_dico_grps():
+    return 0
 
 def supprimer_concert(concID):
     try:

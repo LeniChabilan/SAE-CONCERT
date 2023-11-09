@@ -8,7 +8,7 @@ from .models import Organisation, ajouter_concert
 from wtforms.validators import DataRequired
 from .models import Organisation
 from flask import request
-from .models import get_info_concert,supprimer_concert, mod_concert, get_info_un_concert
+from .models import *
 
 
 
@@ -120,4 +120,8 @@ def retour(typeOrga):
         return redirect(url_for("accueil_technique"))
     else:
         return redirect(url_for("accueil_bien_etre"))
+    
 
+@app.route("/liste_groupes/", methods = ("GET","POST",))
+def liste_groupes():
+    return render_template("liste_groupes.html",title="Les Groupes",groupes=get_info_groupe())
