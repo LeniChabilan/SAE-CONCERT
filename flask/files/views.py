@@ -10,6 +10,8 @@ from .models import Organisation
 from flask import request
 from .models import get_info_concert,supprimer_concert, mod_concert, get_info_un_concert
 
+
+
 @app.route("/")
 def home():
     return render_template("home.html", title="Home")
@@ -83,12 +85,13 @@ def save_concert():
     salle = request.form.get("salle")
     groupe = request.form.get("groupe")
     ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
-    return render_template("home.html", title="Home")
+    return render_template("accueil_bien_etre.html", title="Home")
 
 @app.route("/sup-concert/<int:id>")
 def sup_concert(id):
     supprimer_concert(id)
-    return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert())
+    return render_template("liste_concerts.html",title="Les Concerts", concerts=get_info_concert())
+
 
 @app.route("/modif-concert/<int:id>", methods =["POST"])
 def modif_concert(id):
@@ -105,3 +108,16 @@ def modif_concert(id):
 @app.route("/modification_concert/<int:id>")
 def modification_concert(id):
     return render_template("modifier_concert.html",concert=get_info_un_concert(id), cID=id)
+
+@app.route("/entrer-groupe")
+def inscription_groupe():
+    return render_template("entrer_groupe.html")
+  
+@app.route("/retour/<string:typeOrga>")
+def retour(typeOrga):
+    print(typeOrga)
+    if typeOrga == "Technique":
+        return redirect(url_for("accueil_technique"))
+    else:
+        return redirect(url_for("accueil_bien_etre"))
+

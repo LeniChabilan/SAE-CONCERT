@@ -2,11 +2,19 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='liste_concerts.css')}}" />
 {% endblock %} {% block content %}
 <div class="main">
-    <div class="middle">
-        <h1 id="modification">Liste des concerts</h1>
+    <div id="tete_page">
+      <div id="bouton_retour_choix_fiche">
+        <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">
+          <button type="button" class="bouton_de_retour">Retour</button>
+        </a>
+      </div>
+        <div class="middle">
+          <h1 id="modification">Liste des concerts</h1>
+        </div>
     </div>
     <div class="partie_principale">
         <table class="liste_des_concerts">
+
             <tr>
                 <th>Nom</th>
                 <th>Date</th>
@@ -24,8 +32,9 @@
                     <th>{{x.salle.nomSalle}}</th>
                     <th><a href="{{ url_for('modification_concert', id=x.concertID) }}">Modifier</a></th>
                     <th><a href="{{ url_for('sup_concert', id=x.concertID) }}">Supprimer</a></th>
-                </tr>
-                {% endfor %}
+
+            </tr>
+            {% endfor %}
             {% endif %}
         </table>
     </div>
