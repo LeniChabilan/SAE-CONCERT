@@ -25,7 +25,7 @@
             </thead>
             {% if concerts!=None %}
                 {% for x in concerts %}
-                <tr class="liens" onclick="window.location='{{ url_for('choix_fiche') }}';" style="cursor: pointer;">
+                <tr class="liens" onclick="window.location='{{ url_for('choix', typeOrga=current_user.typeOrga) }}';" style="cursor: pointer;">
                   <th>{{ x.nomConcert }}</th>
                   <th>{{ x.dateDebutConcert }}</th>
                   <th>{{ x.groupe.nomGroupe }}</th>

@@ -121,3 +121,14 @@ def retour(typeOrga):
     else:
         return redirect(url_for("accueil_bien_etre"))
 
+@app.route("/choix/<string:typeOrga>")
+def choix(typeOrga):
+    print(typeOrga)
+    if typeOrga == "Technique":
+        return redirect(url_for("Consulter_fiches"))
+    else:
+        return redirect(url_for("choix_fiche"))
+    
+@app.route("/Consulter_fiches")
+def Consulter_fiches():
+    return render_template("Consulter_fiches.html")
