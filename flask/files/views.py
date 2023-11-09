@@ -8,6 +8,11 @@ from .models import Organisation, ajouter_concert,  supprimer_concert, get_info_
 from wtforms.validators import DataRequired
 from flask import request
 
+from .models import *
+
+
+
+
 @app.route("/")
 def home():
     return render_template("home.html", title="Home")
@@ -125,4 +130,16 @@ def retour(typeOrga):
         return redirect(url_for("accueil_technique"))
     else:
         return redirect(url_for("accueil_bien_etre"))
+    
 
+@app.route("/liste_groupes/", methods = ("GET","POST",))
+def liste_groupes():
+    return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
+
+@app.route("/liste_artistes/", methods = ("GET","POST",))
+def liste_artistes():
+    return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
+
+@app.route("/choix-artiste-groupe/", methods = ("GET","POST",))
+def choix_groupes_artistes():
+    return render_template("choix_groupes_artistes.html")
