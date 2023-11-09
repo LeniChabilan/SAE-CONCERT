@@ -140,6 +140,17 @@ def liste_groupes():
 def liste_artistes():
     return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
 
+@app.route("/choix/<string:typeOrga>")
+def choix(typeOrga):
+    print(typeOrga)
+    if typeOrga == "Technique":
+        return redirect(url_for("Consulter_fiches"))
+    else:
+        return redirect(url_for("choix_fiche"))
+    
+@app.route("/Consulter_fiches")
+def Consulter_fiches():
+    return render_template("Consulter_fiches.html")
 @app.route("/choix-artiste-groupe/", methods = ("GET","POST",))
 def choix_groupes_artistes():
     return render_template("choix_groupes_artistes.html")
