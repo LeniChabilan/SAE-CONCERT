@@ -223,6 +223,8 @@ class Organiser(db.Model):
 def get_info_concert():
     return db.session.query(Concert).all()
 
+def get_info_un_concert(id):
+    return db.session.query(Concert).filter(Concert.concertID==id).first()
 
 def supprimer_concert(concID):
     try:
@@ -242,8 +244,27 @@ def supprimer_concert(concID):
         db.session.rollback()
         return "Erreur : Impossible de supprimer le concert et ses enregistrements liés en raison de contraintes de clé étrangère."
 
-
-
+def mod_concert(id,nom, dateD, dateF, ficheTech, catering, salle, groupe):
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    conc = session.query(Concert).filter(Concert.concertID == id).first()
+    if conc:
+        conc.nomConcert = nom
+        conc.dateDebutConcert = dateD
+        conc.dateFinConcert = dateF
+        conc.ficheTechnique = ficheTech
+        conc.catering = catering
+        conc.salleID = get_id_salle_by_nom(salle)
+        conc.groupeID = get_id_groupe_by_nom(groupe)
+        session.commit()
+    else:
+        print("Le concert n'a pas été trouvé.")
+    
 
 def get_max_id():
     login='chabilan'
