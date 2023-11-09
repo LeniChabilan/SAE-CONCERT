@@ -3,34 +3,37 @@
 {% endblock %} {% block content %}
 <ul class="listeOptions">
   <li>
-    <a href="{{ url_for('liste_concerts') }}"
-      ><div>
+    <a href="{{ url_for('liste_concerts') }}">
+      <div>
         Consulter la liste des concerts prévus
         <img
           src="../static/img/prevus.jpg"
           alt="salle de concert vide en préparation"
-        /></div
-    ></a>
+        />
+      </div>
+    </a>
   </li>
   <li>
-    <a href="#"
-      ><div>
+    <a href="#">
+      <div>
         Éditer une liste de matériel à louer
         <img
           src="../static/img/materielImg.jpg"
           alt="matériel de concert"
-        /></div
-    ></a>
+        />
+      </div>
+    </a>
   </li>
   <li>
-    <a href="{{ url_for('choix_fiche') }}"
-      ><div>
+    <a href="{{ url_for('choix_fiche') }}">
+      <div>
         Modifier les fiches d'artiste
         <img
           src="../static/img/checklist.png"
           alt="image d'une checklist"
-        /></div
-    ></a>
+        />
+      </div>
+    </a>
   </li>
 </ul>
 {% endblock %}

@@ -10,6 +10,7 @@ body{
 }
 
 .middle{
+    flex-basis: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,8 +77,9 @@ tbody tr:nth-child(odd){
     background-color: #b9b9b9;
 }
 
+a>i{
+    color: black;
 }
-
 #tete_page{
     display: flex;
 }
@@ -88,8 +90,8 @@ tbody tr:nth-child(odd){
     color: #ffeba7;
     margin-top: 5vh;
     margin-left: 3vw;
-    height: 5vh;
-    width: 6vw;
+    height: 6vh;
+    width: 7vw;
     text-align: center;
     font-size: 2vh;
     box-sizing: border-box;
