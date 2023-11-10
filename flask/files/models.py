@@ -217,3 +217,4 @@ class Organiser(db.Model):
     nomOrga = Column(String(50), ForeignKey('ORGANISATION.nomOrga'), primary_key=True)
     concert = relationship(Concert)
     organisation = relationship(Organisation)
+

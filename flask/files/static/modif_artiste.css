@@ -21,7 +21,7 @@ main{
     margin-top: 5vh;
     margin-bottom: 3vh;
     padding: 1vw;
-    height: 77vh;
+    height: 114vh;
     width: 20vw;
     margin-left : 30vw;
   }
@@ -56,8 +56,6 @@ main{
     width: 100%;
   }
   
-
-
   .cut {
     background-color: #15172b;
     border-radius: 10px;
@@ -67,7 +65,7 @@ main{
     top: -2vh;
     transform: translateY(0);
     transition: transform 200ms;
-    width: 7vw;
+    width: 12vw;
   }
   
   .iLabel {
@@ -97,20 +95,7 @@ main{
     color: #808097;
   }
   
-  .input:focus ~ .iLabel{
-    color: #fff;
-  }
-
-  .input:valid ~ .cut{
-    transform: translateY(1vh);
-  }
-
-  .input:valid  ~ .iLabel {
-    transform: translateY(-3.5vh) translateX(1.5vh) scale(0.75);
-    opacity: 1;
-  }
-  
-  .input:valid ~ .iLabel {
+  .input:focus ~ .iLabel {
     color: #fff;
   }
   

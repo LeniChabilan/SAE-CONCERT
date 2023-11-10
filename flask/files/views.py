@@ -159,3 +159,55 @@ def choix_groupes_artistes():
 @app.route("/visualiser_fiches/", methods = ("GET","POST",))
 def visualiser_fiches():
     return render_template("visualisation_fiches.html")
+
+
+@app.route("/sup-artiste/<int:id>")
+def sup_artiste(id):
+    supprimer_artiste(id)
+    return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
+
+
+@app.route("/sup-artiste-grp/<int:id>")
+def sup_artiste_grp(id):
+    supprimer_artiste(id)
+    return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
+
+@app.route("/modification_artiste/<int:id>")
+def modification_artiste_art(id):
+    return render_template("modifier_artiste_art.html", arti=get_info_un_artiste(id), aID=id)
+
+@app.route("/modification_artiste_grp/<int:id>")
+def modification_artiste_grp(id):
+    return render_template("modifier_artiste_grp.html", arti=get_info_un_artiste(id), aID=id)
+
+@app.route("/modif-artiste-art/<int:id>", methods =["POST"])
+def modif_artiste_art(id):
+    pseudo=request.form.get("pseudo")
+    nom = request.form.get("nom")
+    prenom = request.form.get("prenom")
+    mail = request.form.get("email")
+    dDnA =request.form.get("dateDN")
+    lDN = request.form.get("lDN")
+    adresseA = request.form.get("adresse")
+    numSecu = request.form.get("numSec")
+    numCNI = request.form.get("numCNI")
+    dateDel = request.form.get("dateDelivrance")
+    dateExp = request.form.get("dateExpiration")
+    mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
+    return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
+
+@app.route("/modif-artiste-grp/<int:id>", methods =["POST"])
+def modif_artiste_grp(id):
+    pseudo=request.form.get("pseudo")
+    nom = request.form.get("nom")
+    prenom = request.form.get("prenom")
+    mail = request.form.get("email")
+    dDnA =request.form.get("dateDN")
+    lDN = request.form.get("lDN")
+    adresseA = request.form.get("adresse")
+    numSecu = request.form.get("numSec")
+    numCNI = request.form.get("numCNI")
+    dateDel = request.form.get("dateDelivrance")
+    dateExp = request.form.get("dateExpiration")
+    mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
+    return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())

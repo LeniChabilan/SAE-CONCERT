@@ -50,8 +50,8 @@
                             <th>{{arti.dateExpirationCNI}}</th>
                             
    
-                            <th><a href="#"><i class="fa-solid fa-pen"></i></a></th>
-                            <th><a href="#"><i class="fa-solid fa-trash"></i></a></th>
+                            <th><a href="{{ url_for('modification_artiste_grp', id=arti.artisteID) }}"><i class="fa-solid fa-pen"></i></a></th>
+                            <th><a href="{{ url_for('sup_artiste_grp', id=arti.artisteID) }}"><i class="fa-solid fa-trash"></i></a></th>
 
 
                         </tr>
