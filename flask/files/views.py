@@ -151,6 +151,11 @@ def choix(typeOrga):
 @app.route("/Consulter_fiches")
 def Consulter_fiches():
     return render_template("Consulter_fiches.html")
+
 @app.route("/choix-artiste-groupe/", methods = ("GET","POST",))
 def choix_groupes_artistes():
     return render_template("choix_groupes_artistes.html")
+
+@app.route("/visualiser_fiches/", methods = ("GET","POST",))
+def visualiser_fiches():
+    return render_template("visualisation_fiches.html")
