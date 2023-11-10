@@ -1,0 +1,136 @@
+body{
+  margin: 0;
+}
+
+.main{
+    min-height: 100vh;
+    min-width: 100vw;
+}
+.partie_principale{
+    display:flex;
+}
+
+.middle{
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 3%;
+
+}
+
+
+
+body.light .main .partie_principale, body.light .main {
+  background-color: #e8e5da;
+}
+
+body.dark .main .partie_principale, body.dark .main{
+  background-color: #212121;
+}
+
+body.light #modification{
+    color: #212121;
+    font-size: 2vw;
+}
+
+body.dark #modification{
+    color: #e8e5da;
+    font-size: 2vw;
+}
+
+.liste_des_concerts{
+
+    margin-top: 5%;
+    margin-left: 1%;
+    background-color: #d3d1cb;
+    margin-right: 1%;
+    margin-bottom: 5%;
+}
+
+#modification {
+    font-weight: 300;
+}
+
+.liste_des_concerts, th{
+    border-collapse: collapse;
+}
+
+table{
+    outline: none;
+    table-layout: fixed;
+}
+
+thead{
+    background-color: #2a2b38;
+    color: #fff;
+}
+thead th{
+    padding-left:1vw;
+    padding-right:1vw;
+    padding-bottom: 3vh;
+    padding-top:3vh;
+    border: none;
+}
+
+th{
+    padding-bottom: 3vh;
+    padding-top:3vh;
+}
+tbody tr:nth-child(odd){
+    background-color: #b9b9b9;
+}
+
+
+#tete_page{
+    display: flex;
+}
+
+.bouton_de_retour{
+    appearance: none;
+    background-color: #2a2b38;
+    color: #ffeba7;
+    margin-top: 5vh;
+    margin-left: 3vw;
+    height: 6vh;
+    width: 7vw;
+    text-align: center;
+    font-size: 2vh;
+    box-sizing: border-box;
+    border-radius: 0.9375em;
+    border: none;
+}
+
+.bouton_de_retour:disabled {
+    pointer-events: none;
+}
+
+.bouton_de_retour:hover {
+  color: #2a2b38;
+  background-color: #ffeba7;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.bouton_de_retour:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.liens{
+    cursor: hand;
+}
+ 
+.liens:hover
+{
+   background-color: rgb(133, 133, 133);
+   cursor: hand;
+} 
+
+a>i{
+    color: black;
+    justify-content: center;
+    padding: 30%;
+}
