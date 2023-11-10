@@ -98,7 +98,26 @@ def mod_concert(id,nom, dateD, dateF, ficheTech, catering, salle, groupe):
         session.commit()
     else:
         print("Le concert n'a pas été trouvé.")
-    
+
+
+def mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp):
+    session = login()
+    arti = session.query(Artiste).filter(Artiste.artisteID == id).first()
+    if arti:
+        arti.pseudoArtiste=pseudo
+        arti.nomA=nom
+        arti.prenomA=prenom
+        arti.mailA=mail
+        arti.DdNA=dDnA
+        arti.LdN=lDN
+        arti.adresseA=adresseA
+        arti.numSecuriteSociale=numSecu
+        arti.numCNI=numCNI
+        arti.dateDelivranceCNI=dateDel
+        arti.dateExpirationCNI=dateExp
+        session.commit()
+    else:
+        print("L'artiste n'a pas été trouvé.")
 
 def get_max_id():
     session = login()
@@ -151,4 +170,20 @@ def get_liste_groupe():
 
 def get_artiste_groupe(id):
     session = login()
-    return session.query(Composer.artisteID).filter_by(groupeID=id).all()
+    artistes = session.query(Composer.artisteID).filter_by(groupeID=id).all()
+    session.expunge_all()
+    session.close() 
+    return artistes
+
+def supprimer_artiste(artID):
+    try:
+        # Supprimez le concert et toutes les lignes liées dans d'autres tables
+        db.session.query(Composer).filter_by(artisteID=artID).delete(synchronize_session=False)
+        db.session.query(Artiste).filter_by(artisteID=artID).delete(synchronize_session=False)
+
+        db.session.commit()
+        return "Artiste et enregistrements liés supprimés avec succès."
+    except pymysql.IntegrityError:
+        # Si une contrainte de clé étrangère empêche la suppression, gérez l'erreur ici
+        db.session.rollback()
+        return "Erreur : Impossible de supprimer l'artiste et ses enregistrements liés en raison de contraintes de clé étrangère."
