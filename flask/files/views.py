@@ -148,6 +148,7 @@ def choix(typeOrga):
     else:
         return redirect(url_for("choix_fiche"))
     
+
 @app.route("/Consulter_fiches")
 def Consulter_fiches():
     return render_template("Consulter_fiches.html")
