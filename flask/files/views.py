@@ -4,7 +4,7 @@ from flask_login import login_user , current_user, logout_user, login_required
 from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
-from .models import Organisation, ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert
+from .models import Organisation, ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe
 from wtforms.validators import DataRequired
 from flask import request
 
@@ -64,7 +64,7 @@ def choix_fiche():
 
 @app.route("/creation_concert")
 def creation_concert():
-    return render_template("creation_concert.html")
+    return render_template("creation_concert.html", liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
 
 @app.route("/liste_concerts/", methods = ("GET","POST",))
@@ -103,7 +103,7 @@ def modif_concert(id):
 
 @app.route("/modification_concert/<int:id>")
 def modification_concert(id):
-    return render_template("modifier_concert.html",concert=get_info_un_concert(id), cID=id)
+    return render_template("modifier_concert.html", concert=get_info_un_concert(id), cID=id)
 
 @app.route("/entrer-groupe")
 def inscription_groupe():

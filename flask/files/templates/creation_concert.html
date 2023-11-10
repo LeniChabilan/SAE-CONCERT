@@ -35,16 +35,25 @@
                 <label class="iLabel" for="catering">Catering</label>
               </div>
               <div class="input-container">
-                <input placeholder="Salle" type="text" class="input" name="salle" required>
+                <select name="salle" id="pet-select" class="input">
+                  {% for s in liste_salle %}
+                  <option value="{{s.nomSalle}}">{{s.nomSalle}}</option>
+                  {% endfor %}
+                </select>
+                </input>
                 <div class="cut"></div>
                 <label class="iLabel" for="salle">Salle</label>
               </div>
               <div class="input-container">
-                <input placeholder="Groupe" type="text" class="input" name="groupe" required>
+                <select name="groupe" id="pet-select" class="input">
+                  {% for g in liste_groupe %}
+                  <option value="{{g.nomGroupe}}">{{g.nomGroupe}}</option>
+                  {% endfor %}
+                </select>
+                </input>
                 <div class="cut"></div>
                 <label class="iLabel" for="groupe">Groupe</label>
               </div>
-              
               <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
         </form>
     </div>
