@@ -4,7 +4,8 @@ from flask_login import login_user , current_user, logout_user, login_required
 from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
-from .models import Organisation, ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe
+from.models import Organisation
+from .requetes import ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps
 from wtforms.validators import DataRequired
 from flask import request
 
@@ -118,10 +119,8 @@ def inscription_groupe():
 def recherche_groupe():
     nom_groupe = request.form.get("nom")
     groupe = chercher_groupe(nom_groupe)
-    return redirect(url_for("completer_fiche"))
-
-@app.route("/completer-fiche")
-def completer_fiche():
+    if get_artiste_groupe(groupe.groupeID) == []:
+        return render_template("ajoute_artiste.html")
     return render_template("completer_fiche.html")
 
 @app.route("/retour/<string:typeOrga>")
