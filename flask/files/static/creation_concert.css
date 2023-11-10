@@ -56,6 +56,8 @@ main{
     width: 100%;
   }
   
+
+
   .cut {
     background-color: #15172b;
     border-radius: 10px;
@@ -95,7 +97,20 @@ main{
     color: #808097;
   }
   
-  .input:focus ~ .iLabel {
+  .input:focus ~ .iLabel{
+    color: #fff;
+  }
+
+  .input:valid ~ .cut{
+    transform: translateY(1vh);
+  }
+
+  .input:valid  ~ .iLabel {
+    transform: translateY(-3.5vh) translateX(1.5vh) scale(0.75);
+    opacity: 1;
+  }
+  
+  .input:valid ~ .iLabel {
     color: #fff;
   }
   
