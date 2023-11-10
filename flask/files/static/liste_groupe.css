@@ -1,17 +1,20 @@
-body{
-  margin: 0;
+/* Reset some existing styles */
+body {
+    margin: 0;
 }
 
-.main{
+/* General styles */
+.main {
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100%;
 }
-.partie_principale{
-    display:flex;
+
+.partie_principale {
+    display: flex;
     flex-wrap: wrap;
 }
 
-.middle{
+.middle {
     flex-basis: 80%;
     display: flex;
     flex-direction: column;
@@ -19,82 +22,84 @@ body{
     align-items: center;
     text-align: center;
     padding-top: 3%;
-
 }
 
-
-
-body.light .main .partie_principale, body.light .main {
-  background-color: #e8e5da;
+/* Light and Dark mode styles */
+body.light .main .partie_principale,
+body.light .main {
+    background-color: #e8e5da;
 }
 
-body.dark .main .partie_principale, body.dark .main{
-  background-color: #212121;
+body.dark .main .partie_principale,
+body.dark .main {
+    background-color: #212121;
 }
 
-body.light #modification{
+body.light #modification {
     color: #212121;
     font-size: 2vw;
 }
 
-body.dark #modification{
+body.dark #modification {
     color: #e8e5da;
     font-size: 2vw;
 }
 
-.liste_des_concerts{
-    margin-top: 2%;
+/* Table styles */
+.liste_des_concerts {
+    margin-top: 5%;
     margin-left: 2%;
     background-color: #d3d1cb;
     margin-right: 2%;
     outline: none;
-
+    overflow-x: auto; /* Add horizontal scroll if needed */
 }
 
 #modification {
     font-weight: 300;
 }
 
-.liste_des_concerts, th{
+.liste_des_concerts,
+th {
     border-collapse: collapse;
 }
 
-
-thead{
-    background-color: #2a2b38;
-    color: #fff;
-   
-}
-.test{
+.logo {
     background-color: #d3d1cb;
 }
-thead th{
-    padding-left:0.5%;
-    padding-bottom:1%;
-    padding-top:1%;
-    padding-right: 0.5%;
-    border: none;
+
+thead {
+    background-color: #2a2b38;
+    color: #fff;
 }
-th{
-    padding-left:0.5%;
-    padding-bottom:0.5%;
-    padding-top:0.5%;
-    padding-right: 0.5%;
+
+.test,
+thead th,
+th {
+    padding-top: 2%;
     border: none;
+    margin-right: 5%;
 }
-table{
+td{
+    padding: 1%;
+}
+
+table {
     width: 100%;
+    table-layout: unset;
 }
-tbody tr:nth-child(odd){
+
+tbody tr:nth-child(odd) {
     background-color: #b9b9b9;
 }
 
-
-#tete_page{
+/* Header styles */
+#tete_page {
     display: flex;
 }
 
-.bouton_de_retour{
+/* Button styles */
+.bouton_de_retour {
     appearance: none;
     background-color: #2a2b38;
     color: #ffeba7;
@@ -114,29 +119,62 @@ tbody tr:nth-child(odd){
 }
 
 .bouton_de_retour:hover {
-  color: #2a2b38;
-  background-color: #ffeba7;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
+    color: #2a2b38;
+    background-color: #ffeba7;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
 }
 
 .bouton_de_retour:active {
-  box-shadow: none;
-  transform: translateY(0);
+    box-shadow: none;
+    transform: translateY(0);
 }
 
-.liens{
-    cursor: hand;
+/* Link styles */
+.liens {
+    cursor: pointer;
 }
- 
-.liens:hover
-{
-   background-color: rgb(133, 133, 133);
-   cursor: hand;
-} 
 
-a>i{
+.liens:hover {
+    background-color: rgb(133, 133, 133);
+}
+
+a > i {
     color: black;
     justify-content: center;
-    padding: 30%;
+    padding: 15%;
+}
+
+/* Existing styles */
+
+/* Responsive styles */
+@media only screen and (max-width: 1100px) {
+    .middle {
+      flex-basis: 100%; /* Adjust for smaller screens */
+    }
+
+    .partie_principale {
+      overflow-x: auto; /* Add horizontal scroll if needed */
+      display: flex; /* Enable block formatting context to contain floats */
+    }
+
+    .table-container {
+      flex: 0 0 auto; /* Do not allow flex basis to grow */
+      width: 100%; /* Ensure table containers take full width */
+      max-width: 800px; /* Set a fixed width that suits your design */
+      margin-right: 5%;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap; /* Prevent line breaks inside the table cells */
+    }
+
+    .liste_des_concerts {
+      width: 100%;
+    }
+
+    .bouton_de_retour {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
 }
