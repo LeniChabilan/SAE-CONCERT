@@ -384,8 +384,6 @@ def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, gr
     session.add(concert)
     session.commit()
 
-
-
 def chercher_groupe(nom):
     login='chabilan'
     passwd='chabilan'
@@ -403,4 +401,22 @@ def chercher_groupe(nom):
         session.commit()
         return grp
 
+def get_liste_salle():
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    return session.query(Salle).all()
 
+def get_liste_groupe():
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    return session.query(Groupe).all()
