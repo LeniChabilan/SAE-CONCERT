@@ -222,7 +222,15 @@ class Organiser(db.Model):
     concert = relationship(Concert)
     organisation = relationship(Organisation)
 
-
+def login():
+    login='chabilan'
+    passwd='chabilan'
+    serveur='servinfo-maria'
+    bd='DBchabilan'
+    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    return session
 
 def get_info_concert():
     return db.session.query(Concert).all()
@@ -243,13 +251,7 @@ def get_info_un_concert(id):
     return db.session.query(Concert).filter(Concert.concertID==id).first()
 
 def get_id_artiste_par_groupe(idG):
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     grps=session.query(Composer).filter(Composer.groupeID==idG).all()
     liste_artID=[]
     for grp in grps:
@@ -257,13 +259,7 @@ def get_id_artiste_par_groupe(idG):
     return liste_artID
 
 def get_liste_artiste(liste_id):
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     liste_art=[]
     for idA in liste_id:
         arti=session.query(Artiste).filter(Artiste.artisteID==idA).first()
@@ -271,13 +267,6 @@ def get_liste_artiste(liste_id):
     return liste_art
 
 def get_dico_grps():
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
     dicoGr={}
     grps=get_info_groupe()
     for grp in grps:
@@ -307,13 +296,7 @@ def supprimer_concert(concID):
         return "Erreur : Impossible de supprimer le concert et ses enregistrements liés en raison de contraintes de clé étrangère."
 
 def mod_concert(id,nom, dateD, dateF, ficheTech, catering, salle, groupe):
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     conc = session.query(Concert).filter(Concert.concertID == id).first()
     if conc:
         conc.nomConcert = nom
@@ -329,69 +312,33 @@ def mod_concert(id,nom, dateD, dateF, ficheTech, catering, salle, groupe):
     
 
 def get_max_id():
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     if session.query(func.max(Concert.concertID)).all()[0][0] is None:
         return 1
     return session.query(func.max(Concert.concertID)).all()[0][0] + 1
 
 def get_max_id_groupe():
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     if session.query(func.max(Groupe.groupeID)).all()[0][0] is None:
         return 1
     return session.query(func.max(Groupe.groupeID)).all()[0][0] + 1
 
 def get_id_salle_by_nom(nom):
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     return session.query(Salle.salleID).filter_by(nomSalle = nom).limit(1).all()[0][0]
 
 def get_id_groupe_by_nom(nom):
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     return session.query(Groupe.groupeID).filter_by(nomGroupe = nom).limit(1).all()[0][0]
 
 def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     concert = Concert(Nom, datetime.strptime(dateDebut,"%Y-%m-%d").date(), datetime.strptime(dateFin,"%Y-%m-%d").date(), ficheTechnique, catering, get_id_salle_by_nom(salle), get_id_groupe_by_nom(groupe))
     session.add(concert)
     session.commit()
 
 def chercher_groupe(nom):
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     groupe = session.query(Groupe).filter_by(nomGroupe=nom).all()
     if groupe != []:        
         return groupe[0]
@@ -402,21 +349,9 @@ def chercher_groupe(nom):
         return grp
 
 def get_liste_salle():
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     return session.query(Salle).all()
 
 def get_liste_groupe():
-    login='chabilan'
-    passwd='chabilan'
-    serveur='servinfo-maria'
-    bd='DBchabilan'
-    engine=create_engine('mysql+mysqldb://'+login+':'+passwd+'@'+serveur+'/'+bd, echo=False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = login()
     return session.query(Groupe).all()
