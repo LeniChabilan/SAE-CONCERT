@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='entrer_groupe.css')}}" />
+{% endblock %} {% block content %}
+<main>
+    <div class="form">
+        <div class="title">Entrez votre nom de groupe !</div>
+        <form role="form" method ="POST" action ="{{ url_for('recherche_groupe') }}">
+            <div class="input-container ">
+                <input placeholder="Nom Groupe" type="text" class="input" name="nom" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="nom">Nom Groupe</label>
+            </div>            
+            <button class="submit" type="text">Enregistrer</button>
+        </form>
+    </div>
+</main>
+{% endblock %}

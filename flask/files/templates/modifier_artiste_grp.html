@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='modif_artiste.css')}}" />
+<script src="../static/script/confirmation.js"></script>
+{% endblock %} {% block content %}
+<main>
+  <div id="bouton_retour_choix_fiche">
+    <a href="{{ url_for('liste_groupes') }}">
+      <button type="button" class="bouton_de_retour">Retour</button>
+    </a>
+  </div>
+    <div class="form">
+        <div class="title">Modifiez les information de l'artiste !</div>
+        <form role="form" method ="POST" action ="{{ url_for('modif_artiste_grp', id=aID) }}">
+            <div class="input-container ">
+                <input placeholder="Pseudo" type="text" class="input" name="pseudo" value="{{ arti.pseudoArtiste }}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="pseudo">Pseudo</label>
+             </div>
+            <div class="input-container ">
+                <input placeholder="Nom" type="text" class="input" name="nom" value="{{ arti.nomA }}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="nom">Nom</label>
+             </div>
+             <div class="input-container ">
+                <input placeholder="Prenom" type="text" class="input" name="prenom" value="{{ arti.prenomA }}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="prenom">Prénom</label>
+             </div>
+             <div class="input-container ">
+                <input placeholder="Email" type="text" class="input" name="email" value="{{ arti.mailA }}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="email">Email</label>
+             </div>
+              <div class="input-container">
+                <input placeholder="" type="date" class="input" name="dateDN" value="{{ arti.DdNA }}" required>
+                <label class="iLabel" for="dateDN">Date de naissance</label>
+              </div>
+              <div class="input-container ">
+                <input placeholder="Lieu de naissance" type="text" class="input" name="lDN" value="{{ arti.LdN }}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="lDN">Lieu de naissance</label>
+             </div>
+             <div class="input-container ">
+                <input placeholder="Adresse" type="text" class="input" name="adresse" value="{{ arti.adresseA }}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="adresse">Adresse</label>
+             </div>
+             <div class="input-container ">
+                <input placeholder="Numéro de sécurité sociale" type="text" class="input" name="numSec" value="{{ arti.numSecuriteSociale }}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="numSec">Numéro de sécurité sociale</label>
+             </div>
+             <div class="input-container ">
+                <input placeholder="Numéro CNI" type="text" class="input" name="numCNI" value="{{ arti.numCNI }}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="numCNI">Numéro CNI</label>
+             </div>
+             <div class="input-container">
+                <input placeholder="" type="date" class="input" name="dateDelivrance" value="{{ arti.dateDelivranceCNI }}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="dateDelivrance">Date de délivrance</label>
+             </div>
+             <div class="input-container">
+                <input placeholder="" type="date" class="input" name="dateExpiration" value="{{ arti.dateExpirationCNI }}" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="dateExpiration">Date d'expiration</label>
+            </div>
+              
+              <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
+        </form>
+    </div>
+</main>
+{% endblock %}

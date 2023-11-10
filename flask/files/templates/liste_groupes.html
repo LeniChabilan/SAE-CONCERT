@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='liste_groupe.css')}}" />
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <div id="tete_page">
+      <div id="bouton_retour_choix_fiche">
+        <a href="{{ url_for('choix_groupes_artistes') }}">
+          <button type="button" class="bouton_de_retour">Retour</button>
+        </a>
+      </div>
+      <div class="middle">
+        <h1 id="modification">Liste des groupes</h1>
+      </div>
+    </div>
+    <div class="partie_principale">
+        
+      {% if groupes %}
+        {% for grp, lArt in groupes.items() %}
+          <table class="liste_des_concerts">
+            <thead>
+              <th>{{grp.nomGroupe}}</th>
+              <th></th>
+              <th class="logo"><a href="#"><i class="fa-solid fa-pen"></i></a></th>
+              <th class="logo"><a href="#"><i class="fa-solid fa-trash"></i></a></th>
+            </thead>
+            <thead>
+              <th>Pseudo</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Mail</th>
+              <th>Date de naissance</th>
+              <th>Lieu de naissance</th>
+              <th>Adresse</th>
+              <th>Numéro sécurité sociale</th>
+              <th>Numéro CNI</th>
+              <th>Date de délivrance</th>
+              <th>Date d'expiration</th>
+            </thead>
+            <tbody>
+              {% if lArt %}
+                {% for arti in lArt %}
+                  <tr>
+                    <td>{{arti.pseudoArtiste}}</td>
+                    <td>{{arti.nomA}}</td>
+                    <td>{{arti.prenomA}}</td>
+                    <td>{{arti.mailA}}</td>
+                    <td>{{arti.DdNA}}</td>
+                    <td>{{arti.LdN}}</td>
+                    <td>{{arti.adresseA}}</td>
+                    <td>{{arti.numSecuriteSociale}}</td>
+                    <td>{{arti.numCNI}}</td>
+                    <td>{{arti.dateDelivranceCNI}}</td>
+                    <td>{{arti.dateExpirationCNI}}</td>
+                  </tr>
+                {% endfor %}
+              {% endif %} 
+            </tbody>
+          </table>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

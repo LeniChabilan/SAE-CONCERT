@@ -1,96 +1,127 @@
-body{margin:0;}
-
-header{
-    display: flex;
-    background-color: #264263;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.img_base {
-    height: 5vw;
-    width: 5vw;
-    border-radius: 15%;
-    margin: 2vw;
-    margin-right : 4vw;
+.main {
+  height: 85vh;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#nom_Entreprise{
-    color: #E9C46A;
-    margin-top : 2wh;
-    font-size: 3vw;
-    margin-right: 38vw;
+body.light .main {
+  background-color: #e8e5da;
 }
 
-#bouton_se_connecter{
-    color : #FFFF;
-    border-color: #22AD8F;
-    background-color: #22AD8F;
-    border-radius: 5%;
-    margin: 2vw;
-    margin-top: 3vw;
-    font-size: 2vw;
+body.dark .main {
+  background-color: #212121;
 }
 
-
-#bouton_se_connecter:hover{
-    background-color: #1d997e;
+.card {
+  width: 25vw;
+  height: 50vh;
+  padding: 1.9rem 1.2rem;
+  text-align: center;
+  background: #2a2b38;
+  border-radius: 20px;
 }
 
-.left{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #2D8DD2;
-    width: 21vw;
-    height: 28vh;
-    text-align: center;
-    border-top-right-radius: 45%;
-    border-bottom-right-radius: 45%;
+/*Inputs*/
+.field {
+  height: 5vh;
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  background-color: #1f2029;
+  border-radius: 4px;
+  padding: 0.5em 1em;
 }
 
-.main{
-    background-color: #22AD8F;
+.input-icon {
+  height: 1em;
+  width: 1em;
+  fill: #ffeba7;
 }
 
-#connexion{
-    color: #FFFF;
-    font-size: 3vw;
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
+  font-size: 1vw;
 }
 
-.id_mdp{
-    margin-left: 24vw;
+/*Text*/
+.title {
+  margin-bottom: 3.5vh;
+  font-size: 2vw;
+  font-weight: 500;
+  color: #ffeba7;
 }
 
-.id, .mdp{
-    font-size:2vw;
-    margin-top: -2vw;
+/*Buttons*/
+.btn {
+  height: 4vh;
+  width: 8vw;
+  margin: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1vw;
+  text-transform: uppercase;
+  padding: 0;
+  background-color: #ffeba7;
+  color: #5e6681;
+  box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
+  transition: all 0.3s ease-in-out;
 }
 
-#identifiant, #mot_de_passe{
-    border: none;
-    border-radius: 5px;
-    font-size: 4vh;
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
-    width : 40vw;
+.btn-link {
+  color: #f5f5f5;
+  display: block;
+  font-size: 0.75em;
+  transition: color 0.3s ease-out;
 }
 
-.envoyer_identifiants{
-    margin-left:75vw;
+/*Hover & focus*/
+.field input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-#boutonConnexion{
-    color : #FFFF;
-    border-color: #E9C46A;
-    background-color: #E9C46A;
-    border-radius: 8%;
-    margin: 2vw;
-    margin-top: 3vw;
-    font-size: 2vw;
-    margin-bottom: 5vh;
-    height:6vh;
+.btn:hover {
+  background-color: #5e6681;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
 }
 
-.texte_connexion{
-    margin-top: 10vh;
-    margin-bottom: 2vh;
+.btn-link:hover {
+  color: #ffeba7;
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    width: 75vw;
+    height: 50vh;
+  }
+
+  .title {
+    font-size: 8vw;
+  }
+
+  .input-field {
+    font-size: 4vw;
+  }
+
+  .btn {
+    height: 9vh;
+    width: 30vw;
+    font-size: 2.5vw;
+  }
 }

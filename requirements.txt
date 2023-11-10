@@ -12,3 +12,6 @@ Werkzeug==2.2.2
 WTForms==3.0.1
 flask-sqlalchemy
 flask-wtf
+flask-login
+pymysql
+mysqlclient

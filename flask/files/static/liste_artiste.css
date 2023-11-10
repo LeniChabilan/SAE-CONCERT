@@ -1,0 +1,190 @@
+/* Reset some existing styles */
+body {
+    margin: 0;
+}
+
+/* General styles */
+.main {
+    min-height: 100vh;
+    min-width: 100vw;
+    max-width: 100%;
+}
+
+.partie_principale {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.middle {
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 3%;
+}
+
+/* Light and Dark mode styles */
+body.light .main .partie_principale,
+body.light .main {
+    background-color: #e8e5da;
+}
+
+body.dark .main .partie_principale,
+body.dark .main {
+    background-color: #212121;
+}
+
+body.light #modification {
+    color: #212121;
+    font-size: 2vw;
+}
+
+body.dark #modification {
+    color: #e8e5da;
+    font-size: 2vw;
+}
+
+/* Table styles */
+.liste_des_concerts {
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d3d1cb;
+    overflow-x: auto; /* Add horizontal scroll if needed */
+    max-width: 80%; /* Set a maximum width for the table container */
+}
+
+#modification {
+    font-weight: 300;
+}
+
+.liste_des_concerts,
+th {
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.logo {
+    background-color: #d3d1cb;
+}
+
+thead {
+    background-color: #2a2b38;
+    color: #fff;
+}
+.th-long {
+    max-width: 150px; /* Set your preferred maximum width */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+th,
+td {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+    border: none;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #b9b9b9;
+}
+
+/* Header styles */
+#tete_page {
+    display: flex;
+}
+
+/* Button styles */
+.bouton_de_retour {
+    appearance: none;
+    background-color: #2a2b38;
+    color: #ffeba7;
+    margin-top: 5vh;
+    margin-left: 3vw;
+    height: 6vh;
+    width: 7vw;
+    text-align: center;
+    font-size: 2vh;
+    box-sizing: border-box;
+    border-radius: 0.9375em;
+    border: none;
+}
+
+.bouton_de_retour:disabled {
+    pointer-events: none;
+}
+
+.bouton_de_retour:hover {
+    color: #2a2b38;
+    background-color: #ffeba7;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.bouton_de_retour:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+/* Link styles */
+.liens {
+    cursor: hand;
+}
+
+.liens:hover {
+    background-color: rgb(133, 133, 133);
+    cursor: hand;
+}
+
+a > i {
+    color: black;
+    justify-content: center;
+    padding: 30%;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 1100px) {
+    .middle {
+        flex-basis: 100%; /* Adjust for smaller screens */
+    }
+
+    .partie_principale {
+        overflow-x: auto; /* Add horizontal scroll if needed */
+        display: flex; /* Enable block formatting context to contain floats */
+    }
+
+    .table-container {
+        flex: 0 0 auto; /* Do not allow flex basis to grow */
+        width: 100%; /* Ensure table containers take full width */
+        max-width: 800px; /* Set a fixed width that suits your design */
+        margin-right: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        white-space: nowrap; /* Prevent line breaks inside the table cells */
+        overflow-x: auto;
+    }
+
+    .liste_des_concerts {
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #d3d1cb;
+        overflow-x: auto; /* Add horizontal scroll if needed */
+        max-width: 80%; /* Set a maximum width for the table container */
+    }
+
+    .bouton_de_retour {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

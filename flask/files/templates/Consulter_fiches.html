@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='consulter_fiches.css')}}" />
+{% endblock %} {% block content %}
+  <div class="main">
+    <div id="tete_page">
+      <div id="bouton_retour_choix_fiche">
+        <a href="{{ url_for('liste_concerts') }}">
+          <button type="button" class="bouton_de_retour">Retour</button>
+        </a>
+      </div>
+      <div class="middle">
+        <h1 id="modification">Consulter fiches</h1>
+      </div>
+    </div>
+    <ul class="listeOptions">
+      <li>
+        <div>
+          <a href="{{ url_for('visualiser_fiches') }}" class="text_link">Fiche Rider</a>
+          <a href="{{ url_for('visualiser_fiches') }}">
+              <img
+                src="../static/img/branchements.png"
+                alt="branchements électrique"/>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="#">Fiche de plan feu</a>
+          <a href="#">
+            <img
+              src="../static/img/prevus.jpg"
+              alt="salle de concert vide en préparation"
+            />
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</html>
+{% endblock %}

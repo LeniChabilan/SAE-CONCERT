@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='creation_concert.css')}}" />
+<script src="../static/script/confirmation.js"></script>
+{% endblock %} {% block content %}
+<main>
+  <div id="bouton_retour_choix_fiche">
+      <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">
+        <button type="button" class="bouton_de_retour">Retour</button>
+      </a>
+  </div>
+    <div class="form">
+        <div class="title">Creer votre concert !</div>
+        <form role="form" method ="POST" action ="{{ url_for('save_concert') }}">
+            <div class="input-container ">
+                <input placeholder="Nom" type="text" class="input" name="nom" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="nom">Nom</label>
+             </div>
+              <div class="input-container">
+                <input placeholder="" type="date" class="input" name="dateD" required>
+                <label class="iLabel" for="dateD"></label>
+              </div>
+              <div class="input-container">
+                <input placeholder="" type="date" class="input" name="dateF" required>
+                <label class="iLabel" for="dateF"></label>
+              </div>
+              <div class="input-container">
+                <input placeholder="Fiche technique" type="text" class="input" name="fiche" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="Fiche">Fiche technique</label>
+              </div>
+              <div class="input-container">
+                <input placeholder="Catering" type="text" class="input" name="catering" required>
+                <div class="cut"></div>
+                <label class="iLabel" for="catering">Catering</label>
+              </div>
+              <div class="input-container">
+                <select name="salle" id="pet-select" class="input">
+                  {% for s in liste_salle %}
+                  <option value="{{s.nomSalle}}">{{s.nomSalle}}</option>
+                  {% endfor %}
+                </select>
+                </input>
+                <div class="cut"></div>
+                <label class="iLabel" for="salle">Salle</label>
+              </div>
+              <div class="input-container">
+                <select name="groupe" id="pet-select" class="input">
+                  {% for g in liste_groupe %}
+                  <option value="{{g.nomGroupe}}">{{g.nomGroupe}}</option>
+                  {% endfor %}
+                </select>
+                </input>
+                <div class="cut"></div>
+                <label class="iLabel" for="groupe">Groupe</label>
+              </div>
+              <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
+        </form>
+    </div>
+</main>
+{% endblock %}
