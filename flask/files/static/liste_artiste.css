@@ -101,7 +101,6 @@ tbody tr:nth-child(odd) {
 /* Header styles */
 #tete_page {
     display: flex;
-    justify-content: center;
 }
 
 /* Button styles */
