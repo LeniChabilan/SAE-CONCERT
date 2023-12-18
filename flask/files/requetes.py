@@ -1,4 +1,4 @@
-from .models import Concert, Groupe, Artiste, Composer, Participe, Salle, MusicienAdditionnel, Transporte, Necessiter, Prepare, Organiser , Utilise
+from .models import Concert, Groupe, Artiste, Composer, Participe, Salle, MusicienAdditionnel, Transporte, Necessiter, Prepare, Organiser , Utilise,Plan
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -202,6 +202,14 @@ def supprimer_artiste(artID):
         db.session.rollback()
         return "Erreur : Impossible de supprimer l'artiste et ses enregistrements liés en raison de contraintes de clé étrangère."
     
+def get_plan_concert(idsalle):
+    session = login()
+    res= session.query(Plan.planScene).filter_by(salleID=idsalle).all()
+    res1=[]
+    for val in res:
+        res1.append(val[0])
+    return res1
+
 def ajouter_artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, idGroupe):
     session = login()
     artiste = Artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, 1)

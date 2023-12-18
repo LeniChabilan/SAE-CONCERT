@@ -85,7 +85,14 @@ main{
     border: none;
     align-items: center;
 }
-
+.planScene{
+    flex-basis: 80%;
+    text-align: center;
+    color: #212121;
+    font-size: 2vw;
+    font-weight: 300;
+    margin-top: 5vh;
+}
 .bouton_de_retour:disabled {
     pointer-events: none;
 }

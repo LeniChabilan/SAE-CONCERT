@@ -695,43 +695,35 @@
 
 - Plan:
   - planID: 1
-    planScene: null
-    planFeu: null
+    planScene: "./fichier_pdf/planScene.pdf"
     salleID: 1
 
   - planID: 2
-    planScene: null
-    planFeu: null
+    planScene: "./fichier_pdf/planScene.pdf"
     salleID: 2
 
   - planID: 3
-    planScene: null
-    planFeu: null
+    planScene: "./fichier_pdf/planScene.pdf"
     salleID: 3
 
   - planID: 4
-    planScene: null
-    planFeu: null
+    planScene: "./fichier_pdf/planScene.pdf"
     salleID: 4
 
   - planID: 5
-    planScene: null
-    planFeu: null
+    planScene: "./fichier_pdf/planScene2.pdf"
     salleID: 1
 
   - planID: 6
-    planScene: null
-    planFeu: null
+    planScene: "./fichier_pdf/planScene2.pdf"
     salleID: 2
 
   - planID: 7
-    planScene: null
-    planFeu: null
+    planScene: "./fichier_pdf/planScene2.pdf"
     salleID: 3
 
   - planID: 8
-    planScene: null
-    planFeu: null
+    planScene: "./fichier_pdf/planScene2.pdf"
     salleID: 4
 
 
@@ -892,6 +884,7 @@
     dateFinConcert: "2023-11-29"
     ficheTechnique: "Fiche technique du concert 1"
     catering: "Catering du concert 1"
+    ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 2
     groupeID: 2
 
@@ -901,6 +894,7 @@
     dateFinConcert: "2023-11-28"
     ficheTechnique: "Fiche technique du concert 2"
     catering: "Catering du concert 2"
+    ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 3
     groupeID: 1
 
@@ -910,6 +904,7 @@
     dateFinConcert: "2023-12-24"
     ficheTechnique: "Fiche technique du concert 3"
     catering: "Catering du concert 3"
+    ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 1
     groupeID: 3
 

@@ -1,6 +1,9 @@
 {% extends 'base.html' %} {% block styles %} {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='accueil_bien_etre.css')}}" />
+<script src="../static/script/copier.js"></script>
 {% endblock %} {% block content %}
+<main>
+  
 <ul class="listeOptions">
   <li>
     <a href="{{ url_for('liste_concerts') }}">
@@ -37,4 +40,10 @@
     </a>
   </li>
 </ul>
+<div id="boutonC">
+  <button onclick="copierTexteDansPressePapiers()" id="boutonCopier">Copier le lien du formulaire</button>
+
+</div>
+
+</main>
 {% endblock %}
