@@ -6,7 +6,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
 
 from .models import Organisation, Concert
-from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste
+from .requetes import ajouter_concert,  supprimer_concert, supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste, ajouter_artiste
 
 from wtforms.validators import DataRequired
 from flask import request
@@ -133,6 +133,10 @@ def recherche_groupe():
 def completer_fiche():
     return render_template("completer_fiche.html")
 
+@app.route("/completer-fiche-pdf", methods=['GET', 'POST'])
+def completer_fiche_pdf():
+    return render_template("completer_fiche_pdf.html")
+
 @app.route("/ajout-artiste/<int:id>", methods=['GET', 'POST'])
 def ajout_artiste(id):
     pseudo = request.form.get("pseudo")
@@ -167,7 +171,6 @@ def liste_artistes():
 
 @app.route("/choix/<string:typeOrga>/<int:concert>", methods = ("GET","POST"))
 def choix(typeOrga,concert):
-
     if typeOrga == "Technique":
         return render_template("Consulter_fiches.html",conc=get_info_un_concert(concert))
     else:
