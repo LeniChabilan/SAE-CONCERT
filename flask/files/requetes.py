@@ -1,4 +1,4 @@
-from .models import Concert, Groupe, Artiste, Composer, Participe, Salle, MusicienAdditionnel, Transporte, Necessiter, Prepare, Organiser
+from .models import Concert, Groupe, Artiste, Composer, Participe, Salle, MusicienAdditionnel, Transporte, Necessiter, Prepare, Organiser , Utilise
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -65,6 +65,20 @@ def get_dico_grps():
         dicoGr[grp]=liste_arti
     return dicoGr
 
+
+def supprimer_groupe(grpID):
+    try :
+        db.session.query(Participe).filter_by(groupeID=grpID).delete(synchronize_session=False)
+        db.session.query(Utilise).filter_by(groupeID=grpID).delete(synchronize_session=False)
+        db.session.query(Composer).filter_by(groupeID=grpID).delete(synchronize_session=False)
+        db.session.query(Concert).filter_by(groupeID=grpID).delete(synchronize_session=False)
+        db.session.query(Groupe).filter_by(groupeID=grpID).delete(synchronize_session=False)
+        db.session.commit()
+        return "Groupe supprimée avec succès."
+    except pymysql.IntegrityError:
+        # Si une contrainte de clé étrangère empêche la suppression, gérez l'erreur ici
+        db.session.rollback()
+        return "Erreur : Impossible de supprimer le groupe en raison de contraintes de clé étrangère."
 
 def supprimer_concert(concID):
     try:

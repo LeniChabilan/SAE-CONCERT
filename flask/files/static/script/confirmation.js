@@ -20,3 +20,10 @@ function showConfirmationEnregistrer() {
         window.history.back();  // Revenir à la page précédente 
     }   
 }
+
+function showConfirmationSupGroupe() {
+    if (confirm("Êtes-vous sûr de vouloir Supprimer ce Groupe ?")) {
+    } else {
+        window.history.back();  // Revenir à la page précédente
+    }
+}
