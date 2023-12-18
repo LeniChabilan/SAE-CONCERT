@@ -14,7 +14,8 @@
     <header>
       <div class="gauche">
         <a href="{{ url_for('home') }}">
-          <img class="img_base" id="img1" src="./../static/img/logomusiquejaune.png" alt="image du logo de l'application" />
+          
+          <img class="img_base" id="img1" src="{{ url_for('static', filename='img/logomusiquejaune.png') }}" alt="image du logo de l'application" />
         </a>
         <h2 id="nom_Entreprise">Concert'O</h2>
       </div>
@@ -33,7 +34,7 @@
         </ul>
             
         <a href="{{ url_for('home') }}" id="home">
-          <img class="img_maison" id="img2" src="./../static/img/home.png" alt="logo silouhette maison" />
+          <img class="img_maison" id="img2" src="{{ url_for('static', filename='img/home.png') }}" alt="logo silouhette maison" />
         </a>
         <div class="toggle-switch">
           <label class="switch-label">
