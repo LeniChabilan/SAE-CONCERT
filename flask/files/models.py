@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, Date, Float, Text, ForeignKey
+from sqlalchemy import Column, Integer, String, Boolean, Date, Float, Text, ForeignKey , LargeBinary
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -81,7 +81,7 @@ class Artiste(db.Model):
 
 class Vehicule(db.Model):
     __tablename__ = 'VEHICULE'
-    immatriculation = Column(String(255), primary_key=True,autoincrement=True)
+    immatriculation = Column(String(255), primary_key=True)
     typeVehicule = Column(String(255))
     capacitéV = Column(Integer)
 
@@ -121,8 +121,7 @@ class PersonelTechnique(db.Model):
 class Plan(db.Model):
     __tablename__ = 'PLAN'
     planID = Column(Integer, primary_key=True,autoincrement=True)
-    planScene = Column(Integer)  # Utilisez le type de données approprié pour BLOB
-    planFeu = Column(Integer)
+    planScene = Column(LargeBinary(length=2**32-1))  # Utilisez le type de données approprié pour BLOB
     salleID = Column(Integer, ForeignKey('SALLE.salleID'))
     salle = relationship(Salle)
 
@@ -151,6 +150,7 @@ class Concert(db.Model):
     dateFinConcert = Column(Date)
     ficheTechnique = Column(Text)
     catering = Column(Text)
+    ficheRider = Column(LargeBinary(length=2**32-1))
     salleID = Column(Integer, ForeignKey('SALLE.salleID'))
     groupeID = Column(Integer, ForeignKey('GROUPE.groupeID'))
     salle = relationship(Salle)

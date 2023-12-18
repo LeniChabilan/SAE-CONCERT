@@ -14,13 +14,12 @@
     </div>
     <ul class="listeOptions">
       <li>
-        <div>
-          <a href="{{ url_for('visualiser_fiches') }}" class="text_link">Fiche Rider</a>
-          <a href="{{ url_for('visualiser_fiches') }}">
-          <img src="{{ url_for('static', filename='img/branchements.png') }}" alt="branchements électrique" />
-
-          </a>
-        </div>
+        
+          <div>
+            <a href="{{ url_for('visualiser_fiches' , conc=conc.concertID) }}" class="text_link">Fiche Rider
+            <img src="{{ url_for('static', filename='img/branchements.png') }}" alt="branchements électrique" />         
+          </div>
+        </a>
       </li>
       <li>
         <a href="#">
@@ -32,7 +31,7 @@
       </li>
       <li>
         <div>
-          <a href="#">Fiche de plan feu</a>
+          <a href="{{ url_for('visualiser_plan' , conc=conc.concertID) }}">Fiche de plan feu</a>
           <a href="#">
             <img src="{{ url_for('static', filename='img/prevus.jpg') }}" alt="branchements électrique" />
           </a>

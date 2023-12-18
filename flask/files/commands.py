@@ -4,6 +4,7 @@ from datetime import datetime
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import create_engine
 from sqlalchemy.exc import IntegrityError
+import base64
 
 
 
@@ -282,7 +283,9 @@ def loaddb(filename):
         if "Plan" in nomTable:
             plans = nomTable["Plan"]
             for plan_data in plans:
-                plan = Plan(planID=plan_data["planID"], planScene=plan_data["planScene"], planFeu=plan_data["planFeu"], salleID=plan_data["salleID"])
+                with open(plan_data["planScene"], 'rb') as pdf_file:
+                    pdf_data2 = base64.b64encode(pdf_file.read())
+                plan = Plan(planID=plan_data["planID"], planScene=pdf_data2, salleID=plan_data["salleID"])
                 session.add(plan)
 
         if "Hebergment" in nomTable:
@@ -300,7 +303,9 @@ def loaddb(filename):
         if "Concert" in nomTable:
             concerts = nomTable["Concert"]
             for concert_data in concerts:
-                concert = Concert(concertID=concert_data["concertID"], nomConcert=concert_data["nomConcert"], dateDebutConcert=datetime.strptime(concert_data["dateDebutConcert"],"%Y-%m-%d").date(), dateFinConcert=datetime.strptime(concert_data["dateFinConcert"],"%Y-%m-%d").date(), ficheTechnique=concert_data["ficheTechnique"], catering=concert_data["catering"], salleID=concert_data["salleID"], groupeID=concert_data["groupeID"])
+                with open(concert_data["ficheRider"], 'rb') as pdf_file:
+                    pdf_data = base64.b64encode(pdf_file.read())
+                concert = Concert(concertID=concert_data["concertID"], nomConcert=concert_data["nomConcert"], dateDebutConcert=datetime.strptime(concert_data["dateDebutConcert"],"%Y-%m-%d").date(), dateFinConcert=datetime.strptime(concert_data["dateFinConcert"],"%Y-%m-%d").date(), ficheTechnique=concert_data["ficheTechnique"], catering=concert_data["catering"],ficheRider=pdf_data, salleID=concert_data["salleID"], groupeID=concert_data["groupeID"])
                 session.add(concert)
 
         if "MusicienAdditionnel" in nomTable:
