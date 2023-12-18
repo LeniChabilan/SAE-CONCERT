@@ -29,21 +29,20 @@ body.dark .listeOptions {
   margin: 3vw;
   margin-top: 5vw;
   border-radius: 5%;
-  height: 50vh;
-  width: 25vw;
+  height: 60vh;
+  width: 60vw;
   transition: 0.3s;
-  max-width: 50vh;
+  max-width: 60vh;
 }
 
 .listeOptions div:hover {
-  height: 53vh;
-  width: 28vw;
-  max-width: 50vh;
+  height: 65vh;
+  max-width: 65vh;
 
 }
 .listeOptions div:hover img{
-  width: 19vw;
-  height: 24vh;
+  width: 23vw;
+  height: 28vh;
   transition-duration: 0.2s;
 }
 
@@ -64,8 +63,8 @@ body.dark .listeOptions {
 
 
 .listeOptions img {
-  width: 18vw;
-  height: 23vh;
+  width: 20vw;
+  height: 25vh;
   border-radius: 5%;
   margin: 2rem;
   align-self: center;
