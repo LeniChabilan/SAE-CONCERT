@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block styles %} {{ super() }}
-<link rel="stylesheet" href="{{ url_for('static',filename='accueil.css')}}" />
+<link rel="stylesheet" href="{{ url_for('static',filename='accueil_technique.css')}}" />
 {% endblock %} {% block content %}
 <ul class="listeOptions">
   <li>
@@ -7,19 +7,8 @@
       <div>
         Consulter la liste des concerts prévus
         <img
-          src="../static/img/prevus.jpg"
+          src="{{ url_for('static', filename='img/prevus.jpg') }}"
           alt="salle de concert vide en préparation"
-        />
-      </div>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <div>
-        Éditer une liste de matériel à louer
-        <img
-          src="../static/img/materielImg.jpg"
-          alt="matériel de concert"
         />
       </div>
     </a>
@@ -29,7 +18,7 @@
       <div>
         Modifier les fiches d'artiste
         <img
-          src="../static/img/checklist.png"
+          src="{{ url_for('static', filename='img/checklist.png') }}"
           alt="image d'une checklist"
         />
       </div>

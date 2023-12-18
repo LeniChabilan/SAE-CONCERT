@@ -4,8 +4,10 @@ from flask_login import login_user , current_user, logout_user, login_required
 from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
-from.models import Organisation
-from .requetes import ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste, ajouter_artiste, supprimer_artiste
+
+from .models import Organisation, Concert
+from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste
+
 from wtforms.validators import DataRequired
 from flask import request
 
@@ -98,6 +100,11 @@ def sup_concert(id):
 def modification_concert(id):
     return render_template("modifier_concert.html", concert=get_info_un_concert(id), cID=id,liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
+@app.route("/sup-groupe/<int:id>")
+def sup_groupe(id):
+    supprimer_groupe(id)
+    return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
+
 @app.route("/modif-concert/<int:id>", methods =["POST"])
 def modif_concert(id):
     nom = request.form.get("nom")
@@ -158,12 +165,13 @@ def liste_groupes():
 def liste_artistes():
     return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
 
-@app.route("/choix/<string:typeOrga>")
-def choix(typeOrga):=
+@app.route("/choix/<string:typeOrga>/<int:concert>", methods = ("GET","POST"))
+def choix(typeOrga,concert):
+
     if typeOrga == "Technique":
-        return redirect(url_for("Consulter_fiches"))
+        return render_template("Consulter_fiches.html",conc=get_info_un_concert(concert))
     else:
-        return redirect(url_for("choix_fiche"))
+        return render_template("choix_fiche.html",conc=get_info_un_concert(concert))
     
 
 @app.route("/Consulter_fiches")

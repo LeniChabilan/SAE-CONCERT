@@ -9,7 +9,7 @@
         </a>
       </div>
       <div class="middle">
-        <h1 id="modification">Consulter fiches</h1>
+        <h1 id="modification">Consulter fiches {{ conc.nomConcert }}</h1>
       </div>
     </div>
     <ul class="listeOptions">
@@ -17,20 +17,24 @@
         <div>
           <a href="{{ url_for('visualiser_fiches') }}" class="text_link">Fiche Rider</a>
           <a href="{{ url_for('visualiser_fiches') }}">
-              <img
-                src="../static/img/branchements.png"
-                alt="branchements électrique"/>
+          <img src="{{ url_for('static', filename='img/branchements.png') }}" alt="branchements électrique" />
+
           </a>
         </div>
+      </li>
+      <li>
+        <a href="#">
+          <div>
+            Éditer une liste de matériel à louer
+            <img src="{{ url_for('static', filename='img/materielImg.jpg') }}" alt="branchements électrique" />
+          </div>
+        </a>
       </li>
       <li>
         <div>
           <a href="#">Fiche de plan feu</a>
           <a href="#">
-            <img
-              src="../static/img/prevus.jpg"
-              alt="salle de concert vide en préparation"
-            />
+            <img src="{{ url_for('static', filename='img/prevus.jpg') }}" alt="branchements électrique" />
           </a>
         </div>
       </li>
