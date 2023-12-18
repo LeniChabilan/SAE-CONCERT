@@ -120,6 +120,10 @@ def recherche_groupe():
     groupe = chercher_groupe(nom_groupe)
     if get_artiste_groupe(groupe.groupeID) == []:
         return render_template("ajout_artiste.html", id = groupe.groupeID)
+    return redirect(url_for("completer_fiche"))
+
+@app.route("/completer-fiche", methods=['GET', 'POST'])
+def completer_fiche():
     return render_template("completer_fiche.html")
 
 @app.route("/ajout-artiste/<int:id>", methods=['GET', 'POST'])
@@ -155,8 +159,7 @@ def liste_artistes():
     return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
 
 @app.route("/choix/<string:typeOrga>")
-def choix(typeOrga):
-    print(typeOrga)
+def choix(typeOrga):=
     if typeOrga == "Technique":
         return redirect(url_for("Consulter_fiches"))
     else:

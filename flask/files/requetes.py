@@ -156,7 +156,7 @@ def chercher_groupe(nom):
         grp = Groupe(nom)
         session.add(grp)
         session.commit()
-        session.expunge_all()
+        session.refresh(grp)
         session.close()
         return grp
 
