@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='choix_fiche.css')}}" />
 {% endblock %} {% block content %}
 
+
   <div class="main">
     <div id="tete_page">
       <div id="bouton_retour_choix_fiche">
@@ -10,7 +11,7 @@
         </a>
       </div>
       <div class="middle">
-        <h1 id="modification">Fiche accueil</h1>
+        <h1 id="modification">Fiche accueil {{ conc.nomConcert }}</h1>
       </div>
   </div>
 </html>
