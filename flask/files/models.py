@@ -65,6 +65,20 @@ class Artiste(db.Model):
     dateExpirationCNI = Column(Date)
     dansGroupe = Column(Boolean)
 
+    def __init__(self, pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, dansGRoupe):
+        self.pseudoArtiste = pseudo
+        self.nomA = nom
+        self.prenomA = prenom
+        self.emailA = email
+        self.DdNA = DdN 
+        self.LdN = lieuNaissance
+        self.adresseA = adresse
+        self.numSecuriteSociale = numSecu
+        self.numCNI = numCNI
+        self.dateDelivranceCNI = debutCNI
+        self.dateExpirationCNI = finCNI
+        self.dansGroupe = dansGRoupe
+
 class Vehicule(db.Model):
     __tablename__ = 'VEHICULE'
     immatriculation = Column(String(255), primary_key=True,autoincrement=True)
@@ -179,6 +193,10 @@ class Composer(db.Model):
     groupeID = Column(Integer, ForeignKey('GROUPE.groupeID'), primary_key=True)
     artiste = relationship(Artiste)
     groupe = relationship(Groupe)
+
+    def __init__(self, artisteID, groupeID):
+        self.artisteID = artisteID
+        self.groupeID = groupeID
 
 class Utilise(db.Model):
     __tablename__ = 'UTILISE'
