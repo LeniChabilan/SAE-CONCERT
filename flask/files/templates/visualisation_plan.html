@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='visualisation_fiche.css')}}" />
+{% endblock %} {% block content %}
+    <main>
+        <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">
+            <button type="button" class="bouton_de_retour">Retour</button>
+        </a>
+        <h1 class="planScene">plan Scene</h1>
+        <ul>
+            {% for x in plan%}
+            <li class="partie_gauche">
+                
+                <object type="application/pdf" data="data:application/pdf;base64,{{x.decode('utf-8') }}" id="pdf_fiche">
+                    <p>Le lecteur PDF n'est pas pris en charge par votre navigateur.</p>
+                </object>            
+            </li>
+            {%endfor%}
+        </ul>
+        
+    </main>
+{% endblock %}
