@@ -4,8 +4,10 @@ from flask_login import login_user , current_user, logout_user, login_required
 from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
+
 from .models import Organisation, Concert
-from .requetes import ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste
+from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste
+
 from wtforms.validators import DataRequired
 from flask import request
 
@@ -94,6 +96,11 @@ def sup_concert(id):
     supprimer_concert(id)
     return render_template("liste_concerts.html",title="Les Concerts", concerts=get_info_concert())
 
+
+@app.route("/sup-groupe/<int:id>")
+def sup_groupe(id):
+    supprimer_groupe(id)
+    return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
 
 @app.route("/modif-concert/<int:id>", methods =["POST"])
 def modif_concert(id):
