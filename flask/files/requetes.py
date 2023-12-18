@@ -187,3 +187,15 @@ def supprimer_artiste(artID):
         # Si une contrainte de clé étrangère empêche la suppression, gérez l'erreur ici
         db.session.rollback()
         return "Erreur : Impossible de supprimer l'artiste et ses enregistrements liés en raison de contraintes de clé étrangère."
+    
+def ajouter_artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, idGroupe):
+    session = login()
+    artiste = Artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, 1)
+    session.add(artiste)
+    session.commit()
+    print(session.query(Artiste.artisteID).filter_by(nomA = nom).limit(1).all()[0][0])
+    composer = Composer(session.query(Artiste.artisteID).filter_by(nomA = nom).limit(1).all()[0][0], idGroupe)
+    session.add(artiste)
+    session.add(composer)
+    session.commit()
+    session.close() 

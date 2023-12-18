@@ -5,7 +5,7 @@ from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
 from.models import Organisation
-from .requetes import ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste
+from .requetes import ajouter_concert,  supprimer_concert, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste, ajouter_artiste, supprimer_artiste
 from wtforms.validators import DataRequired
 from flask import request
 
@@ -94,6 +94,9 @@ def sup_concert(id):
     supprimer_concert(id)
     return render_template("liste_concerts.html",title="Les Concerts", concerts=get_info_concert())
 
+@app.route("/modification_concert/<int:id>")
+def modification_concert(id):
+    return render_template("modifier_concert.html", concert=get_info_un_concert(id), cID=id,liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
 @app.route("/modif-concert/<int:id>", methods =["POST"])
 def modif_concert(id):
@@ -107,21 +110,34 @@ def modif_concert(id):
     mod_concert(id,nom, dateD, dateF, ficheTech, catering, salle, groupe)
     return render_template("liste_concerts.html", title="Les Concerts",concerts=get_info_concert())
 
-@app.route("/modification_concert/<int:id>")
-def modification_concert(id):
-    return render_template("modifier_concert.html", concert=get_info_un_concert(id), cID=id,liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
-
 @app.route("/entrer-groupe")
 def inscription_groupe():
     return render_template("entrer_groupe.html")
 
-@app.route("/recherche-groupe", methods =["POST"])
+@app.route("/recherche-groupe", methods=['GET', 'POST'])
 def recherche_groupe():
     nom_groupe = request.form.get("nom")
     groupe = chercher_groupe(nom_groupe)
     if get_artiste_groupe(groupe.groupeID) == []:
-        return render_template("ajoute_artiste.html")
+        return render_template("ajout_artiste.html", id = groupe.groupeID)
     return render_template("completer_fiche.html")
+
+@app.route("/ajout-artiste/<int:id>", methods=['GET', 'POST'])
+def ajout_artiste(id):
+    pseudo = request.form.get("pseudo")
+    nom = request.form.get("nom")
+    prenom = request.form.get("prenom")
+    email = request.form.get("email")
+    dateDN =request.form.get("dateDN")
+    lDN = request.form.get("lDN")
+    adresse = request.form.get("adresse")
+    numSec = request.form.get("numSec")
+    numCNI = request.form.get("numCNI")
+    dateDelivrance = request.form.get("dateDelivrance")
+    dateExpiration = request.form.get("dateExpiration")
+    idGroupe = request.form.get("idGroupe")
+    ajouter_artiste(pseudo, nom, prenom, email, dateDN, lDN, adresse, numSec, numCNI, dateDelivrance, dateExpiration, idGroupe)
+    return render_template("ajout_artiste.html", id = id)
 
 @app.route("/retour/<string:typeOrga>")
 def retour(typeOrga):
@@ -130,7 +146,6 @@ def retour(typeOrga):
     else:
         return redirect(url_for("accueil_bien_etre"))
     
-
 @app.route("/liste_groupes/", methods = ("GET","POST",))
 def liste_groupes():
     return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
