@@ -170,7 +170,7 @@ def chercher_groupe(nom):
         grp = Groupe(nom)
         session.add(grp)
         session.commit()
-        session.expunge_all()
+        session.refresh(grp)
         session.close()
         return grp
 
@@ -209,3 +209,15 @@ def get_plan_concert(idsalle):
     for val in res:
         res1.append(val[0])
     return res1
+
+def ajouter_artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, idGroupe):
+    session = login()
+    artiste = Artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, 1)
+    session.add(artiste)
+    session.commit()
+    print(session.query(Artiste.artisteID).filter_by(nomA = nom).limit(1).all()[0][0])
+    composer = Composer(session.query(Artiste.artisteID).filter_by(nomA = nom).limit(1).all()[0][0], idGroupe)
+    session.add(artiste)
+    session.add(composer)
+    session.commit()
+    session.close() 
