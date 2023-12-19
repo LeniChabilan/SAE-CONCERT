@@ -155,13 +155,6 @@ def ajout_artiste(id):
     ajouter_artiste(pseudo, nom, prenom, email, dateDN, lDN, adresse, numSec, numCNI, dateDelivrance, dateExpiration, idGroupe)
     return render_template("ajout_artiste.html", id = id)
 
-@app.route("/retour/<string:typeOrga>")
-def retour(typeOrga):
-    if typeOrga == "Technique":
-        return redirect(url_for("accueil_technique"))
-    else:
-        return redirect(url_for("accueil_bien_etre"))
-    
 @app.route("/liste_groupes/", methods = ("GET","POST",))
 def liste_groupes():
     return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
@@ -193,7 +186,8 @@ def visualiser_fiches(conc):
 @app.route("/visualiser_plan/<int:conc>", methods = ("GET","POST",))
 def visualiser_plan(conc):
     concert=get_info_un_concert(conc)
-    return render_template("visualisation_plan.html",plan=get_plan_concert(concert.salleID))
+    return render_template("visualisation_plan.html",plan=get_plan_concert(concert.salleID),conc=concert)
+
 
 @app.route("/sup-artiste/<int:id>")
 def sup_artiste(id):
@@ -245,3 +239,16 @@ def modif_artiste_grp(id):
     dateExp = request.form.get("dateExpiration")
     mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
     return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
+
+
+@app.route("/retour/<string:typeOrga>")
+def retour(typeOrga):
+    if typeOrga == "Technique":
+        return redirect(url_for("accueil_technique"))
+    else:
+        return redirect(url_for("accueil_bien_etre"))
+
+@app.route("/retourFiche/<int:conc>")
+def retourFiche(conc):
+    return render_template("Consulter_fiches.html",conc=get_info_un_concert(conc))
+
