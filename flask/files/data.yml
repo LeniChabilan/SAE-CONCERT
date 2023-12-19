@@ -699,7 +699,7 @@
     salleID: 1
 
   - planID: 2
-    planScene: "./fichier_pdf/planScene.pdf"
+    planScene: "./fichier_pdf/FichePlan2page2.pdf"
     salleID: 2
 
   - planID: 3
@@ -707,26 +707,32 @@
     salleID: 3
 
   - planID: 4
-    planScene: "./fichier_pdf/planScene.pdf"
+    planScene: "./fichier_pdf/FichePlan2page.pdf"
     salleID: 4
 
   - planID: 5
-    planScene: "./fichier_pdf/planScene2.pdf"
+    planScene: "./fichier_pdf/FichePlan2page.pdf"
     salleID: 1
 
   - planID: 6
     planScene: "./fichier_pdf/planScene2.pdf"
-    salleID: 2
+    salleID: 3
 
   - planID: 7
-    planScene: "./fichier_pdf/planScene2.pdf"
+    planScene: "./fichier_pdf/FichePlan2page2.pdf"
     salleID: 3
 
   - planID: 8
     planScene: "./fichier_pdf/planScene2.pdf"
     salleID: 4
+  
+  - planID: 9
+    planScene: "./fichier_pdf/FichePlan2page2.pdf"
+    salleID: 1
 
-
+  - planID: 10
+    planScene: "./fichier_pdf/planScene2.pdf"
+    salleID: 1
 
 
 - Hebergment:
