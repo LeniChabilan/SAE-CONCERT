@@ -98,15 +98,13 @@ def supprimer_concert(concID):
         db.session.rollback()
         return "Erreur : Impossible de supprimer le concert et ses enregistrements liés en raison de contraintes de clé étrangère."
 
-def mod_concert(id,nom, dateD, dateF, ficheTech, catering, salle, groupe):
+def mod_concert(id,nom, dateD, dateF, salle, groupe):
     session = login()
     conc = session.query(Concert).filter(Concert.concertID == id).first()
     if conc:
         conc.nomConcert = nom
         conc.dateDebutConcert = dateD
         conc.dateFinConcert = dateF
-        conc.ficheTechnique = ficheTech
-        conc.catering = catering
         conc.salleID = get_id_salle_by_nom(salle)
         conc.groupeID = get_id_groupe_by_nom(groupe)
         session.commit()

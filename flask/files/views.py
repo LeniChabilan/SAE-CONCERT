@@ -4,7 +4,7 @@ from flask_login import login_user , current_user, logout_user, login_required
 from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
-
+import time
 from .models import Organisation, Concert
 
 from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste
@@ -85,8 +85,8 @@ def save_concert():
     nom = request.form.get("nom")
     dateD = request.form.get("dateD")
     dateF = request.form.get("dateF")
-    ficheTech =request.form.get("fiche")
-    catering = request.form.get("catering")
+    ficheTech =""
+    catering = ""
     salle = request.form.get("salle")
     groupe = request.form.get("groupe")
     ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
@@ -111,11 +111,10 @@ def modif_concert(id):
     nom = request.form.get("nom")
     dateD = request.form.get("dateD")
     dateF = request.form.get("dateF")
-    ficheTech =request.form.get("fiche")
-    catering = request.form.get("catering")
     salle = request.form.get("salle")
     groupe = request.form.get("groupe")
-    mod_concert(id,nom, dateD, dateF, ficheTech, catering, salle, groupe)
+    mod_concert(id,nom, dateD, dateF, salle, groupe)
+    conc=get_info_concert()
     return render_template("liste_concerts.html", title="Les Concerts",concerts=get_info_concert())
 
 @app.route("/entrer-groupe")
