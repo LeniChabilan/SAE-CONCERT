@@ -75,7 +75,7 @@ CREATE TABLE SALLE (
     salleID INT PRIMARY KEY,
     nomSalle VARCHAR(255),
     capaciteTotaleSalle INT,
-    planSalle BLOB,
+    planSalle longblob,
     dimensionOuverture float,
     dimensionProfondeur float,
     lieuID INT,
@@ -92,8 +92,7 @@ CREATE TABLE PERSONELTECHNIQUE(
 
 CREATE TABLE PLAN(
     planID int PRIMARY KEY,
-    planScene BLOB,
-    planFeu BLOB,
+    planScene longblob,
     salleID int,
     FOREIGN KEY (salleID) REFERENCES SALLE(salleID)
 );
@@ -124,6 +123,7 @@ CREATE TABLE CONCERT (
     dateFinConcert DATE,
     ficheTechnique TEXT,
     catering TEXT,
+    ficheRider longblob,
     salleID int,
     groupeID int,
     FOREIGN KEY (salleID) REFERENCES SALLE(salleID),
@@ -191,15 +191,6 @@ CREATE TABLE PREPARE(
     FOREIGN KEY (personelTechniqueID) REFERENCES PERSONELTECHNIQUE(personelTechniqueID)    
 );
 
-
-CREATE TABLE INVITATION(
-    typePlaceID int ,
-    concertID int ,
-    quantiteInv int,
-    PRIMARY KEY(typePlaceID,concertID),
-    FOREIGN KEY (concertID) REFERENCES CONCERT(concertId),
-    FOREIGN KEY (typePlaceID) REFERENCES TYPEPLACE(typePlaceID)
-);
 
 CREATE TABLE SALLETYPEPLACE(
     typePlaceID INT ,
