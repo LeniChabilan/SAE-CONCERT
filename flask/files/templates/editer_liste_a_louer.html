@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='editer_liste_a_louer.css')}}" />
+{% endblock %} {% block content %}
+<main>
+    <div id="bouton_retour_choix_fiche">
+        <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">
+          <button type="button" class="bouton_de_retour">Retour</button>
+        </a>
+    </div>
+    <div class="tableau">
+        <table class="liste_des_besoins">
+            <thead>
+                <th>Instrument</th>
+                <th>Micro</th>
+                <th>Description</th>
+                <th>Quantité</th>
+            </thead>
+            {% if lBesoin!= None%}
+                {% for besoin in lBesoin%}
+                    <tr>
+                        <td>{{besoin.instrument}}<td>
+                        <td>{{besoin.micro}}<td>
+                        {% if besoin.description == None %}
+                            <td>-</td>
+                        {% else %}
+                            <td>{{besoin.description}}</td>
+                        {% endif %}
+                        <td>{{besoin.quantite}}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+    </div>
+
+</main>
+{% endblock %}
