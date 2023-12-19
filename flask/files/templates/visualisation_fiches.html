@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='visualisation_fiche.css')}}" />
 {% endblock %} {% block content %}
     <main>
-        <a href="{{ url_for('retourFiche', conc=conc.concertID) }}">
+        <a class="" href="{{ url_for('retourFiche', conc=conc.concertID) }}">
             <button type="button" class="bouton_de_retour">Retour</button>
         </a>
         <ul>
