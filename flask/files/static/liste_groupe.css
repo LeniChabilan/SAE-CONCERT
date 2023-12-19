@@ -76,7 +76,7 @@ thead {
 .test,
 thead th,
 th {
-    padding-top: 2%;
+    padding: 10px;
     border: none;
     margin-right: 5%;
 }
