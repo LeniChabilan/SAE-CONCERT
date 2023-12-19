@@ -68,7 +68,10 @@ main {
     box-shadow: none;
     transform: translateY(0);
 }
-
+.lien{
+    display: inline;
+    flex-basis: 100%;
+}
 .bouton_de_retour {
     appearance: none;
     background-color: #2a2b38;
@@ -85,7 +88,6 @@ main {
     border: none;
     align-items: center;
 }
-
 .planScene {
     flex-basis: 80%;
     text-align: center;
