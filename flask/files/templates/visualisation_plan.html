@@ -6,15 +6,20 @@
             <button type="button" class="bouton_de_retour">Retour</button>
         </a>
         <h1 class="planScene">plan Scene</h1>
-        <ul>
-            {% for x in plan%}
-            <li class="partie_gauche">
-                
+        <ul class="liste">
+            {% for x in plan %}
+            {% if loop.length <=2 %}
+              <li class="centre-deux">
+
+            {% else %}
+              <li class="centre">
+            {% endif %}
                 <object type="application/pdf" data="data:application/pdf;base64,{{x.decode('utf-8') }}" id="pdf_fiche">
                     <p>Le lecteur PDF n'est pas pris en charge par votre navigateur.</p>
                 </object>            
             </li>
-            {%endfor%}
+          {% endfor %}
+          
         </ul>
         
     </main>
