@@ -67,6 +67,10 @@ def logout():
     logout_user()
     return redirect(url_for('connexion'))
 
+@app.route("/editer_liste_a_louer", methods = ("GET","POST",))
+def editer_liste_a_louer():
+    return render_template("editer_liste_a_louer.html")
+
 @app.route("/choix-fiche/", methods = ("GET","POST",))
 def choix_fiche():
     return render_template("choix_fiche.html")

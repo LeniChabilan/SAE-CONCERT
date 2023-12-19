@@ -57,7 +57,10 @@ body.dark .left > h2{
   transition-duration: 0.4s;
   width: 20vw;
   height: 10vh;
-  
+}
+
+a {
+  text-decoration: none;
 }
 
 body.light .buttonOrg {
