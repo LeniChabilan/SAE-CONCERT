@@ -12,6 +12,7 @@ body.dark main{
 
 main{
   padding-bottom: 30px;
+  height: 90vh;
 }
 
 
@@ -70,7 +71,6 @@ main{
 }
 
 .listeOptions {
-  height: 85vh;
   margin: 0;
   display: flex;
   flex-wrap: nowrap;
@@ -78,6 +78,8 @@ main{
   align-items: center;
   list-style-type: none;
   transition: 0.3s;
+  padding: 2%;
+  padding-top: 4%;
 }
 
 .listeOptions div {
