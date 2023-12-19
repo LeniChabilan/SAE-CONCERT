@@ -12,16 +12,17 @@ body.dark main {
 
 main{
     display: flex;
+    height:85vh;
 }
 
 .form {
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
-    margin-top: 5vh;
+    margin-top: 10vh;
     margin-bottom: 3vh;
     padding: 1vw;
-    height: 77vh;
+    height: 65vh;
     width: 20vw;
     margin-left : 30vw;
   }
