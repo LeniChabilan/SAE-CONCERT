@@ -1,4 +1,4 @@
-from .models import Concert, Groupe, Artiste, Composer, Participe, Salle, MusicienAdditionnel, Transporte, Necessiter, Prepare, Organiser , Utilise,Plan
+from .models import Concert, Groupe, Artiste, Composer, Participe, Salle, Necessiter, Organiser ,Plan
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -94,7 +94,6 @@ def get_dico_grps():
 def supprimer_groupe(grpID):
     try :
         db.session.query(Participe).filter_by(groupeID=grpID).delete(synchronize_session=False)
-        db.session.query(Utilise).filter_by(groupeID=grpID).delete(synchronize_session=False)
         db.session.query(Composer).filter_by(groupeID=grpID).delete(synchronize_session=False)
         db.session.query(Concert).filter_by(groupeID=grpID).delete(synchronize_session=False)
         db.session.query(Groupe).filter_by(groupeID=grpID).delete(synchronize_session=False)
@@ -108,11 +107,10 @@ def supprimer_groupe(grpID):
 def supprimer_concert(concID):
     try:
         # Supprimez le concert et toutes les lignes liées dans d'autres tables
-        db.session.query(MusicienAdditionnel).filter_by(concertID=concID).delete(synchronize_session=False)
-        db.session.query(Transporte).filter_by(concertID=concID).delete(synchronize_session=False)
+        
+        
         db.session.query(Necessiter).filter_by(concertID=concID).delete(synchronize_session=False)
         db.session.query(Participe).filter_by(concertID=concID).delete(synchronize_session=False)
-        db.session.query(Prepare).filter_by(concertID=concID).delete(synchronize_session=False)
         db.session.query(Organiser).filter_by(concertID=concID).delete(synchronize_session=False)
         db.session.query(Concert).filter_by(concertID=concID).delete(synchronize_session=False)
 
