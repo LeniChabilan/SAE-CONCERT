@@ -262,7 +262,7 @@ def visualiser_fiches(conc):
 @app.route("/visualiser_plan/<int:conc>", methods = ("GET","POST",))
 def visualiser_plan(conc):
     concert=get_info_un_concert(conc)
-    return render_template("visualisation_plan.html",plan=get_plan_concert(concert.salleID),conc=concert)
+    return render_template("visualisation_plan.html",plan=get_plan_concert(concert.concertID),conc=concert)
 
 
 @app.route("/sup-artiste/<int:id>")

@@ -223,9 +223,9 @@ def supprimer_artiste(artID):
         db.session.rollback()
         return "Erreur : Impossible de supprimer l'artiste et ses enregistrements liés en raison de contraintes de clé étrangère."
     
-def get_plan_concert(idsalle):
+def get_plan_concert(idconcert):
     session = login()
-    res= session.query(Plan.planScene).filter_by(salleID=idsalle).all()
+    res= session.query(Plan.planScene).filter_by(concertID=idconcert).all()
     res1=[]
     for val in res:
         res1.append(val[0])
