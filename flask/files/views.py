@@ -275,6 +275,7 @@ def visualiser_fiches(conc):
 @app.route("/visualiser_plan/<int:conc>", methods = ("GET","POST",))
 def visualiser_plan(conc):
     concert=get_info_un_concert(conc)
+    print(concert.concertID)
     return render_template("visualisation_plan.html",plan=get_plan_concert(concert.concertID),conc=concert)
 
 
@@ -358,9 +359,7 @@ def retourFiche(conc):
 @app.route("/choix-fiche/<int:concert>", methods = ("GET","POST",))
 def choix_fiche(concert):
     conc=get_info_un_concert(concert)
-    text=conc.catering
-    print(text)
+    text=conc.catering    
     pdf=pdf_base_64(text)
-    print(pdf)
     return render_template("choix_fiche.html",pdf=pdf,conc=conc)
 
