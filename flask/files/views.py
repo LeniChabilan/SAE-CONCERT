@@ -95,6 +95,19 @@ def save_concert():
     ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
     return render_template("accueil_bien_etre.html", title="Home")
 
+
+def get_date(concert):
+    return concert.dateDebutConcert
+
+def get_nom(concert):
+    return concert.nomConcert
+
+def get_salle(concert):
+    return concert.salle.nomSalle
+
+def get_groupe(concert):
+    return concert.groupe.nomGroupe
+
 @app.route("/filtreConcert", methods=["GET", "POST"])
 def filtre_concert():
     if request.method == 'POST':
@@ -103,13 +116,16 @@ def filtre_concert():
         date_fin = request.form.get('dateF')
         salle = request.form.get('salle')
         groupe = request.form.get('groupe')
+        nom=request.form.get('nom')
+        filtre=request.form.get('filtre')
 
         # Appliquer les filtres
         concerts_filtres = []
         concerts = get_info_concert()
         for concert in concerts:
             # Filtre par date
-            
+            if nom and nom not in concert.nomConcert:
+                continue
             if date_debut:
                 dateD=datetime.strptime(date_debut,"%Y-%m-%d").date()
                 if concert.dateDebutConcert <= dateD:
@@ -132,6 +148,17 @@ def filtre_concert():
             # Ajouter le concert filtré à la liste
             concerts_filtres.append(concert)
 
+        if filtre !="aucun":
+            if filtre=="dateAsc":
+                concerts_filtres.sort(key=get_date)
+            elif filtre=="dateDesc":
+                concerts_filtres.sort(key=get_date, reverse=True)
+            elif filtre=="nom":
+                concerts_filtres.sort(key=get_nom)
+            elif filtre=="salle":
+                concerts_filtres.sort(key=get_salle)
+            elif filtre=="groupe":
+                concerts_filtres.sort(key=get_groupe)
         # Passer la liste filtrée au modèle
         return render_template("liste_concerts.html", title="Les Concerts", concerts=concerts_filtres, liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 

@@ -66,7 +66,33 @@ form {
     width: 70%;
   }
   
+  .rad {
+    background-color:#303245;
+    margin: 1vh;
+    border-radius: 12px;
+    margin-top:2vh ;
+    font-size: smaller;
+    color: white;
+    width : 50%;
+    padding: 1vh;
+    margin-right: 5vw;
+    accent-color: #ffeba7;
+  }
+  
 
+  .rad div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .rad div div {
+    display: block;
+    
+  }
+
+  .rad div div div{
+    font-size: xx-small;
+  }
 
   .cut {
     background-color: #15172b;
@@ -77,7 +103,7 @@ form {
     top: -2vh;
     transform: translateY(0);
     transition: transform 200ms;
-    width: 7vw;
+    width: 8vw;
   }
   
   .iLabel {
