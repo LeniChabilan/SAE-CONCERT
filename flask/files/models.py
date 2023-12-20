@@ -46,19 +46,19 @@ class Artiste(db.Model):
     dateExpirationCNI = Column(Date)
     dansGroupe = Column(Boolean)
 
-    # def __init__(self, pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, dansGRoupe):
-    #     self.pseudoArtiste = pseudo
-    #     self.nomA = nom
-    #     self.prenomA = prenom
-    #     self.emailA = email
-    #     self.DdNA = DdN 
-    #     self.LdN = lieuNaissance
-    #     self.adresseA = adresse
-    #     self.numSecuriteSociale = numSecu
-    #     self.numCNI = numCNI
-    #     self.dateDelivranceCNI = debutCNI
-    #     self.dateExpirationCNI = finCNI
-    #     self.dansGroupe = dansGRoupe
+    def __init__(self, pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, dansGRoupe):
+        self.pseudoArtiste = pseudo
+        self.nomA = nom
+        self.prenomA = prenom
+        self.emailA = email
+        self.DdNA = DdN 
+        self.LdN = lieuNaissance
+        self.adresseA = adresse
+        self.numSecuriteSociale = numSecu
+        self.numCNI = numCNI
+        self.dateDelivranceCNI = debutCNI
+        self.dateExpirationCNI = finCNI
+        self.dansGroupe = dansGRoupe
 
 
 class Materiel(db.Model):
@@ -71,8 +71,8 @@ class Groupe(db.Model):
     groupeID = Column(Integer, primary_key=True,autoincrement=True)
     nomGroupe = Column(String(255))
 
-    # def __init__(self, nomGroupe):
-    #     self.nomGroupe = nomGroupe
+    def __init__(self, nomGroupe):
+        self.nomGroupe = nomGroupe
         
 
 class Salle(db.Model):
@@ -113,14 +113,14 @@ class Concert(db.Model):
     salle = relationship(Salle)
     groupe = relationship(Groupe)
 
-    # def __init__(self, nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
-    #     self.nomConcert = nom
-    #     self.dateDebutConcert = dateDebut
-    #     self.dateFinConcert = dateFin
-    #     self.ficheTechnique = ficheTechnique
-    #     self.catering = catering
-    #     self.salleID = salle
-    #     self.groupeID = groupe
+    def __init__(self, nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
+        self.nomConcert = nom
+        self.dateDebutConcert = dateDebut
+        self.dateFinConcert = dateFin
+        self.ficheTechnique = ficheTechnique
+        self.catering = catering
+        self.salleID = salle
+        self.groupeID = groupe
 
 
 class Plan(db.Model):
@@ -147,9 +147,9 @@ class Composer(db.Model):
     artiste = relationship(Artiste)
     groupe = relationship(Groupe)
 
-    # def __init__(self, artisteID, groupeID):
-    #     self.artisteID = artisteID
-    #     self.groupeID = groupeID
+    def __init__(self, artisteID, groupeID):
+        self.artisteID = artisteID
+        self.groupeID = groupeID
 
 
 
