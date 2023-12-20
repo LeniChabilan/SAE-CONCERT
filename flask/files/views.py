@@ -227,7 +227,10 @@ def choix_groupes_artistes():
 
 @app.route("/visualiser_fiches/<int:conc>", methods = ("GET","POST",))
 def visualiser_fiches(conc):
-    return render_template("visualisation_fiches.html",conc=get_info_un_concert(conc))
+    conc=get_info_un_concert(conc)
+    text=conc.ficheTechnique
+    pdf=pdf_base_64(text)
+    return render_template("visualisation_fiches.html",conc=conc,pdf=pdf)
 
 @app.route("/visualiser_plan/<int:conc>", methods = ("GET","POST",))
 def visualiser_plan(conc):
