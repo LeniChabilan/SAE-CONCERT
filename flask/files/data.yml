@@ -951,125 +951,184 @@
     immatriculation: "CD-123-EF"
 
 
-- Necessiter:
-  - materielID: 1
-    concertID: 1
-  - materielID: 2
-    concertID: 1
-  - materielID: 3
-    concertID: 2
-  - materielID: 4
-    concertID: 2
-  - materielID: 5
-    concertID: 2
-  - materielID: 6
-    concertID: 2
-  - materielID: 7
-    concertID: 2
-  - materielID: 8
-    concertID: 2
-  - materielID: 9
-    concertID: 2
-  - materielID: 10
-    concertID: 1
-  - materielID: 11
-    concertID: 1
-  - materielID: 12
-    concertID: 1
-  - materielID: 13
-    concertID: 1
-  - materielID: 14
-    concertID: 1
-  - materielID: 15
-    concertID: 1
-  - materielID: 16
-    concertID: 1
-  - materielID: 17
-    concertID: 1
-  - materielID: 18
-    concertID: 1
-  - materielID: 19
-    concertID: 1
-  - materielID: 20
-    concertID: 1
-  - materielID: 21
-    concertID: 1
-  - materielID: 22
-    concertID: 1
-  - materielID: 23
-    concertID: 1
-  - materielID: 24
-    concertID: 1
-  - materielID: 25
-    concertID: 2
-  - materielID: 26
-    concertID: 2
-  - materielID: 27
-    concertID: 2
-  - materielID: 28
-    concertID: 2
-  - materielID: 29
-    concertID: 2
-  - materielID: 30
-    concertID: 2
-  - materielID: 31
-    concertID: 2
-  - materielID: 32
-    concertID: 2
-  - materielID: 33
-    concertID: 2
-  - materielID: 34
-    concertID: 2
-  - materielID: 35
-    concertID: 2
-  - materielID: 36
-    concertID: 2
-  - materielID: 37
-    concertID: 2
-  - materielID: 38
-    concertID: 2
-  - materielID: 39
-    concertID: 2
-  - materielID: 40
-    concertID: 3
-  - materielID: 41
-    concertID: 3
-  - materielID: 42
-    concertID: 3
-  - materielID: 43
-    concertID: 3
-  - materielID: 44
-    concertID: 3
-  - materielID: 45
-    concertID: 3
-  - materielID: 46
-    concertID: 3
-  - materielID: 47
-    concertID: 3
-  - materielID: 48
-    concertID: 3
-  - materielID: 49
-    concertID: 3
-  - materielID: 50
-    concertID: 3
-  - materielID: 51
-    concertID: 3
-  - materielID: 52
-    concertID: 3
-  - materielID: 53
-    concertID: 3
-  - materielID: 54
-    concertID: 3
-  - materielID: 55
-    concertID: 3
-  - materielID: 56
-    concertID: 3
-  - materielID: 57
-    concertID: 3
-  - materielID: 58
-    concertID: 3
-  - materielID: 59
-    concertID: 3
+- materielID: 1
+  concertID: 1
+  description: ""
+- materielID: 2
+  concertID: 1
+  description: ""
+- materielID: 3
+  concertID: 2
+  description: ""
+- materielID: 4
+  concertID: 2
+  description: ""
+- materielID: 5
+  concertID: 2
+  description: ""
+- materielID: 6
+  concertID: 2
+  description: ""
+- materielID: 7
+  concertID: 2
+  description: ""
+- materielID: 8
+  concertID: 2
+  description: ""
+- materielID: 9
+  concertID: 2
+  description: ""
+- materielID: 10
+  concertID: 1
+  description: ""
+- materielID: 11
+  concertID: 1
+  description: ""
+- materielID: 12
+  concertID: 1
+  description: ""
+- materielID: 13
+  concertID: 1
+  description: ""
+- materielID: 14
+  concertID: 1
+  description: ""
+- materielID: 15
+  concertID: 1
+  description: ""
+- materielID: 16
+  concertID: 1
+  description: ""
+- materielID: 17
+  concertID: 1
+  description: ""
+- materielID: 18
+  concertID: 1
+  description: ""
+- materielID: 19
+  concertID: 1
+  description: ""
+- materielID: 20
+  concertID: 1
+  description: ""
+- materielID: 21
+  concertID: 1
+  description: ""
+- materielID: 22
+  concertID: 1
+  description: ""
+- materielID: 23
+  concertID: 1
+  description: ""
+- materielID: 24
+  concertID: 1
+  description: ""
+- materielID: 25
+  concertID: 2
+  description: ""
+- materielID: 26
+  concertID: 2
+  description: ""
+- materielID: 27
+  concertID: 2
+  description: ""
+- materielID: 28
+  concertID: 2
+  description: ""
+- materielID: 29
+  concertID: 2
+  description: ""
+- materielID: 30
+  concertID: 2
+  description: ""
+- materielID: 31
+  concertID: 2
+  description: ""
+- materielID: 32
+  concertID: 2
+  description: ""
+- materielID: 33
+  concertID: 2
+  description: ""
+- materielID: 34
+  concertID: 2
+  description: ""
+- materielID: 35
+  concertID: 2
+  description: ""
+- materielID: 36
+  concertID: 2
+  description: ""
+- materielID: 37
+  concertID: 2
+  description: ""
+- materielID: 38
+  concertID: 2
+  description: ""
+- materielID: 39
+  concertID: 2
+  description: ""
+- materielID: 40
+  concertID: 3
+  description: ""
+- materielID: 41
+  concertID: 3
+  description: ""
+- materielID: 42
+  concertID: 3
+  description: ""
+- materielID: 43
+  concertID: 3
+  description: ""
+- materielID: 44
+  concertID: 3
+  description: ""
+- materielID: 45
+  concertID: 3
+  description: ""
+- materielID: 46
+  concertID: 3
+  description: ""
+- materielID: 47
+  concertID: 3
+  description: ""
+- materielID: 48
+  concertID: 3
+  description: ""
+- materielID: 49
+  concertID: 3
+  description: ""
+- materielID: 50
+  concertID: 3
+  description: ""
+- materielID: 51
+  concertID: 3
+  description: ""
+- materielID: 52
+  concertID: 3
+  description: ""
+- materielID: 53
+  concertID: 3
+  description: ""
+- materielID: 54
+  concertID: 3
+  description: ""
+- materielID: 55
+  concertID: 3
+  description: ""
+- materielID: 56
+  concertID: 3
+  description: ""
+- materielID: 57
+  concertID: 3
+  description: ""
+- materielID: 58
+  concertID: 3
+  description: ""
+- materielID: 59
+  concertID: 3
+  description: ""
+
 
 
 - Composer:

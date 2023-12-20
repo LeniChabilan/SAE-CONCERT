@@ -150,6 +150,7 @@ CREATE TABLE TRANSPORTE(
 create Table NECESSITER(
     materielID int,
     concertID int,
+    description varchar(255),
     PRIMARY KEY(materielID,concertID),
     FOREIGN KEY (materielID) REFERENCES MATERIEL(materielID),
     FOREIGN KEY (concertID) REFERENCES CONCERT(concertID)

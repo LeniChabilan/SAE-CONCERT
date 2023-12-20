@@ -184,6 +184,7 @@ class Necessiter(db.Model):
     __tablename__ = 'NECESSITER'
     materielID = Column(Integer, ForeignKey('MATERIEL.materielID'), primary_key=True)
     concertID = Column(Integer, ForeignKey('CONCERT.concertID'), primary_key=True)
+    description = Column(String(255))
     materiel = relationship(Materiel)
     concert = relationship(Concert)
 
