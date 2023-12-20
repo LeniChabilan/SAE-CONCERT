@@ -7,7 +7,8 @@ from wtforms import StringField , HiddenField, PasswordField
 import time
 from .models import Organisation, Concert
 
-from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste
+
+from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste , pdf_base_64
 
 from wtforms.validators import DataRequired
 from flask import request
@@ -71,9 +72,7 @@ def logout():
 def editer_liste_a_louer():
     return render_template("editer_liste_a_louer.html")
 
-@app.route("/choix-fiche/", methods = ("GET","POST",))
-def choix_fiche():
-    return render_template("choix_fiche.html")
+
 
 @app.route("/creation_concert")
 def creation_concert():
@@ -171,7 +170,7 @@ def choix(typeOrga,concert):
     if typeOrga == "Technique":
         return render_template("Consulter_fiches.html",conc=get_info_un_concert(concert))
     else:
-        return render_template("choix_fiche.html",conc=get_info_un_concert(concert))
+        return redirect(url_for("choix_fiche",concert=concert))
     
 
 @app.route("/Consulter_fiches")
@@ -255,3 +254,19 @@ def retour(typeOrga):
 def retourFiche(conc):
     return render_template("Consulter_fiches.html",conc=get_info_un_concert(conc))
 
+
+@app.route("/choix-fiche/<int:concert>", methods = ("GET","POST",))
+def choix_fiche(concert):
+    conc=get_info_un_concert(concert)
+    text=conc.catering
+    print(text)
+    pdf=pdf_base_64(text)
+    print(pdf)
+    return render_template("choix_fiche.html",pdf=pdf,conc=conc)
+
+# @app.route('/')
+# def generate_and_display_pdf():
+#     # Exemple de texte à partir de votre base de données
+#     database_text = "Le texte de votre base de données ici."
+
+#     # Générer le PDF en mémoire

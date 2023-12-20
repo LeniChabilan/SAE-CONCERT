@@ -6,6 +6,11 @@ from sqlalchemy import func
 import pymysql
 from datetime import datetime
 
+from io import BytesIO
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+import base64
+
 Base = declarative_base()
 from .app import db
 from flask_login import UserMixin
@@ -219,3 +224,23 @@ def ajouter_artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, num
     session.add(composer)
     session.commit()
     session.close() 
+
+def generate_pdf(text):
+    buffer = BytesIO()
+    pdf_canvas = canvas.Canvas(buffer, pagesize=letter)
+    pdf_canvas.drawString(100, 750, text)
+    pdf_canvas.save()
+    buffer.seek(0)
+    return buffer
+
+def pdf_base_64(text):
+    pdf_buffer = generate_pdf(text)
+
+    # Convertir le contenu du PDF en base64
+    pdf_content_base64 = base64.b64encode(pdf_buffer.getvalue())
+    # print(pdf_content_base64)  
+    # print(pdf_content_base64.encode('utf-8'))
+    # Afficher le contenu base64
+    return pdf_content_base64
+
+
