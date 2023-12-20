@@ -87,9 +87,9 @@ class Salle(db.Model):
     lieu = relationship(Lieu)
 
 
-
-
-
+    def __init__(self, planScene, salleId):
+        self.planScene = planScene
+        self.salleId = salleId
 
 class MaterielSalle(db.Model):
     __tablename__ = 'MATERIELSALLE'

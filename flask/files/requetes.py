@@ -243,6 +243,13 @@ def ajouter_artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, num
     session.commit()
     session.close() 
 
+def ajouter_plan(pdfPlan, salleId):
+    session = login()
+    plan = Plan(pdfPlan, salleId)
+    session.add(plan)
+    session.commit()
+    session.close()
+    
 def generate_pdf(text):
     buffer = BytesIO()
     pdf_canvas = canvas.Canvas(buffer, pagesize=letter)
@@ -260,5 +267,3 @@ def pdf_base_64(text):
     # print(pdf_content_base64.encode('utf-8'))
     # Afficher le contenu base64
     return pdf_content_base64
-
-
