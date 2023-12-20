@@ -21,6 +21,26 @@ def login():
     session = Session()
     return session
 
+
+def get_concert_filtre(dateDebut, dateFin, salleId, groupeId):
+    concFiltre = db.session.query(Concert)
+
+    if salleId is not None:
+        concFiltre = concFiltre.filter(Concert.salleID == salleId)
+
+    if groupeId is not None:
+        concFiltre = concFiltre.filter(Concert.groupeID == groupeId)
+
+    if dateDebut is not None:
+        concFiltre = concFiltre.filter(Concert.dateDebutConcert >= dateDebut)
+
+    if dateFin is not None:
+        concFiltre = concFiltre.filter(Concert.dateFinConcert <= dateFin)
+
+    return concFiltre.all()
+
+
+
 def get_info_concert():
     return db.session.query(Concert).all()
 

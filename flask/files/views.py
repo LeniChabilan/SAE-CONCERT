@@ -6,8 +6,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
 import time
 from .models import Organisation, Concert
-
-from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste
+from datetime import datetime
+from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste, get_concert_filtre,get_id_salle_by_nom,get_id_groupe_by_nom
 
 from wtforms.validators import DataRequired
 from flask import request
@@ -82,7 +82,7 @@ def creation_concert():
 
 @app.route("/liste_concerts/", methods = ("GET","POST",))
 def liste_concerts():
-    return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert())
+    return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert(),liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
 @app.route("/save-concert", methods =["POST"])
 def save_concert():
@@ -96,10 +96,54 @@ def save_concert():
     ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
     return render_template("accueil_bien_etre.html", title="Home")
 
+@app.route("/filtreConcert", methods=["GET", "POST"])
+def filtre_concert():
+    if request.method == 'POST':
+        # Récupérer les valeurs du formulaire
+        date_debut = request.form.get('dateD')
+        date_fin = request.form.get('dateF')
+        salle = request.form.get('salle')
+        groupe = request.form.get('groupe')
+
+        # Appliquer les filtres
+        concerts_filtres = []
+        concerts = get_info_concert()
+        for concert in concerts:
+            # Filtre par date
+            
+            if date_debut:
+                dateD=datetime.strptime(date_debut,"%Y-%m-%d").date()
+                if concert.dateDebutConcert <= dateD:
+                    continue
+                
+            
+            if date_fin:
+                dateF=datetime.strptime(date_fin,"%Y-%m-%d").date()
+                if concert.dateDebutConcert >= dateF:
+                    continue
+
+            # Filtre par salle
+            if salle and concert.salle.nomSalle != salle:
+                continue
+
+            # Filtre par groupe
+            if groupe and concert.groupe.nomGroupe != groupe:
+                continue
+
+            # Ajouter le concert filtré à la liste
+            concerts_filtres.append(concert)
+
+        # Passer la liste filtrée au modèle
+        return render_template("liste_concerts.html", title="Les Concerts", concerts=concerts_filtres, liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
+
+    # Si la méthode n'est pas POST, afficher tous les concerts non filtrés
+    return render_template("liste_concerts.html", title="Les Concerts", concerts=get_info_concert(), liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
+
+
 @app.route("/sup-concert/<int:id>")
 def sup_concert(id):
     supprimer_concert(id)
-    return render_template("liste_concerts.html",title="Les Concerts", concerts=get_info_concert())
+    return render_template("liste_concerts.html",title="Les Concerts", concerts=get_info_concert(),liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
 @app.route("/modification_concert/<int:id>")
 def modification_concert(id):
@@ -119,7 +163,7 @@ def modif_concert(id):
     groupe = request.form.get("groupe")
     mod_concert(id,nom, dateD, dateF, salle, groupe)
     conc=get_info_concert()
-    return render_template("liste_concerts.html", title="Les Concerts",concerts=get_info_concert())
+    return render_template("liste_concerts.html", title="Les Concerts",concerts=get_info_concert(),liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
 @app.route("/entrer-groupe")
 def inscription_groupe():
