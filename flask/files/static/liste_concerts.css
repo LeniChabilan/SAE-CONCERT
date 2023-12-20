@@ -47,7 +47,7 @@ form {
   
   .input-container {
     height: 5vh;
-    width: 70%;
+    width: 80%;
     position: relative;
     margin-top: 3vh;
   }
@@ -63,7 +63,7 @@ form {
     height: 100%;
     outline: 0;
     padding: 4px 20px 0;
-    width: 70%;
+    width: 80%;
   }
   
   .rad {
