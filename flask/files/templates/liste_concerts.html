@@ -13,7 +13,43 @@
         <h1 id="modification">Liste des concerts</h1>
       </div>
     </div>
-    <div class="partie_principale">
+   
+      <form role="form" method="POST" action="{{ url_for('filtre_concert') }}">
+        <div class="input-container">
+          <input placeholder="" type="date" class="input" name="dateD" >
+          <div class="cut"></div>
+          <label class="iLabel" for="dateD">Date minimum</label>
+        </div>
+        <div class="input-container">
+          <input placeholder="" type="date" class="input" name="dateF" >
+          <div class="cut"></div>
+          <label class="iLabel" for="dateF">Date maximum</label>
+        </div>
+        <div class="input-container">
+          <select name="salle" id="pet-select" class="input">
+            <option value=""></option>
+            {% for s in liste_salle %}
+            <option value="{{s.nomSalle}}">{{s.nomSalle}}</option>
+            {% endfor %}
+          </select>
+          </input>
+          <div class="cut"></div>
+          <label class="iLabel" for="salle">Salle</label>
+        </div>
+        <div class="input-container">
+          <select name="groupe" id="pet-select" class="input">
+            <option value=""></option>
+            {% for g in liste_groupe %}
+            <option value="{{g.nomGroupe}}">{{g.nomGroupe}}</option>
+            {% endfor %}
+          </select>
+          </input>
+          <div class="cut"></div>
+          <label class="iLabel" for="groupe">Groupe</label>
+        </div>
+        <input type="submit" value="Filtrer" class="submit">
+      </form>
+      <div class="partie_principale">
         <table class="liste_des_concerts">
 
             <thead>
