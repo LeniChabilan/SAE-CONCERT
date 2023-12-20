@@ -12,30 +12,11 @@
   </head>
   <body class="light">
     <header>
-      <div class="gauche">
-        <a href="{{ url_for('home') }}">
-          
+      <div class="gauche">         
           <img class="img_base" id="img1" src="{{ url_for('static', filename='img/logomusiquejaune.png') }}" alt="image du logo de l'application" />
-        </a>
         <h2 id="nom_Entreprise">Concert'O</h2>
       </div>
-      <div class="droite">
-        <ul>
-        {% if current_user.is_authenticated%}
-          <li><a class="username" >{{ current_user.nomOrga }}</a></li>
-          <li class="logout"><a href="{{ url_for('logout') }}" id="fond_bouton" class="noligne">
-            <button type="button" id="bouton_se_connecter">Se deconnecter</button>
-          </a></li>
-          {% else %}
-          <li> <a href="{{ url_for('connexion') }}" id="fond_bouton" class="noligne">
-            <button type="button" id="bouton_se_connecter">Se connecter</button>
-          </a></li>
-        {% endif %}
-        </ul>
-            
-        <a href="{{ url_for('home') }}" id="home">
-          <img class="img_maison" id="img2" src="{{ url_for('static', filename='img/home.png') }}" alt="logo silouhette maison" />
-        </a>
+      <div class="droite">          
         <div class="toggle-switch">
           <label class="switch-label">
             <input type="checkbox" class="checkbox" />
