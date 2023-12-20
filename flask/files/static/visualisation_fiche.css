@@ -1,5 +1,5 @@
-body{
-    margin:0;
+body {
+    margin: 0;
 }
 
 body.light > main {
@@ -18,27 +18,27 @@ body.light main h1 {
     color: #212121;
 }
 
-main{
+main {
     display: flex;
     flex-wrap: wrap;
     min-height: 85vh;
 }
 
-.partie_gauche, .partie_droite{
+.partie_gauche, .partie_droite {
     margin-left: 5vw;
 }
 
-#pdf_fiche, h1{
+#pdf_fiche, h1 {
     margin-top: 2vh;
     margin-right: 2vw;
 }
 
-#pdf_fiche{
+#pdf_fiche {
     width: 40vw;
-    height:75vh;
+    height: 75vh;
 }
 
-.bouton_choix_fiche_visualisation{
+.bouton_choix_fiche_visualisation {
     appearance: none;
     background-color: #2a2b38;
     color: #ffeba7;
@@ -58,18 +58,21 @@ main{
 }
 
 .bouton_choix_fiche_visualisation:hover {
-  color: #2a2b38;
-  background-color: #ffeba7;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
+    color: #2a2b38;
+    background-color: #ffeba7;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
 }
 
 .bouton_choix_fiche_visualisation:active {
-  box-shadow: none;
-  transform: translateY(0);
+    box-shadow: none;
+    transform: translateY(0);
 }
-
-.bouton_de_retour{
+.lien{
+    display: inline;
+    flex-basis: 100%;
+}
+.bouton_de_retour {
     appearance: none;
     background-color: #2a2b38;
     color: #ffeba7;
@@ -85,7 +88,7 @@ main{
     border: none;
     align-items: center;
 }
-.planScene{
+.planScene {
     flex-basis: 80%;
     text-align: center;
     color: #212121;
@@ -93,18 +96,41 @@ main{
     font-weight: 300;
     margin-top: 5vh;
 }
+
 .bouton_de_retour:disabled {
     pointer-events: none;
 }
 
 .bouton_de_retour:hover {
-  color: #2a2b38;
-  background-color: #ffeba7;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
+    color: #2a2b38;
+    background-color: #ffeba7;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
 }
 
 .bouton_de_retour:active {
-  box-shadow: none;
-  transform: translateY(0);
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.liste {
+    flex-grow: 1;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.centre {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.centre-unique{
+    justify-content: center;
+}
+.centre-deux{
+    justify-content:center ;
+
 }

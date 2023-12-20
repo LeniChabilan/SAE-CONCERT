@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block styles %}{{ super() }}
+{% extends 'base_sans_log.html' %} {% block styles %}{{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='completer_fiche_pdf.css')}}" />
 <script type="module" src="{{ url_for('static', filename='script/upload.js') }}"></script>
 {% endblock %} {% block content %}

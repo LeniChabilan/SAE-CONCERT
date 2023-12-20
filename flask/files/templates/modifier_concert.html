@@ -25,16 +25,6 @@
                 <label class="iLabel" for="dateF"></label>
               </div>
               <div class="input-container">
-                <input placeholder="Fiche technique" type="text" class="input" name="fiche" value="{{ concert.ficheTechnique }}" required>
-                <div class="cut"></div>
-                <label class="iLabel" for="Fiche">Fiche technique</label>
-              </div>
-              <div class="input-container">
-                <input placeholder="Catering" type="text" class="input" name="catering" value="{{ concert.catering }}" required>
-                <div class="cut"></div>
-                <label class="iLabel" for="catering">Catering</label>
-              </div>
-              <div class="input-container">
                 <select name="salle" id="pet-select" class="input">
                   {% for s in liste_salle %}
                   <option value="{{s.nomSalle}}">{{s.nomSalle}}</option>

@@ -1,10 +1,15 @@
-from .models import Concert, Groupe, Artiste, Composer, Participe, Salle, MusicienAdditionnel, Transporte, Necessiter, Prepare, Organiser , Utilise,Plan
+from .models import Concert, Groupe, Artiste, Composer, Participe, Salle, Necessiter, Organiser ,Plan
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import func
 import pymysql
 from datetime import datetime
+
+from io import BytesIO
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+import base64
 
 Base = declarative_base()
 from .app import db
@@ -20,6 +25,26 @@ def login():
     Session = sessionmaker(bind=engine)
     session = Session()
     return session
+
+
+def get_concert_filtre(dateDebut, dateFin, salleId, groupeId):
+    concFiltre = db.session.query(Concert)
+
+    if salleId is not None:
+        concFiltre = concFiltre.filter(Concert.salleID == salleId)
+
+    if groupeId is not None:
+        concFiltre = concFiltre.filter(Concert.groupeID == groupeId)
+
+    if dateDebut is not None:
+        concFiltre = concFiltre.filter(Concert.dateDebutConcert >= dateDebut)
+
+    if dateFin is not None:
+        concFiltre = concFiltre.filter(Concert.dateFinConcert <= dateFin)
+
+    return concFiltre.all()
+
+
 
 def get_info_concert():
     return db.session.query(Concert).all()
@@ -69,7 +94,6 @@ def get_dico_grps():
 def supprimer_groupe(grpID):
     try :
         db.session.query(Participe).filter_by(groupeID=grpID).delete(synchronize_session=False)
-        db.session.query(Utilise).filter_by(groupeID=grpID).delete(synchronize_session=False)
         db.session.query(Composer).filter_by(groupeID=grpID).delete(synchronize_session=False)
         db.session.query(Concert).filter_by(groupeID=grpID).delete(synchronize_session=False)
         db.session.query(Groupe).filter_by(groupeID=grpID).delete(synchronize_session=False)
@@ -83,11 +107,10 @@ def supprimer_groupe(grpID):
 def supprimer_concert(concID):
     try:
         # Supprimez le concert et toutes les lignes liées dans d'autres tables
-        db.session.query(MusicienAdditionnel).filter_by(concertID=concID).delete(synchronize_session=False)
-        db.session.query(Transporte).filter_by(concertID=concID).delete(synchronize_session=False)
+        
+        
         db.session.query(Necessiter).filter_by(concertID=concID).delete(synchronize_session=False)
         db.session.query(Participe).filter_by(concertID=concID).delete(synchronize_session=False)
-        db.session.query(Prepare).filter_by(concertID=concID).delete(synchronize_session=False)
         db.session.query(Organiser).filter_by(concertID=concID).delete(synchronize_session=False)
         db.session.query(Concert).filter_by(concertID=concID).delete(synchronize_session=False)
 
@@ -98,15 +121,13 @@ def supprimer_concert(concID):
         db.session.rollback()
         return "Erreur : Impossible de supprimer le concert et ses enregistrements liés en raison de contraintes de clé étrangère."
 
-def mod_concert(id,nom, dateD, dateF, ficheTech, catering, salle, groupe):
+def mod_concert(id,nom, dateD, dateF, salle, groupe):
     session = login()
     conc = session.query(Concert).filter(Concert.concertID == id).first()
     if conc:
         conc.nomConcert = nom
         conc.dateDebutConcert = dateD
         conc.dateFinConcert = dateF
-        conc.ficheTechnique = ficheTech
-        conc.catering = catering
         conc.salleID = get_id_salle_by_nom(salle)
         conc.groupeID = get_id_groupe_by_nom(groupe)
         session.commit()
@@ -228,3 +249,21 @@ def ajouter_plan(pdfPlan, salleId):
     session.add(plan)
     session.commit()
     session.close()
+    
+def generate_pdf(text):
+    buffer = BytesIO()
+    pdf_canvas = canvas.Canvas(buffer, pagesize=letter)
+    pdf_canvas.drawString(100, 750, text)
+    pdf_canvas.save()
+    buffer.seek(0)
+    return buffer
+
+def pdf_base_64(text):
+    pdf_buffer = generate_pdf(text)
+
+    # Convertir le contenu du PDF en base64
+    pdf_content_base64 = base64.b64encode(pdf_buffer.getvalue())
+    # print(pdf_content_base64)  
+    # print(pdf_content_base64.encode('utf-8'))
+    # Afficher le contenu base64
+    return pdf_content_base64
