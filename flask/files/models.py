@@ -125,6 +125,10 @@ class Plan(db.Model):
     salleID = Column(Integer, ForeignKey('SALLE.salleID'))
     salle = relationship(Salle)
 
+    def __init__(self, planScene, salleId):
+        self.planScene = planScene
+        self.salleId = salleId
+
 class Hebergement(db.Model):
     __tablename__ = 'HEBERGMENT'
     hebergementID = Column(Integer, primary_key=True, autoincrement=True)

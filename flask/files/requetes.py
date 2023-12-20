@@ -221,3 +221,10 @@ def ajouter_artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, num
     session.add(composer)
     session.commit()
     session.close() 
+
+def ajouter_plan(pdfPlan, salleId):
+    session = login()
+    plan = Plan(pdfPlan, salleId)
+    session.add(plan)
+    session.commit()
+    session.close()

@@ -4,10 +4,15 @@ from flask_login import login_user , current_user, logout_user, login_required
 from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
+import base64
+# import requests
+from werkzeug.utils import secure_filename
+import os
+
 
 from .models import Organisation, Concert
 
-from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste
+from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste, ajouter_plan
 
 from wtforms.validators import DataRequired
 from flask import request
@@ -138,6 +143,16 @@ def completer_fiche():
 def completer_fiche_pdf():
     return render_template("completer_fiche_pdf.html")
 
+@app.route("/fin-inscription/", methods=['GET', 'POST'])
+def fin_inscription():
+    files = os.listdir("./static/temp/")
+    for file in files:
+        file_path = "./static/temp/" + file
+        with open(file_path, 'rb') as pdf_file:
+            pdf_data = base64.b64encode(pdf_file.read())
+        ajouter_plan(pdf_data, 1)
+    return render_template("fin_inscription.html")
+
 @app.route("/ajout-artiste/<int:id>", methods=['GET', 'POST'])
 def ajout_artiste(id):
     pseudo = request.form.get("pseudo")
@@ -245,3 +260,19 @@ def modif_artiste_grp(id):
     dateExp = request.form.get("dateExpiration")
     mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
     return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
+
+
+@app.route('/upload', methods=['GET', 'POST'])
+
+def upload():
+    if not os.path.exists(f'{app.config["UPLOADED_TEMP_DEST"]}'):
+        os.makedirs(f'{app.config["UPLOADED_TEMP_DEST"]}')
+    if request.method == 'POST':
+        for key, uploaded_file in request.files.items():
+            if key.startswith('file'):
+                filename = secure_filename(uploaded_file.filename)
+                uploaded_file.save(os.path.join(f'{app.config["UPLOADED_TEMP_DEST"]}/', filename))
+    else:
+        for stored_file in os.listdir(f'{app.config["UPLOADED_TEMP_DEST"]}/'):
+            os.remove(f'{app.config["UPLOADED_TEMP_DEST"]}/{stored_file}')
+    return render_template('fin_inscription.html')

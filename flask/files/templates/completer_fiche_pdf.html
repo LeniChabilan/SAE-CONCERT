@@ -1,31 +1,28 @@
 {% extends 'base.html' %} {% block styles %}{{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='completer_fiche_pdf.css')}}" />
+<script type="module" src="{{ url_for('static', filename='script/upload.js') }}"></script>
 {% endblock %} {% block content %}
 <main>
-    <form role="form" method ="POST" action ="{{ url_for('completer_fiche_pdf') }}">
-        <div class="title">Veuillez compléter ces fiches :</div>
-        <div class="form">
-            <div class="droparea">
-                <i class="far fa-images"></i>
-                <label class="nomFiche" for="nom">Fiche Plan </label>
-                <div 
-                    ondrop="dropHandler(event);"
-                    ondragover="dragOverHandler(event);">
-                    Glissez votre fichier au format PDF.
-                </div>
-            </div>      
-            <div class="droparea">
-                <i class="far fa-images"></i>
-                <label class="nomFiche" for="nom">Fiche Rider </label>
-                <div 
-                    ondrop="dropHandler(event);"
-                    ondragover="dragOverHandler(event);">
-                    Glissez votre fichier au format PDF.
-                </div>
-            </div>                         
+    <h3>Veuillez compléter ces fiches :</h2>
+    <div class="form">
+        <div>
+            {{ dropzone.create(action='upload') }}
+            {{ dropzone.load_js() }}
+            {{ dropzone.config() }}
         </div>
-        <button class="submit" type="text">Enregistrer</button>
-    </form>
+        <script>
+            function redirectToFinInscription() {
+                // Utilisez window.location.href pour rediriger vers l'URL généré par url_for
+                window.location.href = "{{ url_for('fin_inscription') }}";
+            }
+        </script>
+        <div>
+            {{ dropzone.create(action='upload') }}
+            {{ dropzone.load_js() }}
+            {{ dropzone.config() }}
+        </div>
+    </div>
+    <button class="submit" onclick="redirectToFinInscription();">Enregistrer</button>
     <script
       type="text/javascript"
       src="{{ url_for('static',filename='script/dragAndDrop.js')}}"
