@@ -7,7 +7,7 @@ from wtforms import StringField , HiddenField, PasswordField
 import time
 from .models import Organisation, Concert
 
-from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste
+from .requetes import ajouter_concert, supp_necessite, ajout_nessecite_concert, supprimer_concert,supprimer_groupe, get_liste_neccessite, get_info_materiel_salle, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste
 
 from wtforms.validators import DataRequired
 from flask import request
@@ -66,10 +66,6 @@ def connexion():
 def logout():
     logout_user()
     return redirect(url_for('connexion'))
-
-@app.route("/editer_liste_a_louer", methods = ("GET","POST",))
-def editer_liste_a_louer():
-    return render_template("editer_liste_a_louer.html")
 
 @app.route("/choix-fiche/", methods = ("GET","POST",))
 def choix_fiche():
@@ -255,3 +251,29 @@ def retour(typeOrga):
 def retourFiche(conc):
     return render_template("Consulter_fiches.html",conc=get_info_un_concert(conc))
 
+@app.route("/editer_liste_a_louer/<int:conc>", methods = ("GET","POST",))
+def editer_liste_a_louer(conc):
+    return render_template("editer_liste_a_louer.html",conc=get_info_un_concert(conc), lBesoin = get_liste_neccessite(conc))
+
+@app.route("/ajout_besoin/<int:conc>", methods =["POST"])
+def ajout_besoin(conc):
+    instrument = request.form.get("instrument")
+    micro = request.form.get("micro")
+    description = request.form.get("description")
+    quantite = request.form.get("quantite")
+    quantite_micro = request.form.get("quantite_micro")
+    print(int(quantite_micro))
+    print(int(quantite))
+    if quantite is not None and instrument is not None and micro is not None:
+        ajout_nessecite_concert(micro, conc,"-", str(int(quantite_micro)*int(quantite)))
+        ajout_nessecite_concert(instrument,conc,description, quantite)
+    return render_template("ajouter_materiel.html",conca=get_info_un_concert(conc), matos=get_info_materiel_salle(conc))
+ 
+@app.route("/ajouter_materiel/<int:conc>", methods = ("GET","POST"))
+def ajouter_materiel(conc):
+    return render_template("ajouter_materiel.html",conca=get_info_un_concert(conc), matos=get_info_materiel_salle(conc))
+
+@app.route("/supp_necessiter/<int:conca>/<string:necessaire>", methods = ("GET","POST",))
+def supp_necessiter(necessaire, conca):
+    supp_necessite(necessaire)
+    return render_template("editer_liste_a_louer.html",conc=get_info_un_concert(conca), lBesoin = get_liste_neccessite(conca))
