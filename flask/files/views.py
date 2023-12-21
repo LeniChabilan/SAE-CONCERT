@@ -16,6 +16,7 @@ from datetime import datetime
 from wtforms.validators import DataRequired
 from flask import request
 from .models import *
+import shutil
 
 
 
@@ -213,14 +214,10 @@ def completer_fiche_pdf(concertID):
     modif_fiche_technique(concertID, ficheTechnique)
     return render_template("completer_fiche_pdf.html", concertID = concertID)
 
-@app.route("/fin-inscription/", methods=['GET', 'POST'])
-def fin_inscription():
-    files = os.listdir("./static/temp/")
-    for file in files:
-        file_path = "./static/temp/" + file
-        with open(file_path, 'rb') as pdf_file:
-            pdf_data = base64.b64encode(pdf_file.read())
-        ajouter_plan(pdf_data, 1)
+@app.route("/fin-inscription/<int:concertID>", methods=['GET', 'POST'])
+def fin_inscription(concertID):
+    ajouter_plan(concertID)
+    ajouter_rider(concertID)
     return render_template("fin_inscription.html")
 
 @app.route("/ajout-artiste/<int:id>", methods=['GET', 'POST'])
@@ -329,17 +326,31 @@ def modif_artiste_grp(id):
     mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
     return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
 
-@app.route('/upload', methods=['GET', 'POST'])
-def upload():
+@app.route('/upload-plan', methods=['GET', 'POST'])
+def upload_plan():
     if not os.path.exists(f'{app.config["UPLOADED_TEMP_DEST"]}'):
         os.makedirs(f'{app.config["UPLOADED_TEMP_DEST"]}')
     if request.method == 'POST':
         for key, uploaded_file in request.files.items():
             if key.startswith('file'):
                 filename = secure_filename(uploaded_file.filename)
-                uploaded_file.save(os.path.join(f'{app.config["UPLOADED_TEMP_DEST"]}/', filename))
+                uploaded_file.save(os.path.join(f'{app.config["UPLOADED_TEMP_DEST"]}/plan/', filename))
     else:
-        for stored_file in os.listdir(f'{app.config["UPLOADED_TEMP_DEST"]}/'):
+        for stored_file in os.listdir(f'{app.config["UPLOADED_TEMP_DEST"]}/plan/'):
+            os.remove(f'{app.config["UPLOADED_TEMP_DEST"]}/{stored_file}')
+    return render_template('fin_inscription.html')
+
+@app.route('/upload-rider', methods=['GET', 'POST'])
+def upload_rider():
+    if not os.path.exists(f'{app.config["UPLOADED_TEMP_DEST"]}'):
+        os.makedirs(f'{app.config["UPLOADED_TEMP_DEST"]}')
+    if request.method == 'POST':
+        for key, uploaded_file in request.files.items():
+            if key.startswith('file'):
+                filename = secure_filename(uploaded_file.filename)
+                uploaded_file.save(os.path.join(f'{app.config["UPLOADED_TEMP_DEST"]}/rider/', filename))
+    else:
+        for stored_file in os.listdir(f'{app.config["UPLOADED_TEMP_DEST"]}/rider/'):
             os.remove(f'{app.config["UPLOADED_TEMP_DEST"]}/{stored_file}')
     return render_template('fin_inscription.html')
 

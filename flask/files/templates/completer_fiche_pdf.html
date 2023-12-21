@@ -6,26 +6,24 @@
     <h3>Veuillez compléter ces fiches :</h2>
     <div class="form">
         <div>
-            {{ dropzone.create(action='upload') }}
+            <p>Plan de scène</p>
+            {{ dropzone.create(action='upload_plan') }}
             {{ dropzone.load_js() }}
             {{ dropzone.config() }}
         </div>
-        <script>
-            function redirectToFinInscription() {
-                // Utilisez window.location.href pour rediriger vers l'URL généré par url_for
-                window.location.href = "{{ url_for('fin_inscription') }}";
-            }
-        </script>
         <div>
-            {{ dropzone.create(action='upload') }}
+            <p>Fiche Rider</p>
+            {{ dropzone.create(action=url_for('upload_rider')) }}
             {{ dropzone.load_js() }}
             {{ dropzone.config() }}
         </div>
     </div>
     <button class="submit" onclick="redirectToFinInscription();">Enregistrer</button>
-    <script
-      type="text/javascript"
-      src="{{ url_for('static',filename='script/dragAndDrop.js')}}"
-    ></script>
+    <script>
+        function redirectToFinInscription() {
+        // Utilisez window.location.href pour rediriger vers l'URL généré par url_for
+        window.location.href = "{{ url_for('fin_inscription', concertID=concertID) }}";
+        }
+    </script>
 </main>
 {% endblock %}

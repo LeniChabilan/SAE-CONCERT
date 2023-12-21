@@ -145,3 +145,8 @@ h3{
   width: 100%;
   margin-left: 45vw;
 }
+
+p{
+  margin-left: 10vw;
+  font-weight: bold;
+}
