@@ -11,6 +11,9 @@
             <button type="button" class="bouton_de_retour">Retour</button>
         </a>
         <h1 class="planScene">plan Scene</h1>
+        <a href="{{ url_for('ajouter_plan_scene')}}" class="ajouter_fiche_scene">
+            <button type="button" class="bouton_ajout_scene">Ajouter</button>
+        </a>
         <ul class="liste">
             {% if plan %}
                 {% for x in plan %}
@@ -22,6 +25,9 @@
                     <object type="application/pdf" data="data:application/pdf;base64,{{ x.decode('utf-8') }}" id="pdf_fiche">
                         <p>Le lecteur PDF n'est pas pris en charge par votre navigateur.</p>
                     </object>
+                    <a href="{{url_for('suppression_plan_scene', fichier= x, liste = plan, conc=conc.concertID )}}">
+                        <button type="button" class="bouton_suppression">Supprimer</button>
+                    </a>
                 </li>
                 {% endfor %}
             {% else %}

@@ -72,7 +72,7 @@ main {
     display: inline;
     flex-basis: 100%;
 }
-.bouton_de_retour {
+.bouton_de_retour, .bouton_ajout_scene, .bouton_suppression {
     appearance: none;
     background-color: #2a2b38;
     color: #ffeba7;
@@ -97,18 +97,18 @@ main {
     margin-top: 5vh;
 }
 
-.bouton_de_retour:disabled {
+.bouton_de_retour:disabled, .bouton_ajout_scene:disabled, .bouton_suppression:disabled {
     pointer-events: none;
 }
 
-.bouton_de_retour:hover {
+.bouton_de_retour:hover, .bouton_ajout_scene:hover, .bouton_suppression:hover {
     color: #2a2b38;
     background-color: #ffeba7;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
 
-.bouton_de_retour:active {
+.bouton_de_retour:active, .bouton_ajout_scene:active, .bouton_suppression:active {
     box-shadow: none;
     transform: translateY(0);
 }
@@ -133,4 +133,12 @@ main {
 .centre-deux{
     justify-content:center ;
 
+}
+
+.ajouter_fiche_scene {
+    margin-right: 3%;
+}
+
+.bouton_suppression{
+    margin-top : 5vw;
 }
