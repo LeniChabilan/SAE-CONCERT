@@ -1,4 +1,4 @@
-from .models import Concert, Groupe, Artiste, Composer, Participe, Salle, Necessiter, Organiser ,Plan
+from .models import Concert, Groupe, Artiste, Materiel, MaterielSalle, Composer, Participe, Salle, MusicienAdditionnel, Transporte, Necessiter, Prepare, Organiser , Utilise,Plan
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -223,9 +223,9 @@ def supprimer_artiste(artID):
         db.session.rollback()
         return "Erreur : Impossible de supprimer l'artiste et ses enregistrements liés en raison de contraintes de clé étrangère."
     
-def get_plan_concert(idsalle):
+def get_plan_concert(idconcert):
     session = login()
-    res= session.query(Plan.planScene).filter_by(salleID=idsalle).all()
+    res= session.query(Plan.planScene).filter_by(concertID=idconcert).all()
     res1=[]
     for val in res:
         res1.append(val[0])
@@ -242,7 +242,76 @@ def ajouter_artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, num
     session.commit()
     session.close() 
 
-def ajouter_plan(pdfPlan, concertID):
+
+def get_max_id_Materiel():
+    session = login()
+    if session.query(func.max(Materiel.materielID)).all()[0][0] is None:
+        return 1
+    return session.query(func.max(Materiel.materielID)).all()[0][0] + 1
+    
+def ajout_nessecite_concert(objet, concert, description, quantite):
+    session = login()
+    
+    # Recherche de l'id du matériel
+    materiel_id_query = session.query(Materiel.materielID).filter_by(nomMateriel=objet).first()
+    
+    if materiel_id_query:
+        id = materiel_id_query[0]
+    else:
+        # Si la recherche ne renvoie rien, créez un nouvel ID
+        id = get_max_id_Materiel()
+        materiel = Materiel(id, objet)
+        session.add(materiel)
+    
+    # Vérifiez si la relation Necessiter existe déjà
+    necessiter_query = session.query(Necessiter).filter_by(materielID=id, concertID=concert).first()
+    
+    if necessiter_query is None:
+        # Si la relation n'existe pas, ajoutez-la
+        necessite = Necessiter(id, concert, description, quantite)
+        session.add(necessite)
+
+    session.commit()
+    session.close()
+
+def get_liste_neccessite(concert):
+    session = login()
+    res = []
+    necessaire = session.query(Necessiter).filter_by(concertID=concert).all()
+    for row in necessaire:
+        liste = []
+        description = row.description
+        nom_objet = session.query(Materiel.nomMateriel).filter_by(materielID = row.materielID).first()[0]
+        liste.append(nom_objet)
+        liste.append(description)
+        liste.append(row.quantite)
+        res.append(liste)
+    session.expunge_all()
+    session.close()
+    return res
+    
+def get_info_materiel_salle(concert):
+    session = login()
+    nom_salle = session.query(Concert.salleID).filter(Concert.concertID==concert).first()[0]
+    a= session.query(MaterielSalle).filter(MaterielSalle.salleID==nom_salle).all()
+    session.expunge_all()
+    session.close()
+    return a
+
+def supp_necessite(nom_necessite):
+    id = db.session.query(Materiel.materielID).filter_by(nomMateriel = nom_necessite).first()[0]
+    print(id)
+    try:
+        db.session.query(Necessiter).filter(Necessiter.materielID == id).delete(synchronize_session=False)
+        db.session.commit()
+        print("Removing")
+        db.session.close()
+    except pymysql.IntegrityError:
+        # Si une contrainte de clé étrangère empêche la suppression, gérez l'erreur ici
+        db.session.rollback()
+        print("not Removing")
+
+def ajouter_plan(pdfPlan, salleId):
     session = login()
     plan = Plan(pdfPlan, concertID)
     session.add(plan)
@@ -267,7 +336,6 @@ def pdf_base_64(text):
     # Afficher le contenu base64
     return pdf_content_base64
 
-
 def get_concert_by_name(nomConcert):
     session = login()
     concert = session.query(Concert.concertID).filter_by(nomConcert=nomConcert).limit(1).all()[0][0]
@@ -286,3 +354,4 @@ def modif_fiche_accueil(concertID, ficheA):
     concert.catering = ficheA
     session.commit()
     session.close()
+

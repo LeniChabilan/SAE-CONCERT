@@ -65,6 +65,10 @@ class Materiel(db.Model):
     __tablename__ = 'MATERIEL'
     materielID = Column(Integer, primary_key=True,autoincrement=True)
     nomMateriel = Column(String(255))
+    
+    def __init__(self,materielID,nomMateriel):
+        self.materielID = materielID
+        self.nomMateriel = nomMateriel
 
 class Groupe(db.Model):
     __tablename__ = 'GROUPE'
@@ -134,8 +138,15 @@ class Necessiter(db.Model):
     materielID = Column(Integer, ForeignKey('MATERIEL.materielID'), primary_key=True)
     concertID = Column(Integer, ForeignKey('CONCERT.concertID'), primary_key=True)
     description = Column(String(255))
+    quantite = Column(Integer)
     materiel = relationship(Materiel)
     concert = relationship(Concert)
+    
+    def __init__(self,materielID,concertID,description,quantite):
+        self.materielID = materielID
+        self.concertID = concertID
+        self.description = description
+        self.quantite = quantite
 
 class Composer(db.Model):
     __tablename__ = 'COMPOSER'

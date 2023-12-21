@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='ajouter_materiel.css')}}" />
+{% endblock %} {% block content %}
+<main>
+    <div id="bouton_retour_choix_fiche">
+        <a href="{{ url_for('editer_liste_a_louer', conc = conca.concertID) }}">
+          <button type="button" class="bouton_de_retour">Retour</button>
+        </a>
+    </div>
+    <div class="contenu">
+        <div class="partie_gauche">
+            <form role="form" method="POST" action="{{ url_for('ajout_besoin', conc=conca.concertID)}}">
+                <div class="input-container">
+                    <label class"iLabel" for="instrument">Instrument</label>
+                    <input placeholder="Instrument" type="text" class="input" name="instrument">
+                </div>
+                <div class="input-container">
+                    <label class"iLabel" for="micro">Micro</label>
+                    <input placeholder="Micro" type="text" class="input" name="micro">
+                </div>
+                <div class="input-container">
+                    <label class"iLabel" for="description">Description</label>
+                    <input placeholder="Description" type="text" class="input" name="description">        
+                </div>
+                <div class="input-container">
+                    <label class"iLabel" for="quantite">Quantité</label>
+                    <input placeholder="Quantite" type="int" class="input" name="quantite">   
+                </div>
+                <div class="input-container">
+                    <label class"iLabel" for="quantite">Quantité de micro</label>
+                    <input placeholder="Quantite_micro" type="int" class="input" name="quantite_micro">   
+                </div>
+                <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Ajouter</button>
+            </form>
+        </div>
+        <div class="partie_milieu">
+            <object type="application/pdf" data="data:application/pdf;base64,{{conca.ficheRider.decode('utf-8') }}" id="pdf_fiche">
+            </object>
+        </div>
+        <div class="partie_droite">
+            <table class="tableau">
+                <thead>
+                    <tr>
+                        <th>Nom Matériel</th>
+                        <th>Disponibilité</th>
+                    </tr>
+                </thead>
+                {% if matos!= None%}
+                    {% for x in matos %}
+                    <tr class="ligne">
+                        <td> {{x.nomMaterielS}} </td>
+                        {% if x.disponible == True %}
+                            <td> Disponible</td>
+                        {% else %}
+                            <td> Indisponible</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                <tr class="ligne">
+                    <td> VIDE </td>
+                    <td>  </td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+    </div>
+</main>
+{%endblock%}

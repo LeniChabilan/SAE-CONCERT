@@ -28,12 +28,12 @@ main {
     margin-left: 5vw;
 }
 
-#pdf_fiche, h1 {
+#pdf_fiche, h1,iframe{
     margin-top: 2vh;
     margin-right: 2vw;
 }
 
-#pdf_fiche {
+#pdf_fiche,iframe {
     width: 40vw;
     height: 75vh;
 }
