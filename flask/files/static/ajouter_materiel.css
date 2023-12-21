@@ -144,10 +144,44 @@ main{
 #pdf_fiche{
   margin-top: -4vh;
   margin-right: 2vw;
-  width: 40vw;
-  height:75vh;
+  width: 35vw;
+  height:70vh;
 }
 
 .partie_gauche{
   margin-top: 3%;
+}
+
+.tableau{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom : 5%; 
+  margin-top : 2%;
+  outline: none;
+}
+
+td{
+  text-align: center;
+  align-items: center;
+}
+
+thead{
+  max-height: 4vh;
+  background-color: #2a2b38;
+  color: #fff;
+}
+
+.td-long {
+  max-width: 125px; /* Set your preferred maximum width */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+thead tr th, td{
+  padding-left:1vw;
+  padding-right:1vw;
+  padding-bottom: 1vh;
+  padding-top: 3vh;
 }

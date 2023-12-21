@@ -12,7 +12,7 @@ body.dark main {
 }
 
 main{
-    min-height: 90vh;
+    min-height: 85vh;
     display: flex;
     flex-wrap: wrap;
 
@@ -54,6 +54,7 @@ main{
     margin-left: auto;
     margin-right: auto;
     margin-bottom : 5%; 
+    margin-top : 2%;
     outline: none;
 }
 
@@ -85,7 +86,7 @@ thead{
 }
 
 
-thead th, td{
+thead tr th, td{
     padding-left:2vw;
     padding-right:2vw;
     padding-bottom: 3vh;

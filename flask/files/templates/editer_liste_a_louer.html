@@ -15,10 +15,12 @@
     <div class="tableau">
         <table class="liste_des_besoins">
             <thead>
-                <th>Instrument</th>
-                <th>Description</th>
-                <th>Quantite</th>
-                <th>Supprimer</th>
+                <tr>
+                    <th>Instrument</th>
+                    <th>Description</th>
+                    <th>Quantite</th>
+                    <th>Supprimer</th>
+                </tr>
             </thead>
             {% if lBesoin!= None%}
                 {% for besoin in lBesoin%}
