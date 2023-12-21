@@ -389,3 +389,17 @@ def choix_fiche(concert):
     pdf=pdf_base_64(text)
     return render_template("choix_fiche.html",pdf=pdf,conc=conc)
   
+@app.route("/ajouter_pla_scene", methods = ("GET","POST"))
+def ajouter_plan_scene():
+    return None
+
+@app.route("/suppression_plan_scene/<string:fichier>/<string:liste>/<int:conc>", methods=("GET", "POST"))
+def suppression_plan_scene(fichier, liste, conc):
+    # Convert the string representation of the list to an actual list
+    liste = liste.split(',')
+    
+    for i in range(len(liste)):
+        if i == fichier:
+            liste.pop(i)
+    
+    return render_template("Consulter_fiches.html", conc=get_info_un_concert(conc))
