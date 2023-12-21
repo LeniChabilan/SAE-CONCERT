@@ -390,8 +390,12 @@ def ajouter_materiel(conc):
 
 @app.route("/supp_necessiter/<int:conca>/<string:necessaire>", methods = ("GET","POST",))
 def supp_necessiter(necessaire, conca):
-    supp_necessite(necessaire)
-    return render_template("editer_liste_a_louer.html",conc=get_info_un_concert(conca), lBesoin = get_liste_neccessite(conca))
+    try:
+        supp_necessite(necessaire)
+        return render_template("editer_liste_a_louer.html",conc=get_info_un_concert(conca), lBesoin = get_liste_neccessite(conca))
+    except:
+        
+        return render_template("editer_liste_a_louer.html",conc=get_info_un_concert(conca), lBesoin = get_liste_neccessite(conca))
 
 @app.route("/choix-fiche/<int:concert>", methods = ("GET","POST"))
 def choix_fiche(concert):
@@ -404,16 +408,14 @@ def choix_fiche(concert):
 def ajouter_plan_scene():
     return None
 
-@app.route("/suppression_plan_scene/<string:fichier>/<string:liste>/<int:conc>", methods=("GET", "POST"))
-def suppression_plan_scene(fichier, liste, conc):
-    # Convert the string representation of the list to an actual list
-    liste = liste.split(',')
-    
-    for i in range(len(liste)):
-        if i == fichier:
-            liste.pop(i)
-    
-    return render_template("Consulter_fiches.html", conc=get_info_un_concert(conc))
+@app.route("/suppression_plan_scene/<int:planId>/<int:concert>", methods=("GET", "POST"))
+def suppression_plan_scene(planId,concert):
+    con=get_info_un_concert(concert)
+    try:
+        sup_plan_id(planId)
+        return render_template("visualisation_plan.html",plan=get_plan_concert(concert.concertID),conc=get_info_un_concert(concert))
+    except:
+        return render_template("visualisation_plan.html",plan=get_plan_concert(con.concertID),conc=con)
 
 
 @app.route("/entrer_groupe/", methods = ("GET","POST",))
