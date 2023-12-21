@@ -1,4 +1,4 @@
-from .models import Concert, Groupe, Artiste, Materiel, MaterielSalle, Composer, Participe, Salle, MusicienAdditionnel, Transporte, Necessiter, Prepare, Organiser , Utilise,Plan
+from .models import Concert, Groupe, Artiste, Materiel, MaterielSalle, Composer, Participe, Salle, Necessiter, Organiser, Plan
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
