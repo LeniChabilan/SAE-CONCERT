@@ -12,7 +12,7 @@ body.dark main {
 }
 
 main{
-    min-height: 90vh;
+    min-height: 85vh;
     display: flex;
     flex-wrap: wrap;
 
@@ -53,8 +53,9 @@ main{
 .tableau{
     margin-left: auto;
     margin-right: auto;
-    margin-bottom : 5%;
-    margin-top: 5%;  
+    margin-bottom : 5%; 
+    margin-top : 2%;
+    outline: none;
 }
 
 .liste_des_besoins {
@@ -66,6 +67,28 @@ main{
     height: 3vh;
 }
 
+td{
+    text-align: center;
+    align-items: center;
+}
+
 thead{
     max-height: 4vh;
+    background-color: #2a2b38;
+    color: #fff;
+}
+
+.td-long {
+    max-width: 150px; /* Set your preferred maximum width */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+thead tr th, td{
+    padding-left:2vw;
+    padding-right:2vw;
+    padding-bottom: 3vh;
+    padding-top: 3vh
 }

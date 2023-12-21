@@ -7,26 +7,29 @@
           <button type="button" class="bouton_de_retour">Retour</button>
         </a>
     </div>
+    <div id="bouton_ajout">
+        <a href="{{ url_for('ajouter_materiel', conc=conc.concertID)}}">
+          <button type="button" class="bouton_de_retour">Ajouter du matériel</button>
+        </a>
+    </div>
     <div class="tableau">
         <table class="liste_des_besoins">
             <thead>
-                <th>Instrument</th>
-                <th>Micro</th>
-                <th>Description</th>
-                <th>Quantité</th>
+                <tr>
+                    <th>Instrument</th>
+                    <th>Description</th>
+                    <th>Quantite</th>
+                    <th>Supprimer</th>
+                </tr>
             </thead>
             {% if lBesoin!= None%}
                 {% for besoin in lBesoin%}
                     <tr>
-                        <td>{{besoin.instrument}}<td>
-                        <td>{{besoin.micro}}<td>
-                        {% if besoin.description == None %}
-                            <td>-</td>
-                        {% else %}
-                            <td>{{besoin.description}}</td>
-                        {% endif %}
-                        <td>{{besoin.quantite}}</td>
-                    </tr>
+                        <td>{{ besoin[0] }}</td>
+                        <td>{{ besoin[1]}}</td>
+                        <td>{{ besoin[2] }}</td>
+                        <td><a href="{{ url_for('supp_necessiter', conca=conc.concertID, necessaire= besoin[0] )}}"><i class="fa-solid fa-trash"></i></a></td>  
+                    </tr>   
                 {% endfor %}
             {% endif %}
         </table>
