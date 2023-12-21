@@ -5,6 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import func
 import pymysql
 from datetime import datetime
+import os
 
 from io import BytesIO
 from reportlab.lib.pagesizes import letter
@@ -311,13 +312,32 @@ def supp_necessite(nom_necessite):
         db.session.rollback()
         print("not Removing")
 
-def ajouter_plan(pdfPlan, salleId):
+def ajouter_plan(concertID):
     session = login()
-    plan = Plan(pdfPlan, concertID)
-    session.add(plan)
-    session.commit()
+    files = os.listdir("./static/temp/plan/")
+    for file in files:
+        file_path = "./static/temp/plan/" + file
+        with open(file_path, 'rb') as pdf_file:
+            pdf_data = base64.b64encode(pdf_file.read())
+        plan = Plan(pdf_data, concertID)
+        session.add(plan)
+        session.commit()
+        os.remove(file_path)
     session.close()
     
+def ajouter_rider(concertID):
+    session = login()
+    files = os.listdir("./static/temp/rider/")
+    for file in files:
+        file_path = "./static/temp/rider/" + file
+        with open(file_path, 'rb') as pdf_file:
+            pdf_data = base64.b64encode(pdf_file.read())
+        concert = session.query(Concert).filter(Concert.concertID == concertID).first()
+        concert.ficheRider = pdf_data
+        session.commit()
+        os.remove(file_path)
+    session.close()
+
 def generate_pdf(text):
     buffer = BytesIO()
     pdf_canvas = canvas.Canvas(buffer, pagesize=letter)
