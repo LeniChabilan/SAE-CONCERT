@@ -11,8 +11,7 @@ import os
 
 from .models import Organisation, Concert
 import time
-from .requetes import ajouter_concert, get_info_materiel_salle, get_liste_neccessite, ajout_nessecite_concert, supp_necessite, supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste, pdf_base_64
-# get_concert_filtre,get_id_salle_by_nom,get_id_groupe_by_nom ,
+from .requetes import *
 from datetime import datetime
 from wtforms.validators import DataRequired
 from flask import request
@@ -81,17 +80,18 @@ def creation_concert():
 def liste_concerts():
     return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert(),liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
-@app.route("/save-concert", methods =["POST"])
+@app.route("/save-concert/", methods =["POST"])
 def save_concert():
     nom = request.form.get("nom")
     dateD = request.form.get("dateD")
     dateF = request.form.get("dateF")
-    ficheTech =""
+    ficheTech = ""
     catering = ""
     salle = request.form.get("salle")
     groupe = request.form.get("groupe")
     ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
-    return render_template("accueil_bien_etre.html", title="Home")
+    print(get_concert_by_name(nom))
+    return render_template("completer_fiche.html", concertID=get_concert_by_name(nom))
 
 
 def get_date(concert):
@@ -201,13 +201,17 @@ def recherche_groupe():
         return render_template("ajout_artiste.html", id = groupe.groupeID)
     return redirect(url_for("completer_fiche"))
 
-@app.route("/completer-fiche", methods=['GET', 'POST'])
-def completer_fiche():
-    return render_template("completer_fiche.html")
+@app.route("/completer-fiche/<int:concertID>", methods=['GET', 'POST'])
+def completer_fiche(concertID):
+    return render_template("completer_fiche.html", concertID = concertID)
 
-@app.route("/completer-fiche-pdf", methods=['GET', 'POST'])
-def completer_fiche_pdf():
-    return render_template("completer_fiche_pdf.html")
+@app.route("/completer-fiche-pdf/<int:concertID>", methods=['GET', 'POST'])
+def completer_fiche_pdf(concertID):
+    ficheAccueil = request.form.get("ficheA")
+    modif_fiche_accueil(concertID, ficheAccueil)
+    ficheTechnique = request.form.get("ficheT")
+    modif_fiche_technique(concertID, ficheTechnique)
+    return render_template("completer_fiche_pdf.html", concertID = concertID)
 
 @app.route("/fin-inscription/", methods=['GET', 'POST'])
 def fin_inscription():

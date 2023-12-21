@@ -236,12 +236,12 @@ def ajouter_artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, num
     artiste = Artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, 1)
     session.add(artiste)
     session.commit()
-    print(session.query(Artiste.artisteID).filter_by(nomA = nom).limit(1).all()[0][0])
     composer = Composer(session.query(Artiste.artisteID).filter_by(nomA = nom).limit(1).all()[0][0], idGroupe)
     session.add(artiste)
     session.add(composer)
     session.commit()
     session.close() 
+
 
 def get_max_id_Materiel():
     session = login()
@@ -313,7 +313,7 @@ def supp_necessite(nom_necessite):
 
 def ajouter_plan(pdfPlan, salleId):
     session = login()
-    plan = Plan(pdfPlan, salleId)
+    plan = Plan(pdfPlan, concertID)
     session.add(plan)
     session.commit()
     session.close()
@@ -335,4 +335,23 @@ def pdf_base_64(text):
     # print(pdf_content_base64.encode('utf-8'))
     # Afficher le contenu base64
     return pdf_content_base64
+
+def get_concert_by_name(nomConcert):
+    session = login()
+    concert = session.query(Concert.concertID).filter_by(nomConcert=nomConcert).limit(1).all()[0][0]
+    return concert
+
+def modif_fiche_technique(concertID, ficheT):
+    session = login()
+    concert = session.query(Concert).filter(Concert.concertID == concertID).first()
+    concert.ficheTechnique = ficheT
+    session.commit()
+    session.close()
+
+def modif_fiche_accueil(concertID, ficheA):
+    session = login()
+    concert = session.query(Concert).filter(Concert.concertID == concertID).first()
+    concert.catering = ficheA
+    session.commit()
+    session.close()
 
