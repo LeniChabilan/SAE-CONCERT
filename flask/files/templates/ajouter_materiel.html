@@ -34,8 +34,12 @@
             </form>
         </div>
         <div class="partie_milieu">
-            <object type="application/pdf" data="data:application/pdf;base64,{{conca.ficheRider.decode('utf-8') }}" id="pdf_fiche">
-            </object>
+            {% if conca.ficheRider is none %}
+                <iframe src="data:application/pdf;base64,"></iframe>
+            {% else %}
+                <object type="application/pdf" data="data:application/pdf;base64,{{conca.ficheRider.decode('utf-8') }}" id="pdf_fiche">
+                </object>  
+            {% endif %}
         </div>
         <div class="partie_droite">
             <table class="tableau">

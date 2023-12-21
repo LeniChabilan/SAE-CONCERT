@@ -73,7 +73,7 @@ def logout():
 
 @app.route("/creation_concert")
 def creation_concert():
-    return render_template("creation_concert.html", liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
+    return render_template("creation_concert.html", liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe(),id=id)
 
 
 @app.route("/liste_concerts/", methods = ("GET","POST",))
@@ -388,7 +388,7 @@ def choix_fiche(concert):
     text=conc.catering    
     pdf=pdf_base_64(text)
     return render_template("choix_fiche.html",pdf=pdf,conc=conc)
-  
+
 @app.route("/ajouter_pla_scene", methods = ("GET","POST"))
 def ajouter_plan_scene():
     return None
@@ -403,3 +403,9 @@ def suppression_plan_scene(fichier, liste, conc):
             liste.pop(i)
     
     return render_template("Consulter_fiches.html", conc=get_info_un_concert(conc))
+
+
+@app.route("/entrer_groupe/", methods = ("GET","POST",))
+def entrer_groupe():
+    return render_template("entrer_groupe.html")
+
