@@ -57,11 +57,13 @@ body.dark #modification {
 
 #modification {
     font-weight: 300;
+
 }
 
 .liste_des_concerts,
 th {
     border-collapse: collapse;
+    font-weight: 500;
 }
 
 .logo {
