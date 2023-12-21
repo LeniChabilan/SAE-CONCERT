@@ -933,3 +933,34 @@
     nomOrga: "HarmonieMusicale"
   - concertID: 3
     nomOrga: "CoeurDeScene"
+
+
+- Necessiter:
+  - materielID: 1
+    concertID: 1 
+    description: "Une description"
+    quantite: 2
+  - materielID: 2
+    concertID: 1 
+    description: "Une description"
+    quantite: 3
+  - materielID: 3
+    concertID: 1 
+    description: "Une description"
+    quantite: 1
+  - materielID: 4
+    concertID: 1 
+    description: "Une description"
+    quantite: 2
+  - materielID: 5
+    concertID: 1 
+    description: "Une description"
+    quantite: 5
+  - materielID: 6
+    concertID: 1 
+    description: "Une description"
+    quantite: 4
+  - materielID: 7
+    concertID: 1 
+    description: "Une description"
+    quantite: 8
