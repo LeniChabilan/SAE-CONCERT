@@ -11,8 +11,8 @@ import os
 
 from .models import Organisation, Concert
 import time
-from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste,get_concert_filtre,get_id_salle_by_nom,get_id_groupe_by_nom , pdf_base_64
-from .requetes import ajouter_concert, supp_necessite, ajout_nessecite_concert, supprimer_concert,supprimer_groupe, get_liste_neccessite, get_info_materiel_salle, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste
+from .requetes import ajouter_concert, get_info_materiel_salle, get_liste_neccessite, ajout_nessecite_concert, supp_necessite, supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste, pdf_base_64
+# get_concert_filtre,get_id_salle_by_nom,get_id_groupe_by_nom ,
 from datetime import datetime
 from wtforms.validators import DataRequired
 from flask import request
@@ -71,14 +71,6 @@ def logout():
     logout_user()
     return redirect(url_for('connexion'))
 
-
-@app.route("/choix-fiche/", methods = ("GET","POST",))
-def choix_fiche():
-    return render_template("choix_fiche.html")
-  
-@app.route("/editer_liste_a_louer", methods = ("GET","POST",))
-def editer_liste_a_louer():
-    return render_template("editer_liste_a_louer.html")
 
 @app.route("/creation_concert")
 def creation_concert():
@@ -386,7 +378,7 @@ def supp_necessiter(necessaire, conca):
     supp_necessite(necessaire)
     return render_template("editer_liste_a_louer.html",conc=get_info_un_concert(conca), lBesoin = get_liste_neccessite(conca))
 
-@app.route("/choix-fiche/<int:concert>", methods = ("GET","POST",))
+@app.route("/choix-fiche/<int:concert>", methods = ("GET","POST"))
 def choix_fiche(concert):
     conc=get_info_un_concert(concert)
     text=conc.catering    
