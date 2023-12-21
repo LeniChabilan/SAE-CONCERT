@@ -12,6 +12,7 @@ body{margin:0;}
     align-items: center;
     text-align: center;
     padding-top: 3%;
+    height: 90vh;
 }
 
 body.light .main {
@@ -67,5 +68,8 @@ body.dark .main {
 .bouton_de_retour:active {
   box-shadow: none;
   transform: translateY(0);
+}
+object{
+    max-height: 100vh;
 }
 

@@ -4,14 +4,18 @@ from flask_login import login_user , current_user, logout_user, login_required
 from hashlib import sha256
 from flask_wtf import FlaskForm
 from wtforms import StringField , HiddenField, PasswordField
-import time
+import base64
+# import requests
+from werkzeug.utils import secure_filename
+import os
+
 from .models import Organisation, Concert
-
+import time
+from .requetes import ajouter_concert,  supprimer_concert,supprimer_groupe, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste,get_concert_filtre,get_id_salle_by_nom,get_id_groupe_by_nom , pdf_base_64
 from .requetes import ajouter_concert, supp_necessite, ajout_nessecite_concert, supprimer_concert,supprimer_groupe, get_liste_neccessite, get_info_materiel_salle, get_info_concert, chercher_groupe, mod_concert,  get_info_un_concert, get_liste_salle, get_liste_groupe, get_artiste_groupe, get_info_artiste, get_dico_grps, mod_artiste, mod_artiste, get_info_un_artiste, supprimer_artiste,get_plan_concert, ajouter_artiste
-
+from datetime import datetime
 from wtforms.validators import DataRequired
 from flask import request
-
 from .models import *
 
 
@@ -67,9 +71,14 @@ def logout():
     logout_user()
     return redirect(url_for('connexion'))
 
+
 @app.route("/choix-fiche/", methods = ("GET","POST",))
 def choix_fiche():
     return render_template("choix_fiche.html")
+  
+@app.route("/editer_liste_a_louer", methods = ("GET","POST",))
+def editer_liste_a_louer():
+    return render_template("editer_liste_a_louer.html")
 
 @app.route("/creation_concert")
 def creation_concert():
@@ -78,7 +87,7 @@ def creation_concert():
 
 @app.route("/liste_concerts/", methods = ("GET","POST",))
 def liste_concerts():
-    return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert())
+    return render_template("liste_concerts.html",title="Les Concerts",concerts=get_info_concert(),liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
 @app.route("/save-concert", methods =["POST"])
 def save_concert():
@@ -92,10 +101,81 @@ def save_concert():
     ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
     return render_template("accueil_bien_etre.html", title="Home")
 
+
+def get_date(concert):
+    return concert.dateDebutConcert
+
+def get_nom(concert):
+    return concert.nomConcert
+
+def get_salle(concert):
+    return concert.salle.nomSalle
+
+def get_groupe(concert):
+    return concert.groupe.nomGroupe
+
+@app.route("/filtreConcert", methods=["GET", "POST"])
+def filtre_concert():
+    if request.method == 'POST':
+        # Récupérer les valeurs du formulaire
+        date_debut = request.form.get('dateD')
+        date_fin = request.form.get('dateF')
+        salle = request.form.get('salle')
+        groupe = request.form.get('groupe')
+        nom=request.form.get('nom')
+        filtre=request.form.get('filtre')
+
+        # Appliquer les filtres
+        concerts_filtres = []
+        concerts = get_info_concert()
+        for concert in concerts:
+            # Filtre par date
+            if nom and nom not in concert.nomConcert:
+                continue
+            if date_debut:
+                dateD=datetime.strptime(date_debut,"%Y-%m-%d").date()
+                if concert.dateDebutConcert <= dateD:
+                    continue
+                
+            
+            if date_fin:
+                dateF=datetime.strptime(date_fin,"%Y-%m-%d").date()
+                if concert.dateDebutConcert >= dateF:
+                    continue
+
+            # Filtre par salle
+            if salle and concert.salle.nomSalle != salle:
+                continue
+
+            # Filtre par groupe
+            if groupe and concert.groupe.nomGroupe != groupe:
+                continue
+
+            # Ajouter le concert filtré à la liste
+            concerts_filtres.append(concert)
+
+        if filtre !="aucun":
+            if filtre=="dateAsc":
+                concerts_filtres.sort(key=get_date)
+            elif filtre=="dateDesc":
+                concerts_filtres.sort(key=get_date, reverse=True)
+            elif filtre=="nom":
+                concerts_filtres.sort(key=get_nom)
+            elif filtre=="salle":
+                concerts_filtres.sort(key=get_salle)
+            elif filtre=="groupe":
+                concerts_filtres.sort(key=get_groupe)
+        # Passer la liste filtrée au modèle
+        return render_template("liste_concerts.html", title="Les Concerts", concerts=concerts_filtres, liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
+
+    # Si la méthode n'est pas POST, afficher tous les concerts non filtrés
+    return render_template("liste_concerts.html", title="Les Concerts", concerts=get_info_concert(), liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
+
+
 @app.route("/sup-concert/<int:id>")
 def sup_concert(id):
     supprimer_concert(id)
-    return render_template("liste_concerts.html",title="Les Concerts", concerts=get_info_concert())
+    return render_template("liste_concerts.html",title="Les Concerts", concerts=get_info_concert(),liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
 @app.route("/modification_concert/<int:id>")
 def modification_concert(id):
@@ -115,7 +195,7 @@ def modif_concert(id):
     groupe = request.form.get("groupe")
     mod_concert(id,nom, dateD, dateF, salle, groupe)
     conc=get_info_concert()
-    return render_template("liste_concerts.html", title="Les Concerts",concerts=get_info_concert())
+    return render_template("liste_concerts.html", title="Les Concerts",concerts=get_info_concert(),liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
 @app.route("/entrer-groupe")
 def inscription_groupe():
@@ -136,6 +216,16 @@ def completer_fiche():
 @app.route("/completer-fiche-pdf", methods=['GET', 'POST'])
 def completer_fiche_pdf():
     return render_template("completer_fiche_pdf.html")
+
+@app.route("/fin-inscription/", methods=['GET', 'POST'])
+def fin_inscription():
+    files = os.listdir("./static/temp/")
+    for file in files:
+        file_path = "./static/temp/" + file
+        with open(file_path, 'rb') as pdf_file:
+            pdf_data = base64.b64encode(pdf_file.read())
+        ajouter_plan(pdf_data, 1)
+    return render_template("fin_inscription.html")
 
 @app.route("/ajout-artiste/<int:id>", methods=['GET', 'POST'])
 def ajout_artiste(id):
@@ -167,7 +257,7 @@ def choix(typeOrga,concert):
     if typeOrga == "Technique":
         return render_template("Consulter_fiches.html",conc=get_info_un_concert(concert))
     else:
-        return render_template("choix_fiche.html",conc=get_info_un_concert(concert))
+        return redirect(url_for("choix_fiche",concert=concert))
     
 
 @app.route("/Consulter_fiches")
@@ -180,12 +270,16 @@ def choix_groupes_artistes():
 
 @app.route("/visualiser_fiches/<int:conc>", methods = ("GET","POST",))
 def visualiser_fiches(conc):
-    return render_template("visualisation_fiches.html",conc=get_info_un_concert(conc))
+    conc=get_info_un_concert(conc)
+    text=conc.ficheTechnique
+    pdf=pdf_base_64(text)
+    return render_template("visualisation_fiches.html",conc=conc,pdf=pdf)
 
 @app.route("/visualiser_plan/<int:conc>", methods = ("GET","POST",))
 def visualiser_plan(conc):
     concert=get_info_un_concert(conc)
-    return render_template("visualisation_plan.html",plan=get_plan_concert(concert.salleID),conc=concert)
+    print(concert.concertID)
+    return render_template("visualisation_plan.html",plan=get_plan_concert(concert.concertID),conc=concert)
 
 
 @app.route("/sup-artiste/<int:id>")
@@ -239,6 +333,19 @@ def modif_artiste_grp(id):
     mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
     return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
 
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+    if not os.path.exists(f'{app.config["UPLOADED_TEMP_DEST"]}'):
+        os.makedirs(f'{app.config["UPLOADED_TEMP_DEST"]}')
+    if request.method == 'POST':
+        for key, uploaded_file in request.files.items():
+            if key.startswith('file'):
+                filename = secure_filename(uploaded_file.filename)
+                uploaded_file.save(os.path.join(f'{app.config["UPLOADED_TEMP_DEST"]}/', filename))
+    else:
+        for stored_file in os.listdir(f'{app.config["UPLOADED_TEMP_DEST"]}/'):
+            os.remove(f'{app.config["UPLOADED_TEMP_DEST"]}/{stored_file}')
+    return render_template('fin_inscription.html')
 
 @app.route("/retour/<string:typeOrga>")
 def retour(typeOrga):
@@ -250,6 +357,7 @@ def retour(typeOrga):
 @app.route("/retourFiche/<int:conc>")
 def retourFiche(conc):
     return render_template("Consulter_fiches.html",conc=get_info_un_concert(conc))
+
 
 @app.route("/editer_liste_a_louer/<int:conc>", methods = ("GET","POST",))
 def editer_liste_a_louer(conc):
@@ -277,3 +385,11 @@ def ajouter_materiel(conc):
 def supp_necessiter(necessaire, conca):
     supp_necessite(necessaire)
     return render_template("editer_liste_a_louer.html",conc=get_info_un_concert(conca), lBesoin = get_liste_neccessite(conca))
+
+@app.route("/choix-fiche/<int:concert>", methods = ("GET","POST",))
+def choix_fiche(concert):
+    conc=get_info_un_concert(concert)
+    text=conc.catering    
+    pdf=pdf_base_64(text)
+    return render_template("choix_fiche.html",pdf=pdf,conc=conc)
+  

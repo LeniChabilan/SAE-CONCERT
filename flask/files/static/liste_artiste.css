@@ -63,11 +63,12 @@ body.dark #modification {
 .liste_des_concerts,
 th {
     border-collapse: collapse;
+    font-weight: 500;
 }
 
 table {
     width: 100%;
-    table-layout: fixed;
+    table-layout: unset;
 }
 
 .logo {
@@ -83,6 +84,7 @@ thead {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
 }
 
 th,

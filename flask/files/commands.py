@@ -193,31 +193,8 @@ def loaddb(filename):
     # # importation des données à partir de yaml
     import yaml
     data = yaml.safe_load(open(filename))
-    from .models import Musicien, MaterielArtiste,Organisation, RoleP, TypePlace, Lieu, Artiste, Vehicule, Materiel, Groupe, Salle, PersonelTechnique, Plan, Hebergement, MaterielSalle, Concert, MusicienAdditionnel, Transporte, Necessiter, Composer, Utilise, Participe, Prepare, SalleTypePlace, Organiser
+    from .models import Organisation, Lieu, Artiste, Materiel, Groupe, Salle,  Plan,  MaterielSalle, Concert,  Necessiter, Composer,  Participe, Organiser
     for nomTable in data:
-        if "Musicien" in nomTable:
-            musiciens = nomTable["Musicien"]
-            print(musiciens)
-            for musicien_data in musiciens:
-                musicien = Musicien(musicienID=musicien_data["musicienID"],nomMusicien=musicien_data["nomMusicien"])
-                session.add(musicien)
-                session.commit()
-
-
-
-        if "MaterielArtiste" in nomTable:
-            materiels = nomTable["MaterielArtiste"]
-            for materiel_data in materiels:
-                materiel = MaterielArtiste(materielArtisteID=materiel_data["materielArtisteID"], nomMaterielArt=materiel_data["nomMaterielArt"], disponible=materiel_data["disponible"])
-                session.add(materiel)
-                # session.commit()
-
-        if "RoleP" in nomTable:
-            roles = nomTable["RoleP"]
-            for role_data in roles:
-                role = RoleP(roleID=role_data["roleID"], nomRole=role_data["nomRole"])
-                session.add(role)
-                # session.commit()
 
         if "Organisation" in nomTable:
             organisations = nomTable["Organisation"]
@@ -231,11 +208,6 @@ def loaddb(filename):
                 # organisation = Organisation(nomOrga=organisation_data["nomOrga"], motDePasse=organisation_data["motDePasse"], typeOrga=organisation_data["typeOrga"])
                 session.add(u)
 
-        if "TypePlace" in nomTable:
-            typePlaces = nomTable["TypePlace"]
-            for typePlace_data in typePlaces:
-                typePlace = TypePlace(typePlaceID=typePlace_data["typePlaceID"], nomPlace=typePlace_data["nomPlace"], descriptionP=typePlace_data["descriptionP"])
-                session.add(typePlace)
 
         if "Lieu" in nomTable:
             lieux = nomTable["Lieu"]
@@ -249,11 +221,6 @@ def loaddb(filename):
                 artiste = Artiste(artisteID=artiste_data["artisteID"], pseudoArtiste=artiste_data["pseudoArtiste"], nomA=artiste_data["nomA"], prenomA=artiste_data["prenomA"],mailA=artiste_data["mailA"], DdNA=datetime.strptime(artiste_data["DdNA"],"%Y-%m-%d").date(), LdN=artiste_data["LdN"], adresseA=artiste_data["adresseA"], numSecuriteSociale=artiste_data["numSecuriteSociale"], numCNI=artiste_data["numCNI"], dateDelivranceCNI=datetime.strptime(artiste_data["dateDelivranceCNI"],"%Y-%m-%d").date(),dateExpirationCNI=datetime.strptime(artiste_data["dateExpirationCNI"],"%Y-%m-%d").date(),dansGroupe=artiste_data["dansGroupe"])
                 session.add(artiste)
 
-        if "Vehicule" in nomTable:
-            vehicules = nomTable["Vehicule"]
-            for vehicule_data in vehicules:
-                vehicule = Vehicule(immatriculation=vehicule_data["immatriculation"], typeVehicule=vehicule_data["typeVehicule"], capacitéV=vehicule_data["capacitéV"])
-                session.add(vehicule)
 
         if "Materiel" in nomTable:
             materiels = nomTable["Materiel"]
@@ -274,26 +241,6 @@ def loaddb(filename):
                 salle = Salle(salleID=salle_data["salleID"], nomSalle=salle_data["nomSalle"], capaciteTotaleSalle=salle_data["capaciteTotaleSalle"], planSalle=salle_data["planSalle"], dimensionOuverture=salle_data["dimensionOuverture"], dimensionProfondeur=salle_data["dimensionProfondeur"], lieuID=salle_data["lieuID"])
                 session.add(salle)
 
-        if "PersonelTechnique" in nomTable:
-            personels = nomTable["PersonelTechnique"]
-            for personel_data in personels:
-                personel = PersonelTechnique(personelTechniqueID=personel_data["personelTechniqueID"], roleID=personel_data["roleID"], nomP=personel_data["nomP"], prenomP=personel_data["prenomP"])
-                session.add(personel)
-
-        if "Plan" in nomTable:
-            plans = nomTable["Plan"]
-            for plan_data in plans:
-                with open(plan_data["planScene"], 'rb') as pdf_file:
-                    pdf_data2 = base64.b64encode(pdf_file.read())
-                plan = Plan(planID=plan_data["planID"], planScene=pdf_data2, salleID=plan_data["salleID"])
-                session.add(plan)
-
-        if "Hebergment" in nomTable:
-            hebergments = nomTable["Hebergment"]
-            for hebergment_data in hebergments:
-                hebergment = Hebergement(hebergementID=hebergment_data["hebergementID"], nomHebergement=hebergment_data["nomHebergement"], capacitéH=hebergment_data["capacitéH"], qualitéH=hebergment_data["qualitéH"], lieuID=hebergment_data["lieuID"])
-                session.add(hebergment)
-
         if "MaterielSalle" in nomTable:
             materiels = nomTable["MaterielSalle"]
             for materiel_data in materiels:
@@ -307,23 +254,19 @@ def loaddb(filename):
                     pdf_data = base64.b64encode(pdf_file.read())
                 concert = Concert(concertID=concert_data["concertID"], nomConcert=concert_data["nomConcert"], dateDebutConcert=datetime.strptime(concert_data["dateDebutConcert"],"%Y-%m-%d").date(), dateFinConcert=datetime.strptime(concert_data["dateFinConcert"],"%Y-%m-%d").date(), ficheTechnique=concert_data["ficheTechnique"], catering=concert_data["catering"],ficheRider=pdf_data, salleID=concert_data["salleID"], groupeID=concert_data["groupeID"])
                 session.add(concert)
-
-        if "MusicienAdditionnel" in nomTable:
-            musiciens = nomTable["MusicienAdditionnel"]
-            for musicien_data in musiciens:
-                musicien = MusicienAdditionnel(musicienID=musicien_data["musicienID"], concertID=musicien_data["concertID"])
-                session.add(musicien)
-
-        if "Transporte" in nomTable:
-            transportes = nomTable["Transporte"]
-            for transport_data in transportes:
-                transporte = Transporte(concertID=transport_data["concertID"], immatriculation=transport_data["immatriculation"])
-                session.add(transporte)
+        
+        if "Plan" in nomTable:
+            plans = nomTable["Plan"]
+            for plan_data in plans:
+                with open(plan_data["planScene"], 'rb') as pdf_file:
+                    pdf_data2 = base64.b64encode(pdf_file.read())
+                plan = Plan(planID=plan_data["planID"], planScene=pdf_data2, concertID=plan_data["concertID"])
+                session.add(plan)
 
         if "Necessiter" in nomTable:
             necessites = nomTable["Necessiter"]
             for necessite_data in necessites:
-                necessite = Necessiter(materielID=necessite_data["materielID"], concertID=necessite_data["concertID"] , Description= necessite_data["description"])
+                necessite = Necessiter(materielID=necessite_data["materielID"], concertID=necessite_data["concertID"] , description=necessite_data["description"] , quantite=necessite_data["quantite"])
                 session.add(necessite)
 
         if "Composer" in nomTable:
@@ -332,29 +275,11 @@ def loaddb(filename):
                 composition = Composer(artisteID=composition_data["artisteID"], groupeID=composition_data["groupeID"])
                 session.add(composition)
 
-        if "Utilise" in nomTable:
-            utilisations = nomTable["Utilise"]
-            for utilisation_data in utilisations:
-                utilisation = Utilise(materielArtisteID=utilisation_data["materielArtisteID"], groupeID=utilisation_data["groupeID"], quantiteMaterielArt=utilisation_data["quantiteMaterielArt"])
-                session.add(utilisation)
-
         if "PARTICIPE" in nomTable:
             participations = nomTable["PARTICIPE"]
             for participation_data in participations:
                 participation = Participe(concertID=participation_data["concertId"], groupeID=participation_data["groupeID"])
                 session.add(participation)
-
-        if "Prepare" in nomTable:
-            preparations = nomTable["Prepare"]
-            for preparation_data in preparations:
-                preparation = Prepare(personelTechniqueID=preparation_data["personelTechniqueID"], concertID=preparation_data["concertID"])
-                session.add(preparation)
-
-        if "SALLETYPEPLACE" in nomTable:
-            salleTypePlaces = nomTable["SALLETYPEPLACE"]
-            for salleTypePlace_data in salleTypePlaces:
-                salleTypePlace = SalleTypePlace(typePlaceID=salleTypePlace_data["typePlaceID"], salleID=salleTypePlace_data["salleID"], capaciteS=salleTypePlace_data["capaciteS"])
-                session.add(salleTypePlace)
 
         if "ORGANISER" in nomTable:
             organisateurs = nomTable["ORGANISER"]

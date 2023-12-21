@@ -20,6 +20,167 @@ body{
 
 }
 
+form {
+    display: flex;
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding-bottom: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    
+  }
+  
+  .title {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 1.5vw;
+    font-weight: 600;
+    margin-top: 2vh;
+  }
+
+  
+  .input-container {
+    height: 5vh;
+    width: 80%;
+    position: relative;
+    margin-top: 3vh;
+  }
+
+  
+  .input {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 1vw;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 80%;
+  }
+  
+  .rad {
+    background-color:#303245;
+    margin: 1vh;
+    border-radius: 12px;
+    margin-top:2vh ;
+    font-size: smaller;
+    color: white;
+    width : 50%;
+    padding: 1vh;
+    margin-right: 5vw;
+    accent-color: #ffeba7;
+  }
+  
+
+  .rad div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .rad div div {
+    display: block;
+    
+  }
+
+  .rad div div div{
+    font-size: xx-small;
+  }
+
+  .cut {
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 2vh;
+    left: 1.5vh;
+    position: absolute;
+    top: -2vh;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 8vw;
+  }
+  
+  .iLabel {
+    color: #65657b;
+    font-family: sans-serif;
+    left: 1vw;
+    line-height: 2vh;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    font-size: 2vh;
+    top: 2vh;
+  }
+  
+  .input:focus ~ .cut {
+    transform: translateY(1vh);
+  }
+  
+  .input:focus ~ .iLabel {
+    transform: translateY(-3.5vh) translateX(1.5vh) scale(0.75);
+    opacity: 1;
+  }
+  
+  .input:not(:focus) ~ .iLabel {
+    color: #808097;
+  }
+  
+  .input:focus ~ .iLabel{
+    color: #fff;
+  }
+
+  .input:valid ~ .cut{
+    transform: translateY(1vh);
+  }
+
+  .input:valid  ~ .iLabel {
+    transform: translateY(-3.5vh) translateX(1.5vh) scale(0.75);
+    opacity: 1;
+  }
+  
+  .input:valid ~ .iLabel {
+    color: #fff;
+  }
+  
+  .submit {
+    background-color: #ffeba7;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 1.5vw;
+    font-weight: 400;
+    height: 5vh;
+    margin-top: 3vh;
+    text-align: center;
+    width: 50%;
+    font-weight: bold;
+    font-size: 1vw;
+    text-transform: uppercase;
+    padding: 0;
+    background-color: #ffeba7;
+    color: #5e6681;
+    box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
+    transition: all 0.3s ease-in-out;
+  }
+  .submit:hover {
+    background-color: #5e6681;
+    color: #ffeba7;
+    box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }
+
 
 
 body.light .main .partie_principale, body.light .main {
