@@ -2,12 +2,12 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='completer_fiche.css')}}" />
 {% endblock %} {% block content %}
 <main>
-    <form role="form" method ="POST" action ="{{ url_for('completer_fiche_pdf') }}">
+    <form role="form" method ="POST" action ="{{ url_for('completer_fiche_pdf', concertID=concertID) }}">
         <div class="title">Veuillez compléter ces fiches :</div>
         <div class="form">
             <div class="txtArea">
                 <div class="input-container">
-                    <label class="iLabel" for="nom">Fiche Accueil</label>
+                    <label class="iLabel" for="nom">Fiche Accueil numero</label>
                     <textarea class="input" name="ficheA" cols="30" rows="10" required></textarea>
                 </div>
             </div>     
