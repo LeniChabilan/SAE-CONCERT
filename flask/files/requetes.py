@@ -225,11 +225,24 @@ def supprimer_artiste(artID):
     
 def get_plan_concert(idconcert):
     session = login()
-    res= session.query(Plan.planScene).filter_by(concertID=idconcert).all()
-    res1=[]
-    for val in res:
-        res1.append(val[0])
-    return res1
+    res= session.query(Plan).filter_by(concertID=idconcert).all()
+    return res
+    # res1=[]
+    # for val in res:
+    #     res1.append(val[0])
+    # return res1
+
+def sup_plan_id(id):
+    session = login()
+    try:
+        session.query(Plan).filter_by(planID=id).delete(synchronize_session=False)
+        session.commit()
+        return "suppression effectuée"
+    except pymysql.IntegrityError:
+        # Si une contrainte de clé étrangère empêche la suppression, gérez l'erreur ici
+        db.session.rollback()
+        return "Erreur : Impossible de supprimer le plan et ses enregistrements liés en raison de contraintes de clé étrangère."
+
 
 def ajouter_artiste(pseudo, nom, prenom, email, DdN, lieuNaissance, adresse, numSecu, numCNI, debutCNI, finCNI, idGroupe):
     session = login()
