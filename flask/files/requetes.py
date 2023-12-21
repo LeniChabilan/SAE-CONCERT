@@ -108,7 +108,7 @@ def supprimer_concert(concID):
     try:
         # Supprimez le concert et toutes les lignes liées dans d'autres tables
         
-        
+        db.session.query(Plan).filter_by(concertID=concID).delete(synchronize_session=False)
         db.session.query(Necessiter).filter_by(concertID=concID).delete(synchronize_session=False)
         db.session.query(Participe).filter_by(concertID=concID).delete(synchronize_session=False)
         db.session.query(Organiser).filter_by(concertID=concID).delete(synchronize_session=False)

@@ -73,7 +73,7 @@ def logout():
 
 @app.route("/creation_concert")
 def creation_concert():
-    return render_template("creation_concert.html", liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
+    return render_template("creation_concert.html", liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe(),id=id)
 
 
 @app.route("/liste_concerts/", methods = ("GET","POST",))
@@ -389,3 +389,8 @@ def choix_fiche(concert):
     pdf=pdf_base_64(text)
     return render_template("choix_fiche.html",pdf=pdf,conc=conc)
   
+
+
+@app.route("/entrer_groupe/", methods = ("GET","POST",))
+def entrer_groupe():
+    return render_template("entrer_groupe.html")
