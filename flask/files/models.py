@@ -86,11 +86,6 @@ class Salle(db.Model):
     lieuID = Column(Integer, ForeignKey('LIEU.lieuID'))
     lieu = relationship(Lieu)
 
-
-    def __init__(self, planScene, salleId):
-        self.planScene = planScene
-        self.salleId = salleId
-
 class MaterielSalle(db.Model):
     __tablename__ = 'MATERIELSALLE'
     materielSalleID = Column(Integer, primary_key=True,autoincrement=True)
@@ -130,7 +125,9 @@ class Plan(db.Model):
     concertID = Column(Integer, ForeignKey('CONCERT.concertID'))
     concert = relationship(Concert)
 
-
+    def __init__(self, planScene, concertID):
+        self.planScene = planScene
+        self.concertID = concertID
 
 class Necessiter(db.Model):
     __tablename__ = 'NECESSITER'
