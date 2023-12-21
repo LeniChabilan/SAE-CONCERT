@@ -141,7 +141,7 @@ main{
     background-color: #06b;
   }
 
-#pdf_fiche{
+#pdf_fiche,iframe{
   margin-top: -4vh;
   margin-right: 2vw;
   width: 35vw;
@@ -158,6 +158,7 @@ main{
   margin-bottom : 5%; 
   margin-top : 2%;
   outline: none;
+  background-color: #d3d1cb;
 }
 
 td{
@@ -184,4 +185,7 @@ thead tr th, td{
   padding-right:1vw;
   padding-bottom: 1vh;
   padding-top: 3vh;
+}
+.tableau, th{
+  border-collapse: collapse;
 }

@@ -18,6 +18,11 @@ main{
 
 }
 
+i{
+    color: black;
+    width: 5vh;
+}
+
 .bouton_de_retour{
     appearance: none;
     background-color: #2a2b38;
@@ -91,4 +96,8 @@ thead tr th, td{
     padding-right:2vw;
     padding-bottom: 3vh;
     padding-top: 3vh
+}
+
+.liste_des_besoins, th{
+    border-collapse: collapse;
 }
