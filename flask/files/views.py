@@ -328,8 +328,8 @@ def modif_artiste_grp(id):
 
 @app.route('/upload-plan', methods=['GET', 'POST'])
 def upload_plan():
-    if not os.path.exists(f'{app.config["UPLOADED_TEMP_DEST"]}'):
-        os.makedirs(f'{app.config["UPLOADED_TEMP_DEST"]}')
+    if not os.path.exists(f'{app.config["UPLOADED_TEMP_DEST"]}/plan/'):
+        os.makedirs(f'{app.config["UPLOADED_TEMP_DEST"]}/plan/')
     if request.method == 'POST':
         for key, uploaded_file in request.files.items():
             if key.startswith('file'):
@@ -342,8 +342,8 @@ def upload_plan():
 
 @app.route('/upload-rider', methods=['GET', 'POST'])
 def upload_rider():
-    if not os.path.exists(f'{app.config["UPLOADED_TEMP_DEST"]}'):
-        os.makedirs(f'{app.config["UPLOADED_TEMP_DEST"]}')
+    if not os.path.exists(f'{app.config["UPLOADED_TEMP_DEST"]}/rider/'):
+        os.makedirs(f'{app.config["UPLOADED_TEMP_DEST"]}/rider/')
     if request.method == 'POST':
         for key, uploaded_file in request.files.items():
             if key.startswith('file'):
