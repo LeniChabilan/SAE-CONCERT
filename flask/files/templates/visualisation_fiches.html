@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block styles %}{{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='visualisation_fiche.css')}}" />
-{% endblock %} {% block content %}
+{% endblock %} 
+{% block content %}
     <main>
         <a class="" href="{{ url_for('retourFiche', conc=conc.concertID) }}">
             <button type="button" class="bouton_de_retour">Retour</button>
@@ -8,9 +9,14 @@
         <ul>
             <li class="partie_gauche">
                 <h1>Fiche Rider</h1>
-                <object type="application/pdf" data="data:application/pdf;base64,{{conc.ficheRider.decode('utf-8') }}" id="pdf_fiche">
-                    
-                </object>            </li>
+                {% if conc.ficheRider is none %}
+                    <iframe src="data:application/pdf;base64,"></iframe>
+                {% else %}
+                    <object type="application/pdf" data="data:application/pdf;base64,{{conc.ficheRider.decode('utf-8') }}" id="pdf_fiche">
+                    </object>  
+                {% endif %}
+                 
+                </li>
             <li class="partie_droite">
                 <h1 >Fiche Technique</h1>
                 <object type="application/pdf" data="data:application/pdf;base64,{{pdf.decode('utf-8')}}" id="pdf_fiche">
@@ -21,3 +27,4 @@
         
     </main>
 {% endblock %}
+
