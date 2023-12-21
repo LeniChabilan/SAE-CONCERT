@@ -11,7 +11,7 @@
         <button type="button" class="bouton_de_retour">Retour</button>
     </a>
     <h1 class="planScene">plan Scene</h1>
-    <a href="{{ url_for('ajouter_plan_scene')}}" class="ajouter_fiche_scene">
+    <a href="{{ url_for('ajouter_plan_scene',concertID=conc.concertID)}}" class="ajouter_fiche_scene">
         <button type="button" class="bouton_ajout_scene">Ajouter</button>
     </a>
     <ul class="liste">

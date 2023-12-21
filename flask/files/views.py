@@ -220,6 +220,12 @@ def fin_inscription(concertID):
     ajouter_rider(concertID)
     return render_template("fin_inscription.html")
 
+@app.route("/ajout-plan/<int:concertID>", methods=['GET', 'POST'])
+def ajout_plan(concertID):
+    ajouter_plan(concertID)
+    concert=get_info_un_concert(concertID)
+    return render_template("visualisation_plan.html",plan=get_plan_concert(concert.concertID),conc=concert)
+
 @app.route("/ajout-artiste/<int:id>", methods=['GET', 'POST'])
 def ajout_artiste(id):
     pseudo = request.form.get("pseudo")
@@ -404,9 +410,9 @@ def choix_fiche(concert):
     pdf=pdf_base_64(text)
     return render_template("choix_fiche.html",pdf=pdf,conc=conc)
 
-@app.route("/ajouter_pla_scene", methods = ("GET","POST"))
-def ajouter_plan_scene():
-    return None
+@app.route("/ajouter_plan_scene/<int:concertID>", methods = ("GET","POST"))
+def ajouter_plan_scene(concertID):
+    return render_template("ajouter_plan_scene.html",concertID=concertID)
 
 @app.route("/suppression_plan_scene/<int:planId>/<int:concert>", methods=("GET", "POST"))
 def suppression_plan_scene(planId,concert):
