@@ -3,40 +3,121 @@
 <script src="../static/script/confirmation.js"></script>
 {% endblock %} {% block content %}
 <div class="main">
-    <div id="tete_page">
-      <div id="bouton_retour_choix_fiche">
-        <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">
-          <button type="button" class="bouton_de_retour">Retour</button>
-        </a>
-      </div>
-      <div class="middle">
-        <h1 id="modification">Liste des concerts</h1>
-      </div>
+  <div id="tete_page">
+    <div id="bouton_retour_choix_fiche">
+      <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">
+        <button type="button" class="bouton_de_retour">Retour</button>
+      </a>
     </div>
-    <div class="partie_principale">
-        <table class="liste_des_concerts">
+    <div class="middle">
+      <h1 id="modification">Liste des concerts</h1>
+    </div>
+  </div>
 
-            <thead>
-                <th>Nom</th>
-                <th>Date</th>
-                <th>Artiste</th>
-                <th>Salle</th>
-                <th></th>
-                <th></th>
-            </thead>
-            {% if concerts!=None %}
-                {% for x in concerts %}
-                <tr class="liens" onclick="window.location='{{ url_for('choix', typeOrga=current_user.typeOrga) }}';" style="cursor: pointer;">
-                  <th>{{ x.nomConcert }}</th>
-                  <th>{{ x.dateDebutConcert }}</th>
-                  <th>{{ x.groupe.nomGroupe }}</th>
-                  <th>{{ x.salle.nomSalle }}</th>
-                  <th><a href="{{ url_for('modification_concert', id=x.concertID) }}" onclick="return showConfirmationModif()"><i class="fa-solid fa-pen fa-xl"></i></a></td>
-                  <th><a href="{{ url_for('sup_concert', id=x.concertID) }}" onclick="return showConfirmationSup()"><i class="fa-solid fa-trash fa-xl"></i></a></td>
-              </tr>
-            {% endfor %}
-            {% endif %}
-        </table>
+  <form role="form" method="POST" action="{{ url_for('filtre_concert') }}">
+    <div class="input-container ">
+      <input placeholder="Nom" type="text" class="input" name="nom">
+      <div class="cut"></div>
+      <label class="iLabel" for="nom">Nom</label>
     </div>
+
+
+    <div class="rad">
+
+      <div>
+        <div>
+          <div>
+            <input type="radio" id="aucun" name="filtre" value="aucun" />
+            <label for="aucun">Aucun</label>
+          </div>
+          <div>
+            <input type="radio" id="dateAsc" name="filtre" value="dateAsc" />
+            <label for="dateAsc">Date ascendante</label>
+          </div>
+          <div>
+            <input type="radio" id="dateDesc" name="filtre" value="dateDesc" />
+            <label for="dateDesc">Date descendante</label>
+          </div>
+        </div>
+        <div>
+          <div>
+            <input type="radio" id="nom" name="filtre" value="nom" />
+            <label for="nom">Nom</label>
+          </div>
+          <div>
+            <input type="radio" id="salle" name="filtre" value="salle" />
+            <label for="salle">Salle</label>
+          </div>
+          <div>
+            <input type="radio" id="groupe" name="filtre" value="groupe" />
+            <label for="groupe">Groupe</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <input placeholder="" type="date" class="input" name="dateD">
+      <div class="cut"></div>
+      <label class="iLabel" for="dateD">Date minimum</label>
+    </div>
+    <div class="input-container">
+      <input placeholder="" type="date" class="input" name="dateF">
+      <div class="cut"></div>
+      <label class="iLabel" for="dateF">Date maximum</label>
+    </div>
+    <div class="input-container">
+      <select name="salle" id="pet-select" class="input">
+        <option value=""></option>
+        {% for s in liste_salle %}
+        <option value="{{s.nomSalle}}">{{s.nomSalle}}</option>
+        {% endfor %}
+      </select>
+      </input>
+      <div class="cut"></div>
+      <label class="iLabel" for="salle">Salle</label>
+    </div>
+    <div class="input-container">
+      <select name="groupe" id="pet-select" class="input">
+        <option value=""></option>
+        {% for g in liste_groupe %}
+        <option value="{{g.nomGroupe}}">{{g.nomGroupe}}</option>
+        {% endfor %}
+      </select>
+      </input>
+      <div class="cut"></div>
+      <label class="iLabel" for="groupe">Groupe</label>
+    </div>
+    <input type="submit" value="Filtrer" class="submit">
+  </form>
+  <div class="partie_principale">
+    <table class="liste_des_concerts">
+
+      <thead>
+        <th>Nom</th>
+        <th>Date</th>
+        <th>Artiste</th>
+        <th>Salle</th>
+        <th></th>
+        <th></th>
+      </thead>
+      {% if concerts!=None %}
+      {% for x in concerts %}
+      <tr class="liens"
+        onclick="window.location='{{ url_for('choix', typeOrga=current_user.typeOrga, concert=x.concertID) }}';"
+        style="cursor: pointer;">
+        <th>{{ x.nomConcert }}</th>
+        <th>{{ x.dateDebutConcert }}</th>
+        <th>{{ x.groupe.nomGroupe }}</th>
+        <th>{{ x.salle.nomSalle }}</th>
+        <th><a href="{{ url_for('modification_concert', id=x.concertID) }}" onclick="return showConfirmationModif()"><i
+              class="fa-solid fa-pen fa-xl"></i></a></td>
+        <th><a href="{{ url_for('sup_concert', id=x.concertID) }}" onclick="return showConfirmationSup()"><i
+              class="fa-solid fa-trash fa-xl"></i></a></td>
+      </tr>
+      {% endfor %}
+      {% endif %}
+    </table>
+  </div>
 </div>
 {% endblock %}

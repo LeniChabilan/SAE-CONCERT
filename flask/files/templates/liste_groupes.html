@@ -3,6 +3,7 @@
 {% block styles %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static',filename='liste_groupe.css')}}" />
+    <script src="../static/script/confirmation.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -25,8 +26,8 @@
             <thead>
               <th>{{grp.nomGroupe}}</th>
               <th></th>
-              <th class="logo"><a href="#"><i class="fa-solid fa-pen"></i></a></th>
-              <th class="logo"><a href="#"><i class="fa-solid fa-trash"></i></a></th>
+              <th class="logo"><a href="{{ url_for('modification_groupe', groupeID=grp.groupeID) }}"><i class="fa-solid fa-pen"></i></a></th>
+              <th class="logo"><a href="{{ url_for('sup_groupe', id=grp.groupeID) }}" onclick="return showConfirmationSupGroupe()"><i class="fa-solid fa-trash"></i></a></th>
             </thead>
             <thead>
               <th>Pseudo</th>

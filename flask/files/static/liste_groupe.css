@@ -57,11 +57,13 @@ body.dark #modification {
 
 #modification {
     font-weight: 300;
+
 }
 
 .liste_des_concerts,
 th {
     border-collapse: collapse;
+    font-weight: 500;
 }
 
 .logo {
@@ -76,7 +78,7 @@ thead {
 .test,
 thead th,
 th {
-    padding-top: 2%;
+    padding: 10px;
     border: none;
     margin-right: 5%;
 }

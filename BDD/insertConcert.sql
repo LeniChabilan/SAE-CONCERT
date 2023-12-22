@@ -234,10 +234,10 @@ INSERT INTO GROUPE (groupeID, nomGroupe)VALUES
 
 
 INSERT INTO SALLE (salleID, nomSalle, capaciteTotaleSalle, planSalle, dimensionOuverture, dimensionProfondeur, lieuID)VALUES
-  (1, 'Salle A', 500, NULL, 20.5, 30.2, 1), -- Lieu ID 1 (Lyon Salle 1)
-  (2, 'Salle B', 300, NULL, 15.8, 25.4, 2), -- Lieu ID 2 (Lyon Salle 2)
-  (3, 'Salle C', 700, NULL, 25.0, 35.6, 3), -- Lieu ID 3 (Lyon Salle 3)
-  (4, 'Salle D', 400, NULL, 18.2, 27.9, 4); -- Lieu ID 4 (Lyon Salle 4)
+  (1, 'Salle A', 500,"../flask/files/fichier_pdf/planScene.pdf", 20.5, 30.2, 1), -- Lieu ID 1 (Lyon Salle 1)
+  (2, 'Salle B', 300,"../flask/files/fichier_pdf/planScene.pdf", 15.8, 25.4, 2), -- Lieu ID 2 (Lyon Salle 2)
+  (3, 'Salle C', 700,"../flask/files/fichier_pdf/planScene.pdf", 25.0, 35.6, 3), -- Lieu ID 3 (Lyon Salle 3)
+  (4, 'Salle D', 400,"../flask/files/fichier_pdf/planScene.pdf", 18.2, 27.9, 4); -- Lieu ID 4 (Lyon Salle 4)
 
 
 INSERT INTO PERSONELTECHNIQUE(personelTechniqueID, roleID, nomP, prenomP)VALUES
@@ -254,15 +254,15 @@ INSERT INTO PERSONELTECHNIQUE(personelTechniqueID, roleID, nomP, prenomP)VALUES
   (11, 1, 'Thomas', 'Leroy'), -- Ingénieur du son
   (12, 2, 'Léa', 'Dubois'); -- Éclairagiste
 
-INSERT INTO PLAN (planID, planScene, planFeu, salleID)VALUES
-  (1, NULL, NULL, 1),
-  (2, NULL, NULL, 2),
-  (3, NULL, NULL, 3),
-  (4, NULL, NULL, 4),
-  (5, NULL, NULL, 1),
-  (6, NULL, NULL, 2),
-  (7, NULL, NULL, 3),
-  (8, NULL, NULL, 4);
+INSERT INTO PLAN (planID, planScene,salleID)VALUES
+  (1, "../flask/files/fichier_pdf/planScene.pdf",1),
+  (2, "../flask/files/fichier_pdf/planScene.pdf",2),
+  (3, "../flask/files/fichier_pdf/planScene.pdf",3),
+  (4, "../flask/files/fichier_pdf/planScene.pdf",4),
+  (5, "../flask/files/fichier_pdf/planScene.pdf",1),
+  (6, "../flask/files/fichier_pdf/planScene.pdf",2),
+  (7, "../flask/files/fichier_pdf/planScene.pdf",3),
+  (8, "../flask/files/fichier_pdf/planScene.pdf",4);
 
 INSERT INTO HEBERGMENT (hebergementID, nomHebergement, capacitéH, qualitéH, lieuID, prix)VALUES
   (1, 'Hôtel de Lyon', 100, 4, 1, 150),
@@ -296,10 +296,10 @@ INSERT INTO MATERIELSALLE (materielSalleID, salleID, nomMaterielS, disponible)VA
 
 
 
-INSERT INTO CONCERT (concertID, nomConcert, dateDebutConcert, dateFinConcert, ficheTechnique, catering, salleID, groupeID) VALUES
-  (1, 'Concert 1', '2023-11-28', '2023-11-29', 'Fiche technique du concert 1', 'Catering du concert 1', 2, 2),
-  (2, 'Concert 2', '2023-11-27', '2023-11-28', 'Fiche technique du concert 2', 'Catering du concert 2', 3, 1),
-  (3, 'Concert 3', '2023-12-23', '2023-12-24', 'Fiche technique du concert 3', 'Catering du concert 3', 1, 3);
+INSERT INTO CONCERT (concertID, nomConcert, dateDebutConcert, dateFinConcert, ficheTechnique, catering,ficheRider, salleID, groupeID) VALUES
+  (1, 'Concert 1', '2023-11-28', '2023-11-29', 'Fiche technique du concert 1', 'Catering du concert 1',"../flask/files/fichier_pdf/rider.pdf",2, 2),
+  (2, 'Concert 2', '2023-11-27', '2023-11-28', 'Fiche technique du concert 2', 'Catering du concert 2',"../flask/files/fichier_pdf/rider.pdf", 3, 1),
+  (3, 'Concert 3', '2023-12-23', '2023-12-24', 'Fiche technique du concert 3', 'Catering du concert 3',"../flask/files/fichier_pdf/rider.pdf", 1, 3);
 
 
 INSERT INTO MUSICIENADDITIONEL(musicienID, concertID)VALUES
@@ -328,65 +328,65 @@ INSERT INTO COMPOSER (artisteID, groupeID)VALUES
 
 
 INSERT INTO NECESSITER (materielID, concertID)VALUES
-  (1, 1), 
-  (2, 1),
-  (3, 2), 
-  (4, 2),
-  (5, 2), 
-  (6, 2), 
-  (7, 2), 
-  (8, 2), 
-  (9, 2), 
-  (10, 1), 
-  (11, 1), 
-  (12, 1), 
-  (13, 1), 
-  (14, 1), 
-  (15, 1), 
-  (16, 1), 
-  (17, 1), 
-  (18, 1), 
-  (19, 1), 
-  (20, 1), 
-  (21, 1), 
-  (22, 1), 
-  (23, 1), 
-  (24, 1), 
-  (25, 2), 
-  (26, 2), 
-  (27, 2), 
-  (28, 2), 
-  (29, 2), 
-  (30, 2), 
-  (31, 2), 
-  (32, 2), 
-  (33, 2), 
-  (34, 2), 
-  (35, 2), 
-  (36, 2), 
-  (37, 2), 
-  (38, 2), 
-  (39, 2), 
-  (40, 3), 
-  (41, 3), 
-  (42, 3), 
-  (43, 3), 
-  (44, 3), 
-  (45, 3), 
-  (46, 3), 
-  (47, 3), 
-  (48, 3), 
-  (49, 3), 
-  (50, 3), 
-  (51, 3), 
-  (52, 3), 
-  (53, 3), 
-  (54, 3), 
-  (55, 3), 
-  (56, 3), 
-  (57, 3), 
-  (58, 3), 
-  (59, 3);
+  (1, 1 , ""), 
+  (2, 1 , ""),
+  (3, 2 , ""), 
+  (4, 2 , ""),
+  (5, 2 , ""), 
+  (6, 2 , ""), 
+  (7, 2 , ""), 
+  (8, 2 , ""), 
+  (9, 2 , ""), 
+  (10, 1, ""), 
+  (11, 1, ""), 
+  (12, 1, ""), 
+  (13, 1, ""), 
+  (14, 1, ""), 
+  (15, 1, ""), 
+  (16, 1, ""), 
+  (17, 1, ""), 
+  (18, 1, ""), 
+  (19, 1, ""), 
+  (20, 1, ""), 
+  (21, 1, ""), 
+  (22, 1, ""), 
+  (23, 1, ""), 
+  (24, 1, ""), 
+  (25, 2, ""), 
+  (26, 2, ""), 
+  (27, 2, ""), 
+  (28, 2, ""), 
+  (29, 2, ""), 
+  (30, 2, ""), 
+  (31, 2, ""), 
+  (32, 2, ""), 
+  (33, 2, ""), 
+  (34, 2, ""), 
+  (35, 2, ""), 
+  (36, 2, ""), 
+  (37, 2, ""), 
+  (38, 2, ""), 
+  (39, 2, ""), 
+  (40, 3, ""), 
+  (41, 3, ""), 
+  (42, 3, ""), 
+  (43, 3, ""), 
+  (44, 3, ""), 
+  (45, 3, ""), 
+  (46, 3, ""), 
+  (47, 3, ""), 
+  (48, 3, ""), 
+  (49, 3, ""), 
+  (50, 3, ""), 
+  (51, 3, ""), 
+  (52, 3, ""), 
+  (53, 3, ""), 
+  (54, 3, ""), 
+  (55, 3, ""), 
+  (56, 3, ""), 
+  (57, 3, ""), 
+  (58, 3, ""), 
+  (59, 3, "");
   
 INSERT INTO UTILISE (materielArtisteID, groupeID, quantiteMaterielArt)
 VALUES

@@ -1,0 +1,72 @@
+{% extends 'base_sans_log.html' %} {% block styles %} {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='ajoute_artiste.css')}}" />
+{% endblock %} {% block content %}
+<main>
+    <div id="bouton_retour_choix_fiche">
+      <a href="{{ url_for('modification_groupe', groupeID=groupeID) }}">
+        <button type="button" class="bouton_de_retour">Retour</button>
+      </a>
+    </div>
+      <div class="form">
+          <div class="title">Modifiez les information de l'artiste !</div>
+          <form role="form" method ="POST" action="{{ url_for('sauvegarde_artiste_groupe', groupeID=groupeID) }}">
+            <div>
+               <input placeholder="Numéro de sécurité sociale" type="text" class="input" name="idGroupe" value ="{{ groupeID }}" hidden>
+            </div>
+              <div class="input-container ">
+                  <input placeholder="Pseudo" type="text" class="input" name="pseudo" required>
+                  <div class="cut"></div>
+                  <label class="iLabel" for="pseudo">Pseudo</label>
+               </div>
+              <div class="input-container ">
+                  <input placeholder="Nom" type="text" class="input" name="nom" required>
+                  <div class="cut"></div>
+                  <label class="iLabel" for="nom">Nom</label>
+               </div>
+               <div class="input-container ">
+                  <input placeholder="Prenom" type="text" class="input" name="prenom" required>
+                  <div class="cut"></div>
+                  <label class="iLabel" for="prenom">Prénom</label>
+               </div>
+               <div class="input-container ">
+                  <input placeholder="Email" type="text" class="input" name="email" required>
+                  <div class="cut"></div>
+                  <label class="iLabel" for="email">Email</label>
+               </div>
+                <div class="input-container">
+                  <input placeholder="" type="date" class="input" name="dateDN" required>
+                  <label class="iLabel" for="dateDN"></label>
+                </div>
+                <div class="input-container ">
+                  <input placeholder="Lieu de naissance" type="text" class="input" name="lDN" required>
+                  <div class="cut"></div>
+                  <label class="iLabel" for="lDN">Lieu de naissance</label>
+               </div>
+               <div class="input-container ">
+                  <input placeholder="Adresse" type="text" class="input" name="adresse" required>
+                  <div class="cut"></div>
+                  <label class="iLabel" for="adresse">Adresse</label>
+               </div>
+               <div class="input-container ">
+                  <input placeholder="Numéro de sécurité sociale" type="text" class="input" name="numSec" required>
+                  <div class="cut"></div>
+                  <label class="iLabel" for="numSec">Numéro de sécurité sociale</label>
+               </div>
+               <div class="input-container ">
+                  <input placeholder="Numéro CNI" type="text" class="input" name="numCNI" required>
+                  <div class="cut"></div>
+                  <label class="iLabel" for="numCNI">Numéro CNI</label>
+               </div>
+               <div class="input-container">
+                  <input placeholder="" type="date" class="input" name="dateDelivrance" required>
+                  <label class="iLabel" for="dateDelivrance"></label>
+               </div>
+               <div class="input-container">
+                  <input placeholder="" type="date" class="input" name="dateExpiration" required>
+                  <label class="iLabel" for="dateExpiration"></label>
+              </div>
+               <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
+          </form>
+      </div>
+  </main>
+{% endblock %}

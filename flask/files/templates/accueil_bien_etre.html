@@ -1,25 +1,17 @@
 {% extends 'base.html' %} {% block styles %} {{ super() }}
-<link rel="stylesheet" href="{{ url_for('static',filename='accueil.css')}}" />
+<link rel="stylesheet" href="{{ url_for('static',filename='accueil_bien_etre.css')}}" />
+<script src="../static/script/copier.js"></script>
 {% endblock %} {% block content %}
+<main>
+  
 <ul class="listeOptions">
   <li>
     <a href="{{ url_for('liste_concerts') }}">
       <div>
         Consulter la liste des concerts prévus
         <img
-          src="../static/img/prevus.jpg"
+          src="{{ url_for('static', filename='img/prevus.jpg') }}"
           alt="salle de concert vide en préparation"
-        />
-      </div>
-    </a>
-  </li>
-  <li>
-    <a href="{{ url_for('creation_concert') }}">
-      <div>
-        Creer un nouveau concert
-        <img
-          src="../static/img/caisse.jpeg"
-          alt="image de caisses de concert"
         />
       </div>
     </a>
@@ -29,11 +21,17 @@
       <div>
         Modifier les fiches d'artiste
         <img
-          src="../static/img/checklist.png"
+          src="{{ url_for('static', filename='img/checklist.png') }}"
           alt="image de checklist"
         />
       </div>
     </a>
   </li>
 </ul>
+<div id="boutonC">
+  <button onclick="copierTexteDansPressePapiers()" id="boutonCopier">Copier le lien du formulaire</button>
+
+</div>
+
+</main>
 {% endblock %}

@@ -1,7 +1,7 @@
 body{margin:0;}
 
 .main{
-    min-height: 80vh;
+    min-height: 90vh;
 }
 
 .middle{
@@ -13,7 +13,9 @@ body{margin:0;}
     text-align: center;
     padding-top: 3%;
 }
-
+.image_droite{     
+    padding-top: 3vh;
+}
 body.light .main {
     color: #212121;
     font-size: 1vw;
@@ -70,43 +72,49 @@ body.dark .main {
 }
 
 
-.listeOptions {
-    height: 85vh;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    list-style-type: none;
-    transition: 0.3s;
-  }
-.listeOptions div {
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #2a2b38;
-    border-radius: 5%;
-    height: 50vh;
-    width: 35vw;
-    transition: 0.3s;
-  }
 
-.listeOptions div:hover {
-    height: 52vh;
-    width: 37vw;
 
   
+.listeOptions {
+
+margin: 0;
+display: flex;
+flex-wrap: nowrap;
+justify-content: space-around;
+align-items: center;
+list-style-type: none;
+transition: 0.3s;
+}
+
+.listeOptions div {
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+background-color: #2a2b38;
+margin: 3vw;
+border-radius: 5%;
+height: 50vh;
+width: 50vw;
+transition: 0.3s;
+max-width: 50vh;
+}
+
+.listeOptions div:hover {
+height: 53vh;
+width: 53vw;
+max-width: 53vh;
+
 }
 .listeOptions div:hover img{
-    width: 24vw;
-    height: 29vh;
-    transition-duration: 0.2s;
+width: 19vw;
+height: 24vh;
+transition-duration: 0.2s;
 }
 
 .listeOptions a {
 color: #ffeba7;
 text-decoration: none;
 font-size: 2em;
-margin: 1em;
 font-weight: bold;
 text-align: center;
 }
@@ -115,6 +123,8 @@ text-align: center;
 font-size: 2.1em;
 transition-duration: 0.2s;
 }
+
+
 
 .listeOptions img {
 width: 18vw;
@@ -127,13 +137,11 @@ align-self: center;
 @media screen and (max-width: 1100px) {
 .listeOptions {
     flex-direction: column;
-    align-items: center;
     height: 95%;
     padding: 0;
 }
 
 .listeOptions div {
-    justify-content: center;
     height: 50vh;
     width: 60vw;
     max-width: 20vw;
@@ -157,3 +165,5 @@ align-self: center;
     height: 24vh;
     transition-duration: 0.2s;
 }
+}
+  

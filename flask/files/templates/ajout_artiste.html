@@ -1,15 +1,18 @@
-{% extends 'base.html' %} {% block styles %} {{ super() }}
+{% extends 'base_sans_log.html' %} {% block styles %} {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='ajoute_artiste.css')}}" />
 {% endblock %} {% block content %}
 <main>
     <div id="bouton_retour_choix_fiche">
-      <a href="{{ url_for('liste_artistes') }}">
+      <a href="{{ url_for('entrer_groupe') }}">
         <button type="button" class="bouton_de_retour">Retour</button>
       </a>
     </div>
       <div class="form">
           <div class="title">Modifiez les information de l'artiste !</div>
-          <form role="form" method ="POST">
+          <form role="form" method ="POST" action="{{ url_for('ajout_artiste', id=id) }}">
+            <div>
+               <input placeholder="Numéro de sécurité sociale" type="text" class="input" name="idGroupe" value ="{{ id }}" hidden>
+            </div>
               <div class="input-container ">
                   <input placeholder="Pseudo" type="text" class="input" name="pseudo" required>
                   <div class="cut"></div>
@@ -62,9 +65,13 @@
                   <input placeholder="" type="date" class="input" name="dateExpiration" required>
                   <label class="iLabel" for="dateExpiration"></label>
               </div>
-                
-                <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
+               <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
           </form>
       </div>
+      <div id="bouton_retour_choix_fiche">
+         <a href="{{ url_for('creation_concert') }}">
+            <button type="button" class="bouton_de_retour">Suivant</button>
+         </a>
+       </div>
   </main>
 {% endblock %}

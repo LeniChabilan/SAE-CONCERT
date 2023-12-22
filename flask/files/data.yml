@@ -1,45 +1,5 @@
-- Musicien :
-  - musicienID: 1  
-    nomMusicien: "Pierre Dupont"
-  - musicienID: 2
-    nomMusicien: "Élise Martin"
-  - musicienID: 3
-    nomMusicien: "Claude Leblanc"
-  - musicienID: 4
-    nomMusicien: "Camille Dubois"
-  - musicienID: 5
-    nomMusicien: "Lucien Lambert"
 
 
-
-- MaterielArtiste :
-  - materielArtisteID: 1
-    nomMaterielArt: "Guitare acoustique"
-    disponible: true
-  - materielArtisteID: 2
-    nomMaterielArt: "Piano à queue"
-    disponible: true
-  - materielArtisteID: 3
-    nomMaterielArt: "Batterie complète"
-    disponible: false
-  - materielArtisteID: 4
-    nomMaterielArt: "Saxophone alto"
-    disponible: true
-  - materielArtisteID: 5
-    nomMaterielArt: "Violoncelle"
-    disponible: true
-
-- RoleP : 
-  - roleID: 1
-    nomRole: "Ingénieur du son"
-  - roleID: 2
-    nomRole: "Éclairagiste"
-  - roleID: 3
-    nomRole: "Régisseur de scène"
-  - roleID: 4
-    nomRole: "Technicien de son"
-  - roleID: 5
-    nomRole: "Technicien éclairage"
 
 
 
@@ -70,31 +30,6 @@
 
 
 
-
-- TypePlace :
-  - typePlaceID: 1
-    nomPlace: "VIP"
-    descriptionP: "Accès privilégié avec vue exceptionnelle sur la scène."
-
-  - typePlaceID: 2
-    nomPlace: "Place Assise"
-    descriptionP: "Des sièges confortables et une bonne vue sur la scène."
-
-  - typePlaceID: 3
-    nomPlace: "Place en Fosse"
-    descriptionP: "Directement dans la fosse du concert."
-
-  - typePlaceID: 4
-    nomPlace: "Place Debout"
-    descriptionP: "Accès à la zone debout pour ceux qui aiment danser."
-
-  - typePlaceID: 5
-    nomPlace: "Place Enfant"
-    descriptionP: "Pour les jeunes fans et enfants (âge limite : 12 ans)."
-
-  - typePlaceID: 6
-    nomPlace: "Place pour Personnes à Mobilité Réduite"
-    descriptionP: "Places spécialement aménagées pour les personnes à mobilité réduite."
 
 
 
@@ -269,49 +204,6 @@
     dateDelivranceCNI: "2011-05-02"
     dateExpirationCNI: "2031-05-02"
     dansGroupe: true
-
-
-
-
-
-- Vehicule:
-  - immatriculation: "AB-123-CD"
-    typeVehicule: "Voiture"
-    capacitéV: 5
-  - immatriculation: "XY-789-ZW"
-    typeVehicule: "Camion"
-    capacitéV: 10
-  - immatriculation: "LM-456-OP"
-    typeVehicule: "Moto"
-    capacitéV: 2
-  - immatriculation: "EF-123-GH"
-    typeVehicule: "Voiture"
-    capacitéV: 7
-  - immatriculation: "JK-789-LM"
-    typeVehicule: "Voiture"
-    capacitéV: 5
-  - immatriculation: "UV-456-WX"
-    typeVehicule: "Camion"
-    capacitéV: 10
-  - immatriculation: "CD-123-EF"
-    typeVehicule: "Moto"
-    capacitéV: 2
-  - immatriculation: "GH-789-IJ"
-    typeVehicule: "Fourgon"
-    capacitéV: 8
-  - immatriculation: "OP-456-QR"
-    typeVehicule: "Bus"
-    capacitéV: 35
-  - immatriculation: "LM-123-UV"
-    typeVehicule: "Minibus"
-    capacitéV: 15
-  - immatriculation: "WX-789-CD"
-    typeVehicule: "Bus"
-    capacitéV: 50
-  - immatriculation: "EF-120-GH"
-    typeVehicule: "Minibus"
-    capacitéV: 15
-
 
 
 
@@ -627,162 +519,6 @@
 
   
 
-
-
-- PersonelTechnique:
-  - personelTechniqueID: 1
-    roleID: 1
-    nomP: "Martin"
-    prenomP: "Dupont"  # Ingénieur du son
-
-  - personelTechniqueID: 2
-    roleID: 2
-    nomP: "Sophie"
-    prenomP: "Lefebvre"  # Éclairagiste
-
-  - personelTechniqueID: 3
-    roleID: 3
-    nomP: "Philippe"
-    prenomP: "Roux"  # Régisseur de scène
-
-  - personelTechniqueID: 4
-    roleID: 4
-    nomP: "Camille"
-    prenomP: "Moreau"  # Technicien de son
-
-  - personelTechniqueID: 5
-    roleID: 5
-    nomP: "Éric"
-    prenomP: "Lambert"  # Technicien éclairage
-
-  - personelTechniqueID: 6
-    roleID: 1
-    nomP: "Isabelle"
-    prenomP: "Gagnon"  # Ingénieur du son
-
-  - personelTechniqueID: 7
-    roleID: 2
-    nomP: "Antoine"
-    prenomP: "Lapointe"  # Éclairagiste
-
-  - personelTechniqueID: 8
-    roleID: 3
-    nomP: "David"
-    prenomP: "Bergeron"  # Régisseur de scène
-
-  - personelTechniqueID: 9
-    roleID: 4
-    nomP: "Valérie"
-    prenomP: "Leclerc"  # Technicien de son
-
-  - personelTechniqueID: 10
-    roleID: 5
-    nomP: "Sophie"
-    prenomP: "Tremblay"  # Technicien éclairage
-
-  - personelTechniqueID: 11
-    roleID: 1
-    nomP: "Thomas"
-    prenomP: "Leroy"  # Ingénieur du son
-
-  - personelTechniqueID: 12
-    roleID: 2
-    nomP: "Léa"
-    prenomP: "Dubois"  # Éclairagiste
-
-
-
-
-- Plan:
-  - planID: 1
-    planScene: null
-    planFeu: null
-    salleID: 1
-
-  - planID: 2
-    planScene: null
-    planFeu: null
-    salleID: 2
-
-  - planID: 3
-    planScene: null
-    planFeu: null
-    salleID: 3
-
-  - planID: 4
-    planScene: null
-    planFeu: null
-    salleID: 4
-
-  - planID: 5
-    planScene: null
-    planFeu: null
-    salleID: 1
-
-  - planID: 6
-    planScene: null
-    planFeu: null
-    salleID: 2
-
-  - planID: 7
-    planScene: null
-    planFeu: null
-    salleID: 3
-
-  - planID: 8
-    planScene: null
-    planFeu: null
-    salleID: 4
-
-
-
-
-- Hebergment:
-  - hebergementID: 1
-    nomHebergement: "Hôtel de Lyon"
-    capacitéH: 100
-    qualitéH: 4
-    lieuID: 1
-    prix: 150
-
-  - hebergementID: 2
-    nomHebergement: "Auberge des Musiciens"
-    capacitéH: 50
-    qualitéH: 3
-    lieuID: 2
-    prix: 80
-
-  - hebergementID: 3
-    nomHebergement: "Appartement du Vieux Lyon"
-    capacitéH: 30
-    qualitéH: 5
-    lieuID: 1
-    prix: 120
-
-  - hebergementID: 4
-    nomHebergement: "Chambre d hôtes du Vieux Lyon"
-    capacitéH: 10
-    qualitéH: 4
-    lieuID: 1
-    prix: 70
-
-  - hebergementID: 5
-    nomHebergement: "Hôtel Belle Vue"
-    capacitéH: 80
-    qualitéH: 4
-    lieuID: 3
-    prix: 130
-
-  - hebergementID: 6
-    nomHebergement: "Maison de Ville Lumière"
-    capacitéH: 45
-    qualitéH: 3
-    lieuID: 2
-    prix: 90
-
-
-
-
 - MaterielSalle:
   - materielSalleID: 1
     salleID: 1
@@ -892,6 +628,7 @@
     dateFinConcert: "2023-11-29"
     ficheTechnique: "Fiche technique du concert 1"
     catering: "Catering du concert 1"
+    ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 2
     groupeID: 2
 
@@ -901,6 +638,7 @@
     dateFinConcert: "2023-11-28"
     ficheTechnique: "Fiche technique du concert 2"
     catering: "Catering du concert 2"
+    ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 3
     groupeID: 1
 
@@ -910,165 +648,244 @@
     dateFinConcert: "2023-12-24"
     ficheTechnique: "Fiche technique du concert 3"
     catering: "Catering du concert 3"
+    ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 1
     groupeID: 3
 
+  - concertID: 4
+    nomConcert: "Concert 4"
+    dateDebutConcert: "2023-12-23"
+    dateFinConcert: "2023-12-24"
+    ficheTechnique: "Fiche technique du concert 4"
+    catering: "Catering du concert 4"
+    ficheRider : "./fichier_pdf/rider.pdf"
+    salleID: 4
+    groupeID: 2
 
 
-- MusicienAdditionnel:
-  - musicienID: 1
+- Plan:
+  - planID: 1
+    planScene: "./fichier_pdf/planScene.pdf"
     concertID: 1
 
-  - musicienID: 2
-    concertID: 1
-
-  - musicienID: 3
-    concertID: 1
-
-  - musicienID: 4
+  - planID: 2
+    planScene: "./fichier_pdf/FichePlan2page2.pdf"
     concertID: 2
 
-  - musicienID: 5
-    concertID: 2
-
-  - musicienID: 4
+  - planID: 3
+    planScene: "./fichier_pdf/planScene.pdf"
     concertID: 3
 
-  - musicienID: 1
+  - planID: 4
+    planScene: "./fichier_pdf/FichePlan2page.pdf"
+    concertID: 4
+
+  - planID: 5
+    planScene: "./fichier_pdf/FichePlan2page.pdf"
+    concertID: 1
+
+  - planID: 6
+    planScene: "./fichier_pdf/planScene2.pdf"
     concertID: 3
+
+  - planID: 7
+    planScene: "./fichier_pdf/FichePlan2page2.pdf"
+    concertID: 3
+
+  - planID: 8
+    planScene: "./fichier_pdf/planScene2.pdf"
+    concertID: 4
+  
+  - planID: 9
+    planScene: "./fichier_pdf/FichePlan2page2.pdf"
+    concertID: 1
+
+  - planID: 10
+    planScene: "./fichier_pdf/planScene2.pdf"
+    concertID: 1
 
 
 
-- Transporte:
-  - concertID: 1
-    immatriculation: "AB-123-CD"
-
-  - concertID: 2
-    immatriculation: "EF-123-GH"
-
-  - concertID: 3
-    immatriculation: "CD-123-EF"
 
 
-- Necessiter:
-  - materielID: 1
-    concertID: 1
-  - materielID: 2
-    concertID: 1
-  - materielID: 3
-    concertID: 2
-  - materielID: 4
-    concertID: 2
-  - materielID: 5
-    concertID: 2
-  - materielID: 6
-    concertID: 2
-  - materielID: 7
-    concertID: 2
-  - materielID: 8
-    concertID: 2
-  - materielID: 9
-    concertID: 2
-  - materielID: 10
-    concertID: 1
-  - materielID: 11
-    concertID: 1
-  - materielID: 12
-    concertID: 1
-  - materielID: 13
-    concertID: 1
-  - materielID: 14
-    concertID: 1
-  - materielID: 15
-    concertID: 1
-  - materielID: 16
-    concertID: 1
-  - materielID: 17
-    concertID: 1
-  - materielID: 18
-    concertID: 1
-  - materielID: 19
-    concertID: 1
-  - materielID: 20
-    concertID: 1
-  - materielID: 21
-    concertID: 1
-  - materielID: 22
-    concertID: 1
-  - materielID: 23
-    concertID: 1
-  - materielID: 24
-    concertID: 1
-  - materielID: 25
-    concertID: 2
-  - materielID: 26
-    concertID: 2
-  - materielID: 27
-    concertID: 2
-  - materielID: 28
-    concertID: 2
-  - materielID: 29
-    concertID: 2
-  - materielID: 30
-    concertID: 2
-  - materielID: 31
-    concertID: 2
-  - materielID: 32
-    concertID: 2
-  - materielID: 33
-    concertID: 2
-  - materielID: 34
-    concertID: 2
-  - materielID: 35
-    concertID: 2
-  - materielID: 36
-    concertID: 2
-  - materielID: 37
-    concertID: 2
-  - materielID: 38
-    concertID: 2
-  - materielID: 39
-    concertID: 2
-  - materielID: 40
-    concertID: 3
-  - materielID: 41
-    concertID: 3
-  - materielID: 42
-    concertID: 3
-  - materielID: 43
-    concertID: 3
-  - materielID: 44
-    concertID: 3
-  - materielID: 45
-    concertID: 3
-  - materielID: 46
-    concertID: 3
-  - materielID: 47
-    concertID: 3
-  - materielID: 48
-    concertID: 3
-  - materielID: 49
-    concertID: 3
-  - materielID: 50
-    concertID: 3
-  - materielID: 51
-    concertID: 3
-  - materielID: 52
-    concertID: 3
-  - materielID: 53
-    concertID: 3
-  - materielID: 54
-    concertID: 3
-  - materielID: 55
-    concertID: 3
-  - materielID: 56
-    concertID: 3
-  - materielID: 57
-    concertID: 3
-  - materielID: 58
-    concertID: 3
-  - materielID: 59
-    concertID: 3
+- materielID: 1
+  concertID: 1
+  description: ""
+- materielID: 2
+  concertID: 1
+  description: ""
+- materielID: 3
+  concertID: 2
+  description: ""
+- materielID: 4
+  concertID: 2
+  description: ""
+- materielID: 5
+  concertID: 2
+  description: ""
+- materielID: 6
+  concertID: 2
+  description: ""
+- materielID: 7
+  concertID: 2
+  description: ""
+- materielID: 8
+  concertID: 2
+  description: ""
+- materielID: 9
+  concertID: 2
+  description: ""
+- materielID: 10
+  concertID: 1
+  description: ""
+- materielID: 11
+  concertID: 1
+  description: ""
+- materielID: 12
+  concertID: 1
+  description: ""
+- materielID: 13
+  concertID: 1
+  description: ""
+- materielID: 14
+  concertID: 1
+  description: ""
+- materielID: 15
+  concertID: 1
+  description: ""
+- materielID: 16
+  concertID: 1
+  description: ""
+- materielID: 17
+  concertID: 1
+  description: ""
+- materielID: 18
+  concertID: 1
+  description: ""
+- materielID: 19
+  concertID: 1
+  description: ""
+- materielID: 20
+  concertID: 1
+  description: ""
+- materielID: 21
+  concertID: 1
+  description: ""
+- materielID: 22
+  concertID: 1
+  description: ""
+- materielID: 23
+  concertID: 1
+  description: ""
+- materielID: 24
+  concertID: 1
+  description: ""
+- materielID: 25
+  concertID: 2
+  description: ""
+- materielID: 26
+  concertID: 2
+  description: ""
+- materielID: 27
+  concertID: 2
+  description: ""
+- materielID: 28
+  concertID: 2
+  description: ""
+- materielID: 29
+  concertID: 2
+  description: ""
+- materielID: 30
+  concertID: 2
+  description: ""
+- materielID: 31
+  concertID: 2
+  description: ""
+- materielID: 32
+  concertID: 2
+  description: ""
+- materielID: 33
+  concertID: 2
+  description: ""
+- materielID: 34
+  concertID: 2
+  description: ""
+- materielID: 35
+  concertID: 2
+  description: ""
+- materielID: 36
+  concertID: 2
+  description: ""
+- materielID: 37
+  concertID: 2
+  description: ""
+- materielID: 38
+  concertID: 2
+  description: ""
+- materielID: 39
+  concertID: 2
+  description: ""
+- materielID: 40
+  concertID: 3
+  description: ""
+- materielID: 41
+  concertID: 3
+  description: ""
+- materielID: 42
+  concertID: 3
+  description: ""
+- materielID: 43
+  concertID: 3
+  description: ""
+- materielID: 44
+  concertID: 3
+  description: ""
+- materielID: 45
+  concertID: 3
+  description: ""
+- materielID: 46
+  concertID: 3
+  description: ""
+- materielID: 47
+  concertID: 3
+  description: ""
+- materielID: 48
+  concertID: 3
+  description: ""
+- materielID: 49
+  concertID: 3
+  description: ""
+- materielID: 50
+  concertID: 3
+  description: ""
+- materielID: 51
+  concertID: 3
+  description: ""
+- materielID: 52
+  concertID: 3
+  description: ""
+- materielID: 53
+  concertID: 3
+  description: ""
+- materielID: 54
+  concertID: 3
+  description: ""
+- materielID: 55
+  concertID: 3
+  description: ""
+- materielID: 56
+  concertID: 3
+  description: ""
+- materielID: 57
+  concertID: 3
+  description: ""
+- materielID: 58
+  concertID: 3
+  description: ""
+- materielID: 59
+  concertID: 3
+  description: ""
+
 
 
 - Composer:
@@ -1093,72 +910,6 @@
   - artisteID: 5
     groupeID: 3
 
-
-
-
-
-
-- Prepare:
-  - personelTechniqueID: 1
-    concertID: 1
-
-  - personelTechniqueID: 2
-    concertID: 1
-
-  - personelTechniqueID: 3
-    concertID: 1
-
-  - personelTechniqueID: 4
-    concertID: 2
-
-  - personelTechniqueID: 5
-    concertID: 2
-
-  - personelTechniqueID: 6
-    concertID: 3
-
-  - personelTechniqueID: 7
-    concertID: 3
-
-  - personelTechniqueID: 8
-    concertID: 3
-
-  - personelTechniqueID: 9
-    concertID: 1
-
-  - personelTechniqueID: 10
-    concertID: 1
-
-  - personelTechniqueID: 11
-    concertID: 2
-
-  - personelTechniqueID: 12
-    concertID: 3
-
-
-
-
-
-
-- Utilise:
-  - materielArtisteID: 1
-    groupeID: 1
-    quantiteMaterielArt: 2
-  - materielArtisteID: 2
-    groupeID: 2
-    quantiteMaterielArt: 1
-  - materielArtisteID: 3
-    groupeID: 1
-    quantiteMaterielArt: 1
-  - materielArtisteID: 4
-    groupeID: 3
-    quantiteMaterielArt: 3
-  - materielArtisteID: 5
-    groupeID: 4
-    quantiteMaterielArt: 2
-
-
-
 - PARTICIPE:
   - concertId: 1
     groupeID: 1
@@ -1168,79 +919,6 @@
     groupeID: 3
 
 
-- SALLETYPEPLACE:
-  - typePlaceID: 1
-    salleID: 1
-    capaciteS: 50
-  - typePlaceID: 2
-    salleID: 1
-    capaciteS: 200
-  - typePlaceID: 3
-    salleID: 1
-    capaciteS: 300
-  - typePlaceID: 4
-    salleID: 1
-    capaciteS: 400
-  - typePlaceID: 5
-    salleID: 1
-    capaciteS: 30
-  - typePlaceID: 6
-    salleID: 1
-    capaciteS: 10
-  - typePlaceID: 1
-    salleID: 2
-    capaciteS: 30
-  - typePlaceID: 2
-    salleID: 2
-    capaciteS: 150
-  - typePlaceID: 3
-    salleID: 2
-    capaciteS: 200
-  - typePlaceID: 4
-    salleID: 2
-    capaciteS: 250
-  - typePlaceID: 5
-    salleID: 2
-    capaciteS: 20
-  - typePlaceID: 6
-    salleID: 2
-    capaciteS: 8
-  - typePlaceID: 1
-    salleID: 3
-    capaciteS: 70
-  - typePlaceID: 2
-    salleID: 3
-    capaciteS: 350
-  - typePlaceID: 3
-    salleID: 3
-    capaciteS: 450
-  - typePlaceID: 4
-    salleID: 3
-    capaciteS: 600
-  - typePlaceID: 5
-    salleID: 3
-    capaciteS: 40
-  - typePlaceID: 6
-    salleID: 3
-    capaciteS: 12
-  - typePlaceID: 1
-    salleID: 4
-    capaciteS: 40
-  - typePlaceID: 2
-    salleID: 4
-    capaciteS: 200
-  - typePlaceID: 3
-    salleID: 4
-    capaciteS: 250
-  - typePlaceID: 4
-    salleID: 4
-    capaciteS: 300
-  - typePlaceID: 5
-    salleID: 4
-    capaciteS: 25
-  - typePlaceID: 6
-    salleID: 4
-    capaciteS: 6
 
 - ORGANISER:
   - concertID: 1
@@ -1255,3 +933,34 @@
     nomOrga: "HarmonieMusicale"
   - concertID: 3
     nomOrga: "CoeurDeScene"
+
+
+- Necessiter:
+  - materielID: 1
+    concertID: 1 
+    description: "Une description"
+    quantite: 2
+  - materielID: 2
+    concertID: 1 
+    description: "Une description"
+    quantite: 3
+  - materielID: 3
+    concertID: 1 
+    description: "Une description"
+    quantite: 1
+  - materielID: 4
+    concertID: 1 
+    description: "Une description"
+    quantite: 2
+  - materielID: 5
+    concertID: 1 
+    description: "Une description"
+    quantite: 5
+  - materielID: 6
+    concertID: 1 
+    description: "Une description"
+    quantite: 4
+  - materielID: 7
+    concertID: 1 
+    description: "Une description"
+    quantite: 8
