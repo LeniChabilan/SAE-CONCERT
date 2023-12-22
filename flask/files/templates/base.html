@@ -24,7 +24,7 @@
         {% if current_user.is_authenticated%}
           <li><a class="username" >{{ current_user.nomOrga }}</a></li>
           <li class="logout"><a href="{{ url_for('logout') }}" id="fond_bouton" class="noligne">
-            <button type="button" id="bouton_se_connecter">Se deconnecter</button>
+            <button type="button" id="bouton_se_connecter">Se déconnecter</button>
           </a></li>
           {% else %}
           <li> <a href="{{ url_for('connexion') }}" id="fond_bouton" class="noligne">
