@@ -204,7 +204,7 @@ def get_liste_groupe():
     session = login()
     return session.query(Groupe).all()
 
-def get_artiste_groupe(id):
+def get_artiste_id_groupe(id):
     session = login()
     artistes = session.query(Composer.artisteID).filter_by(groupeID=id).all()
     session.expunge_all()
@@ -388,3 +388,12 @@ def modif_fiche_accueil(concertID, ficheA):
     session.commit()
     session.close()
 
+def get_artiste_groupe(id):
+    session = login()
+    artistesID = session.query(Composer.artisteID).filter_by(groupeID=id).all()
+    lesArtistes = []
+    for artiste in artistesID:
+        lesArtistes.append(session.query(Artiste).filter(Artiste.artisteID == artiste[0]).first())
+    session.expunge_all()
+    session.close() 
+    return lesArtistes
