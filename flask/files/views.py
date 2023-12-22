@@ -198,7 +198,7 @@ def inscription_groupe():
 def recherche_groupe():
     nom_groupe = request.form.get("nom")
     groupe = chercher_groupe(nom_groupe)
-    if get_artiste_groupe(groupe.groupeID) == []:
+    if get_artiste_id_groupe(groupe.groupeID) == []:
         return render_template("ajout_artiste.html", id = groupe.groupeID)
     return redirect(url_for("completer_fiche"))
 
@@ -428,3 +428,28 @@ def suppression_plan_scene(planId,concert):
 def entrer_groupe():
     return render_template("entrer_groupe.html")
 
+@app.route("/modification-groupe/<int:groupeID>", methods = ("GET","POST",))
+def modification_groupe(groupeID):
+    return render_template("modification_groupe.html", artistes=get_artiste_groupe(groupeID), groupeID=groupeID)
+
+
+@app.route("/ajout-artiste-modif/<int:groupeID>", methods = ("GET","POST",))
+def ajout_artiste_modif(groupeID):
+    return render_template("ajout_artiste_modif_groupe.html", groupeID = groupeID)
+
+@app.route("/sauvegarde_artiste_groupe/<int:groupeID>", methods = ("GET","POST",))
+def sauvegarde_artiste_groupe(groupeID):
+    pseudo = request.form.get("pseudo")
+    nom = request.form.get("nom")
+    prenom = request.form.get("prenom")
+    email = request.form.get("email")
+    dateDN =request.form.get("dateDN")
+    lDN = request.form.get("lDN")
+    adresse = request.form.get("adresse")
+    numSec = request.form.get("numSec")
+    numCNI = request.form.get("numCNI")
+    dateDelivrance = request.form.get("dateDelivrance")
+    dateExpiration = request.form.get("dateExpiration")
+    idGroupe = request.form.get("idGroupe")
+    ajouter_artiste(pseudo, nom, prenom, email, dateDN, lDN, adresse, numSec, numCNI, dateDelivrance, dateExpiration, idGroupe)
+    return redirect(url_for("modification_groupe", groupeID=groupeID))
