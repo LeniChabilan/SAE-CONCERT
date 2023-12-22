@@ -78,7 +78,9 @@ main{
     padding: 4px 20px 0;
     width: 100%;
   }
-  
+  tbody tr:nth-child(odd){
+    background-color: #b9b9b9;
+}
   .iLabel {
     color: #65657b;
     font-family: sans-serif;
