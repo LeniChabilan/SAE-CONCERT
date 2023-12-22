@@ -101,3 +101,6 @@ thead tr th, td{
 .liste_des_besoins, th{
     border-collapse: collapse;
 }
+tbody tr:nth-child(odd){
+    background-color: #b9b9b9;
+}
