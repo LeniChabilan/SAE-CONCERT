@@ -214,6 +214,18 @@ def completer_fiche_pdf(concertID):
     modif_fiche_technique(concertID, ficheTechnique)
     return render_template("completer_fiche_pdf.html", concertID = concertID)
 
+@app.route("/modif-fiche-accueil/<int:concertID>", methods=['GET', 'POST'])
+def modif_fiche_accueil(concertID):
+    ficheAccueil = request.form.get("ficheA")
+    modif_fiche_accueil(concertID, ficheAccueil)
+    
+    return render_template("choix_fiche.html", concertID = concertID)
+
+@app.route("/modif-accueil/<int:concertID>", methods=['GET', 'POST'])
+def modif_accueil(concertID):
+    
+    return render_template("modif_fiche_accueil.html", concertID = concertID)
+
 @app.route("/fin-inscription/<int:concertID>", methods=['GET', 'POST'])
 def fin_inscription(concertID):
     ajouter_plan(concertID)
