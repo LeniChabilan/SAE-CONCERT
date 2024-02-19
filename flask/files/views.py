@@ -217,9 +217,12 @@ def completer_fiche_pdf(concertID):
 @app.route("/modif-fiche-accueil/<int:concertID>", methods=['GET', 'POST'])
 def modif_fiche_accueil(concertID):
     ficheAccueil = request.form.get("ficheA")
-    modif_fiche_accueil(concertID, ficheAccueil)
+    modif_fiche_acc(concertID, ficheAccueil)
     
-    return render_template("choix_fiche.html", concertID = concertID)
+    conc=get_info_un_concert(concertID)
+    text=conc.catering    
+    pdf=pdf_base_64(text)
+    return render_template("choix_fiche.html",pdf=pdf,conc=conc)
 
 @app.route("/modif-accueil/<int:concertID>", methods=['GET', 'POST'])
 def modif_accueil(concertID):

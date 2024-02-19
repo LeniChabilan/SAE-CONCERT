@@ -381,7 +381,7 @@ def modif_fiche_technique(concertID, ficheT):
     session.commit()
     session.close()
 
-def modif_fiche_accueil(concertID, ficheA):
+def modif_fiche_acc(concertID, ficheA):
     session = login()
     concert = session.query(Concert).filter(Concert.concertID == concertID).first()
     concert.catering = ficheA
