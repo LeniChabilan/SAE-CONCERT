@@ -97,6 +97,7 @@ class MaterielSalle(db.Model):
     nomMaterielS = Column(String(255))
     disponible = Column(Boolean)
     salle = relationship(Salle)
+    
 
 class Concert(db.Model):
     __tablename__ = 'CONCERT'

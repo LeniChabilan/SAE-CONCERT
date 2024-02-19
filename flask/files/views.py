@@ -210,8 +210,12 @@ def completer_fiche(concertID):
 def completer_fiche_pdf(concertID):
     ficheAccueil = request.form.get("ficheA")
     modif_fiche_acc(concertID, ficheAccueil)
-    ficheTechnique = request.form.get("ficheT")
-    modif_fiche_technique(concertID, ficheTechnique)
+    # ficheTechnique = request.form.get("ficheT")
+    # modif_fiche_technique(concertID, ficheTechnique)
+    return render_template("fiche_tech_materiel.html", id = concertID)
+
+@app.route("/completer-fiche-glisse/<int:concertID>", methods=['GET', 'POST'])
+def completer_fiche_glisse(concertID):
     return render_template("completer_fiche_pdf.html", concertID = concertID)
 
 @app.route("/modif-fiche-accueil/<int:concertID>", methods=['GET', 'POST'])
@@ -234,6 +238,18 @@ def fin_inscription(concertID):
     ajouter_plan(concertID)
     ajouter_rider(concertID)
     return render_template("fin_inscription.html")
+
+
+@app.route("/ajout_mat/<int:id>", methods=['GET','POST'])
+def ajout_mat(id):
+    nom=request.form.get("nom")
+    quantite=request.form.get("quantite")
+    desc=request.form.get("desc")
+    
+    ajouter_mat(id,nom,quantite,desc)
+    
+    return render_template("fiche_tech_materiel.html",id=id)
+
 
 @app.route("/ajout-plan/<int:concertID>", methods=['GET', 'POST'])
 def ajout_plan(concertID):
