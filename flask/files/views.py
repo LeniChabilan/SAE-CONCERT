@@ -74,7 +74,8 @@ def logout():
 
 @app.route("/creation_concert")
 def creation_concert():
-    return render_template("creation_concert.html", liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe(),id=id)
+    id_concert=get_concert_id_nouv()
+    return render_template("creation_concert.html", liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe(),id=id_concert)
 
 
 @app.route("/liste_concerts/", methods = ("GET","POST",))
@@ -92,7 +93,7 @@ def save_concert():
     groupe = request.form.get("groupe")
     ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
     print(get_concert_by_name(nom))
-    return render_template("completer_fiche.html", concertID=get_concert_by_name(nom))
+    return render_template("accueil_bien_etre.html")
 
 
 def get_date(concert):
@@ -190,17 +191,18 @@ def modif_concert(id):
     conc=get_info_concert()
     return render_template("liste_concerts.html", title="Les Concerts",concerts=get_info_concert(),liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
-@app.route("/entrer-groupe")
-def inscription_groupe():
-    return render_template("entrer_groupe.html")
+# @app.route("/entrer_groupe")
+# def entrer_groupe():
+#     return render_template("entrer_groupe.html")
 
 @app.route("/recherche-groupe", methods=['GET', 'POST'])
 def recherche_groupe():
     nom_groupe = request.form.get("nom")
     groupe = chercher_groupe(nom_groupe)
     if get_artiste_id_groupe(groupe.groupeID) == []:
-        return render_template("ajout_artiste.html", id = groupe.groupeID)
-    return redirect(url_for("completer_fiche"))
+        return render_template("creation_concert")
+    else:
+        return redirect(url_for("creation_concert"))
 
 @app.route("/completer-fiche/<int:concertID>", methods=['GET', 'POST'])
 def completer_fiche(concertID):
@@ -314,6 +316,12 @@ def modification_artiste_art(id):
 @app.route("/modification_artiste_grp/<int:id>")
 def modification_artiste_grp(id):
     return render_template("modifier_artiste_grp.html", arti=get_info_un_artiste(id), aID=id)
+
+@app.route("/accueil_artiste.html/<int:id>" , methods = ("GET","POST",))
+def accueil_artiste(id):
+    return render_template("accueil_artiste.html",id=id)
+
+
 
 @app.route("/modif-artiste-art/<int:id>", methods =["POST"])
 def modif_artiste_art(id):
@@ -439,7 +447,7 @@ def suppression_plan_scene(planId,concert):
         return render_template("visualisation_plan.html",plan=get_plan_concert(con.concertID),conc=con)
 
 
-@app.route("/entrer_groupe/", methods = ("GET","POST",))
+@app.route("/entrer_groupe", methods = ("GET","POST",))
 def entrer_groupe():
     return render_template("entrer_groupe.html")
 

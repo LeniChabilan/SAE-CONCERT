@@ -211,6 +211,13 @@ def get_artiste_id_groupe(id):
     session.close() 
     return artistes
 
+def get_concert_id_nouv():
+    session=login()
+    res=session.query(func.max(Concert.concertID)).all()[0][0]+1
+    session.close()
+    return res
+
+
 def supprimer_artiste(artID):
     try:
         # Supprimez le concert et toutes les lignes liées dans d'autres tables
