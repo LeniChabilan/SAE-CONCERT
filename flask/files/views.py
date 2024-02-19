@@ -209,7 +209,7 @@ def completer_fiche(concertID):
 @app.route("/completer-fiche-pdf/<int:concertID>", methods=['GET', 'POST'])
 def completer_fiche_pdf(concertID):
     ficheAccueil = request.form.get("ficheA")
-    modif_fiche_accueil(concertID, ficheAccueil)
+    modif_fiche_acc(concertID, ficheAccueil)
     ficheTechnique = request.form.get("ficheT")
     modif_fiche_technique(concertID, ficheTechnique)
     return render_template("completer_fiche_pdf.html", concertID = concertID)
