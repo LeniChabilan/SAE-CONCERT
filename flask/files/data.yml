@@ -945,27 +945,34 @@
     concertID: 1 
     description: "Une description"
     quantite: 2
+    quantiteAcquise: 2
   - materielID: 2
     concertID: 1 
     description: "Une description"
     quantite: 3
+    quantiteAcquise: 2
   - materielID: 3
     concertID: 1 
     description: "Une description"
     quantite: 1
+    quantiteAcquise: 1
   - materielID: 4
     concertID: 1 
     description: "Une description"
     quantite: 2
+    quantiteAcquise: 0
   - materielID: 5
     concertID: 1 
     description: "Une description"
     quantite: 5
+    quantiteAcquise: 3
   - materielID: 6
     concertID: 1 
     description: "Une description"
     quantite: 4
+    quantiteAcquise: 2
   - materielID: 7
     concertID: 1 
     description: "Une description"
     quantite: 8
+    quantiteAcquise: 7

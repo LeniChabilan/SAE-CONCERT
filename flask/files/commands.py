@@ -266,7 +266,7 @@ def loaddb(filename):
         if "Necessiter" in nomTable:
             necessites = nomTable["Necessiter"]
             for necessite_data in necessites:
-                necessite = Necessiter(materielID=necessite_data["materielID"], concertID=necessite_data["concertID"] , description=necessite_data["description"] , quantite=necessite_data["quantite"])
+                necessite = Necessiter(materielID=necessite_data["materielID"], concertID=necessite_data["concertID"] , description=necessite_data["description"] , quantite=necessite_data["quantite"] , quantiteAcquise=necessite_data["quantiteAcquise"])
                 session.add(necessite)
 
         if "Composer" in nomTable:
