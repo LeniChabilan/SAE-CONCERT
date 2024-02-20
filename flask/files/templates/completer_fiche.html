@@ -8,7 +8,7 @@
           <button type="button" class="bouton_de_retour">Retour</button>
         </a>
       </div>
-<form role="form" method ="POST" action ="{{ url_for('completer_fiche_pdf', concertID=concertID,salleId=salleId) }}">
+  <form role="form" method ="POST" action ="{{ url_for('completer_fiche_pdf', concertID=concertID,salleId=salleId) }}">
         <div class="title">Veuillez compléter ces fiches :</div>
         <div class="form">
             <div class="txtArea">
@@ -19,7 +19,9 @@
             </div>     
                                     
         </div>
-        <button class="submit" type="text">Enregistrer</button>
+        <div class="submitance">
+            <button class="submit" type="text">Enregistrer</button>
+        </div>
     </form>
 </main>
 {% endblock %}
