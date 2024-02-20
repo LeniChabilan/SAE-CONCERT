@@ -2,24 +2,31 @@
 
 {% block styles %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static',filename='liste_artiste.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='liste_groupe_id.css')}}" />
     <script src="../static/script/confirmation.js"></script>
 {% endblock %}
 
 {% block content %}
 <div class="main">
     <div id="tete_page">
-      <div id="bouton_retour_choix_fiche">
-        <a href="{{ url_for('accueil_artiste', id=id) }}">
-          <button type="button" class="bouton_de_retour">Retour</button>
-        </a>
+        <div class="retour">
+            <a href="{{ url_for('accueil_artiste', id=id) }}">
+              <button type="button" class="bouton_de_retour">Retour</button>
+            </a>
+        </div>
+        <div class="suivant">
+            <a href="{{ url_for('completer_fiche', concertID=id) }}">
+              <button type="button" class="bouton_de_retour">Suivant</button>
+            </a>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="modif">
+          <h1 id="modification">Modifier votre groupe si les informations ne sont pas correctes !</h1>
+        </div>
         <a href="{{ url_for('ajoute_artiste', id=id) }}">
-            <button type="button" class="bouton_de_retour">ajouter Artiste</button>
-          </a>
-      </div>
-      <div class="middle">
-        <h1 id="modification">Voici votre groupe</h1>
-      </div>
+          <button type="button" class="addArtiste">ajouter un Artiste</button>
+        </a>
     </div>
     <div class="partie_principale">
         
@@ -70,11 +77,6 @@
           </table>
         {% endfor %}
       {% endif %}
-    </div>
-    <div id="bouton_retour_choix_fiche">
-    <a href="{{ url_for('completer_fiche', concertID=id) }}">
-        <button type="button" class="bouton_de_retour">Suivant</button>
-      </a>
     </div>
   </div>
 {% endblock %}
