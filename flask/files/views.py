@@ -206,17 +206,17 @@ def recherche_groupe():
     else:
         return redirect(url_for("creation_concert"))
 
-@app.route("/completer-fiche/<int:concertID>", methods=['GET', 'POST'])
-def completer_fiche(concertID):
-    return render_template("completer_fiche.html", concertID = concertID)
+@app.route("/completer-fiche/<int:concertID>/<int:salleId>", methods=['GET', 'POST'])
+def completer_fiche(concertID,salleId):
+    return render_template("completer_fiche.html", concertID = concertID,salleId=salleId)
 
-@app.route("/completer-fiche-pdf/<int:concertID>", methods=['GET', 'POST'])
-def completer_fiche_pdf(concertID):
+@app.route("/completer-fiche-pdf/<int:concertID>/<int:salleId>", methods=['GET', 'POST'])
+def completer_fiche_pdf(concertID,salleId):
     ficheAccueil = request.form.get("ficheA")
     modif_fiche_acc(concertID, ficheAccueil)
     # ficheTechnique = request.form.get("ficheT")
     # modif_fiche_technique(concertID, ficheTechnique)
-    return render_template("fiche_tech_materiel.html", id = concertID)
+    return render_template("fiche_tech_materiel.html", id = concertID, salleId=salleId)
 
 @app.route("/completer-fiche-glisse/<int:concertID>", methods=['GET', 'POST'])
 def completer_fiche_glisse(concertID):
@@ -244,15 +244,15 @@ def fin_inscription(concertID):
     return render_template("fin_inscription.html")
 
 
-@app.route("/ajout_mat/<int:id>", methods=['GET','POST'])
-def ajout_mat(id):
+@app.route("/ajout_mat/<int:id>/<int:salleId>", methods=['GET','POST'])
+def ajout_mat(id,salleId):
     nom=request.form.get("nom")
     quantite=request.form.get("quantite")
     desc=request.form.get("desc")
     
-    ajouter_mat(id,nom,quantite,desc)
+    ajouter_mat(id,nom,quantite,desc,salleId)
     
-    return render_template("fiche_tech_materiel.html",id=id)
+    return render_template("fiche_tech_materiel.html",id=id,salleId=salleId)
 
 
 @app.route("/ajout-plan/<int:concertID>", methods=['GET', 'POST'])
@@ -358,7 +358,7 @@ def accueil_artiste(id):
 @app.route("/liste_groupe_id/<int:id>", methods = ("GET","POST",))
 def liste_groupe_id(id):
     liste=get_dico_grps_art(id)
-    return render_template("liste_groupe_id.html",id=id,liste=liste)
+    return render_template("liste_groupe_id.html",id=id,liste=liste,conc=get_info_un_concert(id))
 
 
 @app.route("/modif-artiste-art/<int:id>", methods =["POST"])
