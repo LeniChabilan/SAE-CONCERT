@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block styles %} {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='liste_concerts.css')}}" />
 <script src="../static/script/confirmation.js"></script>
+<script src="../static/script/copier.js"></script>
 {% endblock %} {% block content %}
 <div class="main">
   <div id="tete_page">
@@ -111,10 +112,10 @@
         <th>{{ x.dateDebutConcert }}</th>
         <th>{{ x.groupe.nomGroupe }}</th>
         <th>{{ x.salle.nomSalle }}</th>
-        <th><a href="" onclick="copierTexteDansPressePapiers()"><i class="fa-solid fa-clipboard fa-xl"></i></a></th>
-        <th><a href="{{ url_for('modification_concert', id=x.concertID) }}" onclick="return showConfirmationModif()"><i
+        <th><a href="" onclick="copierTexteDansPressePapiers_id('{{ x.concertID }}')"><i class="fa-solid fa-clipboard fa-xl"></i></a></th>
+        <th><a href="{{ url_for('modification_concert', id=x.concertID) }}" onclick="showConfirmationModif()"><i
               class="fa-solid fa-pen fa-xl"></i></a></th>
-        <th><a href="{{ url_for('sup_concert', id=x.concertID) }}" onclick="return showConfirmationSup()"><i
+        <th><a href="{{ url_for('sup_concert', id=x.concertID) }}" onclick="showConfirmationSup()"><i
               class="fa-solid fa-trash fa-xl"></i></a></th>
       </tr>
       {% endfor %}

@@ -2,21 +2,31 @@
 
 {% block styles %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static',filename='liste_groupe.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='liste_groupe_id.css')}}" />
     <script src="../static/script/confirmation.js"></script>
 {% endblock %}
 
 {% block content %}
 <div class="main">
     <div id="tete_page">
-      <div id="bouton_retour_choix_fiche">
-        <a href="{{ url_for('accueil_artiste', id=id) }}">
-          <button type="button" class="bouton_de_retour">Retour</button>
+        <div class="retour">
+            <a href="{{ url_for('accueil_artiste', id=id) }}">
+              <button type="button" class="bouton_de_retour">Retour</button>
+            </a>
+        </div>
+        <div class="suivant">
+            <a href="{{ url_for('completer_fiche', concertID=id) }}">
+              <button type="button" class="bouton_de_retour">Suivant</button>
+            </a>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="modif">
+          <h1 id="modification">Modifier votre groupe si les informations ne sont pas correctes !</h1>
+        </div>
+        <a href="{{ url_for('ajoute_artiste', id=id) }}">
+          <button type="button" class="addArtiste">ajouter un Artiste</button>
         </a>
-      </div>
-      <div class="middle">
-        <h1 id="modification">Voici votre groupe</h1>
-      </div>
     </div>
     <div class="partie_principale">
         
@@ -26,8 +36,6 @@
             <thead>
               <th>{{grp.nomGroupe}}</th>
               <th></th>
-              <th class="logo"><a href="{{ url_for('modification_groupe', groupeID=grp.groupeID) }}"><i class="fa-solid fa-pen"></i></a></th>
-              <th class="logo"><a href="{{ url_for('sup_groupe', id=grp.groupeID) }}" onclick="return showConfirmationSupGroupe()"><i class="fa-solid fa-trash"></i></a></th>
             </thead>
             <thead>
               <th>Pseudo</th>
@@ -41,6 +49,9 @@
               <th>Numéro CNI</th>
               <th>Date de délivrance</th>
               <th>Date d'expiration</th>
+              <th></th>
+              <th></th>
+              
             </thead>
             <tbody>
               {% if lArt %}
@@ -57,6 +68,8 @@
                     <td>{{arti.numCNI}}</td>
                     <td>{{arti.dateDelivranceCNI}}</td>
                     <td>{{arti.dateExpirationCNI}}</td>
+                    <td><a href="{{ url_for('modification_art', id=id, aID=arti.artisteID) }}"><i class="fa-solid fa-pen"></i></a></td>
+                    <td><a href="{{ url_for('sup_artiste_art', aID=arti.artisteID,id=id ) }}"><i class="fa-solid fa-trash"></i></a></td>
                   </tr>
                 {% endfor %}
               {% endif %} 

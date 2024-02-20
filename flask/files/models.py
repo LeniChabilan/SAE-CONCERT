@@ -114,7 +114,7 @@ class Concert(db.Model):
     salle = relationship(Salle)
     groupe = relationship(Groupe)
 
-    def __init__(self, nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
+    def __init__(self, nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe,lien):
         self.nomConcert = nom
         self.dateDebutConcert = dateDebut
         self.dateFinConcert = dateFin
@@ -122,6 +122,7 @@ class Concert(db.Model):
         self.catering = catering
         self.salleID = salle
         self.groupeID = groupe
+        self.lienConcert = lien
 
 
 class Plan(db.Model):
