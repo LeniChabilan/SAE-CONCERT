@@ -17,7 +17,7 @@ from wtforms.validators import DataRequired
 from flask import request
 from .models import *
 import shutil
-
+from sqlalchemy.orm import joinedload
 
 
 
@@ -452,6 +452,17 @@ def retourFiche(conc):
 @app.route("/editer_liste_a_louer/<int:conc>", methods = ("GET","POST",))
 def editer_liste_a_louer(conc):
     return render_template("editer_liste_a_louer.html",conc=get_info_un_concert(conc), lBesoin = get_liste_neccessite(conc))
+
+from flask import request, jsonify
+
+@app.route('/update_quantite', methods=['POST'])
+def update_quantite():
+    data = request.get_json()
+    idConcert = data['idConcert']
+    idMateriel = data['idMateriel']
+    newValue = data['newValue']
+    update_necessite(idConcert, idMateriel, newValue)
+    return jsonify({'success': True})
 
 @app.route("/ajout_besoin/<int:conc>", methods =["POST"])
 def ajout_besoin(conc):
