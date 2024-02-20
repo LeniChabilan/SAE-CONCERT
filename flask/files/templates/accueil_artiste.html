@@ -1,0 +1,8 @@
+{% extends 'base_sans_log.html' %} {% block styles %} {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='accueil_technique.css')}}" />
+{% endblock %} {% block content %}
+<h1> Bienvenue sur la gestion de votre concert {{id}}</h1>
+<a href="{{ url_for('liste_groupe_id', id=id) }}">
+    <button class="submit" type="button">continuer</button>
+  </a>
+{% endblock %}
