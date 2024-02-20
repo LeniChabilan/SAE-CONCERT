@@ -1,6 +1,7 @@
 /* Reset some existing styles */
 body {
     margin: 0;
+    background-color: #fff;
 }
 
 /* General styles */
@@ -15,19 +16,18 @@ body {
 }
 
 .middle {
-    flex-basis: 80%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 3%;
+    margin-right: 5%;
+    margin-left: 5%;
 }
+
+
 
 /* Light and Dark mode styles */
 body.light .main .partie_principale,
 body.light .main {
-    background-color: #e8e5da;
+    background-color: #ffffff;
 }
 
 body.dark .main .partie_principale,
@@ -41,7 +41,7 @@ body.light #modification {
 }
 
 body.dark #modification {
-    color: #e8e5da;
+    color: #ffffff;
     font-size: 2vw;
 }
 
@@ -49,7 +49,7 @@ body.dark #modification {
 .liste_des_concerts {
     margin-top: 5%;
     margin-left: 2%;
-    background-color: #d3d1cb;
+    background-color: #ffffff;
     margin-right: 2%;
     outline: none;
     overflow-x: auto; /* Add horizontal scroll if needed */
@@ -67,7 +67,7 @@ th {
 }
 
 .logo {
-    background-color: #d3d1cb;
+    background-color: #ffffff;
 }
 
 thead {
@@ -104,9 +104,8 @@ tbody tr:nth-child(odd) {
 .bouton_de_retour {
     appearance: none;
     background-color: #2a2b38;
-    color: #ffeba7;
+    color: #ffffff;
     margin-top: 5vh;
-    margin-left: 3vw;
     height: 6vh;
     width: 7vw;
     text-align: center;
@@ -122,7 +121,7 @@ tbody tr:nth-child(odd) {
 
 .bouton_de_retour:hover {
     color: #2a2b38;
-    background-color: #ffeba7;
+    background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
@@ -181,15 +180,41 @@ a > i {
     }
 }
 
-#modif {
-    justify-content: left;
-    text-align: left;
-}
-
 #tete_page {
     display: flex;
     justify-content: space-between;
     margin-right: 5%;
     margin-left: 5%;
 
+}
+
+
+
+.addArtiste {
+    appearance: none;
+    background-color: #2a2b38;
+    color: #ffffff;
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 2vh;
+    box-sizing: border-box;
+    border-radius: 0.9375em;
+    border: none;
+    padding: 1%;
+}
+
+.addArtiste:disabled {
+    pointer-events: none;
+}
+
+.addArtiste:hover {
+    color: #2a2b38;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.addArtiste:active {
+    box-shadow: none;
+    transform: translateY(0);
 }
