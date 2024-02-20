@@ -146,11 +146,12 @@ class Necessiter(db.Model):
     materiel = relationship(Materiel)
     concert = relationship(Concert)
     
-    def __init__(self,materielID,concertID,description,quantite):
+    def __init__(self,materielID,concertID,description,quantite,quantiteAcquise):
         self.materielID = materielID
         self.concertID = concertID
         self.description = description
         self.quantite = quantite
+        self.quantiteAcquise = quantiteAcquise
 
 class Composer(db.Model):
     __tablename__ = 'COMPOSER'

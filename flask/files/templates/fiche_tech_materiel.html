@@ -3,6 +3,11 @@
 <script type="module" src="{{ url_for('static', filename='script/upload.js') }}"></script>
 {% endblock %} {% block content %}
 <main>
+   <div id="bouton_retour_choix_fiche">
+      <a href="{{ url_for('completer_fiche', concertID=id,salleId=salleId) }}">
+        <button type="button" class="bouton_de_retour">Retour</button>
+      </a>
+    </div>
     <div class="form">
         <div class="title">Ajoutez du materiel</div>
         <form role="form" method ="POST" action="{{ url_for('ajout_mat', id=id,salleId=salleId) }}">

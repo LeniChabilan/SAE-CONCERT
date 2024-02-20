@@ -358,7 +358,7 @@ def accueil_artiste(id):
 @app.route("/liste_groupe_id/<int:id>", methods = ("GET","POST",))
 def liste_groupe_id(id):
     liste=get_dico_grps_art(id)
-    return render_template("liste_groupe_id.html",id=id,liste=liste)
+    return render_template("liste_groupe_id.html",id=id,liste=liste,conc=get_info_un_concert(id))
 
 
 @app.route("/modif-artiste-art/<int:id>", methods =["POST"])
