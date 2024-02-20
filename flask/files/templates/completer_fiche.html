@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='completer_fiche.css')}}" />
 {% endblock %} {% block content %}
 <main>
-    <form role="form" method ="POST" action ="{{ url_for('completer_fiche_pdf', concertID=concertID) }}">
+    <form role="form" method ="POST" action ="{{ url_for('completer_fiche_pdf', concertID=concertID,salleId=salleId) }}">
         <div class="title">Veuillez compléter ces fiches :</div>
         <div class="form">
             <div class="txtArea">
