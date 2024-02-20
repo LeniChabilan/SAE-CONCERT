@@ -272,11 +272,18 @@ def get_max_id_Materiel():
         return 1
     return session.query(func.max(Materiel.materielID)).all()[0][0] + 1
     
-def ajout_nessecite_concert(objet, concert, description, quantite):
+def ajout_nessecite_concert(objet, concert, description, quantite,salle):
     session = login()
     
     # Recherche de l'id du matériel
     materiel_id_query = session.query(Materiel.materielID).filter_by(nomMateriel=objet).first()
+    
+    matosSalle=session.query(MaterielSalle).filter_by(nomMaterielS=objet,salleID=salle).all()
+    nb=0
+    for i in matosSalle:
+        nb+=1
+    
+    
     
     if materiel_id_query:
         id = materiel_id_query[0]
@@ -291,7 +298,7 @@ def ajout_nessecite_concert(objet, concert, description, quantite):
     
     if necessiter_query is None:
         # Si la relation n'existe pas, ajoutez-la
-        necessite = Necessiter(id, concert, description, quantite)
+        necessite = Necessiter(id, concert, description, quantite,nb)
         session.add(necessite)
 
     session.commit()
@@ -347,13 +354,13 @@ def ajouter_plan(concertID):
         os.remove(file_path)
     session.close()
     
-def ajouter_mat(idC,nom,quantite,description):
+def ajouter_mat(idC,nom,quantite,description,salle):
     session = login()
     idM=get_max_id_Materiel()
     mat=Materiel(idM,nom)
     session.add(mat)
     session.commit()
-    ajout_nessecite_concert(nom,idC,description,quantite)
+    ajout_nessecite_concert(nom,idC,description,quantite,salle)
     session.close()
      
 

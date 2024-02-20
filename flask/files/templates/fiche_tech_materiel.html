@@ -5,7 +5,7 @@
 <main>
     <div class="form">
         <div class="title">Ajoutez du materiel</div>
-        <form role="form" method ="POST" action="{{ url_for('ajout_mat', id=id) }}">
+        <form role="form" method ="POST" action="{{ url_for('ajout_mat', id=id,salleId=salleId) }}">
           
             <div class="input-container ">
                 <input placeholder="Nom du matériel" type="text" class="input" name="nom" required>

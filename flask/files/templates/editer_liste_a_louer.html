@@ -29,7 +29,7 @@
                         <td>{{ besoin.materiel.nomMateriel }}</td>
                         <td>{{ besoin.description }}</td>
                         <td>{{ besoin.quantite }}</td>
-                        <td>{{ besoin.quantite }}</td>
+                        <td>{{ besoin.quantiteAcquise }}</td>
                         <td><a href="{{ url_for('supp_necessiter', conca=conc.concertID, necessaire= besoin.materiel.nomMateriel )}}"><i class="fa-solid fa-trash"></i></a></td>  
                     </tr>   
                 {% endfor %}
