@@ -2,6 +2,11 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='completer_fiche.css')}}" />
 {% endblock %} {% block content %}
 <main>
+    <div id="bouton_retour_choix_fiche">
+        <a href="{{ url_for('liste_groupe_id', id=concertID) }}">
+          <button type="button" class="bouton_de_retour">Retour</button>
+        </a>
+      </div>
     <form role="form" method ="POST" action ="{{ url_for('completer_fiche_pdf', concertID=concertID) }}">
         <div class="title">Veuillez compléter ces fiches :</div>
         <div class="form">
