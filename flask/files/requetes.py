@@ -446,3 +446,10 @@ def get_nom_groupe(id):
     nom=session.query(Groupe.nomGroupe).filter(Groupe.groupeID==id).all()
     session.close() 
     return nom[0][0]
+
+def update_necessite(idConcert, idMateriel, quantiteacquise):
+    session = login()
+    necessite = session.query(Necessiter).filter(Necessiter.materielID == idMateriel, Necessiter.concertID == idConcert).first()
+    necessite.quantiteAcquise = quantiteacquise
+    session.commit()
+    session.close()
