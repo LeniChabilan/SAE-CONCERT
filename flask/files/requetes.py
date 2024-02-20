@@ -218,6 +218,8 @@ def get_concert_id_nouv():
     return res
 
 
+
+
 def supprimer_artiste(artID):
     try:
         # Supprimez le concert et toutes les lignes liées dans d'autres tables
@@ -404,3 +406,19 @@ def get_artiste_groupe(id):
     session.expunge_all()
     session.close() 
     return lesArtistes
+
+def get_groupe_id(id):
+    session = login()
+    groupe_id=session.query(Groupe).filter(Groupe.groupeID==id).all()
+    session.close() 
+    return groupe_id
+
+def get_dico_grps_art(id):
+    dicoGr={}
+    grps=get_groupe_id(id)
+    for grp in grps:
+        idG=grp.groupeID
+        liste_idA=get_id_artiste_par_groupe(idG)
+        liste_arti=get_liste_artiste(liste_idA)
+        dicoGr[grp]=liste_arti
+    return dicoGr

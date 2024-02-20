@@ -91,7 +91,9 @@ def save_concert():
     catering = ""
     salle = request.form.get("salle")
     groupe = request.form.get("groupe")
-    ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
+    id_concert=request.form.get("id")
+    lien="127.0.0.1:5000/accueil_artiste.html/"+id_concert
+    ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe,lien)
     print(get_concert_by_name(nom))
     return render_template("accueil_bien_etre.html")
 
@@ -321,6 +323,10 @@ def modification_artiste_grp(id):
 def accueil_artiste(id):
     return render_template("accueil_artiste.html",id=id)
 
+@app.route("/liste_groupe_id/<int:id>", methods = ("GET","POST",))
+def liste_groupe_id(id):
+    liste=get_dico_grps_art(id)
+    return render_template("liste_groupe_id.html",id=id,liste=liste)
 
 
 @app.route("/modif-artiste-art/<int:id>", methods =["POST"])
