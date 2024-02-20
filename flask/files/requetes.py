@@ -338,6 +338,17 @@ def ajouter_plan(concertID):
         os.remove(file_path)
     session.close()
     
+def ajouter_mat(idC,nom,quantite,description):
+    session = login()
+    idM=get_max_id_Materiel()
+    mat=Materiel(idM,nom)
+    session.add(mat)
+    session.commit()
+    ajout_nessecite_concert(nom,idC,description,quantite)
+    session.close()
+     
+
+    
 def ajouter_rider(concertID):
     session = login()
     files = os.listdir("./static/temp/rider/")
