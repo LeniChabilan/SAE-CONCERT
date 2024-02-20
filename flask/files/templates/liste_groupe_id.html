@@ -13,6 +13,9 @@
         <a href="{{ url_for('accueil_artiste', id=id) }}">
           <button type="button" class="bouton_de_retour">Retour</button>
         </a>
+        <a href="{{ url_for('ajoute_artiste', id=id) }}">
+            <button type="button" class="bouton_de_retour">ajouter Artiste</button>
+          </a>
       </div>
       <div class="middle">
         <h1 id="modification">Voici votre groupe</h1>
@@ -64,6 +67,11 @@
           </table>
         {% endfor %}
       {% endif %}
+    </div>
+    <div id="bouton_retour_choix_fiche">
+    <a href="{{ url_for('completer_fiche', concertID=id) }}">
+        <button type="button" class="bouton_de_retour">Suivant</button>
+      </a>
     </div>
   </div>
 {% endblock %}
