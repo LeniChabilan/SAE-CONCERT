@@ -100,6 +100,7 @@
         <th>Salle</th>
         <th></th>
         <th></th>
+        <th></th>
       </thead>
       {% if concerts!=None %}
       {% for x in concerts %}
@@ -110,11 +111,11 @@
         <th>{{ x.dateDebutConcert }}</th>
         <th>{{ x.groupe.nomGroupe }}</th>
         <th>{{ x.salle.nomSalle }}</th>
-        <th></a></th>
+        <th><a href="" onclick="copierTexteDansPressePapiers()"><i class="fa-solid fa-clipboard fa-xl"></i></a></th>
         <th><a href="{{ url_for('modification_concert', id=x.concertID) }}" onclick="return showConfirmationModif()"><i
-              class="fa-solid fa-pen fa-xl"></i></a></td>
+              class="fa-solid fa-pen fa-xl"></i></a></th>
         <th><a href="{{ url_for('sup_concert', id=x.concertID) }}" onclick="return showConfirmationSup()"><i
-              class="fa-solid fa-trash fa-xl"></i></a></td>
+              class="fa-solid fa-trash fa-xl"></i></a></th>
       </tr>
       {% endfor %}
       {% endif %}
