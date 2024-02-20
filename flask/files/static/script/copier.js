@@ -1,5 +1,6 @@
 function copierTexteDansPressePapiers() {
-    var texteACopier = "127.0.0.1:5000/entrer-groupe";
+    var texte= document.getElementsByClassName("idConcert")[0].value;
+    var texteACopier = "127.0.0.1:5000/accueil_artiste.html/"+texte;
     var texteTemporaire = document.createElement("textarea");
     texteTemporaire.value = texteACopier;
     document.body.appendChild(texteTemporaire);
