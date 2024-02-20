@@ -278,6 +278,10 @@ def ajout_artiste(id):
     ajouter_artiste(pseudo, nom, prenom, email, dateDN, lDN, adresse, numSec, numCNI, dateDelivrance, dateExpiration, idGroupe)
     return render_template("ajout_artiste.html", id = id)
 
+@app.route("/ajoute_artiste/<int:id>", methods=['GET', 'POST'])
+def ajoute_artiste(id):
+    return render_template("ajout_artiste.html", id = id)
+
 @app.route("/liste_groupes/", methods = ("GET","POST",))
 def liste_groupes():
     return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
@@ -337,7 +341,8 @@ def modification_artiste_grp(id):
 
 @app.route("/accueil_artiste.html/<int:id>" , methods = ("GET","POST",))
 def accueil_artiste(id):
-    return render_template("accueil_artiste.html",id=id)
+    nom_groupe=get_nom_groupe(id)
+    return render_template("accueil_artiste.html",id=id,nom_groupe=nom_groupe)
 
 @app.route("/liste_groupe_id/<int:id>", methods = ("GET","POST",))
 def liste_groupe_id(id):

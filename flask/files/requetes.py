@@ -175,9 +175,9 @@ def get_id_groupe_by_nom(nom):
     session = login()
     return session.query(Groupe.groupeID).filter_by(nomGroupe = nom).limit(1).all()[0][0]
 
-def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
+def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe,lien):
     session = login()
-    concert = Concert(Nom, datetime.strptime(dateDebut,"%Y-%m-%d").date(), datetime.strptime(dateFin,"%Y-%m-%d").date(), ficheTechnique, catering, get_id_salle_by_nom(salle), get_id_groupe_by_nom(groupe))
+    concert = Concert(Nom, datetime.strptime(dateDebut,"%Y-%m-%d").date(), datetime.strptime(dateFin,"%Y-%m-%d").date(), ficheTechnique, catering, get_id_salle_by_nom(salle), get_id_groupe_by_nom(groupe),lien)
     session.add(concert)
     session.commit()
 
@@ -433,3 +433,9 @@ def get_dico_grps_art(id):
         liste_arti=get_liste_artiste(liste_idA)
         dicoGr[grp]=liste_arti
     return dicoGr
+
+def get_nom_groupe(id):
+    session = login()
+    nom=session.query(Groupe.nomGroupe).filter(Groupe.groupeID==id).all()
+    session.close() 
+    return nom[0][0]
