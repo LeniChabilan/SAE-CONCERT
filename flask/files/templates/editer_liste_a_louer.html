@@ -16,19 +16,21 @@
         <table class="liste_des_besoins">
             <thead>
                 <tr>
-                    <th>Instrument</th>
+                    <th>Nom du matériel</th>
                     <th>Description</th>
-                    <th>Quantité</th>
+                    <th>Quantité nécessaire</th>
+                    <th>Quantité possédée</th>
                     <th>Supprimer</th>
                 </tr>
             </thead>
             {% if lBesoin!= None%}
                 {% for besoin in lBesoin%}
                     <tr>
-                        <td>{{ besoin[0] }}</td>
-                        <td>{{ besoin[1]}}</td>
-                        <td>{{ besoin[2] }}</td>
-                        <td><a href="{{ url_for('supp_necessiter', conca=conc.concertID, necessaire= besoin[0] )}}"><i class="fa-solid fa-trash"></i></a></td>  
+                        <td>{{ besoin.materiel.nomMateriel }}</td>
+                        <td>{{ besoin.description }}</td>
+                        <td>{{ besoin.quantite }}</td>
+                        <td>{{ besoin.quantite }}</td>
+                        <td><a href="{{ url_for('supp_necessiter', conca=conc.concertID, necessaire= besoin.materiel.nomMateriel )}}"><i class="fa-solid fa-trash"></i></a></td>  
                     </tr>   
                 {% endfor %}
             {% endif %}
