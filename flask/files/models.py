@@ -142,6 +142,7 @@ class Necessiter(db.Model):
     concertID = Column(Integer, ForeignKey('CONCERT.concertID'), primary_key=True)
     description = Column(String(255))
     quantite = Column(Integer)
+    quantiteAcquise = Column(Integer)
     materiel = relationship(Materiel)
     concert = relationship(Concert)
     
