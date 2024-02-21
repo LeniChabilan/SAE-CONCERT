@@ -631,6 +631,7 @@
     ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 2
     groupeID: 2
+    lienConcert: "127.0.0.1:5000/accueil_artiste.html/1"
 
   - concertID: 2
     nomConcert: "Concert 2"
@@ -641,6 +642,8 @@
     ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 3
     groupeID: 1
+    lienConcert: "127.0.0.1:5000/accueil_artiste.html/2"
+
 
   - concertID: 3
     nomConcert: "Concert 3"
@@ -651,6 +654,7 @@
     ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 1
     groupeID: 3
+    lienConcert: "127.0.0.1:5000/accueil_artiste.html/3"
 
   - concertID: 4
     nomConcert: "Concert 4"
@@ -661,6 +665,7 @@
     ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 4
     groupeID: 2
+    lienConcert: "127.0.0.1:5000/accueil_artiste.html/4"
 
 
 - Plan:
@@ -669,7 +674,7 @@
     concertID: 1
 
   - planID: 2
-    planScene: "./fichier_pdf/FichePlan2page2.pdf"
+    planScene: "./fichier_pdf/FichePlanLeni.pdf"
     concertID: 2
 
   - planID: 3
@@ -689,7 +694,7 @@
     concertID: 3
 
   - planID: 7
-    planScene: "./fichier_pdf/FichePlan2page2.pdf"
+    planScene: "./fichier_pdf/FichePlanLeni.pdf"
     concertID: 3
 
   - planID: 8
@@ -697,7 +702,7 @@
     concertID: 4
   
   - planID: 9
-    planScene: "./fichier_pdf/FichePlan2page2.pdf"
+    planScene: "./fichier_pdf/FichePlanLeni.pdf"
     concertID: 1
 
   - planID: 10
@@ -940,27 +945,34 @@
     concertID: 1 
     description: "Une description"
     quantite: 2
+    quantiteAcquise: 2
   - materielID: 2
     concertID: 1 
     description: "Une description"
     quantite: 3
+    quantiteAcquise: 2
   - materielID: 3
     concertID: 1 
     description: "Une description"
     quantite: 1
+    quantiteAcquise: 1
   - materielID: 4
     concertID: 1 
     description: "Une description"
     quantite: 2
+    quantiteAcquise: 0
   - materielID: 5
     concertID: 1 
     description: "Une description"
     quantite: 5
+    quantiteAcquise: 3
   - materielID: 6
     concertID: 1 
     description: "Une description"
     quantite: 4
+    quantiteAcquise: 2
   - materielID: 7
     concertID: 1 
     description: "Une description"
     quantite: 8
+    quantiteAcquise: 7

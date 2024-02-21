@@ -68,8 +68,13 @@ i{
 }
 
 .liste_des_besoins > thead > tr > th, .liste_des_besoins > tr > td {
-    width: 17vw;
+    width: 15vw;
     height: 3vh;
+}
+
+#valide{
+    width: 3vw;
+    height : 3vh;
 }
 
 td{
@@ -83,8 +88,15 @@ thead{
     color: #fff;
 }
 
+img{
+    width : 30px;
+    height: 30px;
+    margin-left : 2vw;
+    margin-right: 2vw;
+}
+
 .td-long {
-    max-width: 150px; /* Set your preferred maximum width */
+    max-width: 120px; /* Set your preferred maximum width */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -92,8 +104,6 @@ thead{
 
 
 thead tr th, td{
-    padding-left:2vw;
-    padding-right:2vw;
     padding-bottom: 3vh;
     padding-top: 3vh
 }

@@ -252,7 +252,7 @@ def loaddb(filename):
             for concert_data in concerts:
                 with open(concert_data["ficheRider"], 'rb') as pdf_file:
                     pdf_data = base64.b64encode(pdf_file.read())
-                concert = Concert(concertID=concert_data["concertID"], nomConcert=concert_data["nomConcert"], dateDebutConcert=datetime.strptime(concert_data["dateDebutConcert"],"%Y-%m-%d").date(), dateFinConcert=datetime.strptime(concert_data["dateFinConcert"],"%Y-%m-%d").date(), ficheTechnique=concert_data["ficheTechnique"], catering=concert_data["catering"],ficheRider=pdf_data, salleID=concert_data["salleID"], groupeID=concert_data["groupeID"])
+                concert = Concert(concertID=concert_data["concertID"], nomConcert=concert_data["nomConcert"], dateDebutConcert=datetime.strptime(concert_data["dateDebutConcert"],"%Y-%m-%d").date(), dateFinConcert=datetime.strptime(concert_data["dateFinConcert"],"%Y-%m-%d").date(), ficheTechnique=concert_data["ficheTechnique"], catering=concert_data["catering"],ficheRider=pdf_data, salleID=concert_data["salleID"], groupeID=concert_data["groupeID"],lienConcert=concert_data["lienConcert"])
                 session.add(concert)
         
         if "Plan" in nomTable:
@@ -266,7 +266,7 @@ def loaddb(filename):
         if "Necessiter" in nomTable:
             necessites = nomTable["Necessiter"]
             for necessite_data in necessites:
-                necessite = Necessiter(materielID=necessite_data["materielID"], concertID=necessite_data["concertID"] , description=necessite_data["description"] , quantite=necessite_data["quantite"])
+                necessite = Necessiter(materielID=necessite_data["materielID"], concertID=necessite_data["concertID"] , description=necessite_data["description"] , quantite=necessite_data["quantite"] , quantiteAcquise=necessite_data["quantiteAcquise"])
                 session.add(necessite)
 
         if "Composer" in nomTable:

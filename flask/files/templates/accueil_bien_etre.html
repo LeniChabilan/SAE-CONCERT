@@ -14,6 +14,17 @@
     </a>
   </li>
   <li>
+    <a href="{{ url_for('creation_concert') }}">
+      <div>
+        Creer concert
+        <img
+          src="{{ url_for('static', filename='img/prevus.jpg') }}"
+          alt="salle de concert vide en préparation"
+        />
+      </div>
+    </a>
+  </li>
+  <li>
     <a href="{{ url_for('choix_groupes_artistes') }}">
       <div class="card">
         <div class="card-image">Listes des fiches artistes</div>
@@ -22,10 +33,7 @@
     </a>
   </li>
 </ul>
-<div id="boutonC">
-  <button onclick="copierTexteDansPressePapiers()" id="boutonCopier">Copier le lien du formulaire</button>
 
-</div>
 
 </main>
 {% endblock %}

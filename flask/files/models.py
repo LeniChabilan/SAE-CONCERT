@@ -40,8 +40,8 @@ class Artiste(db.Model):
     DdNA = Column(Date)
     LdN = Column(String(255))
     adresseA = Column(String(255))
-    numSecuriteSociale = Column(Integer)
-    numCNI = Column(Integer)
+    numSecuriteSociale = Column(String(255))
+    numCNI = Column(String(255))
     dateDelivranceCNI = Column(Date)
     dateExpirationCNI = Column(Date)
     dansGroupe = Column(Boolean)
@@ -50,7 +50,7 @@ class Artiste(db.Model):
         self.pseudoArtiste = pseudo
         self.nomA = nom
         self.prenomA = prenom
-        self.emailA = email
+        self.mailA = email
         self.DdNA = DdN 
         self.LdN = lieuNaissance
         self.adresseA = adresse
@@ -97,6 +97,7 @@ class MaterielSalle(db.Model):
     nomMaterielS = Column(String(255))
     disponible = Column(Boolean)
     salle = relationship(Salle)
+    
 
 class Concert(db.Model):
     __tablename__ = 'CONCERT'
@@ -107,12 +108,13 @@ class Concert(db.Model):
     ficheTechnique = Column(Text)
     catering = Column(Text)
     ficheRider = Column(LargeBinary(length=2**32-1))
+    lienConcert = Column(String(255))
     salleID = Column(Integer, ForeignKey('SALLE.salleID'))
     groupeID = Column(Integer, ForeignKey('GROUPE.groupeID'))
     salle = relationship(Salle)
     groupe = relationship(Groupe)
 
-    def __init__(self, nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
+    def __init__(self, nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe,lien):
         self.nomConcert = nom
         self.dateDebutConcert = dateDebut
         self.dateFinConcert = dateFin
@@ -120,6 +122,7 @@ class Concert(db.Model):
         self.catering = catering
         self.salleID = salle
         self.groupeID = groupe
+        self.lienConcert = lien
 
 
 class Plan(db.Model):
@@ -139,14 +142,16 @@ class Necessiter(db.Model):
     concertID = Column(Integer, ForeignKey('CONCERT.concertID'), primary_key=True)
     description = Column(String(255))
     quantite = Column(Integer)
+    quantiteAcquise = Column(Integer)
     materiel = relationship(Materiel)
     concert = relationship(Concert)
     
-    def __init__(self,materielID,concertID,description,quantite):
+    def __init__(self,materielID,concertID,description,quantite,quantiteAcquise):
         self.materielID = materielID
         self.concertID = concertID
         self.description = description
         self.quantite = quantite
+        self.quantiteAcquise = quantiteAcquise
 
 class Composer(db.Model):
     __tablename__ = 'COMPOSER'

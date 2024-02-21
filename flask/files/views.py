@@ -17,7 +17,7 @@ from wtforms.validators import DataRequired
 from flask import request
 from .models import *
 import shutil
-
+from sqlalchemy.orm import joinedload
 
 
 
@@ -74,7 +74,8 @@ def logout():
 
 @app.route("/creation_concert")
 def creation_concert():
-    return render_template("creation_concert.html", liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe(),id=id)
+    id_concert=get_concert_id_nouv()
+    return render_template("creation_concert.html", liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe(),id=id_concert)
 
 
 @app.route("/liste_concerts/", methods = ("GET","POST",))
@@ -90,9 +91,11 @@ def save_concert():
     catering = ""
     salle = request.form.get("salle")
     groupe = request.form.get("groupe")
-    ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe)
+    id_concert=request.form.get("id")
+    lien="127.0.0.1:5000/accueil_artiste.html/"+id_concert
+    ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe,lien)
     print(get_concert_by_name(nom))
-    return render_template("completer_fiche.html", concertID=get_concert_by_name(nom))
+    return render_template("accueil_bien_etre.html")
 
 
 def get_date(concert):
@@ -190,35 +193,67 @@ def modif_concert(id):
     conc=get_info_concert()
     return render_template("liste_concerts.html", title="Les Concerts",concerts=get_info_concert(),liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe())
 
-@app.route("/entrer-groupe")
-def inscription_groupe():
-    return render_template("entrer_groupe.html")
+# @app.route("/entrer_groupe")
+# def entrer_groupe():
+#     return render_template("entrer_groupe.html")
 
 @app.route("/recherche-groupe", methods=['GET', 'POST'])
 def recherche_groupe():
     nom_groupe = request.form.get("nom")
     groupe = chercher_groupe(nom_groupe)
     if get_artiste_id_groupe(groupe.groupeID) == []:
-        return render_template("ajout_artiste.html", id = groupe.groupeID)
-    return redirect(url_for("completer_fiche"))
+        return render_template("creation_concert")
+    else:
+        return redirect(url_for("creation_concert"))
 
-@app.route("/completer-fiche/<int:concertID>", methods=['GET', 'POST'])
-def completer_fiche(concertID):
-    return render_template("completer_fiche.html", concertID = concertID)
+@app.route("/completer-fiche/<int:concertID>/<int:salleId>", methods=['GET', 'POST'])
+def completer_fiche(concertID,salleId):
+    return render_template("completer_fiche.html", concertID = concertID,salleId=salleId)
 
-@app.route("/completer-fiche-pdf/<int:concertID>", methods=['GET', 'POST'])
-def completer_fiche_pdf(concertID):
+@app.route("/completer-fiche-pdf/<int:concertID>/<int:salleId>", methods=['GET', 'POST'])
+def completer_fiche_pdf(concertID,salleId):
     ficheAccueil = request.form.get("ficheA")
-    modif_fiche_accueil(concertID, ficheAccueil)
-    ficheTechnique = request.form.get("ficheT")
-    modif_fiche_technique(concertID, ficheTechnique)
+    modif_fiche_acc(concertID, ficheAccueil)
+    # ficheTechnique = request.form.get("ficheT")
+    # modif_fiche_technique(concertID, ficheTechnique)
+    return render_template("fiche_tech_materiel.html", id = concertID, salleId=salleId)
+
+@app.route("/completer-fiche-glisse/<int:concertID>", methods=['GET', 'POST'])
+def completer_fiche_glisse(concertID):
     return render_template("completer_fiche_pdf.html", concertID = concertID)
+
+@app.route("/modif-fiche-accueil/<int:concertID>", methods=['GET', 'POST'])
+def modif_fiche_accueil(concertID):
+    ficheAccueil = request.form.get("ficheA")
+    modif_fiche_acc(concertID, ficheAccueil)
+    
+    conc=get_info_un_concert(concertID)
+    text=conc.catering    
+    pdf=pdf_base_64(text)
+    return render_template("choix_fiche.html",pdf=pdf,conc=conc)
+
+@app.route("/modif-accueil/<int:concertID>", methods=['GET', 'POST'])
+def modif_accueil(concertID):
+    
+    return render_template("modif_fiche_accueil.html", concertID = concertID)
 
 @app.route("/fin-inscription/<int:concertID>", methods=['GET', 'POST'])
 def fin_inscription(concertID):
     ajouter_plan(concertID)
     ajouter_rider(concertID)
     return render_template("fin_inscription.html")
+
+
+@app.route("/ajout_mat/<int:id>/<int:salleId>", methods=['GET','POST'])
+def ajout_mat(id,salleId):
+    nom=request.form.get("nom")
+    quantite=request.form.get("quantite")
+    desc=request.form.get("desc")
+    
+    ajouter_mat(id,nom,quantite,desc,salleId)
+    
+    return render_template("fiche_tech_materiel.html",id=id,salleId=salleId)
+
 
 @app.route("/ajout-plan/<int:concertID>", methods=['GET', 'POST'])
 def ajout_plan(concertID):
@@ -243,6 +278,10 @@ def ajout_artiste(id):
     ajouter_artiste(pseudo, nom, prenom, email, dateDN, lDN, adresse, numSec, numCNI, dateDelivrance, dateExpiration, idGroupe)
     return render_template("ajout_artiste.html", id = id)
 
+@app.route("/ajoute_artiste/<int:id>", methods=['GET', 'POST'])
+def ajoute_artiste(id):
+    return render_template("ajout_artiste.html", id = id)
+
 @app.route("/liste_groupes/", methods = ("GET","POST",))
 def liste_groupes():
     return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
@@ -257,7 +296,10 @@ def choix(typeOrga,concert):
         return render_template("Consulter_fiches.html",conc=get_info_un_concert(concert))
     else:
         return redirect(url_for("choix_fiche",concert=concert))
-    
+
+@app.route("/liste_artiste_id/<int:id>", methods = ("GET","POST",))
+def liste_artiste_id(id):
+    return render_template("liste_artiste_id.html",id=id)
 
 @app.route("/Consulter_fiches")
 def Consulter_fiches():
@@ -286,19 +328,39 @@ def sup_artiste(id):
     supprimer_artiste(id)
     return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
 
-
+@app.route("/sup_artiste_art/<int:aID>/<int:id>")
+def sup_artiste_art(aID,id):
+    supprimer_artiste(aID)
+    return render_template("liste_groupe_id.html",id=id,liste=get_dico_grps_art(id))
 @app.route("/sup-artiste-grp/<int:id>")
 def sup_artiste_grp(id):
     supprimer_artiste(id)
-    return render_template("liste_groupes.html",title="Les Groupes",groupes=get_dico_grps())
+    return render_template("liste_groupe_id.html",id=id,liste=get_dico_grps_art(id))
 
 @app.route("/modification_artiste/<int:id>")
 def modification_artiste_art(id):
     return render_template("modifier_artiste_art.html", arti=get_info_un_artiste(id), aID=id)
 
+
+@app.route("/modification_art/<int:id>/<int:aID>")
+def modification_art(id,aID):
+    return render_template("modifier_art.html", arti=get_info_un_artiste(aID), aID=aID,id=id)
+
 @app.route("/modification_artiste_grp/<int:id>")
 def modification_artiste_grp(id):
     return render_template("modifier_artiste_grp.html", arti=get_info_un_artiste(id), aID=id)
+
+@app.route("/accueil_artiste.html/<int:id>" , methods = ("GET","POST",))
+def accueil_artiste(id):
+    id_groupe=get_id_groupe(id)
+    nom_groupe=get_nom_groupe(id_groupe)
+    return render_template("accueil_artiste.html",id=id,nom_groupe=nom_groupe,nom_concert=get_nom_concert(id))
+
+@app.route("/liste_groupe_id/<int:id>", methods = ("GET","POST",))
+def liste_groupe_id(id):
+    liste=get_dico_grps_art(id)
+    return render_template("liste_groupe_id.html",id=id,liste=liste,conc=get_info_un_concert(id))
+
 
 @app.route("/modif-artiste-art/<int:id>", methods =["POST"])
 def modif_artiste_art(id):
@@ -315,6 +377,22 @@ def modif_artiste_art(id):
     dateExp = request.form.get("dateExpiration")
     mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
     return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
+
+@app.route("/modif-artiste-art/<int:id>/<int:aID>", methods =["POST"])
+def modif_artiste_art_aid(id,aID):
+    pseudo=request.form.get("pseudo")
+    nom = request.form.get("nom")
+    prenom = request.form.get("prenom")
+    mail = request.form.get("email")
+    dDnA =request.form.get("dateDN")
+    lDN = request.form.get("lDN")
+    adresseA = request.form.get("adresse")
+    numSecu = request.form.get("numSec")
+    numCNI = request.form.get("numCNI")
+    dateDel = request.form.get("dateDelivrance")
+    dateExp = request.form.get("dateExpiration")
+    mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
+    return render_template("liste_groupe_id.html",id=id,liste=get_dico_grps_art(id))
 
 @app.route("/modif-artiste-grp/<int:id>", methods =["POST"])
 def modif_artiste_grp(id):
@@ -376,6 +454,17 @@ def retourFiche(conc):
 def editer_liste_a_louer(conc):
     return render_template("editer_liste_a_louer.html",conc=get_info_un_concert(conc), lBesoin = get_liste_neccessite(conc))
 
+from flask import request, jsonify
+
+@app.route('/update_quantite', methods=['POST'])
+def update_quantite():
+    data = request.get_json()
+    idConcert = data['idConcert']
+    idMateriel = data['idMateriel']
+    newValue = data['newValue']
+    update_necessite(idConcert, idMateriel, newValue)
+    return jsonify({'success': True})
+
 @app.route("/ajout_besoin/<int:conc>", methods =["POST"])
 def ajout_besoin(conc):
     instrument = request.form.get("instrument")
@@ -424,7 +513,7 @@ def suppression_plan_scene(planId,concert):
         return render_template("visualisation_plan.html",plan=get_plan_concert(con.concertID),conc=con)
 
 
-@app.route("/entrer_groupe/", methods = ("GET","POST",))
+@app.route("/entrer_groupe", methods = ("GET","POST",))
 def entrer_groupe():
     return render_template("entrer_groupe.html")
 

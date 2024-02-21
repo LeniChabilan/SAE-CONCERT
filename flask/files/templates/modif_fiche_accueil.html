@@ -1,0 +1,19 @@
+{% extends 'base_sans_log.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='completer_fiche.css')}}" />
+{% endblock %} {% block content %}
+<main>
+    
+    <form role="form" method ="POST" action ="{{ url_for('modif_fiche_accueil', concertID=concertID) }}">
+        <div class="title">Veuillez compléter cette fiche :</div>
+        <div class="form">
+            <div class="txtArea">
+                <div class="input-container">
+                    <label class="iLabel" for="nom">Fiche Accueil numero</label>
+                    <textarea class="input" name="ficheA" cols="30" rows="10" required></textarea>
+                </div>
+            </div>     
+            
+        <button class="submit" type="text">Enregistrer</button>
+    </form>
+</main>
+{% endblock %}

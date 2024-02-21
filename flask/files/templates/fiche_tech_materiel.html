@@ -1,0 +1,48 @@
+{% extends 'base_sans_log.html' %} {% block styles %}{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='fiche_tech_materiel.css')}}" />
+<script type="module" src="{{ url_for('static', filename='script/upload.js') }}"></script>
+{% endblock %} {% block content %}
+<main>
+   <div id="tete_page">
+      <div id="bouton_retour_choix_fiche">
+         <a href="{{ url_for('completer_fiche', concertID=id,salleId=salleId) }}">
+         <button type="button" class="bouton_de_retour">Retour</button>
+         </a>
+      </div>
+      <h3>Veuillez ajouter autant de fois que necessaire le matériel pour le concert</h3>
+      <div id="bouton_retour_choix_fiche">
+         <a href="{{ url_for('completer_fiche_glisse',concertID=id) }}">
+            <button type="button" class="bouton_de_retour">Suivant</button>
+         </a>
+      </div>
+   </div>
+   <div class="AutourForm">
+     <div class="form">
+      <div class="title">Ajoutez du materiel</div>
+      <form role="form" method ="POST" action="{{ url_for('ajout_mat', id=id,salleId=salleId) }}">
+        
+          <div class="input-container ">
+              <input placeholder="Nom du matériel" type="text" class="input" name="nom" required>
+              <div class="cut"></div>
+              <label class="iLabel" for="pseudo">Nom du materiel</label>
+           </div>
+          
+           <div class="input-container ">
+              <input placeholder="Quantité" type="number" class="input" name="quantite" min="1" required>
+              <div class="cut"></div>
+              <label class="iLabel" for="prenom">Quantité</label>
+           </div>
+
+           <div class="input-container ">
+              <input placeholder="Description" type="text" class="input" name="desc" required>
+              <div class="cut"></div>
+              <label class="iLabel" for="nom">Description</label>
+           </div>
+           
+           <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
+      </form>
+  </div>
+</div>
+
+</main>
+{% endblock %}

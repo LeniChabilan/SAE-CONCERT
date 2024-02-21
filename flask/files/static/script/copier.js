@@ -1,5 +1,6 @@
 function copierTexteDansPressePapiers() {
-    var texteACopier = "127.0.0.1:5000/entrer-groupe";
+    var texte= document.getElementsByClassName("idConcert")[0].value;
+    var texteACopier = "127.0.0.1:5000/accueil_artiste.html/"+texte;
     var texteTemporaire = document.createElement("textarea");
     texteTemporaire.value = texteACopier;
     document.body.appendChild(texteTemporaire);
@@ -15,3 +16,15 @@ function copierTexteDansPressePapiers() {
   }, 500);
 }
   
+function copierTexteDansPressePapiers_id(id) {
+
+  var texteACopier = "127.0.0.1:5000/accueil_artiste.html/"+id;
+  var texteTemporaire = document.createElement("textarea");
+  texteTemporaire.value = texteACopier;
+  document.body.appendChild(texteTemporaire);
+  texteTemporaire.select();
+  document.execCommand("copy");
+  document.body.removeChild(texteTemporaire);
+  
+}
+

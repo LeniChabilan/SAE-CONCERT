@@ -175,9 +175,9 @@ def get_id_groupe_by_nom(nom):
     session = login()
     return session.query(Groupe.groupeID).filter_by(nomGroupe = nom).limit(1).all()[0][0]
 
-def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
+def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe,lien):
     session = login()
-    concert = Concert(Nom, datetime.strptime(dateDebut,"%Y-%m-%d").date(), datetime.strptime(dateFin,"%Y-%m-%d").date(), ficheTechnique, catering, get_id_salle_by_nom(salle), get_id_groupe_by_nom(groupe))
+    concert = Concert(Nom, datetime.strptime(dateDebut,"%Y-%m-%d").date(), datetime.strptime(dateFin,"%Y-%m-%d").date(), ficheTechnique, catering, get_id_salle_by_nom(salle), get_id_groupe_by_nom(groupe),lien)
     session.add(concert)
     session.commit()
 
@@ -210,6 +210,19 @@ def get_artiste_id_groupe(id):
     session.expunge_all()
     session.close() 
     return artistes
+
+def get_concert_id_nouv():
+    session=login()
+    res=session.query(func.max(Concert.concertID)).all()[0][0]+1
+    session.close()
+    return res
+
+def get_nom_concert(id):
+    session=login()
+    res=session.query(Concert.nomConcert).filter(Concert.concertID==id).all()[0][0]
+    session.close()
+    return res
+
 
 def supprimer_artiste(artID):
     try:
@@ -269,6 +282,15 @@ def ajout_nessecite_concert(objet, concert, description, quantite):
     # Recherche de l'id du matériel
     materiel_id_query = session.query(Materiel.materielID).filter_by(nomMateriel=objet).first()
     
+    concertinfo = session.query(Concert.salleID).filter_by(concertID=concert).first()
+    
+    matosSalle=session.query(MaterielSalle).filter_by(nomMaterielS=objet,salleID=concertinfo).all()
+    nb=0
+    for i in matosSalle:
+        nb+=1
+    
+    
+    
     if materiel_id_query:
         id = materiel_id_query[0]
     else:
@@ -282,7 +304,7 @@ def ajout_nessecite_concert(objet, concert, description, quantite):
     
     if necessiter_query is None:
         # Si la relation n'existe pas, ajoutez-la
-        necessite = Necessiter(id, concert, description, quantite)
+        necessite = Necessiter(id, concert, description, quantite,nb)
         session.add(necessite)
 
     session.commit()
@@ -290,19 +312,19 @@ def ajout_nessecite_concert(objet, concert, description, quantite):
 
 def get_liste_neccessite(concert):
     session = login()
-    res = []
+    # res = []
     necessaire = session.query(Necessiter).filter_by(concertID=concert).all()
-    for row in necessaire:
-        liste = []
-        description = row.description
-        nom_objet = session.query(Materiel.nomMateriel).filter_by(materielID = row.materielID).first()[0]
-        liste.append(nom_objet)
-        liste.append(description)
-        liste.append(row.quantite)
-        res.append(liste)
-    session.expunge_all()
-    session.close()
-    return res
+    # for row in necessaire:
+    #     liste = []
+    #     description = row.description
+    #     nom_objet = session.query(Materiel.nomMateriel).filter_by(materielID = row.materielID).first()[0]
+    #     liste.append(nom_objet)
+    #     liste.append(description)
+    #     liste.append(row.quantite)
+    #     res.append(liste)
+    # session.expunge_all()
+    # session.close()
+    return necessaire
     
 def get_info_materiel_salle(concert):
     session = login()
@@ -337,6 +359,17 @@ def ajouter_plan(concertID):
         session.commit()
         os.remove(file_path)
     session.close()
+    
+def ajouter_mat(idC,nom,quantite,description):
+    session = login()
+    idM=get_max_id_Materiel()
+    mat=Materiel(idM,nom)
+    session.add(mat)
+    session.commit()
+    ajout_nessecite_concert(nom,idC,description,quantite)
+    session.close()
+     
+
     
 def ajouter_rider(concertID):
     session = login()
@@ -381,7 +414,7 @@ def modif_fiche_technique(concertID, ficheT):
     session.commit()
     session.close()
 
-def modif_fiche_accueil(concertID, ficheA):
+def modif_fiche_acc(concertID, ficheA):
     session = login()
     concert = session.query(Concert).filter(Concert.concertID == concertID).first()
     concert.catering = ficheA
@@ -397,3 +430,42 @@ def get_artiste_groupe(id):
     session.expunge_all()
     session.close() 
     return lesArtistes
+
+def get_groupe_id(id):
+    session = login()
+    id_groupe=session.query(Concert.groupeID).filter(Concert.concertID==id).all()[0][0]
+    groupe_id=session.query(Groupe).filter(Groupe.groupeID==id_groupe).all()
+    session.close() 
+    return groupe_id
+
+def get_dico_grps_art(id):
+    dicoGr={}
+    grps=get_groupe_id(id)
+    for grp in grps:
+        idG=grp.groupeID 
+        liste_idA=get_id_artiste_par_groupe(idG)
+        liste_arti=get_liste_artiste(liste_idA)
+        dicoGr[grp]=liste_arti
+    return dicoGr
+
+def get_id_groupe(id):
+    session = login()
+    idG=session.query(Concert.groupeID).filter(Concert.concertID==id).all()
+    session.close() 
+    print(idG)
+    return idG[0][0]
+
+
+def get_nom_groupe(id):
+    session = login()
+    nom=session.query(Groupe.nomGroupe).filter(Groupe.groupeID==id).all()
+    session.close() 
+    print(nom)
+    return nom[0][0]
+
+def update_necessite(idConcert, idMateriel, quantiteacquise):
+    session = login()
+    necessite = session.query(Necessiter).filter(Necessiter.materielID == idMateriel, Necessiter.concertID == idConcert).first()
+    necessite.quantiteAcquise = quantiteacquise
+    session.commit()
+    session.close()

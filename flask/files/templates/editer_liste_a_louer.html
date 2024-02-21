@@ -1,39 +1,94 @@
-{% extends 'base.html' %} {% block styles %}{{ super() }}
-<link rel="stylesheet" href="{{ url_for('static',filename='editer_liste_a_louer.css')}}" />
-{% endblock %} {% block content %}
-<main>
-    <div id="bouton_retour_choix_fiche">
-        <a href="{{ url_for('retourFiche', conc=conc.concertID) }}">
-          <button type="button" class="bouton_de_retour">Retour</button>
-        </a>
-    </div>
-    <div id="bouton_ajout">
-        <a href="{{ url_for('ajouter_materiel', conc=conc.concertID)}}">
-          <button type="button" class="bouton_de_retour">Ajouter du matériel</button>
-        </a>
-    </div>
-    <div class="tableau">
-        <table class="liste_des_besoins">
-            <thead>
-                <tr>
-                    <th>Instrument</th>
-                    <th>Description</th>
-                    <th>Quantité</th>
-                    <th>Supprimer</th>
-                </tr>
-            </thead>
-            {% if lBesoin!= None%}
-                {% for besoin in lBesoin%}
-                    <tr>
-                        <td>{{ besoin[0] }}</td>
-                        <td>{{ besoin[1]}}</td>
-                        <td>{{ besoin[2] }}</td>
-                        <td><a href="{{ url_for('supp_necessiter', conca=conc.concertID, necessaire= besoin[0] )}}"><i class="fa-solid fa-trash"></i></a></td>  
-                    </tr>   
-                {% endfor %}
-            {% endif %}
-        </table>
-    </div>
+{% extends 'base.html' %}
 
-</main>
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='editer_liste_a_louer.css')}}" />
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div id="bouton_retour_choix_fiche">
+            <a href="{{ url_for('retourFiche', conc=conc.concertID) }}">
+                <button type="button" class="bouton_de_retour">Retour</button>
+            </a>
+        </div>
+        <div id="bouton_ajout">
+            <a href="{{ url_for('ajouter_materiel', conc=conc.concertID)}}">
+                <button type="button" class="bouton_de_retour">Ajouter du matériel</button>
+            </a>
+        </div>
+        <div class="tableau">
+            <table class="liste_des_besoins">
+                <thead>
+                    <tr>
+                        <th>Nom du matériel</th>
+                        <th>Description</th>
+                        <th>Quantité possédée</th>
+                        <th>Quantité nécessaire</th>
+                        <th>Supprimer</th>
+                        <th id="valide">Validé</th>
+                    </tr>
+                </thead>
+                {% if lBesoin %}
+                    {% for besoin in lBesoin %}
+                        <tr>
+                            <td>{{ besoin.materiel.nomMateriel }}</td>
+                            <td>{{ besoin.description }}</td>
+                            <td>
+                                <input type="number" value="{{ besoin.quantiteAcquise }}" min="0" max="{{ besoin.quantite }}" oninput="checkValue(this, {{ besoin.concert.concertID }}, {{ besoin.materiel.materielID }}, {{ besoin.quantite }})" data-quantite-acquise="{{ besoin.quantiteAcquise }}">
+                            </td>
+                            <td>{{ besoin.quantite }}</td>
+                            <td>
+                                <a href="{{ url_for('supp_necessiter', conca=conc.concertID, necessaire= besoin.materiel.nomMateriel )}}">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                            <td id="validation_{{ loop.index }}">
+                                {% if besoin.quantite == besoin.quantiteAcquise %}
+                                    <img src="{{ url_for('static', filename='img/validation.png') }}" alt="validation">
+                                {% else %}
+                                    <img src="{{ url_for('static', filename='img/non_valide.png') }}" alt="validation">
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td>-</td>
+                        <td>Aucun matériel pour cet événement n'est répertorié</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                {% endif %}
+            </table>
+        </div>
+    </main>
+
+    <script>
+        function checkValue(inputElement, idConcert, idMateriel, maxValue) {
+            var newValue = parseInt(inputElement.value);
+            var validationCell = document.getElementById('validation_' + inputElement.parentElement.parentElement.rowIndex);
+
+            if (newValue == maxValue) {
+                validationCell.innerHTML = '<img src="{{ url_for('static', filename='img/validation.png') }}" alt="validation">';
+            } else {
+                validationCell.innerHTML = '<img src="{{ url_for('static', filename='img/non_valide.png') }}" alt="validation">';
+            }
+
+            // Envoyer la nouvelle valeur au serveur
+            fetch('/update_quantite', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    idConcert: idConcert,
+                    idMateriel: idMateriel,
+                    newValue: newValue
+                })
+            });
+        }
+    </script>
 {% endblock %}
