@@ -16,6 +16,7 @@ main{
     height: 85vh;
 }
 
+
 .form{
     display: flex;
     justify-content: center;
@@ -100,7 +101,7 @@ main{
     justify-content: center;
   }
   .submit:hover {
-    background-color: #5e6681;
+    background-color: #ffffff;
     color: #000000;
     box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
   }
