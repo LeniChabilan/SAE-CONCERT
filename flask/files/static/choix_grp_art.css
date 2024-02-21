@@ -100,7 +100,7 @@ body {
 .bouton_de_retour{
     appearance: none;
     background-color: #2a2b38;
-    color: #ffeba7;
+    color: #ffffff;
     margin-top: 5vh;
     margin-left: 3vw;
     height: 6vh;
@@ -118,7 +118,7 @@ body {
 
 .bouton_de_retour:hover {
   color: #2a2b38;
-  background-color: #ffeba7;
+  background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
