@@ -1,5 +1,7 @@
 {% extends 'base_sans_log.html' %} {% block styles %} {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='ajoute_artiste.css')}}" />
+<script src="{{ url_for('static', filename='script/confirmation.js') }}"></script>
+<script src="{{ url_for('static', filename='script/verif_form.js') }}"></script>
 {% endblock %} {% block content %}
 <main>
     <div id="bouton_retour_choix_fiche">
@@ -9,7 +11,8 @@
     </div>
       <div class="form">
           <div class="title">Modifiez les information de l'artiste !</div>
-          <form role="form" method ="POST" action="{{ url_for('ajout_artiste', id=id) }}">
+          <form name="myForm" role="form" method="POST" onsubmit="return validateForm()" action="{{ url_for('ajout_artiste', id=id) }}">
+            
             <div>
                <input placeholder="Numéro de sécurité sociale" type="text" class="input" name="idGroupe" value ="{{ id }}" hidden>
             </div>
@@ -29,7 +32,7 @@
                   <label class="iLabel" for="prenom">Prénom</label>
                </div>
                <div class="input-container ">
-                  <input placeholder="Email" type="text" class="input" name="email" required>
+                  <input placeholder="Email" type="email" class="input" name="email" required>
                   <div class="cut"></div>
                   <label class="iLabel" for="email">Email</label>
                </div>
@@ -48,12 +51,12 @@
                   <label class="iLabel" for="adresse">Adresse</label>
                </div>
                <div class="input-container ">
-                  <input placeholder="Numéro de sécurité sociale" type="text" class="input" name="numSec" required>
+                  <input placeholder="Numéro de sécurité sociale" type="number" class="input" name="numSec" required>
                   <div class="cut"></div>
                   <label class="iLabel" for="numSec">Numéro de sécurité sociale</label>
                </div>
                <div class="input-container ">
-                  <input placeholder="Numéro CNI" type="text" class="input" name="numCNI" required>
+                  <input placeholder="Numéro CNI" type="number" class="input" name="numCNI" required>
                   <div class="cut"></div>
                   <label class="iLabel" for="numCNI">Numéro CNI</label>
                </div>
@@ -65,6 +68,7 @@
                   <input placeholder="" type="date" class="input" name="dateExpiration" required>
                   <label class="iLabel" for="dateExpiration"></label>
               </div>
+              <div id="errorContainer"></div>
                <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
           </form>
       </div>

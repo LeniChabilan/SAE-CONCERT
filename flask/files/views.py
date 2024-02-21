@@ -331,11 +331,11 @@ def sup_artiste(id):
 @app.route("/sup_artiste_art/<int:aID>/<int:id>")
 def sup_artiste_art(aID,id):
     supprimer_artiste(aID)
-    return render_template("liste_groupe_id.html",id=id,liste=get_dico_grps_art(id))
+    return render_template("liste_groupe_id.html",id=id,liste=get_dico_grps_art(id),conc=get_info_un_concert(id))
 @app.route("/sup-artiste-grp/<int:id>")
 def sup_artiste_grp(id):
     supprimer_artiste(id)
-    return render_template("liste_groupe_id.html",id=id,liste=get_dico_grps_art(id))
+    return render_template("liste_groupe_id.html",id=id,liste=get_dico_grps_art(id),conc=get_info_un_concert(id))
 
 @app.route("/modification_artiste/<int:id>")
 def modification_artiste_art(id):
@@ -391,8 +391,8 @@ def modif_artiste_art_aid(id,aID):
     numCNI = request.form.get("numCNI")
     dateDel = request.form.get("dateDelivrance")
     dateExp = request.form.get("dateExpiration")
-    mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
-    return render_template("liste_groupe_id.html",id=id,liste=get_dico_grps_art(id))
+    mod_artiste(aID,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
+    return render_template("liste_groupe_id.html",id=id,liste=get_dico_grps_art(id),conc=get_info_un_concert(id))
 
 @app.route("/modif-artiste-grp/<int:id>", methods =["POST"])
 def modif_artiste_grp(id):
