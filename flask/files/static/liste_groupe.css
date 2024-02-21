@@ -7,6 +7,7 @@ body {
 .main {
     min-height: 100vh;
     min-width: 100%;
+    background-color: #fafafc;
 }
 
 .partie_principale {
@@ -24,26 +25,6 @@ body {
     padding-top: 3%;
 }
 
-/* Light and Dark mode styles */
-body.light .main .partie_principale,
-body.light .main {
-    background-color: #e8e5da;
-}
-
-body.dark .main .partie_principale,
-body.dark .main {
-    background-color: #212121;
-}
-
-body.light #modification {
-    color: #212121;
-    font-size: 2vw;
-}
-
-body.dark #modification {
-    color: #e8e5da;
-    font-size: 2vw;
-}
 
 /* Table styles */
 .liste_des_concerts {

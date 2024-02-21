@@ -2,16 +2,9 @@ body{
     margin:0;
 }
 
-body.light main {
-    background-color: #e8e5da;
-}
-  
-body.dark main {
-    background-color: #212121;
-}
-
 main{
     display: flex;
+    background-color: #fafafc;
 }
 
 .form {

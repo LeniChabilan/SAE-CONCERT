@@ -175,14 +175,8 @@ form {
     background-color: #06b;
   }
 
-
-
-body.light .main .partie_principale, body.light .main {
-  background-color: #e8e5da;
-}
-
-body.dark .main .partie_principale, body.dark .main{
-  background-color: #212121;
+.main{
+  background-color: #fafafc;
 }
 
 body.light #modification{

@@ -7,23 +7,17 @@
 <ul class="listeOptions">
   <li>
     <a href="{{ url_for('liste_concerts') }}">
-      <div>
-        Consulter la liste des concerts prévus
-        <img
-          src="{{ url_for('static', filename='img/prevus.jpg') }}"
-          alt="salle de concert vide en préparation"
-        />
+      <div class="card">
+        <div class="card-image">Liste des concerts prévus</div>
+          <div class="card-description">Consulter la liste des concerts prévus avec l'aide de filtre, afin de les modifier ou les supprimer</div>
       </div>
     </a>
   </li>
   <li>
     <a href="{{ url_for('choix_groupes_artistes') }}">
-      <div>
-        Modifier les fiches d'artiste
-        <img
-          src="{{ url_for('static', filename='img/checklist.png') }}"
-          alt="image de checklist"
-        />
+      <div class="card">
+        <div class="card-image">Listes des fiches artistes</div>
+          <div class="card-description">Consulter la liste des différentes fiches d'artistes ou de groupes afin de les modifier ou les supprimer</div>
       </div>
     </a>
   </li>
