@@ -234,7 +234,6 @@ def modif_fiche_accueil(concertID):
 
 @app.route("/modif-accueil/<int:concertID>", methods=['GET', 'POST'])
 def modif_accueil(concertID):
-    
     return render_template("modif_fiche_accueil.html", concertID = concertID)
 
 @app.route("/fin-inscription/<int:concertID>", methods=['GET', 'POST'])
