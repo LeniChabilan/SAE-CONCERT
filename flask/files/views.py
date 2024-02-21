@@ -352,8 +352,9 @@ def modification_artiste_grp(id):
 
 @app.route("/accueil_artiste.html/<int:id>" , methods = ("GET","POST",))
 def accueil_artiste(id):
-    nom_groupe=get_nom_groupe(id)
-    return render_template("accueil_artiste.html",id=id,nom_groupe=nom_groupe)
+    id_groupe=get_id_groupe(id)
+    nom_groupe=get_nom_groupe(id_groupe)
+    return render_template("accueil_artiste.html",id=id,nom_groupe=nom_groupe,nom_concert=get_nom_concert(id))
 
 @app.route("/liste_groupe_id/<int:id>", methods = ("GET","POST",))
 def liste_groupe_id(id):

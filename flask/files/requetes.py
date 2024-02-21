@@ -217,7 +217,11 @@ def get_concert_id_nouv():
     session.close()
     return res
 
-
+def get_nom_concert(id):
+    session=login()
+    res=session.query(Concert.nomConcert).filter(Concert.concertID==id).all()[0][0]
+    session.close()
+    return res
 
 
 def supprimer_artiste(artID):
@@ -427,7 +431,8 @@ def get_artiste_groupe(id):
 
 def get_groupe_id(id):
     session = login()
-    groupe_id=session.query(Groupe).filter(Groupe.groupeID==id).all()
+    id_groupe=session.query(Concert.groupeID).filter(Concert.concertID==id).all()[0][0]
+    groupe_id=session.query(Groupe).filter(Groupe.groupeID==id_groupe).all()
     session.close() 
     return groupe_id
 
@@ -435,16 +440,25 @@ def get_dico_grps_art(id):
     dicoGr={}
     grps=get_groupe_id(id)
     for grp in grps:
-        idG=grp.groupeID
+        idG=grp.groupeID 
         liste_idA=get_id_artiste_par_groupe(idG)
         liste_arti=get_liste_artiste(liste_idA)
         dicoGr[grp]=liste_arti
     return dicoGr
 
+def get_id_groupe(id):
+    session = login()
+    idG=session.query(Concert.groupeID).filter(Concert.concertID==id).all()
+    session.close() 
+    print(idG)
+    return idG[0][0]
+
+
 def get_nom_groupe(id):
     session = login()
     nom=session.query(Groupe.nomGroupe).filter(Groupe.groupeID==id).all()
     session.close() 
+    print(nom)
     return nom[0][0]
 
 def update_necessite(idConcert, idMateriel, quantiteacquise):
