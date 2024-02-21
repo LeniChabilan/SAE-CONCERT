@@ -79,8 +79,8 @@ ul {
   line-height: 40px;
   font-family: sans-serif;
   text-decoration: none;
-  background-color: transparent;
-  color: #000;
+  background-color: #000;
+  color:  #fafafc;
   letter-spacing: .1vw;
 }
 
@@ -96,12 +96,12 @@ ul {
   left: 0;
   width: 0;
   height: 100%;
-  background: #000;
+  background: #fafafc;
   transition: all .35s;
 }
 
 #bouton_se_connecter:hover{
-  color: #fff;
+  color: #000;
 }
 
 #bouton_se_connecter:hover:after{
