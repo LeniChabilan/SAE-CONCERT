@@ -3,7 +3,7 @@ body{
 }
 
 body.light main {
-    background-color: #e8e5da;
+    background-color: #ffffff;
 }
   
 body.dark main {
@@ -90,7 +90,7 @@ main{
   }
   
   .submit {
-    background-color: #ffeba7;
+    background-color: #2a2b38;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -98,22 +98,21 @@ main{
     font-size: 1.5vw;
     font-weight: 400;
     margin-top: 5vh;
-    margin-left: 14.5vw;
+    margin-left: 5vw;
     text-align: center;
     height: 8vh;
     width: 13vw;
     font-weight: bold;
     font-size: 1vw;
     text-transform: uppercase;
-    background-color: #ffeba7;
-    color: #5e6681;
+    color: #ffffff;
     box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
     transition: all 0.3s ease-in-out;
   }
 
   .submit:hover {
-    background-color: #5e6681;
-    color: #ffeba7;
+    background-color: #ffffff;
+    color: #2a2b38;
     box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
   }
   
