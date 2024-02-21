@@ -51,3 +51,17 @@ function validateForm() {
     return true;
 }
 
+function validerForm(){
+  var dateDInput = document.forms["myForm"]["dateD"].value;
+  var dateFInput = document.forms["myForm"]["dateF"].value;
+
+  var dateD = new Date(dateDInput);
+  var dateF = new Date(dateFInput);
+
+  if(dateD > dateF){
+    alert("La date de début doit être antérieure à la date de fin.");
+    return false;
+  }
+
+}
+
