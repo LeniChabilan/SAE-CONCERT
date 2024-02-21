@@ -220,7 +220,16 @@ def completer_fiche_pdf(concertID,salleId):
 
 @app.route("/completer-fiche-glisse/<int:concertID>", methods=['GET', 'POST'])
 def completer_fiche_glisse(concertID):
+    
     return render_template("completer_fiche_pdf.html", concertID = concertID)
+
+@app.route("/generer-fiche-technique/<int:concertID>", methods=['GET', 'POST'])
+def generer_fiche_technique(concertID):
+    fiche_tech(concertID)
+    conc = get_info_un_concert(concertID)
+    pdf=conc.ficheTechnique
+ 
+    return Response(pdf, mimetype='application/pdf')
 
 @app.route("/modif-fiche-accueil/<int:concertID>", methods=['GET', 'POST'])
 def modif_fiche_accueil(concertID):
@@ -311,9 +320,8 @@ def choix_groupes_artistes():
 @app.route("/visualiser_fiches/<int:conc>", methods = ("GET","POST",))
 def visualiser_fiches(conc):
     conc=get_info_un_concert(conc)
-    text=conc.ficheTechnique
-    pdf=pdf_base_64(text)
-    return render_template("visualisation_fiches.html",conc=conc,pdf=pdf)
+    
+    return render_template("visualisation_fiches.html",conc=conc)
 
 @app.route("/visualiser_plan/<int:conc>", methods = ("GET","POST",))
 def visualiser_plan(conc):
