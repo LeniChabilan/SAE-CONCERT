@@ -341,6 +341,11 @@ def sup_artiste_grp(id):
 def modification_artiste_art(id):
     return render_template("modifier_artiste_art.html", arti=get_info_un_artiste(id), aID=id)
 
+@app.route("/modification_artiste_art_grp/<int:id>/<int:groupeID>")
+def modification_artiste_art_grp(id,groupeID):
+    return render_template("modifier_artiste_art_grp.html", arti=get_info_un_artiste(id), aID=id,groupeID=groupeID)
+
+
 
 @app.route("/modification_art/<int:id>/<int:aID>")
 def modification_art(id,aID):
@@ -376,7 +381,7 @@ def modif_artiste_art(id):
     dateDel = request.form.get("dateDelivrance")
     dateExp = request.form.get("dateExpiration")
     mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
-    return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
+    return render_template("ste des artist.html",title="Les Artistes", lArt=get_info_artiste())
 
 @app.route("/modif-artiste-art/<int:id>/<int:aID>", methods =["POST"])
 def modif_artiste_art_aid(id,aID):
