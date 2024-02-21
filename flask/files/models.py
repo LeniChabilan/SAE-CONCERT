@@ -40,8 +40,8 @@ class Artiste(db.Model):
     DdNA = Column(Date)
     LdN = Column(String(255))
     adresseA = Column(String(255))
-    numSecuriteSociale = Column(Integer)
-    numCNI = Column(Integer)
+    numSecuriteSociale = Column(String(255))
+    numCNI = Column(String(255))
     dateDelivranceCNI = Column(Date)
     dateExpirationCNI = Column(Date)
     dansGroupe = Column(Boolean)
@@ -50,7 +50,7 @@ class Artiste(db.Model):
         self.pseudoArtiste = pseudo
         self.nomA = nom
         self.prenomA = prenom
-        self.emailA = email
+        self.mailA = email
         self.DdNA = DdN 
         self.LdN = lieuNaissance
         self.adresseA = adresse
