@@ -3,7 +3,7 @@
 {% block styles %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static',filename='liste_groupe_id.css')}}" />
-    <script src="../static/script/confirmation.js"></script>
+    <script src="{{ url_for('static', filename='script/confirmation.js') }}"></script>
 {% endblock %}
 
 {% block content %}

@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block styles %}{{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='modif_artiste.css')}}" />
-<script src="../static/script/confirmation.js"></script>
+<script src="{{ url_for('static', filename='script/confirmation.js') }}"></script>
+<script src="{{ url_for('static', filename='script/verif_form.js') }}"></script>
 {% endblock %} {% block content %}
 <main>
   <div id="bouton_retour_choix_fiche">
@@ -10,7 +11,7 @@
   </div>
     <div class="form">
         <div class="title">Modifiez les information de l'artiste !</div>
-        <form role="form" method ="POST" action ="{{ url_for('modif_artiste_art', id=aID) }}">
+        <form name="myForm" role="form" method="POST" onsubmit="return validateForm()" action ="{{ url_for('modif_artiste_art', id=aID) }}">
             <div class="input-container ">
                 <input placeholder="Pseudo" type="text" class="input" name="pseudo" value="{{ arti.pseudoArtiste }}" required>
                 <div class="cut"></div>
@@ -63,8 +64,7 @@
                 <input placeholder="" type="date" class="input" name="dateExpiration" value="{{ arti.dateExpirationCNI }}" required>
                 <label class="iLabel" for="dateExpiration"></label>
             </div>
-              
-              <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
+              <button class="submit" type="submit" onclick="showConfirmationEnregistrer()">Enregistrer</button>
         </form>
     </div>
 </main>
