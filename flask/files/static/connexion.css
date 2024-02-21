@@ -9,15 +9,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fafafc;
 }
 
-body.light .main {
-  background-color: #fff;
-}
-
-body.dark .main {
-  background-color: #212121;
-}
 
 .card {
   width: 25vw;

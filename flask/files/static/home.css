@@ -3,9 +3,6 @@ body {
   padding: 0;
 }
 
-body.light .left {
-  background-color: #fff;
-}
 
 .left > h2{
   margin-left: 5rem;
@@ -31,7 +28,7 @@ body.dark .left > h2{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #fafafc;
   width: 45vw;
   height: 85vh;
   text-align: center;
