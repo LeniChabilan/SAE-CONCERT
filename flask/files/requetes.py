@@ -275,16 +275,17 @@ def get_max_id_Materiel():
     if session.query(func.max(Materiel.materielID)).all()[0][0] is None:
         return 1
     return session.query(func.max(Materiel.materielID)).all()[0][0] + 1
-    
-def ajout_nessecite_concert(objet, concert, description, quantite):
+
+
+
+
+def ajout_nessecite_concert(objet, concert, description, quantite,salle):
     session = login()
     
     # Recherche de l'id du matériel
     materiel_id_query = session.query(Materiel.materielID).filter_by(nomMateriel=objet).first()
     
-    concertinfo = session.query(Concert.salleID).filter_by(concertID=concert).first()
-    
-    matosSalle=session.query(MaterielSalle).filter_by(nomMaterielS=objet,salleID=concertinfo).all()
+    matosSalle=session.query(MaterielSalle).filter_by(nomMaterielS=objet,salleID=salle).all()
     nb=0
     for i in matosSalle:
         nb+=1
@@ -360,13 +361,14 @@ def ajouter_plan(concertID):
         os.remove(file_path)
     session.close()
     
-def ajouter_mat(idC,nom,quantite,description):
+    
+def ajouter_mat(idC,nom,quantite,description,salle):
     session = login()
     idM=get_max_id_Materiel()
     mat=Materiel(idM,nom)
     session.add(mat)
     session.commit()
-    ajout_nessecite_concert(nom,idC,description,quantite)
+    ajout_nessecite_concert(nom,idC,description,quantite,salle)
     session.close()
      
 
@@ -510,11 +512,12 @@ def fiche_tech(concertId):
         
         pdf.set_font("helvetica", "B",12)
         pdf.cell(0, 10, "Nom du matériel : "+mat.materiel.nomMateriel)
-        pdf.ln(20)
+        pdf.ln(10)
         pdf.set_font("helvetica",size=12)
         pdf.cell(0, 10, "Description : "+mat.description)
-        pdf.ln(20)
+        pdf.ln(10)
         pdf.cell(0, 10, "Quantité demandée : "+str(mat.quantite))
+    
         pdf.ln(20)
     
     byte_string = pdf.output(dest='S').encode('latin-1')
