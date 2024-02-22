@@ -3,13 +3,10 @@ body{
     
 }
 
-body.light main {
+body main {
     background-color: #e8e5da;
 }
-  
-body.dark main {
-    background-color: #212121;
-}
+
 
 main{
     min-height: 85vh;

@@ -2,6 +2,15 @@ body {
     margin: 0;
 }
 
+body > main {
+    background-color: #e8e5da;
+}
+  
+
+body main h1 {
+    color: #212121;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;

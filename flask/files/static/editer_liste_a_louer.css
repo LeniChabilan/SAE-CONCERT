@@ -3,6 +3,10 @@ body{
     
 }
 
+body main {
+    background-color: #e8e5da;
+}
+
 main{
     min-height: 85vh;
     display: flex;
