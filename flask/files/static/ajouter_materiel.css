@@ -3,16 +3,9 @@ body{
     
 }
 
-body.light main {
-    background-color: #e8e5da;
-}
-  
-body.dark main {
-    background-color: #212121;
-}
-
 main{
     min-height: 85vh;
+    background-color: #fafafc;
 }
 
 .contenu{
@@ -23,7 +16,7 @@ main{
 .bouton_de_retour{
     appearance: none;
     background-color: #2a2b38;
-    color: #ffeba7;
+    color: #fafafc;
     margin-top: 5vh;
     margin-left: 3vw;
     height: 6vh;
@@ -41,7 +34,7 @@ main{
 
 .bouton_de_retour:hover {
   color: #2a2b38;
-  background-color: #ffeba7;
+  background-color: #fafafc;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
@@ -113,7 +106,7 @@ main{
   }
   
   .submit {
-    background-color: #ffeba7;
+    background-color: #5e6681;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -128,14 +121,13 @@ main{
     font-size: 1vw;
     text-transform: uppercase;
     padding: 0;
-    background-color: #ffeba7;
-    color: #5e6681;
+    color: #fafafc;
     box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
     transition: all 0.3s ease-in-out;
   }
   .submit:hover {
-    background-color: #5e6681;
-    color: #ffeba7;
+    background-color: #fafafc;
+    color: #5e6681;
     box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
   }
   
