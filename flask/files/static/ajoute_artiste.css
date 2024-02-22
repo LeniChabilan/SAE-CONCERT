@@ -2,10 +2,13 @@ body{
     margin:0;
 }
 
-body main {
+body.light main {
     background-color: #ffffff;
 }
   
+body.dark main {
+    background-color: #212121;
+}
 
 main{
     display: flex;

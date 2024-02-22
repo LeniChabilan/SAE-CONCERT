@@ -3,12 +3,6 @@
 <script type="module" src="{{ url_for('static', filename='script/upload.js') }}"></script>
 {% endblock %} {% block content %}
 <main>
-    <div id="bouton_retour_choix_fiche">
-        <a href="{{ url_for('completer_fiche_pdf', concertID=concertID,  salleId=salleId) }}">
-          <button type="button" class="bouton_de_retour">Retour</button>
-        </a>
-      </div>
-    <div class="mid">
     <h3>Veuillez compléter ces fiches :</h2>
     <div class="form">
         <div>
@@ -31,6 +25,5 @@
         window.location.href = "{{ url_for('fin_inscription', concertID=concertID) }}";
         }
     </script>
-    </div>
 </main>
 {% endblock %}

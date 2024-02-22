@@ -13,10 +13,17 @@
   <body class="light">
     <header>
       <div class="gauche">         
-        <img class="img_base" id="img1" src="{{ url_for('static', filename='img/logomusiquenoir.png') }}" alt="image du logo de l'application" />
+          <img class="img_base" id="img1" src="{{ url_for('static', filename='img/logomusiquejaune.png') }}" alt="image du logo de l'application" />
         <h2 id="nom_Entreprise">Concert'O</h2>
       </div>
-
+      <div class="droite">          
+        <div class="toggle-switch">
+          <label class="switch-label">
+            <input type="checkbox" class="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div> 
     </header>
     <script
       type="text/javascript"

@@ -11,10 +11,17 @@ body {
   font-weight: 800;
 }
 
-body .left > h2  {
+body.light .left > h2  {
   color: #212121;
 }
 
+body.dark .left{
+  background-color: #212121;
+}
+
+body.dark .left > h2{
+  color: #fff;
+}
 
 .left {
   display: flex;
@@ -97,11 +104,15 @@ a {
   right: 0;
 }
 
-body .buttonOrg {
+body.light .buttonOrg {
   color: #fff;
   background-color: #212121;
 }
 
+body.dark .buttonOrg {
+  color: #212121;
+  background-color: #fff;
+}
 
 @media screen and (max-width: 1600px){
   .main{

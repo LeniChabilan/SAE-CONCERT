@@ -72,7 +72,7 @@ def logout():
     return redirect(url_for('connexion'))
 
 
-@app.route("/creation_concert/")
+@app.route("/creation_concert")
 def creation_concert():
     id_concert=get_concert_id_nouv()
     return render_template("creation_concert.html", liste_salle=get_liste_salle(), liste_groupe=get_liste_groupe(),id=id_concert)
@@ -202,7 +202,7 @@ def recherche_groupe():
     nom_groupe = request.form.get("nom")
     groupe = chercher_groupe(nom_groupe)
     if get_artiste_id_groupe(groupe.groupeID) == []:
-        return redirect(url_for("creation_concert"))
+        return render_template("creation_concert")
     else:
         return redirect(url_for("creation_concert"))
 
@@ -218,10 +218,10 @@ def completer_fiche_pdf(concertID,salleId):
     # modif_fiche_technique(concertID, ficheTechnique)
     return render_template("fiche_tech_materiel.html", id = concertID, salleId=salleId)
 
-
-@app.route("/completer-fiche-glisse/<int:concertID>/<int:salleId>", methods=['GET', 'POST'])
-def completer_fiche_glisse(concertID,salleId):
-    return render_template("completer_fiche_pdf.html", concertID = concertID, salleId=salleId)
+@app.route("/completer-fiche-glisse/<int:concertID>", methods=['GET', 'POST'])
+def completer_fiche_glisse(concertID):
+    
+    return render_template("completer_fiche_pdf.html", concertID = concertID)
 
 @app.route("/generer-fiche-technique/<int:concertID>", methods=['GET', 'POST'])
 def generer_fiche_technique(concertID):
