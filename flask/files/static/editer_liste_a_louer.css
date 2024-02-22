@@ -48,11 +48,12 @@ i{
 
 
 .tableau{
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom : 5%; 
     margin-top : 2%;
     outline: none;
+    flex-basis: 100%;
 }
 
 .liste_des_besoins {
