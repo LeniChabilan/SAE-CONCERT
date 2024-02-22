@@ -1,5 +1,5 @@
 {% extends 'base_sans_log.html' %} {% block styles %}{{ super() }}
-<link rel="stylesheet" href="{{ url_for('static',filename='completer_fiche.css')}}" />
+<link rel="stylesheet" href="{{ url_for('static',filename='modif_acceuil.css')}}" />
 {% endblock %} {% block content %}
 <main>
     
@@ -11,9 +11,11 @@
                     <label class="iLabel" for="nom">Fiche Accueil numero</label>
                     <textarea class="input" name="ficheA" cols="30" rows="10" required></textarea>
                 </div>
-            </div>     
-            
-        <button class="submit" type="text">Enregistrer</button>
+            </div>    
+        </div>
+        <div class="yes"> 
+            <button class="submit" type="text">Enregistrer</button>
+        </div>
     </form>
 </main>
 {% endblock %}

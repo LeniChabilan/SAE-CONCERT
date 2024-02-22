@@ -105,7 +105,7 @@ class Concert(db.Model):
     nomConcert = Column(String(255))
     dateDebutConcert = Column(Date)
     dateFinConcert = Column(Date)
-    ficheTechnique = Column(Text)
+    ficheTechnique = Column(LargeBinary(length=2**32-1))
     catering = Column(Text)
     ficheRider = Column(LargeBinary(length=2**32-1))
     lienConcert = Column(String(255))

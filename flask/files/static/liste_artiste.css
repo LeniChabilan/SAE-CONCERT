@@ -34,7 +34,7 @@ body {
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #d3d1cb;
+    background-color: #ffffff;
     overflow-x: auto; /* Add horizontal scroll if needed */
     max-width: 80%; /* Set a maximum width for the table container */
 }
@@ -80,7 +80,11 @@ td {
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #b9b9b9;
+    background-color: #d5d5e0;
+}
+
+tr{
+    border-bottom: 1px solid #15172b;
 }
 
 /* Header styles */
@@ -126,7 +130,7 @@ tbody tr:nth-child(odd) {
 }
 
 .liens:hover {
-    background-color: rgb(133, 133, 133);
+    background-color: #b8b8be;
     cursor: hand;
 }
 

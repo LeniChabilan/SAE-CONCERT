@@ -469,3 +469,62 @@ def update_necessite(idConcert, idMateriel, quantiteacquise):
     necessite.quantiteAcquise = quantiteacquise
     session.commit()
     session.close()
+
+
+
+
+
+from fpdf import FPDF
+from flask import Flask, Response
+
+class PDF(FPDF):
+    def header(self):
+        
+        self.image("./static/img/logomusique.png", 10, 8, 15)
+        
+        self.set_font("helvetica", "B", 15)
+        
+        self.cell(80)
+        
+        self.cell(30, 10, "Fiche Technique", align="C")
+        
+        self.ln(20)
+
+    
+        
+def fiche_tech(concertId):
+    session=login()
+    nec=session.query(Necessiter).filter_by(concertID=concertId).all()
+    conc=session.query(Concert).filter_by(concertID=concertId).first()
+    
+    pdf=PDF()
+    pdf.set_title("Fiche Technique du concert "+conc.nomConcert)
+    pdf.add_page()
+    
+    pdf.set_font("helvetica", "B",15)
+    pdf.cell(80)
+    pdf.cell(30, 10, conc.nomConcert, align="C")
+    pdf.ln(20)
+    
+    for mat in nec:
+        
+        pdf.set_font("helvetica", "B",12)
+        pdf.cell(0, 10, "Nom du matériel : "+mat.materiel.nomMateriel)
+        pdf.ln(20)
+        pdf.set_font("helvetica",size=12)
+        pdf.cell(0, 10, "Description : "+mat.description)
+        pdf.ln(20)
+        pdf.cell(0, 10, "Quantité demandée : "+str(mat.quantite))
+        pdf.ln(20)
+    
+    byte_string = pdf.output(dest='S').encode('latin-1')
+    conc.ficheTechnique = byte_string
+    session.commit()
+    session.close()
+    return pdf
+    
+    
+    
+
+
+

@@ -192,7 +192,7 @@ body.dark #modification{
     flex-grow:1;
     margin-top: 5vh;
     margin-left: 10%;
-    background-color: #d3d1cb;
+    background-color: #ffffff;
     margin-right: 8%;
     margin-bottom: 5%;
 }
@@ -207,6 +207,7 @@ body.dark #modification{
 
 table{
     outline: none;
+    border: #15172b;
 }
 
 thead{
@@ -222,7 +223,11 @@ thead th{
 }
 
 tbody tr:nth-child(odd){
-    background-color: #b9b9b9;
+    background-color: #d5d5e0;
+}
+
+tr{
+    border-bottom: 1px solid #15172b;
 }
 
 
@@ -267,7 +272,7 @@ tbody tr:nth-child(odd){
  
 .liens:hover
 {
-   background-color: rgb(133, 133, 133);
+   background-color: #b8b8be;
    cursor: hand;
 } 
 

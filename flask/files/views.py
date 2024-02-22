@@ -220,7 +220,16 @@ def completer_fiche_pdf(concertID,salleId):
 
 @app.route("/completer-fiche-glisse/<int:concertID>", methods=['GET', 'POST'])
 def completer_fiche_glisse(concertID):
+    
     return render_template("completer_fiche_pdf.html", concertID = concertID)
+
+@app.route("/generer-fiche-technique/<int:concertID>", methods=['GET', 'POST'])
+def generer_fiche_technique(concertID):
+    fiche_tech(concertID)
+    conc = get_info_un_concert(concertID)
+    pdf=conc.ficheTechnique
+ 
+    return Response(pdf, mimetype='application/pdf')
 
 @app.route("/modif-fiche-accueil/<int:concertID>", methods=['GET', 'POST'])
 def modif_fiche_accueil(concertID):
@@ -234,7 +243,6 @@ def modif_fiche_accueil(concertID):
 
 @app.route("/modif-accueil/<int:concertID>", methods=['GET', 'POST'])
 def modif_accueil(concertID):
-    
     return render_template("modif_fiche_accueil.html", concertID = concertID)
 
 @app.route("/fin-inscription/<int:concertID>", methods=['GET', 'POST'])
@@ -312,9 +320,8 @@ def choix_groupes_artistes():
 @app.route("/visualiser_fiches/<int:conc>", methods = ("GET","POST",))
 def visualiser_fiches(conc):
     conc=get_info_un_concert(conc)
-    text=conc.ficheTechnique
-    pdf=pdf_base_64(text)
-    return render_template("visualisation_fiches.html",conc=conc,pdf=pdf)
+    
+    return render_template("visualisation_fiches.html",conc=conc)
 
 @app.route("/visualiser_plan/<int:conc>", methods = ("GET","POST",))
 def visualiser_plan(conc):
@@ -340,6 +347,11 @@ def sup_artiste_grp(id):
 @app.route("/modification_artiste/<int:id>")
 def modification_artiste_art(id):
     return render_template("modifier_artiste_art.html", arti=get_info_un_artiste(id), aID=id)
+
+@app.route("/modification_artiste_art_grp/<int:id>/<int:groupeID>")
+def modification_artiste_art_grp(id,groupeID):
+    return render_template("modifier_artiste_art_grp.html", arti=get_info_un_artiste(id), aID=id,groupeID=groupeID)
+
 
 
 @app.route("/modification_art/<int:id>/<int:aID>")
@@ -376,7 +388,7 @@ def modif_artiste_art(id):
     dateDel = request.form.get("dateDelivrance")
     dateExp = request.form.get("dateExpiration")
     mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
-    return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
+    return render_template("ste des artist.html",title="Les Artistes", lArt=get_info_artiste())
 
 @app.route("/modif-artiste-art/<int:id>/<int:aID>", methods =["POST"])
 def modif_artiste_art_aid(id,aID):

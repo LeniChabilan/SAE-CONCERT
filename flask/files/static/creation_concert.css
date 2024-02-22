@@ -124,7 +124,7 @@ main{
     font-size: 1vw;
     text-transform: uppercase;
     padding: 0;
-    color: #5e6681;
+    color: #5e668;
     box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
     transition: all 0.3s ease-in-out;
   }

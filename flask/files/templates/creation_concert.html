@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='creation_concert.css')}}" />
 <script src="../static/script/confirmation.js"></script>
 <script src="../static/script/copier.js"></script>
+<script src="{{ url_for('static', filename='script/verif_form.js') }}"></script>
 {% endblock %} {% block content %}
 <main>
   <div id="bouton_retour_choix_fiche">
@@ -11,7 +12,7 @@
   </div>
     <div class="form">
         <div class="title">Créer votre concert !</div>
-        <form role="form" method ="POST" action ="{{ url_for('save_concert') }}">
+        <form name="myForm" role="form" method="POST" onsubmit="return validerForm()" action ="{{ url_for('save_concert') }}">
             <div class="input-container ">
                 <input placeholder="Nom" type="text" class="input" name="nom" required>
                 <div class="cut"></div>
