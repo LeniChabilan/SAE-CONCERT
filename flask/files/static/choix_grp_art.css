@@ -34,7 +34,7 @@ body {
   color: #fafafc;
   transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
   background: #0a3394;
-  background: linear-gradient(to top, #0a3394, #4286f4);
+  background: linear-gradient(to top, #2a2b38, #424549);
   font-weight: bolder;
   font-size: 2.5vw;
   text-align: center;
