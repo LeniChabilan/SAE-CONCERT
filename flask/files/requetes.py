@@ -125,12 +125,14 @@ def supprimer_concert(concID):
 def mod_concert(id,nom, dateD, dateF, salle, groupe):
     session = login()
     conc = session.query(Concert).filter(Concert.concertID == id).first()
+    catering=conc.catering
     if conc:
         conc.nomConcert = nom
         conc.dateDebutConcert = dateD
         conc.dateFinConcert = dateF
         conc.salleID = get_id_salle_by_nom(salle)
         conc.groupeID = get_id_groupe_by_nom(groupe)
+        conc.catering=catering
         session.commit()
     else:
         print("Le concert n'a pas été trouvé.")
