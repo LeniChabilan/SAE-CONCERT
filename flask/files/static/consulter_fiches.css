@@ -2,6 +2,7 @@ body{margin:0;}
 
 .main{
     min-height: 90vh;
+    background-color: #fafafc;
 }
 
 .middle{
@@ -16,21 +17,6 @@ body{margin:0;}
 .image_droite{     
     padding-top: 3vh;
 }
-body.light .main {
-    color: #212121;
-    font-size: 1vw;
-  }
-body.light .main .partie_principale, body.light .main {
-    background-color: #e8e5da;
-}
-  
-body.dark .main .partie_principale, body.dark .main{
-    background-color: #212121;
-}
-body.dark .main {
-    color: #e8e5da;
-    font-size: 1vw;
-}
 
 #modification {
     font-weight: 300;
@@ -43,7 +29,7 @@ body.dark .main {
 .bouton_de_retour{
     appearance: none;
     background-color: #2a2b38;
-    color: #ffeba7;
+    color: #fafafc;
     margin-top: 5vh;
     margin-left: 3vw;
     height: 6vh;
@@ -61,7 +47,7 @@ body.dark .main {
 
 .bouton_de_retour:hover {
   color: #2a2b38;
-  background-color: #ffeba7;
+  background-color: #fafafc;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
@@ -85,54 +71,50 @@ align-items: center;
 list-style-type: none;
 transition: 0.3s;
 }
-
-.listeOptions div {
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-background-color: #2a2b38;
-margin: 3vw;
-border-radius: 5%;
-height: 50vh;
-width: 50vw;
-transition: 0.3s;
-max-width: 50vh;
-}
-
-.listeOptions div:hover {
-height: 53vh;
-width: 53vw;
-max-width: 53vh;
-
-}
-.listeOptions div:hover img{
-width: 19vw;
-height: 24vh;
-transition-duration: 0.2s;
-}
-
-.listeOptions a {
-color: #ffeba7;
-text-decoration: none;
-font-size: 2em;
-font-weight: bold;
-text-align: center;
-}
-
-.listeOptions div:hover a {
-font-size: 2.1em;
-transition-duration: 0.2s;
-}
-
-
-
-.listeOptions img {
-width: 18vw;
-height: 23vh;
-border-radius: 5%;
-margin: 2rem;
-align-self: center;
-}
+.card {
+    height: 45vh;
+    width: 18vw;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border-radius: 16px;
+    box-shadow: 0 0 20px 8px #d0d0d0;
+    overflow: hidden;
+  }
+  
+  .card-image {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: #fafafc;
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background: #0a3394;
+    background: linear-gradient(to top, #0a3394, #4286f4);
+    font-weight: bolder;
+    font-size: 2.5vw;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .card-description {
+    display: flex;
+    position: absolute;
+    gap: .5em;
+    background-color: #f5f5f5;
+    color: #212121;
+    height: 80%;
+    width: 100%;
+    top: 100%;
+    border-radius: 16px;
+    transition: all .6s cubic-bezier(0.645, 0.045, 0.355, 1);
+    font-weight: bolder;
+    font-size: 1.5em;
+    text-align: center; 
+    align-items: center;
+  }
+  .card:hover .card-description {
+    transform: translateY(-100%);
+  }
 
 @media screen and (max-width: 1100px) {
 .listeOptions {
