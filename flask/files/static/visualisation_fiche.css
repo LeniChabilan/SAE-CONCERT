@@ -2,19 +2,12 @@ body {
     margin: 0;
 }
 
-body.light > main {
+body > main {
     background-color: #e8e5da;
 }
   
-body.dark > main {
-    background-color: #212121;
-}
 
-body.dark main h1 {
-    color: #e8e5da;
-}
-
-body.light main h1 {
+body main h1 {
     color: #212121;
 }
 

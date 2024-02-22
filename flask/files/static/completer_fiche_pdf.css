@@ -2,13 +2,11 @@ body{
     margin:0;
 }
 
-body.light main {
+body main {
     background-color: #ffffff;
 }
   
-body.dark main {
-    background-color: #212121;
-}
+
 
 main{
     height: 85vh;
@@ -148,4 +146,35 @@ h3{
 p{
   margin-left: 10vw;
   font-weight: bold;
+}
+
+.bouton_de_retour{
+  appearance: none;
+  background-color: #2a2b38;
+  color: #ffffff;
+  margin-top: 5vh;
+  margin-left: 3vw;
+  height: 6vh;
+  width: 7vw;
+  text-align: center;
+  font-size: 2vh;
+  box-sizing: border-box;
+  border-radius: 0.9375em;
+  border: none;
+}
+
+.bouton_de_retour:disabled {
+  pointer-events: none;
+}
+
+.bouton_de_retour:hover {
+color: #2a2b38;
+background-color: #ffffff;
+box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+transform: translateY(-2px);
+}
+
+.bouton_de_retour:active {
+box-shadow: none;
+transform: translateY(0);
 }

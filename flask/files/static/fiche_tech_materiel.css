@@ -2,13 +2,11 @@ body{
     margin:0;
 }
 
-body.light main {
+body main {
     background-color: #ffffff;
 }
   
-body.dark main {
-    background-color: #212121;
-}
+
 
 #tete_page{
     display: flex;

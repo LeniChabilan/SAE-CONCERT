@@ -178,15 +178,12 @@ form {
   background-color: #fafafc;
 }
 
-body.light #modification{
+body #modification{
     color: #212121;
     font-size: 2vw;
 }
 
-body.dark #modification{
-    color: #e8e5da;
-    font-size: 2vw;
-}
+
 
 .liste_des_concerts{
     flex-grow:1;
