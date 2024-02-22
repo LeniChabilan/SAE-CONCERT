@@ -510,7 +510,7 @@ def choix_fiche(concert):
     pdf=pdf_base_64(text)
     return render_template("choix_fiche.html",pdf=pdf,conc=conc)
 
-@app.route("/ajouter_plan_scene/<int:concertID>", methods = ("GET","POST"))
+@app.route("/ajouter_plan_scene/<int:concertID>/", methods = ("GET","POST"))
 def ajouter_plan_scene(concertID):
     return render_template("ajouter_plan_scene.html",concertID=concertID)
 
