@@ -2,26 +2,11 @@ body {
     margin: 0;
 }
 
-body.light > main {
-    background-color: #e8e5da;
-}
-  
-body.dark > main {
-    background-color: #212121;
-}
-
-body.dark main h1 {
-    color: #e8e5da;
-}
-
-body.light main h1 {
-    color: #212121;
-}
-
 main {
     display: flex;
     flex-wrap: wrap;
     min-height: 85vh;
+    background-color: #fafafc;
 }
 
 .partie_gauche, .partie_droite {
@@ -59,7 +44,7 @@ main {
 
 .bouton_choix_fiche_visualisation:hover {
     color: #2a2b38;
-    background-color: #ffeba7;
+    background-color: #fafafc;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
@@ -75,7 +60,7 @@ main {
 .bouton_de_retour, .bouton_ajout_scene, .bouton_suppression {
     appearance: none;
     background-color: #2a2b38;
-    color: #ffeba7;
+    color: #fafafc;
     margin-top: 3vh;
     margin-bottom: 3vh;
     margin-left: 3vw;
@@ -103,7 +88,7 @@ main {
 
 .bouton_de_retour:hover, .bouton_ajout_scene:hover, .bouton_suppression:hover {
     color: #2a2b38;
-    background-color: #ffeba7;
+    background-color: #fafafc;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
