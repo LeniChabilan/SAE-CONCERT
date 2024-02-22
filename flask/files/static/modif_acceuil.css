@@ -2,13 +2,10 @@ body{
     margin:0;
 }
 
-body.light main {
-    background-color: #ffffff;
+body {
+    background-color: #fafafc;
 }
   
-body.dark main {
-    background-color: #212121;
-}
 
 main{
     justify-content: center;
