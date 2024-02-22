@@ -626,7 +626,7 @@
     nomConcert: "Concert 1"
     dateDebutConcert: "2023-11-28"
     dateFinConcert: "2023-11-29"
-    ficheTechnique: "Fiche technique du concert 1"
+    ficheTechnique: "./fichier_pdf/rider.pdf"
     catering: "Catering du concert 1"
     ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 2
@@ -637,7 +637,7 @@
     nomConcert: "Concert 2"
     dateDebutConcert: "2023-11-27"
     dateFinConcert: "2023-11-28"
-    ficheTechnique: "Fiche technique du concert 2"
+    ficheTechnique: "./fichier_pdf/rider.pdf"
     catering: "Catering du concert 2"
     ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 3
@@ -649,7 +649,7 @@
     nomConcert: "Concert 3"
     dateDebutConcert: "2023-12-23"
     dateFinConcert: "2023-12-24"
-    ficheTechnique: "Fiche technique du concert 3"
+    ficheTechnique: "./fichier_pdf/rider.pdf"
     catering: "Catering du concert 3"
     ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 1
@@ -660,7 +660,7 @@
     nomConcert: "Concert 4"
     dateDebutConcert: "2023-12-23"
     dateFinConcert: "2023-12-24"
-    ficheTechnique: "Fiche technique du concert 4"
+    ficheTechnique: "./fichier_pdf/rider.pdf"
     catering: "Catering du concert 4"
     ficheRider : "./fichier_pdf/rider.pdf"
     salleID: 4

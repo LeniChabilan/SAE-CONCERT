@@ -36,7 +36,6 @@ body #modification {
     font-size: 2vw;
 }
 
-
 /* Table styles */
 .liste_des_concerts {
     margin-top: 5%;
@@ -192,8 +191,6 @@ a > i {
     margin-left: 5%;
 
 }
-
-
 
 .addArtiste {
     appearance: none;

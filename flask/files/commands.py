@@ -252,7 +252,9 @@ def loaddb(filename):
             for concert_data in concerts:
                 with open(concert_data["ficheRider"], 'rb') as pdf_file:
                     pdf_data = base64.b64encode(pdf_file.read())
-                concert = Concert(concertID=concert_data["concertID"], nomConcert=concert_data["nomConcert"], dateDebutConcert=datetime.strptime(concert_data["dateDebutConcert"],"%Y-%m-%d").date(), dateFinConcert=datetime.strptime(concert_data["dateFinConcert"],"%Y-%m-%d").date(), ficheTechnique=concert_data["ficheTechnique"], catering=concert_data["catering"],ficheRider=pdf_data, salleID=concert_data["salleID"], groupeID=concert_data["groupeID"],lienConcert=concert_data["lienConcert"])
+                with open(concert_data["ficheTechnique"], 'rb') as pdf_file:
+                    pdf_data_bis = base64.b64encode(pdf_file.read())
+                concert = Concert(concertID=concert_data["concertID"], nomConcert=concert_data["nomConcert"], dateDebutConcert=datetime.strptime(concert_data["dateDebutConcert"],"%Y-%m-%d").date(), dateFinConcert=datetime.strptime(concert_data["dateFinConcert"],"%Y-%m-%d").date(), ficheTechnique=pdf_data_bis, catering=concert_data["catering"],ficheRider=pdf_data, salleID=concert_data["salleID"], groupeID=concert_data["groupeID"],lienConcert=concert_data["lienConcert"])
                 session.add(concert)
         
         if "Plan" in nomTable:
