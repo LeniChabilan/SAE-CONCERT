@@ -202,7 +202,7 @@ def recherche_groupe():
     nom_groupe = request.form.get("nom")
     groupe = chercher_groupe(nom_groupe)
     if get_artiste_id_groupe(groupe.groupeID) == []:
-        return render_template("creation_concert")
+        return redirect(url_for("creation_concert"))
     else:
         return redirect(url_for("creation_concert"))
 
@@ -218,10 +218,9 @@ def completer_fiche_pdf(concertID,salleId):
     # modif_fiche_technique(concertID, ficheTechnique)
     return render_template("fiche_tech_materiel.html", id = concertID, salleId=salleId)
 
-@app.route("/completer-fiche-glisse/<int:concertID>", methods=['GET', 'POST'])
-def completer_fiche_glisse(concertID):
-    
-    return render_template("completer_fiche_pdf.html", concertID = concertID)
+@app.route("/completer-fiche-glisse/<int:concertID>/<int:salleId>", methods=['GET', 'POST'])
+def completer_fiche_glisse(concertID,salleId):
+    return render_template("completer_fiche_pdf.html", concertID = concertID, salleId=salleId)
 
 @app.route("/generer-fiche-technique/<int:concertID>", methods=['GET', 'POST'])
 def generer_fiche_technique(concertID):
@@ -477,8 +476,8 @@ def update_quantite():
     update_necessite(idConcert, idMateriel, newValue)
     return jsonify({'success': True})
 
-@app.route("/ajout_besoin/<int:conc>", methods =["POST"])
-def ajout_besoin(conc):
+@app.route("/ajout_besoin/<int:conc>/<int:salle>", methods =["POST"])
+def ajout_besoin(conc,salle):
     instrument = request.form.get("instrument")
     micro = request.form.get("micro")
     description = request.form.get("description")
@@ -487,13 +486,13 @@ def ajout_besoin(conc):
     print(int(quantite_micro))
     print(int(quantite))
     if quantite is not None and instrument is not None and micro is not None:
-        ajout_nessecite_concert(micro, conc,"-", str(int(quantite_micro)*int(quantite)))
-        ajout_nessecite_concert(instrument,conc,description, quantite)
-    return render_template("ajouter_materiel.html",conca=get_info_un_concert(conc), matos=get_info_materiel_salle(conc))
+        ajout_nessecite_concert(micro, conc,"-", str(int(quantite_micro)*int(quantite)),salle)
+        ajout_nessecite_concert(instrument,conc,description, quantite,salle)
+    return render_template("ajouter_materiel.html",conca=get_info_un_concert(conc), matos=get_info_materiel_salle(conc),salle=salle)
  
-@app.route("/ajouter_materiel/<int:conc>", methods = ("GET","POST"))
-def ajouter_materiel(conc):
-    return render_template("ajouter_materiel.html",conca=get_info_un_concert(conc), matos=get_info_materiel_salle(conc))
+@app.route("/ajouter_materiel/<int:conc>/<int:salle>", methods = ("GET","POST"))
+def ajouter_materiel(conc,salle):
+    return render_template("ajouter_materiel.html",conca=get_info_un_concert(conc), matos=get_info_materiel_salle(conc),salle=salle)
 
 @app.route("/supp_necessiter/<int:conca>/<string:necessaire>", methods = ("GET","POST",))
 def supp_necessiter(necessaire, conca):

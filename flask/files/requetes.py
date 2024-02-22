@@ -125,12 +125,14 @@ def supprimer_concert(concID):
 def mod_concert(id,nom, dateD, dateF, salle, groupe):
     session = login()
     conc = session.query(Concert).filter(Concert.concertID == id).first()
+    catering=conc.catering
     if conc:
         conc.nomConcert = nom
         conc.dateDebutConcert = dateD
         conc.dateFinConcert = dateF
         conc.salleID = get_id_salle_by_nom(salle)
         conc.groupeID = get_id_groupe_by_nom(groupe)
+        conc.catering=catering
         session.commit()
     else:
         print("Le concert n'a pas été trouvé.")
@@ -311,21 +313,25 @@ def ajout_nessecite_concert(objet, concert, description, quantite,salle):
     session.commit()
     session.close()
 
+
+from .app import app
+
 def get_liste_neccessite(concert):
-    session = login()
-    # res = []
-    necessaire = session.query(Necessiter).filter_by(concertID=concert).all()
-    # for row in necessaire:
-    #     liste = []
-    #     description = row.description
-    #     nom_objet = session.query(Materiel.nomMateriel).filter_by(materielID = row.materielID).first()[0]
-    #     liste.append(nom_objet)
-    #     liste.append(description)
-    #     liste.append(row.quantite)
-    #     res.append(liste)
-    # session.expunge_all()
-    # session.close()
-    return necessaire
+    with app.app_context():
+        session = login()
+        # res = []
+        necessaire = session.query(Necessiter).filter_by(concertID=concert).all()
+        # for row in necessaire:
+        #     liste = []
+        #     description = row.description
+        #     nom_objet = session.query(Materiel.nomMateriel).filter_by(materielID = row.materielID).first()[0]
+        #     liste.append(nom_objet)
+        #     liste.append(description)
+        #     liste.append(row.quantite)
+        #     res.append(liste)
+        # session.expunge_all()
+        # session.close()
+        return necessaire
     
 def get_info_materiel_salle(concert):
     session = login()
