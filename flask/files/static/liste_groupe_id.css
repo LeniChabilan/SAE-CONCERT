@@ -71,6 +71,15 @@ table {
 tbody tr:nth-child(odd) {
     background-color: #b9b9b9;
 }
+th,
+td {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+    border: none;
+}
+
 
 /* Header styles */
 #tete_page {
