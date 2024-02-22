@@ -10,10 +10,16 @@ body main {
 
 main{
     height: 85vh;
+}
+
+.mid{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
+    width: 100%;
+
 }
 
 .form{
