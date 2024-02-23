@@ -394,7 +394,29 @@ def modif_artiste_art(id,groupeID):
     mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
     return render_template("modification_groupe.html", artistes=get_artiste_groupe(groupeID), groupeID=groupeID)
 
-@app.route("/modif-artiste-art/<int:id>/<int:aID>", methods =["POST"])
+
+
+@app.route("/mod-art-tkt/<int:id>")
+def mod_art_tkt(id):
+    return render_template("modif_art_tkt.html", arti=get_info_un_artiste(id), aID=id)
+
+@app.route("/modif-art/<int:id>", methods =["POST","GET"])
+def modif_art(id):
+    pseudo=request.form.get("pseudo")
+    nom = request.form.get("nom")
+    prenom = request.form.get("prenom")
+    mail = request.form.get("email")
+    dDnA =request.form.get("dateDN")
+    lDN = request.form.get("lDN")
+    adresseA = request.form.get("adresse")
+    numSecu = request.form.get("numSec")
+    numCNI = request.form.get("numCNI")
+    dateDel = request.form.get("dateDelivrance")
+    dateExp = request.form.get("dateExpiration")
+    mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
+    return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
+
+@app.route("/modif-artiste-art-aid/<int:id>/<int:aID>", methods =["POST"])
 def modif_artiste_art_aid(id,aID):
     pseudo=request.form.get("pseudo")
     nom = request.form.get("nom")
