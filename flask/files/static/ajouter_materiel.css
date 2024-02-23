@@ -72,7 +72,7 @@ main{
     width: 100%;
   }
   tbody tr:nth-child(odd){
-    background-color: #b9b9b9;
+    background-color: #d5d5e0;
 }
   .iLabel {
     color: #65657b;
@@ -152,7 +152,7 @@ main{
   margin-bottom : 5%; 
   margin-top : 2%;
   outline: none;
-  background-color: #d3d1cb;
+  background-color: #ffffff;
 }
 
 td{
