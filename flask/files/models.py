@@ -84,7 +84,7 @@ class Salle(db.Model):
     salleID = Column(Integer, primary_key=True,autoincrement=True)
     nomSalle = Column(String(255))
     capaciteTotaleSalle = Column(Integer)
-    planSalle = Column(Integer)  # Utilisez le type de données approprié pour BLOB, selon votre db.Model de données
+    planSalle = Column(Integer)  
     dimensionOuverture = Column(Float)
     dimensionProfondeur = Column(Float)
     lieuID = Column(Integer, ForeignKey('LIEU.lieuID'))
@@ -114,11 +114,11 @@ class Concert(db.Model):
     salle = relationship(Salle)
     groupe = relationship(Groupe)
 
-    def __init__(self, nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe,lien):
+    def __init__(self, nom, dateDebut, dateFin, catering, salle, groupe,lien):
         self.nomConcert = nom
         self.dateDebutConcert = dateDebut
         self.dateFinConcert = dateFin
-        self.ficheTechnique = ficheTechnique
+        
         self.catering = catering
         self.salleID = salle
         self.groupeID = groupe
@@ -128,7 +128,7 @@ class Concert(db.Model):
 class Plan(db.Model):
     __tablename__ = 'PLAN'
     planID = Column(Integer, primary_key=True,autoincrement=True)
-    planScene = Column(LargeBinary(length=2**32-1))  # Utilisez le type de données approprié pour BLOB
+    planScene = Column(LargeBinary(length=2**32-1))  
     concertID = Column(Integer, ForeignKey('CONCERT.concertID'))
     concert = relationship(Concert)
 

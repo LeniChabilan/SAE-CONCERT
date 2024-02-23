@@ -87,13 +87,13 @@ def save_concert():
     nom = request.form.get("nom")
     dateD = request.form.get("dateD")
     dateF = request.form.get("dateF")
-    ficheTech = ""
+    
     catering = ""
     salle = request.form.get("salle")
     groupe = request.form.get("groupe")
     id_concert=request.form.get("id")
     lien="127.0.0.1:5000/accueil_artiste.html/"+id_concert
-    ajouter_concert(nom, dateD, dateF, ficheTech, catering, salle, groupe,lien)
+    ajouter_concert(nom, dateD, dateF, catering, salle, groupe,lien)
     print(get_concert_by_name(nom))
     return render_template("accueil_bien_etre.html")
 
@@ -334,6 +334,11 @@ def sup_artiste(id):
     supprimer_artiste(id)
     return render_template("liste_artiste.html",title="Les Artistes", lArt=get_info_artiste())
 
+@app.route("/sup-art-gp/<int:id>/<int:groupeID>")
+def sup_art_gp(id,groupeID):
+    supprimer_artiste(id)
+    return render_template("modification_groupe.html", artistes=get_artiste_groupe(groupeID), groupeID=groupeID)
+
 @app.route("/sup_artiste_art/<int:aID>/<int:id>")
 def sup_artiste_art(aID,id):
     supprimer_artiste(aID)
@@ -373,8 +378,8 @@ def liste_groupe_id(id):
     return render_template("liste_groupe_id.html",id=id,liste=liste,conc=get_info_un_concert(id))
 
 
-@app.route("/modif-artiste-art/<int:id>", methods =["POST"])
-def modif_artiste_art(id):
+@app.route("/modif-artiste-art/<int:id>/<int:groupeID>", methods =["POST"])
+def modif_artiste_art(id,groupeID):
     pseudo=request.form.get("pseudo")
     nom = request.form.get("nom")
     prenom = request.form.get("prenom")
@@ -387,7 +392,7 @@ def modif_artiste_art(id):
     dateDel = request.form.get("dateDelivrance")
     dateExp = request.form.get("dateExpiration")
     mod_artiste(id,pseudo, nom, prenom, mail, dDnA, lDN, adresseA, numSecu, numCNI, dateDel, dateExp)
-    return render_template("ste des artist.html",title="Les Artistes", lArt=get_info_artiste())
+    return render_template("modification_groupe.html", artistes=get_artiste_groupe(groupeID), groupeID=groupeID)
 
 @app.route("/modif-artiste-art/<int:id>/<int:aID>", methods =["POST"])
 def modif_artiste_art_aid(id,aID):
