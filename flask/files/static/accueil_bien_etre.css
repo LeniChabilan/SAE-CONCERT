@@ -2,17 +2,10 @@ body {
   margin: 0;
 }
 
-body.light main{
-  background-color: #e8e5da;
-}
-
-body.dark main{
-  background-color: #212121;
-}
-
 main{
   padding-bottom: 30px;
   height: 90vh;
+  background-color: #fafafc
 }
 
 
@@ -20,11 +13,11 @@ main{
   display: flex;
   appearance: none;
   flex-wrap: wrap;
-  background-color: #2a2b38;
-  border: 0.125em solid #ffeba7;
+  background-color: #212121;
+  border: 0.125em solid #fff;
   border-radius: 0.9375em;
   box-sizing: border-box;
-  color: #ffeba7;
+  color: #fff;
   cursor: pointer;
   font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -53,7 +46,7 @@ main{
 }
 
 #boutonCopier:hover {
-  color: #2a2b38;
+  color: #212121;
   background-color: #ffeba7;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
@@ -69,6 +62,7 @@ main{
   
   justify-content: center;
 }
+
 .listeOptions {
   height: 75vh;
   margin: 0;
@@ -80,54 +74,79 @@ main{
   transition: 0.3s;
 }
 
-.listeOptions div {
+.card {
+  height: 45vh;
+  width: 18vw;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius: 16px;
+  box-shadow: 0 0 20px 8px #d0d0d0;
+  overflow: hidden;
+}
+
+.card-image {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-color: #2a2b38;
-  margin: 3vw;
-  margin-top: 5vw;
-  border-radius: 5%;
-  height: 60vh;
-  width: 60vw;
-  transition: 0.3s;
-  max-width: 60vh;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  filter: blur(3px);
 }
 
-.listeOptions div:hover {
-  height: 65vh;
-  max-width: 65vh;
-
-}
-.listeOptions div:hover img{
-  width: 23vw;
-  height: 28vh;
-  transition-duration: 0.2s;
+#prevus {
+  background: no-repeat center url(../static/img/prevus.jpg);
+  background-size: 190%;
 }
 
-.listeOptions a {
-  color: #ffeba7;
-  text-decoration: none;
-  font-size: 2em;
-  margin: 1em;
-  font-weight: bold;
+#creer {
+  background: no-repeat center url(../static/img/creer.avif);
+  background-size: 130%;
+}
+
+#checklist {
+  background: no-repeat center url(../static/img/checklist.jpeg);
+  background-size: 150%;
+}
+.net{
+  display: flex;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  font-weight: bolder;
+  font-size: 2.5vw;
   text-align: center;
+  justify-content: center;
+  color: #fafafc;
+  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.net p{
+  padding-top: 6vh;
 }
 
-.listeOptions div:hover a {
-  font-size: 2.1em;
-  transition-duration: 0.2s;
+.card:hover .net{
+  z-index: -1;
 }
 
-
-
-.listeOptions img {
-  width: 20vw;
-  height: 25vh;
-  border-radius: 5%;
-  margin: 2rem;
-  align-self: center;
+.card-description {
+  display: flex;
+  position: absolute;
+  gap: .5em;
+  background-color: #f5f5f5;
+  color: #212121;
+  height: 80%;
+  width: 100%;
+  top: 100%;
+  border-radius: 16px;
+  transition: all .6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  font-weight: bolder;
+  font-size: 1.5em;
+  text-align: center; 
+  align-items: center;
 }
+.card:hover .card-description {
+  transform: translateY(-100%);
+}
+
 
 @media screen and (max-width: 1100px) {
   .listeOptions {

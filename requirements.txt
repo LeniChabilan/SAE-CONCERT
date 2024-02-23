@@ -16,3 +16,4 @@ flask-login
 pymysql
 mysqlclient
 flask-dropzone
+fpdf

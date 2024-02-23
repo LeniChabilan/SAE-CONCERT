@@ -1,28 +1,26 @@
 {% extends 'base.html' %} {% block styles %} {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='accueil_technique.css')}}" />
 {% endblock %} {% block content %}
+<main>
 <ul class="listeOptions">
   <li>
     <a href="{{ url_for('liste_concerts') }}">
-      <div>
-        Consulter la liste des concerts prévus
-        <img
-          src="{{ url_for('static', filename='img/prevus.jpg') }}"
-          alt="salle de concert vide en préparation"
-        />
+      <div class="card">
+        <div class="card-image" id="prevus"></div>
+        <div class="net"><p>Liste des concerts prévus</p></div>
+          <div class="card-description">Consulter la liste des concerts prévus avec l'aide de filtre, afin de les modifier ou de les supprimer</div>
       </div>
     </a>
   </li>
   <li>
     <a href="{{ url_for('choix_groupes_artistes') }}">
-      <div>
-        Modifier les fiches d'artiste
-        <img
-          src="{{ url_for('static', filename='img/checklist.png') }}"
-          alt="image d'une checklist"
-        />
+      <div class="card">
+        <div class="card-image" id="checklist"></div>
+          <div class="net"><p>Liste des fiches artistes</p></div>
+          <div class="card-description">Consulter la liste des différentes fiches d'artistes ou de groupes afin de les modifier ou de les supprimer</div>
       </div>
     </a>
   </li>
 </ul>
+</main>
 {% endblock %}

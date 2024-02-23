@@ -9,7 +9,7 @@
     </div>
     <div class="contenu">
         <div class="partie_gauche">
-            <form role="form" method="POST" action="{{ url_for('ajout_besoin', conc=conca.concertID)}}">
+            <form role="form" method="POST" action="{{ url_for('ajout_besoin', conc=conca.concertID,salle=salle)}}">
                 <div class="input-container">
                     <label class"iLabel" for="instrument">Instrument</label>
                     <input placeholder="Instrument" type="text" class="input" name="instrument">

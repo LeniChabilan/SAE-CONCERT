@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block styles %}{{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='creation_concert.css')}}" />
 <script src="../static/script/confirmation.js"></script>
+<script src="{{ url_for('static', filename='script/verif_form.js') }}"></script>
 {% endblock %} {% block content %}
 <main>
   <div id="bouton_retour_choix_fiche">
@@ -8,9 +9,10 @@
       <button type="button" class="bouton_de_retour">Retour</button>
     </a>
   </div>
+  
     <div class="form">
         <div class="title">Modifiez votre concert !</div>
-        <form role="form" method ="POST" action ="{{ url_for('modif_concert', id=cID) }}">
+        <form name="myForm" role="form" method="POST" onsubmit="return validerForm()" action ="{{ url_for('modif_concert', id=cID) }}">
             <div class="input-container ">
                 <input placeholder="Nom" type="text" class="input" name="nom" value="{{ concert.nomConcert }}" required>
                 <div class="cut"></div>

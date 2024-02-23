@@ -14,27 +14,30 @@
     </div>
     <ul class="listeOptions">
       <li>
-        
+        <a href="{{ url_for('visualiser_fiches' , conc=conc.concertID) }}">
+          <div class="card">
+            <div class="card-image">Les fiches Rider</div>
+              <div class="card-description">Consulter la fiche rider liée au concert</div>
+            </div>
           <div>
-            <a href="{{ url_for('visualiser_fiches' , conc=conc.concertID) }}" class="text_link">Fiche Rider
-            <img src="{{ url_for('static', filename='img/branchements.png') }}" alt="branchements électrique" />         
-          </div>
         </a>
       </li>
       <li>
         <a href="{{ url_for('editer_liste_a_louer', conc=conc.concertID) }}">
-          <div>
-            Éditer une liste de matériel à louer
-            <img src="{{ url_for('static', filename='img/materielImg.jpg') }}" alt="branchements électrique" />
+          <div class="card">
+            <div class="card-image">Liste de matériel à louer</div>
+              <div class="card-description">Consulter la liste du matériel nécessaire pour le concert</div>
           </div>
         </a>
       </li>
       <li>
-        <div>
-          <a href="{{ url_for('visualiser_plan' , conc=conc.concertID) }}">Fiche de plan feu
-            <img class="image_droite" src="{{ url_for('static', filename='img/prevus.jpg') }}" alt="branchements électrique" />
-          </a>
-        </div>
+        <a href="{{ url_for('visualiser_plan' , conc=conc.concertID) }}">
+          <div class="card">
+            <div class="card-image">Les fiches de plan feu</div>
+              <div class="card-description">Consulter la liste des plans feu liée au concert</div>
+            </div>
+          <div>
+        </a>
       </li>
     </ul>
   </div>

@@ -2,17 +2,18 @@ body{
     margin:0;
 }
 
-body{
-    background-color: #fafafc;
+body.light main {
+    background-color: #ffffff;
 }
   
+body.dark main {
+    background-color: #212121;
+}
 
-
-main{
+#tete_page{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 85vh;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
 
 .form {
@@ -22,9 +23,19 @@ main{
     margin-top: 5vh;
     margin-bottom: 3vh;
     padding: 1vw;
-    height: 38vh;
     width: 20vw;
+    align-items: center;
+    justify-content: center;
   }
+
+.AutourForm{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
   
   .title {
     color: #eee;
@@ -39,8 +50,7 @@ main{
     height: 5vh;
     width: 100%;
     position: relative;
-    margin-top: 5vh;
-    margin-bottom: 2vh;
+    margin-top: 3vh;
   }
 
   
@@ -66,7 +76,7 @@ main{
     top: -2vh;
     transform: translateY(0);
     transition: transform 200ms;
-    width: 7vw;
+    width: 12vw;
   }
   
   .iLabel {
@@ -96,7 +106,20 @@ main{
     color: #808097;
   }
   
-  .input:focus ~ .iLabel {
+  .input:focus ~ .iLabel{
+    color: #fff;
+  }
+
+  .input:valid ~ .cut{
+    transform: translateY(1vh);
+  }
+
+  .input:valid  ~ .iLabel {
+    transform: translateY(-3.5vh) translateX(1.5vh) scale(0.75);
+    opacity: 1;
+  }
+  
+  .input:valid ~ .iLabel {
     color: #fff;
   }
   
@@ -116,12 +139,13 @@ main{
     font-size: 1vw;
     text-transform: uppercase;
     padding: 0;
-    color: #2a2b38;
+    background-color: #ffffff;
+    color: #5e6681;
     box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
     transition: all 0.3s ease-in-out;
   }
   .submit:hover {
-    background-color: #2a2b38;
+    background-color: #5e6681;
     color: #ffffff;
     box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
   }
@@ -129,3 +153,37 @@ main{
   .submit:active {
     background-color: #06b;
   }
+
+  .bouton_de_retour{
+    appearance: none;
+    background-color: #2a2b38;
+    color: #ffffff;
+    margin-top: 5vh;
+    height: 6vh;
+    width: 7vw;
+    text-align: center;
+    font-size: 2vh;
+    box-sizing: border-box;
+    border-radius: 0.9375em;
+    border: none;
+}
+
+.bouton_de_retour:disabled {
+    pointer-events: none;
+}
+
+.bouton_de_retour:hover {
+  color: #2a2b38;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.bouton_de_retour:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+h3{
+  margin-top: 7vh;
+}

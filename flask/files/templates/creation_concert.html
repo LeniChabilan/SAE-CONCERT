@@ -1,16 +1,18 @@
 {% extends 'base_sans_log.html' %} {% block styles %}{{ super() }}
 <link rel="stylesheet" href="{{ url_for('static',filename='creation_concert.css')}}" />
 <script src="../static/script/confirmation.js"></script>
+<script src="../static/script/copier.js"></script>
+<script src="{{ url_for('static', filename='script/verif_form.js') }}"></script>
 {% endblock %} {% block content %}
 <main>
   <div id="bouton_retour_choix_fiche">
-      <a href="{{ url_for('recherche_groupe') }}">
+      <a href="{{ url_for('retour', typeOrga=current_user.typeOrga) }}">  
         <button type="button" class="bouton_de_retour">Retour</button>
       </a>
   </div>
     <div class="form">
         <div class="title">Créer votre concert !</div>
-        <form role="form" method ="POST" action ="{{ url_for('save_concert') }}">
+        <form name="myForm" role="form" method="POST" onsubmit="return validerForm()" action ="{{ url_for('save_concert') }}">
             <div class="input-container ">
                 <input placeholder="Nom" type="text" class="input" name="nom" required>
                 <div class="cut"></div>
@@ -43,9 +45,13 @@
                 </input>
                 <div class="cut"></div>
                 <label class="iLabel" for="groupe">Groupe</label>
-              </div>
-              <button class="submit" type="text" onclick="showConfirmationEnregistrer()">Enregistrer</button>
+                <input type="hidden" class="idConcert" value="{{id}}" name="id">
+              </div>  
+              <button  id="boutonCopier" class="submit">Enregistrer</button>
         </form>
+        <a href="{{ url_for('entrer_groupe') }}">
+        <button class="submit" type="button">Nouveau groupe</button>
+      </a>
     </div>
 </main>
 {% endblock %}

@@ -125,12 +125,14 @@ def supprimer_concert(concID):
 def mod_concert(id,nom, dateD, dateF, salle, groupe):
     session = login()
     conc = session.query(Concert).filter(Concert.concertID == id).first()
+    catering=conc.catering
     if conc:
         conc.nomConcert = nom
         conc.dateDebutConcert = dateD
         conc.dateFinConcert = dateF
         conc.salleID = get_id_salle_by_nom(salle)
         conc.groupeID = get_id_groupe_by_nom(groupe)
+        conc.catering=catering
         session.commit()
     else:
         print("Le concert n'a pas été trouvé.")
@@ -175,11 +177,14 @@ def get_id_groupe_by_nom(nom):
     session = login()
     return session.query(Groupe.groupeID).filter_by(nomGroupe = nom).limit(1).all()[0][0]
 
-def ajouter_concert(Nom, dateDebut, dateFin, ficheTechnique, catering, salle, groupe):
+def ajouter_concert(Nom, dateDebut, dateFin, catering, salle, groupe,lien):
     session = login()
-    concert = Concert(Nom, datetime.strptime(dateDebut,"%Y-%m-%d").date(), datetime.strptime(dateFin,"%Y-%m-%d").date(), ficheTechnique, catering, get_id_salle_by_nom(salle), get_id_groupe_by_nom(groupe))
+    concert = Concert(Nom, datetime.strptime(dateDebut,"%Y-%m-%d").date(), datetime.strptime(dateFin,"%Y-%m-%d").date(), catering, get_id_salle_by_nom(salle), get_id_groupe_by_nom(groupe),lien)
     session.add(concert)
+    idC=concert.concertID
     session.commit()
+    
+    
 
 def chercher_groupe(nom):
     session = login()
@@ -210,6 +215,19 @@ def get_artiste_id_groupe(id):
     session.expunge_all()
     session.close() 
     return artistes
+
+def get_concert_id_nouv():
+    session=login()
+    res=session.query(func.max(Concert.concertID)).all()[0][0]+1
+    session.close()
+    return res
+
+def get_nom_concert(id):
+    session=login()
+    res=session.query(Concert.nomConcert).filter(Concert.concertID==id).all()[0][0]
+    session.close()
+    return res
+
 
 def supprimer_artiste(artID):
     try:
@@ -262,12 +280,22 @@ def get_max_id_Materiel():
     if session.query(func.max(Materiel.materielID)).all()[0][0] is None:
         return 1
     return session.query(func.max(Materiel.materielID)).all()[0][0] + 1
-    
-def ajout_nessecite_concert(objet, concert, description, quantite):
+
+
+
+
+def ajout_nessecite_concert(objet, concert, description, quantite,salle):
     session = login()
     
     # Recherche de l'id du matériel
     materiel_id_query = session.query(Materiel.materielID).filter_by(nomMateriel=objet).first()
+    
+    matosSalle=session.query(MaterielSalle).filter_by(nomMaterielS=objet,salleID=salle).all()
+    nb=0
+    for i in matosSalle:
+        nb+=1
+    
+    
     
     if materiel_id_query:
         id = materiel_id_query[0]
@@ -282,27 +310,31 @@ def ajout_nessecite_concert(objet, concert, description, quantite):
     
     if necessiter_query is None:
         # Si la relation n'existe pas, ajoutez-la
-        necessite = Necessiter(id, concert, description, quantite)
+        necessite = Necessiter(id, concert, description, quantite,nb)
         session.add(necessite)
 
     session.commit()
     session.close()
 
+
+from .app import app
+
 def get_liste_neccessite(concert):
-    session = login()
-    res = []
-    necessaire = session.query(Necessiter).filter_by(concertID=concert).all()
-    for row in necessaire:
-        liste = []
-        description = row.description
-        nom_objet = session.query(Materiel.nomMateriel).filter_by(materielID = row.materielID).first()[0]
-        liste.append(nom_objet)
-        liste.append(description)
-        liste.append(row.quantite)
-        res.append(liste)
-    session.expunge_all()
-    session.close()
-    return res
+    with app.app_context():
+        session = login()
+        # res = []
+        necessaire = session.query(Necessiter).filter_by(concertID=concert).all()
+        # for row in necessaire:
+        #     liste = []
+        #     description = row.description
+        #     nom_objet = session.query(Materiel.nomMateriel).filter_by(materielID = row.materielID).first()[0]
+        #     liste.append(nom_objet)
+        #     liste.append(description)
+        #     liste.append(row.quantite)
+        #     res.append(liste)
+        # session.expunge_all()
+        # session.close()
+        return necessaire
     
 def get_info_materiel_salle(concert):
     session = login()
@@ -337,6 +369,18 @@ def ajouter_plan(concertID):
         session.commit()
         os.remove(file_path)
     session.close()
+    
+    
+def ajouter_mat(idC,nom,quantite,description,salle):
+    session = login()
+    idM=get_max_id_Materiel()
+    mat=Materiel(idM,nom)
+    session.add(mat)
+    session.commit()
+    ajout_nessecite_concert(nom,idC,description,quantite,salle)
+    session.close()
+     
+
     
 def ajouter_rider(concertID):
     session = login()
@@ -381,7 +425,7 @@ def modif_fiche_technique(concertID, ficheT):
     session.commit()
     session.close()
 
-def modif_fiche_accueil(concertID, ficheA):
+def modif_fiche_acc(concertID, ficheA):
     session = login()
     concert = session.query(Concert).filter(Concert.concertID == concertID).first()
     concert.catering = ficheA
@@ -397,3 +441,103 @@ def get_artiste_groupe(id):
     session.expunge_all()
     session.close() 
     return lesArtistes
+
+def get_groupe_id(id):
+    session = login()
+    id_groupe=session.query(Concert.groupeID).filter(Concert.concertID==id).all()[0][0]
+    groupe_id=session.query(Groupe).filter(Groupe.groupeID==id_groupe).all()
+    session.close() 
+    return groupe_id
+
+def get_dico_grps_art(id):
+    dicoGr={}
+    grps=get_groupe_id(id)
+    for grp in grps:
+        idG=grp.groupeID 
+        liste_idA=get_id_artiste_par_groupe(idG)
+        liste_arti=get_liste_artiste(liste_idA)
+        dicoGr[grp]=liste_arti
+    return dicoGr
+
+def get_id_groupe(id):
+    session = login()
+    conc=session.query(Concert).filter(Concert.concertID==id).first()
+    idG=conc.groupeID
+    session.close() 
+    
+    return idG
+
+
+def get_nom_groupe(id):
+    session = login()
+    nom=session.query(Groupe.nomGroupe).filter(Groupe.groupeID==id).all()
+    session.close() 
+    print(nom)
+    return nom[0][0]
+
+def update_necessite(idConcert, idMateriel, quantiteacquise):
+    session = login()
+    necessite = session.query(Necessiter).filter(Necessiter.materielID == idMateriel, Necessiter.concertID == idConcert).first()
+    necessite.quantiteAcquise = quantiteacquise
+    session.commit()
+    session.close()
+
+
+
+
+
+from fpdf import FPDF
+from flask import Flask, Response
+
+class PDF(FPDF):
+    def header(self):
+        
+        self.image("./static/img/logomusique.png", 10, 8, 15)
+        
+        self.set_font("helvetica", "B", 15)
+        
+        self.cell(80)
+        
+        self.cell(30, 10, "Fiche Technique", align="C")
+        
+        self.ln(20)
+
+    
+        
+def fiche_tech(concertId):
+    session=login()
+    nec=session.query(Necessiter).filter_by(concertID=concertId).all()
+    conc=session.query(Concert).filter_by(concertID=concertId).first()
+    
+    pdf=PDF()
+    pdf.set_title("Fiche Technique du concert "+conc.nomConcert)
+    pdf.add_page()
+    
+    pdf.set_font("helvetica", "B",15)
+    pdf.cell(80)
+    pdf.cell(30, 10, conc.nomConcert, align="C")
+    pdf.ln(20)
+    
+    for mat in nec:
+        
+        pdf.set_font("helvetica", "B",12)
+        pdf.cell(0, 10, "Nom du matériel : "+mat.materiel.nomMateriel)
+        pdf.ln(10)
+        pdf.set_font("helvetica",size=12)
+        pdf.cell(0, 10, "Description : "+mat.description)
+        pdf.ln(10)
+        pdf.cell(0, 10, "Quantité demandée : "+str(mat.quantite))
+    
+        pdf.ln(20)
+    
+    byte_string = pdf.output(dest='S').encode('latin-1')
+    conc.ficheTechnique = byte_string
+    session.commit()
+    session.close()
+    return pdf
+    
+    
+    
+
+
+

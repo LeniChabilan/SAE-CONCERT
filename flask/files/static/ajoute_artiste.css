@@ -3,7 +3,7 @@ body{
 }
 
 body.light main {
-    background-color: #e8e5da;
+    background-color: #ffffff;
 }
   
 body.dark main {
@@ -12,7 +12,6 @@ body.dark main {
 
 main{
     display: flex;
-    justify-content: space-evenly;
 }
 
 .form {
@@ -24,6 +23,7 @@ main{
     padding: 1vw;
     height: 114vh;
     width: 20vw;
+    margin-left: 30vw;
   }
   
   .title {
@@ -113,7 +113,7 @@ main{
   }
   
   .submit {
-    background-color: #ffeba7;
+    background-color: #ffffff;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -128,14 +128,13 @@ main{
     font-size: 1vw;
     text-transform: uppercase;
     padding: 0;
-    background-color: #ffeba7;
-    color: #5e6681;
+    color: #212121;
     box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
     transition: all 0.3s ease-in-out;
   }
   .submit:hover {
-    background-color: #5e6681;
-    color: #ffeba7;
+    background-color: #212121;
+    color: #ffffff;
     box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
   }
   
@@ -144,9 +143,10 @@ main{
   }
 
   .bouton_de_retour{
+    margin-left: 5vw;
     appearance: none;
-    background-color: #2a2b38;
-    color: #ffeba7;
+    background-color: #000000;
+    color: #ffffff;
     margin-top: 5vh;
     height: 6vh;
     width: 7vw;
@@ -162,8 +162,8 @@ main{
 }
 
 .bouton_de_retour:hover {
-  color: #2a2b38;
-  background-color: #ffeba7;
+  color: #000000;
+  background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }

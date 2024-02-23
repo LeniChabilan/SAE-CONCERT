@@ -5,13 +5,13 @@
 {% endblock %} {% block content %}
 <main>
   <div id="bouton_retour_choix_fiche">
-    <a href="{{ url_for('liste_artistes') }}">
+    <a href="{{ url_for('modification_groupe', groupeID=groupeID) }}">
       <button type="button" class="bouton_de_retour">Retour</button>
     </a>
   </div>
     <div class="form">
         <div class="title">Modifiez les information de l'artiste !</div>
-        <form name="myForm" role="form" method="POST" onsubmit="return validateForm()" action ="{{ url_for('modif_artiste_art', id=aID) }}">
+        <form name="myForm" role="form" method="POST" onsubmit="return validateForm()" action ="{{ url_for('modif_artiste_art', id=aID, groupeID=groupeID) }}">
             <div class="input-container ">
                 <input placeholder="Pseudo" type="text" class="input" name="pseudo" value="{{ arti.pseudoArtiste }}" required>
                 <div class="cut"></div>

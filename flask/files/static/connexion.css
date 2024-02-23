@@ -9,15 +9,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fafafc;
 }
 
-body.light .main {
-  background-color: #e8e5da;
-}
-
-body.dark .main {
-  background-color: #212121;
-}
 
 .card {
   width: 25vw;
@@ -45,7 +39,7 @@ body.dark .main {
 .input-icon {
   height: 1em;
   width: 1em;
-  fill: #ffeba7;
+  fill: #fff;
 }
 
 .input-field {
@@ -62,7 +56,7 @@ body.dark .main {
   margin-bottom: 3.5vh;
   font-size: 2vw;
   font-weight: 500;
-  color: #ffeba7;
+  color: #fff;
 }
 
 /*Buttons*/
@@ -76,7 +70,7 @@ body.dark .main {
   font-size: 1vw;
   text-transform: uppercase;
   padding: 0;
-  background-color: #ffeba7;
+  background-color: #fff;
   color: #5e6681;
   box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
   transition: all 0.3s ease-in-out;

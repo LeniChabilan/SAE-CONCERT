@@ -14,8 +14,7 @@
     <header>
       <div class="gauche">
         <a href="{{ url_for('home') }}">
-          
-          <img class="img_base" id="img1" src="{{ url_for('static', filename='img/logomusiquejaune.png') }}" alt="image du logo de l'application" />
+          <img class="img_base" id="img1" src="{{ url_for('static', filename='img/logomusiquenoir.png') }}" alt="image du logo de l'application" />
         </a>
         <h2 id="nom_Entreprise">Concert'O</h2>
       </div>
@@ -24,24 +23,26 @@
         {% if current_user.is_authenticated%}
           <li><a class="username" >{{ current_user.nomOrga }}</a></li>
           <li class="logout"><a href="{{ url_for('logout') }}" id="fond_bouton" class="noligne">
-            <button type="button" id="bouton_se_connecter">Se déconnecter</button>
+            <div id="wrapper">
+              <button type="button" id="bouton_se_connecter">
+                <span>Se déconnecter</span>
+              </button>
+            </div>
           </a></li>
           {% else %}
           <li> <a href="{{ url_for('connexion') }}" id="fond_bouton" class="noligne">
-            <button type="button" id="bouton_se_connecter">Se connecter</button>
+            <div id="wrapper">
+              <button type="button" id="bouton_se_connecter">
+                <span>Se connecter</span>
+              </button>
+            </div>
           </a></li>
         {% endif %}
         </ul>
             
         <a href="{{ url_for('home') }}" id="home">
-          <img class="img_maison" id="img2" src="{{ url_for('static', filename='img/home.png') }}" alt="logo silouhette maison" />
+          <img class="img_maison" id="img2" src="{{ url_for('static', filename='img/homeblack.png') }}" alt="logo silouhette maison" />
         </a>
-        <div class="toggle-switch">
-          <label class="switch-label">
-            <input type="checkbox" class="checkbox" />
-            <span class="slider"></span>
-          </label>
-        </div>
       </div> 
     </header>
     <script

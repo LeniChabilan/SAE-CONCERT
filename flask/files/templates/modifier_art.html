@@ -5,13 +5,13 @@
 {% endblock %} {% block content %}
 <main>
   <div id="bouton_retour_choix_fiche">
-    <a href="{{ url_for('liste_artistes') }}">
+    <a href="{{ url_for('liste_groupe_id', id=id) }}">
       <button type="button" class="bouton_de_retour">Retour</button>
     </a>
   </div>
     <div class="form">
         <div class="title">Modifiez les information de l'artiste !</div>
-        <form name="myForm" role="form" method="POST" onsubmit="return validateForm()" action ="{{ url_for('modif_artiste_art', id=aID) }}">
+        <form name="myForm" role="form" method="POST" onsubmit="return validateForm()" action="{{ url_for('modif_artiste_art_aid', id=id ,aID=aID) }}">
             <div class="input-container ">
                 <input placeholder="Pseudo" type="text" class="input" name="pseudo" value="{{ arti.pseudoArtiste }}" required>
                 <div class="cut"></div>
@@ -28,12 +28,12 @@
                 <label class="iLabel" for="prenom">Prénom</label>
              </div>
              <div class="input-container ">
-                <input placeholder="Email" type="text" class="input" name="email" value="{{ arti.mailA }}" required>
+                <input placeholder="Email" type="email" class="input" name="email" value="{{ arti.mailA }}" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="email">Email</label>
              </div>
               <div class="input-container">
-                <input placeholder="" type="date" class="input" name="dateDN" value="{{ arti.DdNA }}" required>
+                <input placeholder="" type="date"  class="input" name="dateDN" value="{{ arti.DdNA }}" required>
                 <label class="iLabel" for="dateDN"></label>
               </div>
               <div class="input-container ">
@@ -47,12 +47,12 @@
                 <label class="iLabel" for="adresse">Adresse</label>
              </div>
              <div class="input-container ">
-                <input placeholder="Numéro de sécurité sociale" type="text" class="input" name="numSec" value="{{ arti.numSecuriteSociale }}" required>
+                <input placeholder="Numéro de sécurité sociale" type="number" class="input" name="numSec" value="{{ arti.numSecuriteSociale }}" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="numSec">Numéro de sécurité sociale</label>
              </div>
              <div class="input-container ">
-                <input placeholder="Numéro CNI" type="text" class="input" name="numCNI" value="{{ arti.numCNI }}" required>
+                <input placeholder="Numéro CNI" type="number" class="input" name="numCNI" value="{{ arti.numCNI }}" required>
                 <div class="cut"></div>
                 <label class="iLabel" for="numCNI">Numéro CNI</label>
              </div>
@@ -64,6 +64,7 @@
                 <input placeholder="" type="date" class="input" name="dateExpiration" value="{{ arti.dateExpirationCNI }}" required>
                 <label class="iLabel" for="dateExpiration"></label>
             </div>
+              
               <button class="submit" type="submit" onclick="showConfirmationEnregistrer()">Enregistrer</button>
         </form>
     </div>

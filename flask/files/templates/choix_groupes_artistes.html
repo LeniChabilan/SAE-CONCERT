@@ -12,23 +12,17 @@
 <ul class="listeOptions">
   <li>
     <a href="{{ url_for('liste_groupes') }}">
-      <div>
-        Consulter la liste des groupes
-        <img
-          src="{{ url_for('static', filename='img/foule.jpg') }}"
-          alt="la silouhette d'une foule"
-        />
+      <div class="card">
+        <div class="card-image">Liste des groupes</div>
+          <div class="card-description">Consulter la liste des différents groupes ainsi que leurs membres, afin de les modifier, de les supprimer ou d'y ajouter des artistes</div>
       </div>
     </a>
   </li>
   <li>
     <a href="{{ url_for('liste_artistes') }}">
-      <div>
-        Consulter la liste des artistes
-        <img
-          src="{{ url_for('static', filename='img/artiste.jpg') }}"
-          alt="la silouhette d'un artiste"
-        />
+      <div class="card">
+        <div class="card-image">Liste des artistes</div>
+          <div class="card-description">Consulter la liste des différents artistes et leurs informations, afin de les modifier ou de les supprimer</div>
       </div>
     </a>
   </li>

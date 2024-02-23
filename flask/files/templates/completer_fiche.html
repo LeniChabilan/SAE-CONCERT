@@ -2,7 +2,13 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='completer_fiche.css')}}" />
 {% endblock %} {% block content %}
 <main>
-    <form role="form" method ="POST" action ="{{ url_for('completer_fiche_pdf', concertID=concertID) }}">
+
+    <div id="bouton_retour_choix_fiche">
+        <a href="{{ url_for('liste_groupe_id', id=concertID) }}">
+          <button type="button" class="bouton_de_retour">Retour</button>
+        </a>
+      </div>
+  <form role="form" method ="POST" action ="{{ url_for('completer_fiche_pdf', concertID=concertID,salleId=salleId) }}">
         <div class="title">Veuillez compléter ces fiches :</div>
         <div class="form">
             <div class="txtArea">
@@ -11,14 +17,11 @@
                     <textarea class="input" name="ficheA" cols="30" rows="10" required></textarea>
                 </div>
             </div>     
-            <div class="txtArea">
-                <div class="input-container">
-                    <label class="iLabel" for="nom">Fiche Technique</label>
-                    <textarea class="input" name="ficheT" cols="30" rows="10" required></textarea>
-                </div>
-            </div>                             
+                                    
         </div>
-        <button class="submit" type="text">Enregistrer</button>
+        <div class="submitance">
+            <button class="submit" type="text">Enregistrer</button>
+        </div>
     </form>
 </main>
 {% endblock %}

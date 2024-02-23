@@ -145,7 +145,7 @@ form {
   }
   
   .submit {
-    background-color: #ffeba7;
+    background-color: #fafafc;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -160,14 +160,13 @@ form {
     font-size: 1vw;
     text-transform: uppercase;
     padding: 0;
-    background-color: #ffeba7;
     color: #5e6681;
     box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
     transition: all 0.3s ease-in-out;
   }
   .submit:hover {
     background-color: #5e6681;
-    color: #ffeba7;
+    color: #fafafc;
     box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
   }
   
@@ -175,14 +174,8 @@ form {
     background-color: #06b;
   }
 
-
-
-body.light .main .partie_principale, body.light .main {
-  background-color: #e8e5da;
-}
-
-body.dark .main .partie_principale, body.dark .main{
-  background-color: #212121;
+.main{
+  background-color: #fafafc;
 }
 
 body.light #modification{
@@ -199,7 +192,7 @@ body.dark #modification{
     flex-grow:1;
     margin-top: 5vh;
     margin-left: 10%;
-    background-color: #d3d1cb;
+    background-color: #ffffff;
     margin-right: 8%;
     margin-bottom: 5%;
 }
@@ -214,6 +207,7 @@ body.dark #modification{
 
 table{
     outline: none;
+    border: #15172b;
 }
 
 thead{
@@ -229,7 +223,11 @@ thead th{
 }
 
 tbody tr:nth-child(odd){
-    background-color: #b9b9b9;
+    background-color: #d5d5e0;
+}
+
+tr{
+    border-bottom: 1px solid #15172b;
 }
 
 
@@ -240,7 +238,7 @@ tbody tr:nth-child(odd){
 .bouton_de_retour{
     appearance: none;
     background-color: #2a2b38;
-    color: #ffeba7;
+    color: #fafafc;
     margin-top: 5vh;
     margin-left: 3vw;
     height: 6vh;
@@ -258,7 +256,7 @@ tbody tr:nth-child(odd){
 
 .bouton_de_retour:hover {
   color: #2a2b38;
-  background-color: #ffeba7;
+  background-color: #fafafc;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
@@ -274,7 +272,7 @@ tbody tr:nth-child(odd){
  
 .liens:hover
 {
-   background-color: rgb(133, 133, 133);
+   background-color: #b8b8be;
    cursor: hand;
 } 
 
